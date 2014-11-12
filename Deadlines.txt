@@ -17,4 +17,4 @@ Level block opslag - Pieter
 Model + animaties van teddy (speler) maken - Esmeralda
 Textures maken voor blokken (muur, grond binnen, grond buiten, plafond, ...) - Jeroen
 Shaders bekijken (toonshader schrijven) - Arjan
-Globale layout huis maken - Abdulah
+Globale layout huis maken - Abdullah
