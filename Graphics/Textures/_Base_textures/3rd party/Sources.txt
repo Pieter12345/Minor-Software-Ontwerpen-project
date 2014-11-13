@@ -5,6 +5,18 @@ Filename:WoodFine0017_S.jpg
 Source  :CGTextures
 URL     :http://www.cgtextures.com/texview.php?id=19794&PHPSESSID=g5hadh1l0cj9dgudr2fnccqnl0
 
-Filename:
-Source  :
+Filename:Carpet0042_M.jpg
+Source  :CGTextures
+URL     :http://www.cgtextures.com/texview.php?id=23829&PHPSESSID=qeltjn3sb25dvuc9a3kg2b4lp4
 
+Filename:Leather0057_2_S.jpg
+Source  :CGTextures
+URL     :http://www.cgtextures.com/texview.php?id=15236&PHPSESSID=qeltjn3sb25dvuc9a3kg2b4lp4
+
+Filename:Leather0057_L.jpg
+Source  :CGTextures
+URL     :http://www.cgtextures.com/texview.php?id=15236&PHPSESSID=qeltjn3sb25dvuc9a3kg2b4lp4
+
+Filename:Leather0113_S.jpg
+Source  :CGTextures
+URL     :http://www.cgtextures.com/texview.php?id=107713&PHPSESSID=qeltjn3sb25dvuc9a3kg2b4lp4
