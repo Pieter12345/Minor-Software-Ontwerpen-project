@@ -12,9 +12,18 @@ Deadlines
 Taken
 -------------------------------------------------------------------------------------
 
-Core FPS mechanica - Demian
+Core FPS mechanica - Damien
 Level block opslag - Pieter
 Model + animaties van teddy (speler) maken - Esmeralda
 Textures maken voor blokken (muur, grond binnen, grond buiten, plafond, ...) - Jeroen
 Shaders bekijken (toonshader schrijven) - Arjan
 Globale layout huis maken - Abdullah
+
+
+Voor Dinsdag af:
+Esmeralda - Teddybeer model af + loop animatie.
+Abdullah - Woning vullen met meubels.
+Arjan - Toonshader af (spotlightondersteuning, specular lighting, texure ondersteuning).
+Jeroen - Textures maken van teddy, muur, vloer en plafond af.
+Damien - FPS third person mechanica af. Deels werken aan block placement trigger.
+Pieter - BlockID ondersteuning schrijven met apparte textures per blockID.
