@@ -3,7 +3,6 @@
 --- !u!13 &1
 InputManager:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal
@@ -150,7 +149,7 @@ InputManager:
     axis: 2
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal
+    m_Name: Horizontal2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -166,7 +165,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Vertical
+    m_Name: Vertical2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -177,7 +176,7 @@ InputManager:
     dead: .189999998
     sensitivity: 1
     snap: 0
-    invert: 1
+    invert: 0
     type: 2
     axis: 1
     joyNum: 0
@@ -283,6 +282,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
+    altNegativeButton: 
+    altPositiveButton: joystick button 1
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Sneak
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left shift
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
