@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-// 3rd person game-like camera controller
-// keeps camera behind the player and aimed at aiming point
 public class ShooterGameCamera : MonoBehaviour {
 	
 	public Transform player;
@@ -24,8 +22,7 @@ public class ShooterGameCamera : MonoBehaviour {
 	
 	private float angleH = 0;
 	private float angleV = 0;
-	private Transform cam;
-	private float maxCamDist = 1;
+	private float maxCamDist = 3;
 	private LayerMask mask;
 	private Vector3 smoothPlayerPos;
 	
@@ -38,11 +35,8 @@ public class ShooterGameCamera : MonoBehaviour {
 		mask |= 1 << LayerMask.NameToLayer("Ignore Raycast");
 		// Invert mask
 		mask = ~mask;
-		
-		cam = transform;
+
 		smoothPlayerPos = player.position;
-		
-		maxCamDist = 3;
 	}
 	
 	// Update is called once per frame
@@ -58,12 +52,12 @@ public class ShooterGameCamera : MonoBehaviour {
 		
 		// Before changing camera, store the prev aiming distance.
 		// If we're aiming at nothing (the sky), we'll keep this distance.
-		float prevDist = (aimTarget.position - cam.position).magnitude;
+		float prevDist = (aimTarget.position - transform.position).magnitude;
 		
 		// Set aim rotation
 		Quaternion aimRotation = Quaternion.Euler(-angleV, angleH, 0);
 		Quaternion camYRotation = Quaternion.Euler(0, angleH, 0);
-		cam.rotation = aimRotation;
+		transform.rotation = aimRotation;
 		
 		// Find far and close position for the camera
 		smoothPlayerPos = Vector3.Lerp(smoothPlayerPos, player.position, smoothingTime * Time.deltaTime);
@@ -84,11 +78,11 @@ public class ShooterGameCamera : MonoBehaviour {
 		if (Physics.Raycast(closeCamPoint, closeToFarDir, out hit, maxCamDist + padding, mask)) {
 			maxCamDist = hit.distance - padding;
 		}
-		cam.position = closeCamPoint + closeToFarDir * maxCamDist;
+		transform.position = closeCamPoint + closeToFarDir * maxCamDist;
 		
 		// Do a raycast from the camera to find the distance to the point we're aiming at.
 		float aimTargetDist;
-		if (Physics.Raycast(cam.position, cam.forward, out hit, 100, mask)) {
+		if (Physics.Raycast(transform.position, transform.forward, out hit, 100, mask)) {
 			aimTargetDist = hit.distance + 0.05f;
 		}
 		else {
@@ -98,6 +92,11 @@ public class ShooterGameCamera : MonoBehaviour {
 		
 		// Set the aimTarget position according to the distance we found.
 		// Make the movement slightly smooth.
-		aimTarget.position = cam.position + cam.forward * aimTargetDist;
+		aimTarget.position = transform.position + transform.forward * aimTargetDist;
+	}
+
+	void OnGUI () {
+		if (Time.time != 0 && Time.timeScale != 0)
+			GUI.DrawTexture(new Rect(Screen.width/2-(reticle.width*0.5f), Screen.height/2-(reticle.height*0.5f), reticle.width, reticle.height), reticle);
 	}
 }

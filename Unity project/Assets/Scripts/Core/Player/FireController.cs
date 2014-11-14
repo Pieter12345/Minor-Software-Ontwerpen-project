@@ -5,11 +5,6 @@ public class FireController : MonoBehaviour {
 
 	public Transform aimTarget;
 	public Transform camera;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {

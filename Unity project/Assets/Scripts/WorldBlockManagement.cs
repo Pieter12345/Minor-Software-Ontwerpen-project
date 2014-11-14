@@ -40,7 +40,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 						GameObject b = (GameObject) Instantiate(block); // Create a new block object.
 						b.transform.position = new Vector3(x, y, z); // Put the block in position.
-						b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
+						b.transform.parent = (parent); // Puts the block object in a tab in the hierarchy window.
 						blockObjects[byteArrayIndex] = b;
 					}
 					byteArrayIndex++;
@@ -101,7 +101,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		else {
 			GameObject b = (GameObject) Instantiate(block); // Create a new block object.
 			b.transform.position = new Vector3(x, y, z); // Put the block in position.
-			b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
+			b.transform.parent = (parent); // Puts the block object in a tab in the hierarchy window.
 			blockObjects[byteArrayIndex] = b;
 		}
 	}
