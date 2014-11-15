@@ -13,8 +13,8 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	
-	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
-	private static Object block;
+//	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
+//	private static Object block;
 
 	public Transform parentObject; // The (empty) parent GameObject to create new blocks in.
 	private static Transform parent; // Block objects will be created as childs of this GameObject. (Default: World/Blocks)
@@ -23,13 +23,13 @@ public class WorldBlockManagement : MonoBehaviour {
 	void Start () {
 
 		// Load the default level to variables.
-		loadFromFile("Assets/Levels/testLevel.bytes");
+		loadLevelFromFile("testLevel");
 
 		// Make the blockPrefab and parentObject static.
-		block = this.blockPrefab;
+//		block = this.blockPrefab;
 		parent = this.parentObject;
 
-		// Load the level to the scene.
+		// Load the level to the scene (Does not clear an old loaded level).
 		int byteArrayIndex = 0;
 		for(int y=0; y < levelHeight; y++) {
 			for(int z=0; z < levelSize; z++) {
@@ -37,11 +37,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 					// If a block should be placed at the current position.
 					if(blockData[byteArrayIndex] != 0) {
-
-						GameObject b = (GameObject) Instantiate(block); // Create a new block object.
-						b.transform.position = new Vector3(x, y, z); // Put the block in position.
-						b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
-						blockObjects[byteArrayIndex] = b;
+						setBlockAt(x, y, z, blockData[byteArrayIndex]);
 					}
 					byteArrayIndex++;
 				}
@@ -51,14 +47,18 @@ public class WorldBlockManagement : MonoBehaviour {
 		// Set some blocks to test the script.
 		Debug.Log("[INFO]: [WorldBlockManagement] Test blocks are being placed.");
 		setBlockAt(0,0,0,1);
-		setBlockAt(1,1,1,1);
-		setBlockAt(2,2,2,1);
+		setBlockAt(1,1,1,2);
+		setBlockAt(2,2,2,3);
+
+		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
+		saveLevelToFile("save1");
 
 	}
 
-	// loadFromFile method.
+	// loadLevelFromFile method.
 	// Loads the levelSize, levelHeight and blockData from file.
-	private static void loadFromFile(string filePath) {
+	private static void loadLevelFromFile(string fileName) {
+		string filePath = "Assets/Levels/" + fileName + ".bytes";
 
 		// Check if the file exists.
 		if(System.IO.File.Exists(filePath)) {
@@ -69,10 +69,29 @@ public class WorldBlockManagement : MonoBehaviour {
 			levelHeight = (byte) binData.BaseStream.ReadByte();
 			blockData = binData.ReadBytes((int) (binData.BaseStream.Length-2));
 			blockObjects = new GameObject[(int) (binData.BaseStream.Length-2)];
+			binData.Close();
 		}
 		else {
 			Debug.Log("[SEVERE]: [WorldBlockManagement] The given levelfile does not exist.");
 		}
+	}
+
+	// saveLevelToFile
+	// Saves the current state of the level.
+	// Argument fileName can be a name without extension.
+	public void saveLevelToFile(string fileName) {
+		string filePath = "Assets/Levels/customSaves/" + fileName + ".binary";
+		
+		FileStream outStream = new FileStream(filePath, FileMode.Create);
+		BinaryWriter writer = new BinaryWriter(outStream);
+
+		writer.Write(levelSize);
+		writer.Write(levelHeight);
+		for(int i=0; i < blockData.Length; i++) {
+			writer.Write(blockData[i]);
+		}
+		writer.Close();
+
 	}
 
 	// setBlockAt method.
@@ -99,9 +118,36 @@ public class WorldBlockManagement : MonoBehaviour {
 			blockObjects[byteArrayIndex] = null;
 		}
 		else {
-			GameObject b = (GameObject) Instantiate(block); // Create a new block object.
-			b.transform.position = new Vector3(x, y, z); // Put the block in position.
+
+			// Load the texture.
+			string textureFileName = "";
+			switch(blockID) {
+			case 1: {
+				textureFileName = "stone.png";
+				break;
+			}
+			case 2: {
+				textureFileName = "brick.png";
+				break;
+			}
+			}
+
+			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+
+			if(texture == null) {
+				Debug.Log("[SEVERE]: [WorldBlockManagement] Texture " + textureFileName + " could not be loaded. Using textureNotFoundTexture.png.");
+				texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/textureNotFoundTexture.png") as Texture2D;
+				if(texture == null) {
+					Debug.Log("[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.");
+				}
+			}
+
+			// Create the block and store a reference to it.
+			GameObject b = GameObject.CreatePrimitive(PrimitiveType.Cube); // Create a new block object.
+		//	GameObject b = (GameObject) Instantiate(block); // Create a new block object.
+			b.transform.position = new Vector3(x+0.5f, y+0.5f, z+0.5f); // Put the block in position.
 			b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
+			b.renderer.material.mainTexture = texture;
 			blockObjects[byteArrayIndex] = b;
 		}
 	}
