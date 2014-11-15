@@ -37,15 +37,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 					// If a block should be placed at the current position.
 					if(blockData[byteArrayIndex] != 0) {
-<<<<<<< HEAD
 						setBlockAt(x, y, z, blockData[byteArrayIndex]);
-=======
-
-						GameObject b = (GameObject) Instantiate(block); // Create a new block object.
-						b.transform.position = new Vector3(x, y, z); // Put the block in position.
-						b.transform.parent = (parent); // Puts the block object in a tab in the hierarchy window.
-						blockObjects[byteArrayIndex] = b;
->>>>>>> origin/master
 					}
 					byteArrayIndex++;
 				}
@@ -126,7 +118,6 @@ public class WorldBlockManagement : MonoBehaviour {
 			blockObjects[byteArrayIndex] = null;
 		}
 		else {
-<<<<<<< HEAD
 
 			// Load the texture.
 			string textureFileName = "";
@@ -157,11 +148,6 @@ public class WorldBlockManagement : MonoBehaviour {
 			b.transform.position = new Vector3(x+0.5f, y+0.5f, z+0.5f); // Put the block in position.
 			b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
 			b.renderer.material.mainTexture = texture;
-=======
-			GameObject b = (GameObject) Instantiate(block); // Create a new block object.
-			b.transform.position = new Vector3(x, y, z); // Put the block in position.
-			b.transform.parent = (parent); // Puts the block object in a tab in the hierarchy window.
->>>>>>> origin/master
 			blockObjects[byteArrayIndex] = b;
 		}
 	}
