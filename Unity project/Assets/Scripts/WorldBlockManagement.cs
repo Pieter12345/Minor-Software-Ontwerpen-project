@@ -49,6 +49,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		setBlockAt(0,0,0,1);
 		setBlockAt(1,1,1,2);
 		setBlockAt(2,2,2,3);
+		setBlockAt(3,3,3,4);
 
 		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
 		saveLevelToFile("save1");
@@ -72,7 +73,7 @@ public class WorldBlockManagement : MonoBehaviour {
 			binData.Close();
 		}
 		else {
-			Debug.Log("[SEVERE]: [WorldBlockManagement] The given levelfile does not exist.");
+			Debug.Log("[SEVERE]: [WorldBlockManagement] The given levelfile does not exist. Filepath: " + filePath  + ".");
 		}
 	}
 
@@ -103,7 +104,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Check if the position exists.
 		if(byteArrayIndex >= blockData.Length || x >= levelSize || z >= levelSize || y >= levelHeight) {
-			Debug.Log("[INFO]: [WorldBlockManagement] The setBlockAt method has been called with out of bounds arguments. Not creating block.");
+			Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with out of bounds arguments: x=" + x + ", y=" + y + ", z=" + z + ". Not creating block.");
 			return;
 		}
 
@@ -121,24 +122,45 @@ public class WorldBlockManagement : MonoBehaviour {
 
 			// Load the texture.
 			string textureFileName = "";
+			string shaderName = "";
 			switch(blockID) {
 			case 1: {
 				textureFileName = "stone.png";
+				shaderName = "Diffuse";
 				break;
 			}
 			case 2: {
 				textureFileName = "brick.png";
+				shaderName = "Diffuse";
+				break;
+			}
+			case 3: {
+				textureFileName = "leaves.png";
+				shaderName = "Transparent/Diffuse";
+				break;
+			}
+			default: {
+				Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with an unknown blockID: " + blockID + ". Setting the block with textureNotFoundTexture and Diffuse shader.");
 				break;
 			}
 			}
-
+			
 			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
-
 			if(texture == null) {
 				Debug.Log("[SEVERE]: [WorldBlockManagement] Texture " + textureFileName + " could not be loaded. Using textureNotFoundTexture.png.");
 				texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/textureNotFoundTexture.png") as Texture2D;
+				shaderName = "Diffuse";
 				if(texture == null) {
 					Debug.Log("[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.");
+				}
+			}
+
+			Shader shader = Shader.Find(shaderName);
+			if(shader == null) {
+				Debug.Log("[SEVERE]: [WorldBlockManagement] Shader " + shaderName + " could not be loaded. Using the default Diffuse shader.");
+				shader = Shader.Find("Diffuse");
+				if(shader == null) {
+					Debug.Log("[SEVERE]: [WorldBlockManagement] Shader Diffuse (defult shader) could not be loaded. Failed to add a shader to a block.");
 				}
 			}
 
@@ -148,6 +170,7 @@ public class WorldBlockManagement : MonoBehaviour {
 			b.transform.position = new Vector3(x+0.5f, y+0.5f, z+0.5f); // Put the block in position.
 			b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
 			b.renderer.material.mainTexture = texture;
+			b.renderer.material.shader = shader;
 			blockObjects[byteArrayIndex] = b;
 		}
 	}
