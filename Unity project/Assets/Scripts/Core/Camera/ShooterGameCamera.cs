@@ -27,15 +27,7 @@ public class ShooterGameCamera : MonoBehaviour {
 	private Vector3 smoothPlayerPos;
 	
 	// Use this for initialization
-	void Start () 
-	{
-		// Add player's own layer to mask
-		mask = 1 << player.gameObject.layer;
-		// Add Igbore Raycast layer to mask
-		mask |= 1 << LayerMask.NameToLayer("Ignore Raycast");
-		// Invert mask
-		mask = ~mask;
-
+	void Start () {
 		smoothPlayerPos = player.position;
 	}
 	
@@ -82,7 +74,7 @@ public class ShooterGameCamera : MonoBehaviour {
 		
 		// Do a raycast from the camera to find the distance to the point we're aiming at.
 		float aimTargetDist;
-		if (Physics.Raycast(transform.position, transform.forward, out hit, 100, mask)) {
+		if (Physics.Raycast(transform.position, transform.forward, out hit, 1000)) {
 			aimTargetDist = hit.distance + 0.05f;
 		}
 		else {
