@@ -11,10 +11,10 @@ ExportedObj/
 obj/
 *.svd
 *.userprefs
-/*.csproj
+Unity project/*.csproj
 *.pidb
 *.suo
-/*.sln
+Unity project/*.sln
 *.user
 *.unityproj
 *.booproj
@@ -29,3 +29,5 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+Unity project/Unity project.sln
+Unity project/Unity project-csharp.sln

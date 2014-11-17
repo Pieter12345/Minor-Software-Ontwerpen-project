@@ -13,8 +13,8 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	
-	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
-	private static Object block;
+//	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
+//	private static Object block;
 
 	public Transform parentObject; // The (empty) parent GameObject to create new blocks in.
 	private static Transform parent; // Block objects will be created as childs of this GameObject. (Default: World/Blocks)
@@ -23,13 +23,13 @@ public class WorldBlockManagement : MonoBehaviour {
 	void Start () {
 
 		// Load the default level to variables.
-		loadFromFile("Assets/Levels/testLevel.bytes");
+		loadLevelFromFile("testLevel");
 
 		// Make the blockPrefab and parentObject static.
-		block = this.blockPrefab;
+//		block = this.blockPrefab;
 		parent = this.parentObject;
 
-		// Load the level to the scene.
+		// Load the level to the scene (Does not clear an old loaded level).
 		int byteArrayIndex = 0;
 		for(int y=0; y < levelHeight; y++) {
 			for(int z=0; z < levelSize; z++) {
@@ -37,11 +37,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 					// If a block should be placed at the current position.
 					if(blockData[byteArrayIndex] != 0) {
-
-						GameObject b = (GameObject) Instantiate(block); // Create a new block object.
-						b.transform.position = new Vector3(x, y, z); // Put the block in position.
-						b.transform.parent = (parent); // Puts the block object in a tab in the hierarchy window.
-						blockObjects[byteArrayIndex] = b;
+						setBlockAt(x, y, z, blockData[byteArrayIndex]);
 					}
 					byteArrayIndex++;
 				}
@@ -50,15 +46,24 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Set some blocks to test the script.
 		Debug.Log("[INFO]: [WorldBlockManagement] Test blocks are being placed.");
+		setBlockAt(1,0,0,1);
+		setBlockAt(1,0,1,1);
+		setBlockAt(0,0,1,1);
 		setBlockAt(0,0,0,1);
-		setBlockAt(1,1,1,1);
-		setBlockAt(2,2,2,1);
+		setBlockAt(1,1,1,2);
+		setBlockAt(2,2,2,3);
+		setBlockAt(3,3,3,4);
+		setBlockAt(4,4,4,5);
+
+		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
+		saveLevelToFile("save1");
 
 	}
 
-	// loadFromFile method.
+	// loadLevelFromFile method.
 	// Loads the levelSize, levelHeight and blockData from file.
-	private static void loadFromFile(string filePath) {
+	private static void loadLevelFromFile(string fileName) {
+		string filePath = "Assets/Levels/" + fileName + ".bytes";
 
 		// Check if the file exists.
 		if(System.IO.File.Exists(filePath)) {
@@ -69,10 +74,29 @@ public class WorldBlockManagement : MonoBehaviour {
 			levelHeight = (byte) binData.BaseStream.ReadByte();
 			blockData = binData.ReadBytes((int) (binData.BaseStream.Length-2));
 			blockObjects = new GameObject[(int) (binData.BaseStream.Length-2)];
+			binData.Close();
 		}
 		else {
-			Debug.Log("[SEVERE]: [WorldBlockManagement] The given levelfile does not exist.");
+			Debug.Log("[SEVERE]: [WorldBlockManagement] The given levelfile does not exist. Filepath: " + filePath  + ".");
 		}
+	}
+
+	// saveLevelToFile
+	// Saves the current state of the level.
+	// Argument fileName can be a name without extension.
+	public void saveLevelToFile(string fileName) {
+		string filePath = "Assets/Levels/customSaves/" + fileName + ".binary";
+		
+		FileStream outStream = new FileStream(filePath, FileMode.Create);
+		BinaryWriter writer = new BinaryWriter(outStream);
+
+		writer.Write(levelSize);
+		writer.Write(levelHeight);
+		for(int i=0; i < blockData.Length; i++) {
+			writer.Write(blockData[i]);
+		}
+		writer.Close();
+
 	}
 
 	// setBlockAt method.
@@ -84,7 +108,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Check if the position exists.
 		if(byteArrayIndex >= blockData.Length || x >= levelSize || z >= levelSize || y >= levelHeight) {
-			Debug.Log("[INFO]: [WorldBlockManagement] The setBlockAt method has been called with out of bounds arguments. Not creating block.");
+			Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with out of bounds arguments: x=" + x + ", y=" + y + ", z=" + z + ". Not creating block.");
 			return;
 		}
 
@@ -99,11 +123,123 @@ public class WorldBlockManagement : MonoBehaviour {
 			blockObjects[byteArrayIndex] = null;
 		}
 		else {
-			GameObject b = (GameObject) Instantiate(block); // Create a new block object.
-			b.transform.position = new Vector3(x, y, z); // Put the block in position.
-			b.transform.parent = (parent); // Puts the block object in a tab in the hierarchy window.
+
+			// Load the texture.
+			string textureFileName = "textureNotFoundTexture.png";
+			string shaderName = "Diffuse";
+			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
+			switch(blockID) {
+			case 1: {
+				textureFileName = "stone.png";
+				break;
+			}
+			case 2: {
+				textureFileName = "brick.png";
+				break;
+			}
+			case 3: {
+				textureFileName = "leaves.png";
+				shaderName = "Transparent/Diffuse";
+				break;
+			}
+			case 4: {
+				textureFileName = "brick.png";
+				blockShape = "topHalf";
+				break;
+			}
+			case 5: {
+				textureFileName = "brick.png";
+				blockShape = "bottomHalf";
+				break;
+			}
+			default: {
+				Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with an unknown blockID: " + blockID + ". Setting the block with textureNotFoundTexture and Diffuse shader.");
+				break;
+			}
+			}
+			
+			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+			if(texture == null) {
+				Debug.Log("[SEVERE]: [WorldBlockManagement] Texture " + textureFileName + " could not be loaded. Using textureNotFoundTexture.png.");
+				texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/textureNotFoundTexture.png") as Texture2D;
+				shaderName = "Diffuse";
+				if(texture == null) {
+					Debug.Log("[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.");
+				}
+			}
+
+			Shader shader = Shader.Find(shaderName);
+			if(shader == null) {
+				Debug.Log("[SEVERE]: [WorldBlockManagement] Shader " + shaderName + " could not be loaded. Using the default Diffuse shader.");
+				shader = Shader.Find("Diffuse");
+				if(shader == null) {
+					Debug.Log("[SEVERE]: [WorldBlockManagement] Shader Diffuse (default shader) could not be loaded. Failed to add a shader to a block.");
+				}
+			}
+
+			// Create the block and store a reference to it.
+			GameObject b = GameObject.CreatePrimitive(PrimitiveType.Cube); // Create a new block object.
+		//	GameObject b = (GameObject) Instantiate(block); // Create a new block object.
+			b.transform.position = new Vector3(x+0.5f, y+0.5f, z+0.5f); // Put the block in position.
+			b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
+			b.renderer.material.mainTexture = texture;
+			b.renderer.material.shader = shader;
 			blockObjects[byteArrayIndex] = b;
+
+			// Adjust the shape of the block (allow half blocks).
+			if(blockShape.Equals("topHalf")) {
+				b.transform.localScale = new Vector3(1f, 0.5f, 1f);
+//				b.renderer.material.mainTextureScale = new Vector2(1f, 0.5f); // Scale the texture (x,y) to maintain the original texture aspect ratio.
+				b.transform.position += new Vector3(0f, 0.25f, 0f); // Shift the block to the top of the 1x1x1 cube.
+
+				// Change the texture coordinates so that the sides will contain only half the texture.
+				MeshFilter mf = (MeshFilter) b.GetComponent("MeshFilter");
+				mf.mesh.uv = setUVmapForHalfBlock(mf.mesh.uv);
+				// OneLiner -> ((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv = setUVmapForHalfBlock(((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv);
+
+			}
+			else if(blockShape.Equals("bottomHalf")) {
+				b.transform.localScale = new Vector3(1f, 0.5f, 1f);
+//				b.renderer.material.mainTextureScale = new Vector2(1f, 0.5f); // Scale the texture (x,y) to maintain the original texture aspect ratio.
+				b.transform.position -= new Vector3(0f, 0.25f, 0f); // Shift the block to the bottom of the 1x1x1 cube.
+
+				// Change the texture coordinates so that the sides will contain only half the texture.
+				MeshFilter mf = (MeshFilter) b.GetComponent("MeshFilter");
+				mf.mesh.uv = setUVmapForHalfBlock(mf.mesh.uv);
+				// OneLiner -> ((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv = setUVmapForHalfBlock(((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv);
+			}
 		}
+	}
+
+	// setUVmapForHalfBlock method.
+	// Halfs the texture size on the sides of the cube. Top and bottom remain untouched.
+	private static Vector2[] setUVmapForHalfBlock(Vector2[] uvMap) {
+
+		// Front.
+		uvMap[0] = new Vector2(0f,0f);
+		uvMap[1] = new Vector2(1f,0f);
+		uvMap[2] = new Vector2(0f,0.5f);
+		uvMap[3] = new Vector2(1f,0.5f);
+
+		// Back.
+		uvMap[10] = new Vector2(0f,0f);
+		uvMap[11] = new Vector2(1f,0f);
+		uvMap[6]  = new Vector2(0f,0.5f);
+		uvMap[7]  = new Vector2(1f,0.5f);
+
+		// Left.
+		uvMap[16] = new Vector2(0f,0f);
+		uvMap[18] = new Vector2(1f,0f);
+		uvMap[19] = new Vector2(0f,0.5f);
+		uvMap[17] = new Vector2(1f,0.5f);
+
+		// Right.
+		uvMap[20] = new Vector2(0f,0f);
+		uvMap[22] = new Vector2(1f,0f);
+		uvMap[23] = new Vector2(0f,0.5f);
+		uvMap[21] = new Vector2(1f,0.5f);
+
+		return uvMap;
 	}
 
 	// getBlockAt method.
