@@ -46,10 +46,14 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Set some blocks to test the script.
 		Debug.Log("[INFO]: [WorldBlockManagement] Test blocks are being placed.");
+		setBlockAt(1,0,0,1);
+		setBlockAt(1,0,1,1);
+		setBlockAt(0,0,1,1);
 		setBlockAt(0,0,0,1);
 		setBlockAt(1,1,1,2);
 		setBlockAt(2,2,2,3);
 		setBlockAt(3,3,3,4);
+		setBlockAt(4,4,4,5);
 
 		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
 		saveLevelToFile("save1");
@@ -121,22 +125,31 @@ public class WorldBlockManagement : MonoBehaviour {
 		else {
 
 			// Load the texture.
-			string textureFileName = "";
-			string shaderName = "";
+			string textureFileName = "textureNotFoundTexture.png";
+			string shaderName = "Diffuse";
+			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
 			switch(blockID) {
 			case 1: {
 				textureFileName = "stone.png";
-				shaderName = "Diffuse";
 				break;
 			}
 			case 2: {
 				textureFileName = "brick.png";
-				shaderName = "Diffuse";
 				break;
 			}
 			case 3: {
 				textureFileName = "leaves.png";
 				shaderName = "Transparent/Diffuse";
+				break;
+			}
+			case 4: {
+				textureFileName = "brick.png";
+				blockShape = "topHalf";
+				break;
+			}
+			case 5: {
+				textureFileName = "brick.png";
+				blockShape = "bottomHalf";
 				break;
 			}
 			default: {
@@ -160,7 +173,7 @@ public class WorldBlockManagement : MonoBehaviour {
 				Debug.Log("[SEVERE]: [WorldBlockManagement] Shader " + shaderName + " could not be loaded. Using the default Diffuse shader.");
 				shader = Shader.Find("Diffuse");
 				if(shader == null) {
-					Debug.Log("[SEVERE]: [WorldBlockManagement] Shader Diffuse (defult shader) could not be loaded. Failed to add a shader to a block.");
+					Debug.Log("[SEVERE]: [WorldBlockManagement] Shader Diffuse (default shader) could not be loaded. Failed to add a shader to a block.");
 				}
 			}
 
@@ -172,7 +185,61 @@ public class WorldBlockManagement : MonoBehaviour {
 			b.renderer.material.mainTexture = texture;
 			b.renderer.material.shader = shader;
 			blockObjects[byteArrayIndex] = b;
+
+			// Adjust the shape of the block (allow half blocks).
+			if(blockShape.Equals("topHalf")) {
+				b.transform.localScale = new Vector3(1f, 0.5f, 1f);
+//				b.renderer.material.mainTextureScale = new Vector2(1f, 0.5f); // Scale the texture (x,y) to maintain the original texture aspect ratio.
+				b.transform.position += new Vector3(0f, 0.25f, 0f); // Shift the block to the top of the 1x1x1 cube.
+
+				// Change the texture coordinates so that the sides will contain only half the texture.
+				MeshFilter mf = (MeshFilter) b.GetComponent("MeshFilter");
+				mf.mesh.uv = setUVmapForHalfBlock(mf.mesh.uv);
+				// OneLiner -> ((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv = setUVmapForHalfBlock(((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv);
+
+			}
+			else if(blockShape.Equals("bottomHalf")) {
+				b.transform.localScale = new Vector3(1f, 0.5f, 1f);
+//				b.renderer.material.mainTextureScale = new Vector2(1f, 0.5f); // Scale the texture (x,y) to maintain the original texture aspect ratio.
+				b.transform.position -= new Vector3(0f, 0.25f, 0f); // Shift the block to the bottom of the 1x1x1 cube.
+
+				// Change the texture coordinates so that the sides will contain only half the texture.
+				MeshFilter mf = (MeshFilter) b.GetComponent("MeshFilter");
+				mf.mesh.uv = setUVmapForHalfBlock(mf.mesh.uv);
+				// OneLiner -> ((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv = setUVmapForHalfBlock(((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv);
+			}
 		}
+	}
+
+	// setUVmapForHalfBlock method.
+	// Halfs the texture size on the sides of the cube. Top and bottom remain untouched.
+	private static Vector2[] setUVmapForHalfBlock(Vector2[] uvMap) {
+
+		// Front.
+		uvMap[0] = new Vector2(0f,0f);
+		uvMap[1] = new Vector2(1f,0f);
+		uvMap[2] = new Vector2(0f,0.5f);
+		uvMap[3] = new Vector2(1f,0.5f);
+
+		// Back.
+		uvMap[10] = new Vector2(0f,0f);
+		uvMap[11] = new Vector2(1f,0f);
+		uvMap[6]  = new Vector2(0f,0.5f);
+		uvMap[7]  = new Vector2(1f,0.5f);
+
+		// Left.
+		uvMap[16] = new Vector2(0f,0f);
+		uvMap[18] = new Vector2(1f,0f);
+		uvMap[19] = new Vector2(0f,0.5f);
+		uvMap[17] = new Vector2(1f,0.5f);
+
+		// Right.
+		uvMap[20] = new Vector2(0f,0f);
+		uvMap[22] = new Vector2(1f,0f);
+		uvMap[23] = new Vector2(0f,0.5f);
+		uvMap[21] = new Vector2(1f,0.5f);
+
+		return uvMap;
 	}
 
 	// getBlockAt method.
