@@ -1860,7 +1860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkMultiplier: .5
-  defaultIsWalk: 0
+  walkAsDefault: 0
 --- !u!1 &1328691458
 GameObject:
   m_ObjectHideFlags: 0

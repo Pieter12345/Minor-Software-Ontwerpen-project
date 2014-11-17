@@ -48,12 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
-     <Compile Include="Assets\Scripts\Core\Player\AlignmentTracker.cs" />
      <Compile Include="Assets\Scripts\Core\Player\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\FireController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
-     <Compile Include="Assets\Scripts\Core\Util.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

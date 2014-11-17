@@ -15,20 +15,20 @@ public abstract class CharacterMotor : MonoBehaviour {
 	public Vector3 forwardVector = Vector3.forward;
 	protected Quaternion alignCorrection;
 	
-	private bool m_Grounded = false;
-	public bool grounded {
-		get { return m_Grounded; }
-		protected set { m_Grounded = value; }
+	private bool onGround = false;
+	public bool OnGround {
+		get { return onGround; }
+		protected set { onGround = value; }
 	}
 	
-	private bool m_Jumping = false;
-	public bool jumping	{
-		get { return m_Jumping; }
-		protected set { m_Jumping = value; }
+	private bool isJumping = false;
+	public bool IsJumping	{
+		get { return isJumping; }
+		protected set { isJumping = value; }
 	}
 	
-	private Vector3 m_desiredMovementDirection;
-	private Vector3 m_desiredFacingDirection;
+	private Vector3 movementDirection;
+	private Vector3 directionFaced;
 	
 	void Start () {
 		alignCorrection = new Quaternion();
@@ -37,28 +37,27 @@ public abstract class CharacterMotor : MonoBehaviour {
 	}
 	
 	public Vector3 desiredMovementDirection {
-		get { return m_desiredMovementDirection; }
+		get { return movementDirection; }
 		set {
-			m_desiredMovementDirection = value;
-			if (m_desiredMovementDirection.magnitude>1) m_desiredMovementDirection = m_desiredMovementDirection.normalized;
+			movementDirection = value;
+			if (movementDirection.magnitude>1) movementDirection = movementDirection.normalized;
 		}
 	}
 	public Vector3 desiredFacingDirection {
-		get { return m_desiredFacingDirection; }
+		get { return directionFaced; }
 		set {
-			m_desiredFacingDirection = value;
-			if (m_desiredFacingDirection.magnitude>1) m_desiredFacingDirection = m_desiredFacingDirection.normalized;
+			directionFaced = value;
+			if (directionFaced.magnitude>1) directionFaced = directionFaced.normalized;
 		}
 	}
 	public Vector3 desiredVelocity {
 		get {
-			//return m_desiredVelocity;
-			if (m_desiredMovementDirection==Vector3.zero) return Vector3.zero;
+			if (movementDirection==Vector3.zero) return Vector3.zero;
 			else {
-				float zAxisEllipseMultiplier = (m_desiredMovementDirection.z>0 ? maxForwardSpeed : maxBackwardsSpeed) / maxSidewaysSpeed;
-				Vector3 temp = new Vector3(m_desiredMovementDirection.x, 0, m_desiredMovementDirection.z/zAxisEllipseMultiplier).normalized;
+				float zAxisEllipseMultiplier = (movementDirection.z>0 ? maxForwardSpeed : maxBackwardsSpeed) / maxSidewaysSpeed;
+				Vector3 temp = new Vector3(movementDirection.x, 0, movementDirection.z/zAxisEllipseMultiplier).normalized;
 				float length = new Vector3(temp.x, 0, temp.z*zAxisEllipseMultiplier).magnitude * maxSidewaysSpeed;
-				Vector3 velocity = m_desiredMovementDirection * length;
+				Vector3 velocity = movementDirection * length;
 				return transform.rotation * velocity;
 			}
 		}

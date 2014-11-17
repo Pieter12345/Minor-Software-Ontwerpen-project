@@ -7,25 +7,30 @@ public class NormalCharacterMotor : CharacterMotor {
 	public float maxRotationSpeed = 270;
 	
 	private bool firstframe = true;
-	
-	private void UpdateFacingDirection() {
+
+	// Update is called once per frame
+	void Update () {
+		if (Time.deltaTime == 0 || Time.timeScale == 0)
+			return;
+		
+		UpdateDirection();
+		UpdateVelocity();
+	}
+
+	private void UpdateDirection() {
 		// Calculate which way character should be facing
 		float facingWeight = desiredFacingDirection.magnitude;
 		Vector3 combinedFacingDirection = (
 			transform.rotation * desiredMovementDirection * (1-facingWeight)
 			+ desiredFacingDirection * facingWeight
 		);
-		combinedFacingDirection = Util.ProjectOntoPlane(combinedFacingDirection, transform.up);
+		combinedFacingDirection -= Vector3.Project(combinedFacingDirection, transform.up);
 		combinedFacingDirection = alignCorrection * combinedFacingDirection;
 		
 		if (combinedFacingDirection.sqrMagnitude > 0.01f) {
-			Vector3 newForward = Util.ConstantSlerp(
-				transform.forward,
-				combinedFacingDirection,
-				maxRotationSpeed*Time.deltaTime
-			);
-			newForward = Util.ProjectOntoPlane(newForward, transform.up);
-			//Debug.DrawLine(transform.position, transform.position+newForward, Color.yellow);
+			float value = Mathf.Min(1, maxRotationSpeed*Time.deltaTime / Vector3.Angle(transform.forward, combinedFacingDirection));
+			Vector3 newForward = Vector3.Slerp(transform.forward, combinedFacingDirection, value);
+			newForward -= Vector3.Project(newForward, transform.up);
 			Quaternion q = new Quaternion();
 			q.SetLookRotation(newForward, transform.up);
 			transform.rotation = q;
@@ -39,13 +44,12 @@ public class NormalCharacterMotor : CharacterMotor {
 			velocity = Vector3.zero;
 			firstframe = false;
 		}
-		if (grounded) velocity = Util.ProjectOntoPlane(velocity, transform.up);
+		if (OnGround) velocity -= Vector3.Project(velocity, transform.up);
 		
 		// Calculate how fast we should be moving
 		Vector3 movement = velocity;
-		//bool hasJumped = false;
-		jumping = false;
-		if (grounded) {
+		IsJumping = false;
+		if (OnGround) {
 			// Apply a force that attempts to reach our target velocity
 			Vector3 velocityChange = (desiredVelocity - velocity);
 			if (velocityChange.magnitude > maxVelocityChange) {
@@ -56,37 +60,27 @@ public class NormalCharacterMotor : CharacterMotor {
 			// Jump
 			if (canJump && Input.GetButton("Jump")) {
 				movement += transform.up * Mathf.Sqrt(2 * jumpHeight * gravity);
-				//hasJumped = true;
-				jumping = true;
+				IsJumping = true;
 			}
 		}
 		
 		float maxVerticalVelocity = 1.0f;
-		AlignmentTracker at = GetComponent<AlignmentTracker>();
-		if (Mathf.Abs(at.velocitySmoothed.y) > maxVerticalVelocity) {
-			movement *= Mathf.Max(0.0f, Mathf.Abs(maxVerticalVelocity / at.velocitySmoothed.y));
+		if (Mathf.Abs(velocity.y) > maxVerticalVelocity) {
+			movement *= Mathf.Max(0.0f, Mathf.Abs(maxVerticalVelocity / velocity.y));
 		}
 		
 		// Apply downwards gravity
 		movement += transform.up * -gravity * Time.deltaTime;
 		
-		if (jumping) {
+		if (IsJumping) {
 			movement -= transform.up * -gravity * Time.deltaTime / 2;
 			
 		}
 		
 		// Apply movement
 		CollisionFlags flags = controller.Move(movement * Time.deltaTime);
-		grounded = (flags & CollisionFlags.CollidedBelow) != 0;
+		OnGround = (flags & CollisionFlags.CollidedBelow) != 0;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (Time.deltaTime == 0 || Time.timeScale == 0)
-			return;
-		
-		UpdateFacingDirection();
-		
-		UpdateVelocity();
-	}
+
 }
