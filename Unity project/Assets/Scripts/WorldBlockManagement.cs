@@ -181,7 +181,7 @@ public class WorldBlockManagement : MonoBehaviour {
 			GameObject b = GameObject.CreatePrimitive(PrimitiveType.Cube); // Create a new block object.
 		//	GameObject b = (GameObject) Instantiate(block); // Create a new block object.
 			b.transform.position = new Vector3(x+0.5f, y+0.5f, z+0.5f); // Put the block in position.
-			b.transform.SetParent(parent); // Puts the block object in a tab in the hierarchy window.
+			b.transform.parent = parent; // Puts the block object in a tab in the hierarchy window.
 			b.renderer.material.mainTexture = texture;
 			b.renderer.material.shader = shader;
 			blockObjects[byteArrayIndex] = b;

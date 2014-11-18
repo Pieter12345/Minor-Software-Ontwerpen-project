@@ -20,7 +20,7 @@ public class FireController : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, 1000)) {
 
-			Debug.Log("Raycast hit " + hit.transform.name);
+			Debug.Log("Shot hit " + hit.transform.name);
 
 			Health hp = hit.transform.GetComponent<Health>();
 			if(hp!=null)
