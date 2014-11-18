@@ -12,6 +12,8 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static byte levelHeight; // Height in which can be built.
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
+	private static byte[] heightMap; // Heights for every (x,z).
+	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
 	
 //	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
 //	private static Object block;
@@ -75,6 +77,18 @@ public class WorldBlockManagement : MonoBehaviour {
 			blockData = binData.ReadBytes((int) (binData.BaseStream.Length-2));
 			blockObjects = new GameObject[(int) (binData.BaseStream.Length-2)];
 			binData.Close();
+
+			// Create an empty heightmap.
+			heightMap = new byte[levelSize * levelSize];
+			for(int i=0; i < heightMap.Length; i++) {
+				heightMap[i] = 0;
+			}
+
+			// Initialize canWalkThrough property.
+			canWalkThrough = new bool[levelSize * levelSize * levelHeight];
+			for(int i=0; i < canWalkThrough.Length; i++) {
+				canWalkThrough[i] = true;
+			}
 		}
 		else {
 			Debug.Log("[SEVERE]: [WorldBlockManagement] The given levelfile does not exist. Filepath: " + filePath  + ".");
@@ -107,7 +121,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;
 
 		// Check if the position exists.
-		if(byteArrayIndex >= blockData.Length || x >= levelSize || z >= levelSize || y >= levelHeight) {
+		if(byteArrayIndex >= blockData.Length || x >= levelSize || z >= levelSize || y >= levelHeight-1) { // y-1 because the pathfinding algorithm needs the upperspace to save the overlay to.
 			Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with out of bounds arguments: x=" + x + ", y=" + y + ", z=" + z + ". Not creating block.");
 			return;
 		}
@@ -119,15 +133,36 @@ public class WorldBlockManagement : MonoBehaviour {
 		if(blockObjects[byteArrayIndex] != null) {
 			Destroy(blockObjects[byteArrayIndex]);
 		}
-		if(blockID == 0) {
+		if(blockID == 0) { // Air (clear block).
 			blockObjects[byteArrayIndex] = null;
 		}
 		else {
+
+			// Update the heightmap.
+			if(blockID != 0) { // Block placed.
+				if(heightMap[x + levelSize*z] <= y) { // If block is placed higher than old heightMap value.
+					heightMap[x + levelSize*z] = (byte) y;
+				}
+			}
+			else { // Block removed.
+				if(getBlockAt(x,y,z) != 0) { // Only edit heightmap if a block was removed.
+					if(heightMap[x + levelSize*z] <= y) { // If block is removed at (or above) the old heightMap value.
+						for(int newHeight=y; newHeight >= 0; newHeight--) {
+							if(getBlockAt(x,y,z) != 0) {
+								heightMap[x + levelSize*z] = (byte) y;
+								break;
+							}
+						}
+					}
+				}
+			}
 
 			// Load the texture.
 			string textureFileName = "textureNotFoundTexture.png";
 			string shaderName = "Diffuse";
 			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
+			bool canWalkThroughLocal = false; // True if players and monsters can walk in this block.
+			bool blockInvisible = false; // To spawn invisible blocks with a hitbox/collider.
 			switch(blockID) {
 			case 1: {
 				textureFileName = "stone.png";
@@ -150,6 +185,11 @@ public class WorldBlockManagement : MonoBehaviour {
 			case 5: {
 				textureFileName = "brick.png";
 				blockShape = "bottomHalf";
+				canWalkThroughLocal = true;
+				break;
+			}
+			case 255: { // Invisible block with hitbox/collider.
+				blockInvisible = true;
 				break;
 			}
 			default: {
@@ -157,6 +197,8 @@ public class WorldBlockManagement : MonoBehaviour {
 				break;
 			}
 			}
+			
+			canWalkThrough[byteArrayIndex] = canWalkThroughLocal; // Set "canWalkThrough" block property.
 			
 			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
 			if(texture == null) {
@@ -208,6 +250,11 @@ public class WorldBlockManagement : MonoBehaviour {
 				mf.mesh.uv = setUVmapForHalfBlock(mf.mesh.uv);
 				// OneLiner -> ((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv = setUVmapForHalfBlock(((MeshFilter) b.GetComponent("MeshFilter")).mesh.uv);
 			}
+
+			// Set the block visibility.
+			if(blockInvisible) {
+				b.renderer.enabled = false; // Don't render a texture.
+			}
 		}
 	}
 
@@ -253,6 +300,63 @@ public class WorldBlockManagement : MonoBehaviour {
 		return(blockData[byteArrayIndex]);
 	}
 
+	// getHighestBlockAt method.
+	// Returns the height of the highest block at position (x,z).
+	public static int getHighestBlockAt(int x, int z) {
+		
+		// Get the index of the position in the blockData array.
+		int byteArrayIndex = x + levelSize*z;
+		
+		// Get the height at the given location.
+		return(heightMap[byteArrayIndex]);
+	}
+	
+	// canWalkHere method.
+	// Returns true if the given location AND the location above it are available.
+	public static bool canWalkHere(int x, int y, int z) {
+		
+		// Get the index of the position in the blockData array.
+		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;
+		
+		// Get the canWalkThrough at the given location.
+		if(y > levelHeight-1) {
+			return true; // Return true as we could walk on top of the highest block.
+		}
+		else if(y == levelHeight-1) {
+			return canWalkThrough[byteArrayIndex];
+		} else {
+			return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); // Block && one block higher.
+		}
+	}
+
+	// canStandHere method.
+	// Returns true if a player/enemy can stand here without falling.
+	public static bool canStandHere(int x, int y, int z) {
+		if(!canWalkHere(x,y,z)) { return false; }
+		if(y == 0) { return true; } // Entities can always walk on the bottom. There should be a ground plane here.
+		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*(y-1);
+		return !canWalkThrough[byteArrayIndex]; // True if there is a solid block below.
+	}
+
+	// canJumpAt method.
+	// Returns true if the player can jump at this location.
+	public static bool canJumpAt(int x, int y, int z) {
+		if(y+2 >= levelHeight) { return true; } // Jumping is always possible above max block height.
+		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*(y+2);
+		return canWalkThrough[byteArrayIndex]; // True is no block above head.
+	}
+
+	// getLevelSize method.
+	// Returns the level size.
+	public static byte getLevelSize() {
+		return levelSize;
+	}
+
+	// getLevelHeight method.
+	// Returns the level size.
+	public static byte getLevelHeight() {
+		return levelHeight;
+	}
 
 	// Quote to copy:   """""""
 

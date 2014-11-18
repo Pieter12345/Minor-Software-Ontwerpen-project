@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
      <Compile Include="Assets\Scripts\Core\Util.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
+     <Compile Include="Assets\pathFinding.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
