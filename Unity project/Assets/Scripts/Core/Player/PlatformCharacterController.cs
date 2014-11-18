@@ -1,17 +1,18 @@
 using UnityEngine;
 using System.Collections;
 
+
+[RequireComponent (typeof (CharacterMotor))]
 public class PlatformCharacterController : MonoBehaviour {
 	
 	private CharacterMotor motor;
 	
 	public float walkMultiplier = 0.5f;
-	public bool defaultIsWalk = false;
+	public bool walkAsDefault = false;
 	
 	// Use this for initialization
 	void Start () {
 		motor = GetComponent(typeof(CharacterMotor)) as CharacterMotor;
-		if (motor==null) Debug.Log("Motor is null!!");
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class PlatformCharacterController : MonoBehaviour {
 		// Rotate input vector into camera space so up is camera's up and right is camera's right
 		directionVector = Camera.main.transform.rotation * directionVector;
 		
-		// Rotate input vector to be perpendicular to character's up vector
+		// Rotate input vector to be perpendicular to character's up vector using Quaternion maths that I don't fully get
 		Quaternion camToCharacterSpace = Quaternion.FromToRotation(Camera.main.transform.forward*-1, transform.up);
 		directionVector = (camToCharacterSpace * directionVector);
 		
@@ -32,7 +33,7 @@ public class PlatformCharacterController : MonoBehaviour {
 		directionVector = Quaternion.Inverse(transform.rotation) * directionVector;
 		
 		if (walkMultiplier!=1) {
-			if ( (Input.GetKey("left shift") || Input.GetKey("right shift") || Input.GetButton("Sneak")) != defaultIsWalk ) {
+			if ( (Input.GetKey("left shift") || Input.GetKey("right shift") || Input.GetButton("Sneak")) != walkAsDefault ) {
 				directionVector *= walkMultiplier;
 			}
 		}
