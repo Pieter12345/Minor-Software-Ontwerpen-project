@@ -53,10 +53,10 @@
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
+     <Compile Include="Assets\pathFinding.cs" />
      <None Include="Assets\Scripts\Shaders\Toon Shader 2.shader" />
      <None Include="Assets\Scripts\Shaders\Toon Shader.shader" />
-     <None Include="Assets\Scripts\Shaders\test3.shader" />
-     <None Include="Assets\Scripts\Shaders\test4.shader" />
+     <None Include="Assets\Scripts\Shaders\Toon Shader 3.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
