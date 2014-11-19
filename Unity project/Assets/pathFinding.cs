@@ -30,7 +30,7 @@ public class pathFinding {
 		// Update the overlay.
 		int[] worldOverLayOld = new int[worldOverlay.Length];
 		for(int i=0; i < worldOverlay.Length; i++) {
-			worldOverlay[i] = -1;
+			worldOverlay[i] = int.MaxValue;
 			worldOverLayOld[i] = worldOverlay[i];
 		}
 		worldOverlay[xGoal + levelSize*zGoal + levelSize*levelSize*yGoal] = 0; // Player position.
@@ -86,7 +86,7 @@ public class pathFinding {
 	// Used for updateGoalLocation method.
 	private void setSingleWorldOverlay(int x, int y, int z, int distanceToSet) {
 		int index = x + levelSize*z + levelSize*levelSize*y;
-		if(worldOverlay[index] == -1) {
+		if(worldOverlay[index] == int.MaxValue) {
 			worldOverlay[index] = distanceToSet;
 		}
 	}
@@ -96,10 +96,22 @@ public class pathFinding {
 	// Will return which way to move in. Format: 
 	public string getNextMove(int x, int y, int z) {
 		int currentOverlay = getSingleWorldOverlay(x, y, z);
-		if(getSingleWorldOverlay(x+1, y, z) < currentOverlay) { return "x+"; }
-		if(getSingleWorldOverlay(x-1, y, z) < currentOverlay) { return "x-"; }
-		if(getSingleWorldOverlay(x, y, z+1) < currentOverlay) { return "z+"; }
-		if(getSingleWorldOverlay(x, y, z-1) < currentOverlay) { return "z-"; }
+
+		for(int y2 = y; y2 <= y+1; y2++) {
+			// Diagonal moves.
+			if(getSingleWorldOverlay(x+1, y2, z+1) < currentOverlay && (getSingleWorldOverlay(x, y2, z+1) != int.MaxValue || getSingleWorldOverlay(x+1, y2, z) != int.MaxValue)) { return "x+z+"; }
+			if(getSingleWorldOverlay(x-1, y2, z+1) < currentOverlay && (getSingleWorldOverlay(x, y2, z+1) != int.MaxValue || getSingleWorldOverlay(x-1, y2, z) != int.MaxValue)) { return "x-z+"; }
+			if(getSingleWorldOverlay(x+1, y2, z-1) < currentOverlay && (getSingleWorldOverlay(x, y2, z-1) != int.MaxValue || getSingleWorldOverlay(x+1, y2, z) != int.MaxValue)) { return "x+z-"; }
+			if(getSingleWorldOverlay(x-1, y2, z-1) < currentOverlay && (getSingleWorldOverlay(x, y2, z-1) != int.MaxValue || getSingleWorldOverlay(x-1, y2, z) != int.MaxValue)) { return "x-z-"; }
+		
+			// Left, right, up and down at y (includes falling) and y+1 (jumping).
+			if(getSingleWorldOverlay(x+1, y2, z) < currentOverlay) { return "x+"; }
+			if(getSingleWorldOverlay(x-1, y2, z) < currentOverlay) { return "x-"; }
+			if(getSingleWorldOverlay(x, y2, z+1) < currentOverlay) { return "z+"; }
+			if(getSingleWorldOverlay(x, y2, z-1) < currentOverlay) { return "z-"; }
+		}
+
+
 		return "noPathFoundError";
 	}
 
