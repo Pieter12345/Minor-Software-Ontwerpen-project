@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Block placer
-  m_Shader: {fileID: 4800000, guid: 876607aa26d25fa48b6f5fb6d82b3be4, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8c3dc79f122d08a418a0b4c7842c34ec, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -21,6 +21,10 @@ Material:
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .078125
       data:
         first:
           name: _Treshold
@@ -46,3 +50,7 @@ Material:
         first:
           name: _Color
         second: {r: .965922892, g: 1, b: .382352948, a: .0392156877}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}

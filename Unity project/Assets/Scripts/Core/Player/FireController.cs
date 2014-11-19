@@ -30,6 +30,13 @@ public class FireController : MonoBehaviour {
 				OnFireWeapon();
 			}
 		}
+		if(Input.GetButtonDown("Fire2")){
+			if (blockMode){
+				OnDestroyBlock();
+			} else{
+				//doSomething
+			}
+		}
 
 		UpdateBlockOutline();
 	}
@@ -55,6 +62,27 @@ public class FireController : MonoBehaviour {
 		                  Mathf.FloorToInt(transBlock.position.y),
 		                  Mathf.FloorToInt(transBlock.position.z),
 		                  (byte)1);
+	}
+
+	void OnDestroyBlock(){
+		Vector3 dir = aimTarget.position-camera.position;
+		dir.Normalize();
+		Ray ray = new Ray(camera.position, dir);
+		RaycastHit hit;
+		if (Physics.Raycast(ray, out hit, 10)) {
+			
+			Debug.DrawRay(camera.position, dir, Color.red);
+			
+			Vector3 destroyPosition = (new Vector3(Mathf.Floor(hit.point.x-0.5f*hit.normal.x),
+			                                   Mathf.Floor(hit.point.y-0.5f*hit.normal.y),
+			                                   Mathf.Floor(hit.point.z-0.5f*hit.normal.z))
+			                       ) + (new Vector3(0.5f, 0.5f, 0.5f));
+
+			blocks.setBlockAt(Mathf.FloorToInt(destroyPosition.x),
+			                  Mathf.FloorToInt(destroyPosition.y),
+			                  Mathf.FloorToInt(destroyPosition.z),
+			                  (byte)0);
+		}
 	}
 
 	void UpdateBlockOutline(){
