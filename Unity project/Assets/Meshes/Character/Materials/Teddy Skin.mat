@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Material
+  m_Name: Teddy Skin
   m_Shader: {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -48,4 +48,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .816176474, g: .667675436, b: .402086943, a: 1}
+        second: {r: .654411793, g: .492202669, b: .202097759, a: 1}

@@ -1,0 +1,24 @@
+Main menu
+-----------------------------------------
+Options:
+- Start
+  - New Game/Resume?
+- Settings
+  - Difficulty
+- Quit
+
+Buttons:
+(Useless)
+- Back
+  # Exit game (first menu)
+  # Previous menu (any other menu)
+  # Same behaviour as Esc(predefined) key
+- Select
+  # Selects the currently targeted option
+-----------------------------------------
+Background:
+- Screenshot(s) from the game
+- Animation from gameplay?
+-----------------------------------------
+Logo:
+- 3D logo?
