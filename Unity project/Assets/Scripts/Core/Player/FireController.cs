@@ -40,7 +40,7 @@ public class FireController : MonoBehaviour {
 		dir.Normalize();
 		Ray ray = new Ray(camera.position, dir);
 		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit, 1000)) {
+		if (Physics.Raycast(ray, out hit, 100)) {
 
 			Debug.Log("Shot hit " + hit.transform.name);
 
