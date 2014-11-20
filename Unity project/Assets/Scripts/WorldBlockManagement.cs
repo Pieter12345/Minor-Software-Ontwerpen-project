@@ -25,7 +25,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	void Awake () {
 
 		// Load the default level to variables.
-		loadLevelFromFile("testLevel"); // Other empty testlevel: 100x100x20.
+		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
 
 		// Make the blockPrefab and parentObject static.
 //		block = this.blockPrefab;
