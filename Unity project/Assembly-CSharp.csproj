@@ -48,12 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\SimpleGun.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\Weapon.cs" />
      <Compile Include="Assets\Scripts\Core\Player\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\FireController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
+     <Compile Include="Assets\Scripts\Core\Player\WeaponController.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
-     <Compile Include="Assets\WeaponController.cs" />
      <Compile Include="Assets\pathFinding.cs" />
      <None Include="Assets\Scripts\Shaders\Toon Shader 2.shader" />
      <None Include="Assets\Scripts\Shaders\Toon Shader.shader" />
