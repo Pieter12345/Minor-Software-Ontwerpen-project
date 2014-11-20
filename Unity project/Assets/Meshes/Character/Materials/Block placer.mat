@@ -23,10 +23,6 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Shininess
-        second: .078125
-      data:
-        first:
           name: _Treshold
         second: 0
       data:
@@ -43,13 +39,17 @@ Material:
         second: 0
       data:
         first:
+          name: _Shininess
+        second: .078125
+      data:
+        first:
           name: _Alpha
         second: .303571433
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .965922892, g: 1, b: .382352948, a: .0392156877}
+        second: {r: .382352948, g: 1, b: .41217044, a: .0392156877}
       data:
         first:
           name: _SpecColor
