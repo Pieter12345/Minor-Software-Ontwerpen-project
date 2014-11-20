@@ -1688,7 +1688,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: b13fe76898565a74d85ae328b34f01b2, type: 2}
+  - {fileID: 2100000, guid: f9e0076b0d908db4cbb1ca2d5769f097, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1773,6 +1773,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1256726499
 Prefab:
   m_ObjectHideFlags: 0
@@ -2378,6 +2379,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9e0076b0d908db4cbb1ca2d5769f097, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
   m_RootGameObject: {fileID: 1937695142}
@@ -2925,6 +2930,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1988667613
 GameObject:
   m_ObjectHideFlags: 0

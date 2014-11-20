@@ -4,7 +4,7 @@
       _Treshold ("Shadow-Treshold", range(0,1)) = 0.5
       _Shadow ("Shadow-Darkness", range(0,3)) = 0.5
       _Intensity ("Intensity-Light", range(0,5)) = 0.5
-      _Diffuse ("Toon-Factor", range(1,0.00000000001)) = 0
+      _Diffuse ("Toon-Factor", range(1,0.0001)) = 0
    }
    SubShader {
       Pass {	
