@@ -19,21 +19,6 @@ public class pathFinding {
 	
 		updateGoalLocation(xGoal, yGoal, zGoal);
 
-		// DEBUG CODE -> WRITE TO FILE.
-		string str = "";
-		int index = 0;
-		for(int y=0; y < 1; y++) {
-			for(int x=0; x < levelSize; x++) {
-				for(int z=0; z < levelSize; z++) {
-					str += worldOverlay[index] + "\t";
-					index++;
-				}
-				str += ";\r\n";
-			}
-			str += "\r\n\r\n";
-		}
-		System.IO.File.WriteAllText("debugfile.txt", str);
-
 	}
 
 	// updateGoalLocation method.
@@ -45,8 +30,14 @@ public class pathFinding {
 		this.goalCoords[2] = zGoal;
 
 		// Update the overlay.
+		// Initialize the overlay to int.MaxValue.
 		for(int i=0; i < worldOverlay.Length; i++) {
 			worldOverlay[i] = int.MaxValue;
+		}
+
+		// Return if the goal is outOfBounds.
+		if(xGoal < 0 || yGoal < 0 || zGoal < 0 || xGoal >= levelSize || yGoal > levelHeight || zGoal > levelSize) {
+			return;
 		}
 
 		worldOverlay[xGoal + levelSize*zGoal + levelSize*levelSize*yGoal] = 0; // Player position.
@@ -109,6 +100,27 @@ public class pathFinding {
 			}
 			currentDistance++;
 		} // End of while(hasChanged).
+
+
+		// DEBUG CODE -> WRITE TO FILE.
+		string str = "";
+		int index = 0;
+		for(int y=0; y < 1; y++) {
+			for(int z=levelSize-1; z >= 0 ; z--) {
+				for(int x=0; x < levelSize; x++) {
+					int nextInt;
+					if(worldOverlay[index] == int.MaxValue) { nextInt = -1; } else { nextInt = worldOverlay[index]; }
+					str += nextInt + "\t";
+					index++;
+				}
+				str += ";\r\n";
+			}
+			str += "\r\n\r\n";
+		}
+		System.IO.File.WriteAllText("debugfile.txt", str);
+
+
+
 	}
 
 	// setSingleWorldOverlay method.
@@ -156,7 +168,7 @@ public class pathFinding {
 	// Used for getNextMove method. Returns the distance value at the given location.
 	private int getSingleWorldOverlay(int x, int y, int z) {
 		int index = x + levelSize*z + levelSize*levelSize*y;
-		if(index >= worldOverlay.Length) {
+		if(index >= worldOverlay.Length || x < 0 || y < 0 || z < 0 || x > levelSize || y > levelHeight || z > levelSize) {
 			return int.MaxValue;
 		}
 		return worldOverlay[index];

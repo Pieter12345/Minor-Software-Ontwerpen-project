@@ -147,6 +147,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		}
 		if(blockID == 0) { // Air (clear block).
 			blockObjects[byteArrayIndex] = null;
+			canWalkThrough[byteArrayIndex] = true;
 		}
 		else {
 
@@ -169,7 +170,7 @@ public class WorldBlockManagement : MonoBehaviour {
 				}
 			}
 
-			// Load the texture.
+			// Load the texture, shader and canWalkThrough value (Depends on blockID).
 			string textureFileName = "textureNotFoundTexture.png";
 			string shaderName = "Diffuse";
 			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
