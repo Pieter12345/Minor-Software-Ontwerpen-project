@@ -10,6 +10,10 @@ GENERAL
 5- Current Wave number
 6- Current wave progress/Enemies remaining counter
 
+7- money/resource amount
+
+!!! General HUD elements can fade when not active/necessary at that moment !!!
+
 --------------------------------------------------------------------------------------
 ON EQUIP
 
@@ -25,3 +29,4 @@ Blocks
 ----------------------------------------------------------------------------------------
 
 CROSSHAIR - could be a customisable feature on your avatar profile
+Crosshair - change crosshair hue/color depending on target

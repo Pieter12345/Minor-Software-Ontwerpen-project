@@ -13,7 +13,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	private static byte[] heightMap; // Heights for every (x,z).
-	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
+	public static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
 	
 //	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
 //	private static Object block;
@@ -22,10 +22,10 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static Transform parent; // Block objects will be created as childs of this GameObject. (Default: World/Blocks)
 
 	// Runs on creation of the object its bound to (should be the level floor plane or so).
-	void Start () {
+	void Awake () {
 
 		// Load the default level to variables.
-		loadLevelFromFile("testLevel");
+		loadLevelFromFile("testLevel"); // Other empty testlevel: 100x100x20.
 
 		// Make the blockPrefab and parentObject static.
 //		block = this.blockPrefab;
@@ -48,14 +48,26 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Set some blocks to test the script.
 		Debug.Log("[INFO]: [WorldBlockManagement] Test blocks are being placed.");
-		setBlockAt(1,0,0,1);
-		setBlockAt(1,0,1,1);
-		setBlockAt(0,0,1,1);
-		setBlockAt(0,0,0,1);
-		setBlockAt(1,1,1,2);
-		setBlockAt(2,2,2,3);
-		setBlockAt(3,3,3,4);
-		setBlockAt(4,4,4,5);
+//		setBlockAt(1,0,0,1);
+//		setBlockAt(1,0,1,1);
+//		setBlockAt(0,0,1,1);
+//		setBlockAt(0,0,0,1);
+//		setBlockAt(1,1,1,2);
+//		setBlockAt(2,2,2,3);
+//		setBlockAt(3,3,3,4);
+//		setBlockAt(3,2,3,5);
+
+//		setBlocksInRegion(0,0,0, 99,0,99, 1);
+
+		setBlockAt(0,           0, 0,           1);
+		setBlockAt(levelSize-1, 0, 0,           1);
+		setBlockAt(0,           0, levelSize-1, 1);
+		setBlockAt(levelSize-1, 0, levelSize-1, 1);
+
+		setBlockAt(0,           levelHeight-2, 0,           1);
+		setBlockAt(levelSize-1, levelHeight-2, 0,           1);
+		setBlockAt(0,           levelHeight-2, levelSize-1, 1);
+		setBlockAt(levelSize-1, levelHeight-2, levelSize-1, 1);
 
 		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
 		saveLevelToFile("save1");
@@ -121,7 +133,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;
 
 		// Check if the position exists.
-		if(byteArrayIndex >= blockData.Length || x >= levelSize || z >= levelSize || y >= levelHeight-1) { // y-1 because the pathfinding algorithm needs the upperspace to save the overlay to.
+		if(byteArrayIndex >= blockData.Length || x >= levelSize || z >= levelSize || y >= levelHeight-1 || x < 0 || y < 0 || z < 0) { // y-1 because the pathfinding algorithm needs the upperspace to save the overlay to.
 			Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with out of bounds arguments: x=" + x + ", y=" + y + ", z=" + z + ". Not creating block.");
 			return;
 		}
@@ -293,6 +305,11 @@ public class WorldBlockManagement : MonoBehaviour {
 	// Returns the blockID at position (x,y,z).
 	public static byte getBlockAt(int x, int y, int z) {
 
+		// Catch outOfBounds errors.
+		if(x<0 || y<0 || z<0 || x >= levelSize || y >= levelHeight || z >= levelSize) {
+			return 0;
+		}
+
 		// Get the index of the position in the blockData array.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;
 
@@ -303,6 +320,11 @@ public class WorldBlockManagement : MonoBehaviour {
 	// getHighestBlockAt method.
 	// Returns the height of the highest block at position (x,z).
 	public static int getHighestBlockAt(int x, int z) {
+
+		// Catch outOfBounds errors.
+		if(x<0 || z<0 || x >= levelSize || z >= levelSize) {
+			return 0;
+		}
 		
 		// Get the index of the position in the blockData array.
 		int byteArrayIndex = x + levelSize*z;
@@ -314,7 +336,12 @@ public class WorldBlockManagement : MonoBehaviour {
 	// canWalkHere method.
 	// Returns true if the given location AND the location above it are available.
 	public static bool canWalkHere(int x, int y, int z) {
-		
+
+		// Catch outOfBounds errors (not yMax).
+		if(x<0 || y<0 || z<0 || x >= levelSize || z >= levelSize) {
+			return false;
+		}
+
 		// Get the index of the position in the blockData array.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;
 		
@@ -325,6 +352,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		else if(y == levelHeight-1) {
 			return canWalkThrough[byteArrayIndex];
 		} else {
+//			Debug.Log ("x=" + x + " y=" + y + " z=" + z);
 			return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); // Block && one block higher.
 		}
 	}
@@ -332,6 +360,12 @@ public class WorldBlockManagement : MonoBehaviour {
 	// canStandHere method.
 	// Returns true if a player/enemy can stand here without falling.
 	public static bool canStandHere(int x, int y, int z) {
+
+		// Catch outOfBounds errors.
+		if(x<0 || y<0 || z<0 || x >= levelSize || y >= levelHeight || z >= levelSize) {
+			return false;
+		}
+
 		if(!canWalkHere(x,y,z)) { return false; }
 		if(y == 0) { return true; } // Entities can always walk on the bottom. There should be a ground plane here.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*(y-1);
@@ -341,6 +375,12 @@ public class WorldBlockManagement : MonoBehaviour {
 	// canJumpAt method.
 	// Returns true if the player can jump at this location.
 	public static bool canJumpAt(int x, int y, int z) {
+
+		// Catch outOfBounds errors.
+		if(x<0 || y<0 || z<0 || x >= levelSize || y >= levelHeight || z >= levelSize) {
+			return false;
+		}
+
 		if(y+2 >= levelHeight) { return true; } // Jumping is always possible above max block height.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*(y+2);
 		return canWalkThrough[byteArrayIndex]; // True is no block above head.
@@ -356,6 +396,25 @@ public class WorldBlockManagement : MonoBehaviour {
 	// Returns the level size.
 	public static byte getLevelHeight() {
 		return levelHeight;
+	}
+
+	// setBlocksInRegion method.
+	// Sets blocks in a cube defined by 2 positions.
+	public void setBlocksInRegion(int x1, int y1, int z1, int x2, int y2, int z2, byte blockID) {
+		int Xmin = Mathf.Min(x1, x2);
+		int Xmax = Mathf.Max(x1, x2);
+		int Ymin = Mathf.Min(y1, y2);
+		int Ymax = Mathf.Max(y1, y2);
+		int Zmin = Mathf.Min(z1, z2);
+		int Zmax = Mathf.Max(z1, z2);
+
+		for(int x = Xmin; x <= Xmax; x++) {
+			for(int y = Ymin; y <= Ymax; y++) {
+				for(int z = Zmin; z <= Zmax; z++) {
+					setBlockAt(x, y, z, blockID);
+				}
+			}
+		}
 	}
 
 	// Quote to copy:   """""""
