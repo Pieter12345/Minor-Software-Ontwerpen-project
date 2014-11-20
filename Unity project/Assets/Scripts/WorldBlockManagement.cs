@@ -127,7 +127,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 	// setBlockAt method.
 	// Sets a block with blockID at position (x,y,z).
-	public static void setBlockAt(int x, int y, int z, byte blockID) {
+	public void setBlockAt(int x, int y, int z, byte blockID) {
 
 		// Get the index of the position in the blockData array.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;

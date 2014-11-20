@@ -5,26 +5,124 @@ public class FireController : MonoBehaviour {
 
 	public Transform aimTarget;
 	public Transform camera;
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetButtonDown("Fire1"))
-			OnFire();
+	public Transform transBlock;
+	public Transform blockManager;
+	public Transform weaponController;
+
+	private bool blockMode = false;
+	private WorldBlockManagement blocks;
+	private WeaponController weapons;
+	private bool positionValid = true;
+	private int selectedBlock = 2;
+
+	void Start(){
+		blocks = blockManager.GetComponent<WorldBlockManagement>();
+		weapons = weaponController.GetComponent<WeaponController>();
 	}
 
-	void OnFire () {
+	// Update is called once per frame
+	void Update () {
+		if(Input.GetButton("Modifier")){ //Place block mode enabled
+			blockMode = true;
+			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
+		} else {
+			blockMode = false;
+			weapons.SelectedWeapon += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
+		}
+		if(selectedBlock < 1){
+			selectedBlock = 3;
+		} else if(selectedBlock > 3){
+			selectedBlock = 1;
+		}
+
+
+		if(Input.GetButtonDown("Fire1")){
+			if (blockMode && positionValid){
+				OnPlaceBlock();
+			} else{
+				OnFireWeapon();
+			}
+		}
+		if(Input.GetButtonDown("Fire2")){
+			if (blockMode){
+				OnDestroyBlock();
+			} else{
+				//doSomething
+			}
+		}
+
+		UpdateBlockOutline();
+	}
+
+	void OnFireWeapon () {
 		Screen.lockCursor = true;
 		Vector3 dir = aimTarget.position-camera.position;
 		dir.Normalize();
 		Ray ray = new Ray(camera.position, dir);
 		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit, 1000)) {
+		if (Physics.Raycast(ray, out hit, 100)) {
 
 			Debug.Log("Shot hit " + hit.transform.name);
 
 			Health hp = hit.transform.GetComponent<Health>();
-			if(hp!=null)
-				hp.Damage(1);
+			weapons.Fire(hp);
+		}
+	}
+
+	void OnPlaceBlock(){
+		blocks.setBlockAt(Mathf.FloorToInt(transBlock.position.x),
+		                  Mathf.FloorToInt(transBlock.position.y),
+		                  Mathf.FloorToInt(transBlock.position.z),
+		                  (byte) selectedBlock);
+	}
+
+	void OnDestroyBlock(){
+		Vector3 dir = aimTarget.position-camera.position;
+		dir.Normalize();
+		Ray ray = new Ray(camera.position, dir);
+		RaycastHit hit;
+		if (Physics.Raycast(ray, out hit, 10)) {
+			
+			Debug.DrawRay(camera.position, dir, Color.red);
+			
+			Vector3 destroyPosition = (new Vector3(Mathf.Floor(hit.point.x-0.5f*hit.normal.x),
+			                                   Mathf.Floor(hit.point.y-0.5f*hit.normal.y),
+			                                   Mathf.Floor(hit.point.z-0.5f*hit.normal.z))
+			                       ) + (new Vector3(0.5f, 0.5f, 0.5f));
+
+			blocks.setBlockAt(Mathf.FloorToInt(destroyPosition.x),
+			                  Mathf.FloorToInt(destroyPosition.y),
+			                  Mathf.FloorToInt(destroyPosition.z),
+			                  (byte)0);
+		}
+	}
+
+	void UpdateBlockOutline(){
+		positionValid = true;
+		transBlock.gameObject.SetActive(blockMode);
+		if(blockMode){
+			Vector3 dir = aimTarget.position-camera.position;
+			dir.Normalize();
+			Ray ray = new Ray(camera.position, dir);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, 10)) {
+
+				Debug.DrawRay(camera.position, dir, Color.red);
+
+				transBlock.position = (new Vector3(Mathf.Floor(hit.point.x+0.5f*hit.normal.x),
+				                                   Mathf.Floor(hit.point.y+0.5f*hit.normal.y),
+				                                   Mathf.Floor(hit.point.z+0.5f*hit.normal.z))
+				                       ) + (new Vector3(0.5f, 0.5f, 0.5f));
+				if(Physics.CheckSphere(transBlock.position, 0.4f)) {
+					positionValid = false;
+				}
+			}
+		}
+
+		if (positionValid) {
+			transBlock.renderer.material.color = Color.green;
+		} else {
+			transBlock.renderer.material.color = Color.red;
 		}
 	}
 }

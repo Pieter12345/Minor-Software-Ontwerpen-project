@@ -1,0 +1,27 @@
+
+Desired HUD elements:
+
+---------------------------------------------------------------------------------------
+GENERAL
+1- Health Bar/ Status
+2- Weapons currently in inventory
+3- Blocks in inventory
+4- minimap/radar/compass
+5- Current Wave number
+6- Current wave progress/Enemies remaining counter
+
+--------------------------------------------------------------------------------------
+ON EQUIP
+
+WEAPONS
+1- ammo in clip
+2- ammo in inventory
+3- type weapon/weapon
+
+Blocks
+1- BlockID/Type
+2- Current amount of BlockID
+
+----------------------------------------------------------------------------------------
+
+CROSSHAIR - could be a customisable feature on your avatar profile
