@@ -1979,7 +1979,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 1256726499}
   m_GameObject: {fileID: 1579508057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   maxVerticalAngle: 80
   minVerticalAngle: -80
   mouseSensitivity: .100000001
-  reticle: {fileID: 0}
+  reticle: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
 --- !u!1 &1667082276
 GameObject:
   m_ObjectHideFlags: 0
