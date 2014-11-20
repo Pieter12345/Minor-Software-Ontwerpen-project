@@ -10,6 +10,8 @@ public class FireController : MonoBehaviour {
 
 	private bool blockMode = false;
 	private WorldBlockManagement blocks;
+	private bool positionValid = true;
+	private int selectedBlock = 2;
 
 	void Start(){
 		blocks = blockManager.GetComponent<WorldBlockManagement>();
@@ -19,12 +21,19 @@ public class FireController : MonoBehaviour {
 	void Update () {
 		if(Input.GetButton("Modifier")){ //Place block mode enabled
 			blockMode = true;
+			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
 		} else {
 			blockMode = false;
 		}
+		if(selectedBlock < 1){
+			selectedBlock = 3;
+		} else if(selectedBlock > 3){
+			selectedBlock = 1;
+		}
+
 
 		if(Input.GetButtonDown("Fire1")){
-			if (blockMode){
+			if (blockMode && positionValid){
 				OnPlaceBlock();
 			} else{
 				OnFireWeapon();
@@ -61,7 +70,7 @@ public class FireController : MonoBehaviour {
 		blocks.setBlockAt(Mathf.FloorToInt(transBlock.position.x),
 		                  Mathf.FloorToInt(transBlock.position.y),
 		                  Mathf.FloorToInt(transBlock.position.z),
-		                  (byte)1);
+		                  (byte) selectedBlock);
 	}
 
 	void OnDestroyBlock(){
@@ -86,6 +95,7 @@ public class FireController : MonoBehaviour {
 	}
 
 	void UpdateBlockOutline(){
+		positionValid = true;
 		transBlock.gameObject.SetActive(blockMode);
 		if(blockMode){
 			Vector3 dir = aimTarget.position-camera.position;
@@ -100,7 +110,16 @@ public class FireController : MonoBehaviour {
 				                                   Mathf.Floor(hit.point.y+0.5f*hit.normal.y),
 				                                   Mathf.Floor(hit.point.z+0.5f*hit.normal.z))
 				                       ) + (new Vector3(0.5f, 0.5f, 0.5f));
+				if(Physics.CheckSphere(transBlock.position, 0.4f)) {
+					positionValid = false;
+				}
 			}
+		}
+
+		if (positionValid) {
+			transBlock.renderer.material.color = Color.green;
+		} else {
+			transBlock.renderer.material.color = Color.red;
 		}
 	}
 }
