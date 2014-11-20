@@ -48,14 +48,15 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
-     <Compile Include="Assets\Scripts\Core\Player\AlignmentTracker.cs" />
      <Compile Include="Assets\Scripts\Core\Player\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\FireController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
-     <Compile Include="Assets\Scripts\Core\Util.cs" />
+     <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
-     <Compile Include="Assets\pathFinding.cs" />
+     <Compile Include="Assets\Scripts\pathFinding.cs" />
+     <None Include="Assets\Scripts\Shaders\Toon Shader 2.shader" />
+     <None Include="Assets\Scripts\Shaders\Toon Shader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
