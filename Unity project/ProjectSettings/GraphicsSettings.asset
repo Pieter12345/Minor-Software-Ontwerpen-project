@@ -3,11 +3,5 @@
 --- !u!30 &1
 GraphicsSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
   m_AlwaysIncludedShaders:
   - {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10782, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
-  - {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
-  - {fileID: 4800000, guid: 8c3dc79f122d08a418a0b4c7842c34ec, type: 3}

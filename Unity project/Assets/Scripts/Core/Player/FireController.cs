@@ -7,14 +7,17 @@ public class FireController : MonoBehaviour {
 	public Transform camera;
 	public Transform transBlock;
 	public Transform blockManager;
+	public Transform weaponController;
 
 	private bool blockMode = false;
 	private WorldBlockManagement blocks;
+	private WeaponController weapons;
 	private bool positionValid = true;
 	private int selectedBlock = 2;
 
 	void Start(){
 		blocks = blockManager.GetComponent<WorldBlockManagement>();
+		weapons = weaponController.GetComponent<WeaponController>();
 	}
 
 	// Update is called once per frame
@@ -24,6 +27,7 @@ public class FireController : MonoBehaviour {
 			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
 		} else {
 			blockMode = false;
+			weapons.SelectedWeapon += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
 		}
 		if(selectedBlock < 1){
 			selectedBlock = 3;
@@ -61,8 +65,7 @@ public class FireController : MonoBehaviour {
 			Debug.Log("Shot hit " + hit.transform.name);
 
 			Health hp = hit.transform.GetComponent<Health>();
-			if(hp!=null)
-				hp.Damage(1);
+			weapons.Fire(hp);
 		}
 	}
 
