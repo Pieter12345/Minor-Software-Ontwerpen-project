@@ -48,15 +48,19 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\SimpleGun.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\Weapon.cs" />
      <Compile Include="Assets\Scripts\Core\Player\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\FireController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
+     <Compile Include="Assets\Scripts\Core\Player\WeaponController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
      <Compile Include="Assets\Scripts\pathFinding.cs" />
-     <None Include="Assets\Scripts\Shaders\Toon Shader 2.shader" />
-     <None Include="Assets\Scripts\Shaders\Toon Shader.shader" />
+     <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
+     <None Include="Assets\Resources\Shaders\Toon Shader.shader" />
+     <None Include="Assets\Resources\Shaders\Toon Shader 3.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

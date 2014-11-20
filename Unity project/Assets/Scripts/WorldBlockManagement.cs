@@ -13,7 +13,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	private static byte[] heightMap; // Heights for every (x,z).
-	public static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
+	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
 	
 //	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
 //	private static Object block;
@@ -127,7 +127,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 	// setBlockAt method.
 	// Sets a block with blockID at position (x,y,z).
-	public void setBlockAt(int x, int y, int z, byte blockID) {
+	public static void setBlockAt(int x, int y, int z, byte blockID) {
 
 		// Get the index of the position in the blockData array.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;

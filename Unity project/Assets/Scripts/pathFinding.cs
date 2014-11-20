@@ -156,6 +156,9 @@ public class pathFinding {
 	// Used for getNextMove method. Returns the distance value at the given location.
 	private int getSingleWorldOverlay(int x, int y, int z) {
 		int index = x + levelSize*z + levelSize*levelSize*y;
+		if(index >= worldOverlay.Length) {
+			return int.MaxValue;
+		}
 		return worldOverlay[index];
 	}
 
