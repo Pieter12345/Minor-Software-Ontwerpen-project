@@ -638,7 +638,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_PrefabInternal: {fileID: 1256726499}
   m_GameObject: {fileID: 381778677}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 17.0402069, y: 3, z: 7.85769081}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1921,7 +1921,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -.707106829
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1929,7 +1929,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .707106829
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_RootOrder
@@ -1955,6 +1955,10 @@ Prefab:
       propertyPath: weaponController
       value: 
       objectReference: {fileID: 621141090}
+    - target: {fileID: 14300000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Radius
+      value: .49000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -2926,7 +2930,7 @@ CharacterController:
   m_GameObject: {fileID: 1767831526}
   serializedVersion: 2
   m_Height: 1.75
-  m_Radius: .500000119
+  m_Radius: .49000001
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
