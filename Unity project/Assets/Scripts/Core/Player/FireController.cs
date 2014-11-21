@@ -6,17 +6,17 @@ public class FireController : MonoBehaviour {
 	public Transform aimTarget;
 	public Transform camera;
 	public Transform transBlock;
-	public Transform blockManager;
+//	public Transform blockManager;
 	public Transform weaponController;
 
 	private bool blockMode = false;
-	private WorldBlockManagement blocks;
+//	private WorldBlockManagement blocks;
 	private WeaponController weapons;
 	private bool positionValid = true;
 	private int selectedBlock = 2;
 
 	void Start(){
-		blocks = blockManager.GetComponent<WorldBlockManagement>();
+//		blocks = blockManager.GetComponent<WorldBlockManagement>();
 		weapons = weaponController.GetComponent<WeaponController>();
 	}
 
@@ -70,7 +70,7 @@ public class FireController : MonoBehaviour {
 	}
 
 	void OnPlaceBlock(){
-		blocks.setBlockAt(Mathf.FloorToInt(transBlock.position.x),
+		WorldBlockManagement.setBlockAt(Mathf.FloorToInt(transBlock.position.x),
 		                  Mathf.FloorToInt(transBlock.position.y),
 		                  Mathf.FloorToInt(transBlock.position.z),
 		                  (byte) selectedBlock);
@@ -90,7 +90,7 @@ public class FireController : MonoBehaviour {
 			                                   Mathf.Floor(hit.point.z-0.5f*hit.normal.z))
 			                       ) + (new Vector3(0.5f, 0.5f, 0.5f));
 
-			blocks.setBlockAt(Mathf.FloorToInt(destroyPosition.x),
+			WorldBlockManagement.setBlockAt(Mathf.FloorToInt(destroyPosition.x),
 			                  Mathf.FloorToInt(destroyPosition.y),
 			                  Mathf.FloorToInt(destroyPosition.z),
 			                  (byte)0);

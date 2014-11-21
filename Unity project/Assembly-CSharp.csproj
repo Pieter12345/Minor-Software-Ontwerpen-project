@@ -61,6 +61,12 @@
      <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 3.shader" />
+<<<<<<< HEAD
+=======
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+>>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -59,6 +59,11 @@ public class EnemyController : MonoBehaviour {
 
 			pathFind.updateGoalLocation(Xplayer, Yplayer, Zplayer);
 
+			// Stop if the thing is close to its goal.
+			if(Mathf.Sqrt(Mathf.Pow(Xplayer - coords[0], 2) + Mathf.Pow(Yplayer - coords[1], 2) + Mathf.Pow(Zplayer - coords[2], 2)) <= 1) {
+				Debug.Log("Mr Capsule is very close to his goal (1 meter), not moving.");
+				return;
+			}
 
 //			Debug.Log("coords[0] = " + coords[0]);
 //			Debug.Log("coords[1] = " + coords[1]);
@@ -71,6 +76,7 @@ public class EnemyController : MonoBehaviour {
 //			Debug.Log("pos[1] = " + pos1[1]);
 //			Debug.Log("pos[2] = " + pos1[2]);
 
+			// Perform the move.
 			switch(nextMove) {
 			case "x+": { enemy.transform.Translate(1f,0f,0f); break; }
 			case "x-": { enemy.transform.Translate(-1f,0f,0f); break; }
@@ -84,10 +90,29 @@ public class EnemyController : MonoBehaviour {
 			case "AlreadyAtGoalPosition": { break; }
 			default: { Debug.Log("Unknown direction returned."); break; }
 			}
+
+			// Save the new grid position.
 			Vector3 pos = enemy.transform.position;
 			coords[0] = (int) Mathf.Round(pos[0]-0.5f);
 			coords[1] = (int) Mathf.Round(pos[1]-1f);
 			coords[2] = (int) Mathf.Round(pos[2]-0.5f);
+
+			// Go one up if the enemy is standing in a block (To simulate a jump).
+			if(!WorldBlockManagement.canStandHere(coords[0], coords[1], coords[2])) {
+				if(WorldBlockManagement.canStandHere(coords[0], coords[1]+1, coords[2])) {
+					coords[1] += 1;
+					enemy.transform.Translate(0f, 1f, 0f);
+				}
+				else if(WorldBlockManagement.canStandHere(coords[0], coords[1]-1, coords[2])) {
+					coords[1] -= 1;
+					enemy.transform.Translate(0f, -1f, 0f);
+				}
+				else if(WorldBlockManagement.canStandHere(coords[0], coords[1]-2, coords[2])) {
+					coords[1] -= 2;
+					enemy.transform.Translate(0f, -2f, 0f);
+				}
+			}
+
 		}
 	}
 

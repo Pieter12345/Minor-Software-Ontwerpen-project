@@ -13,7 +13,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	private static byte[] heightMap; // Heights for every (x,z).
-	public static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
+	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
 	
 //	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
 //	private static Object block;
@@ -25,7 +25,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	void Awake () {
 
 		// Load the default level to variables.
-		loadLevelFromFile("testLevel"); // Other empty testlevel: 100x100x20.
+		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
 
 		// Make the blockPrefab and parentObject static.
 //		block = this.blockPrefab;
@@ -127,7 +127,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 	// setBlockAt method.
 	// Sets a block with blockID at position (x,y,z).
-	public void setBlockAt(int x, int y, int z, byte blockID) {
+	public static void setBlockAt(int x, int y, int z, byte blockID) {
 
 		// Get the index of the position in the blockData array.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*y;
@@ -147,6 +147,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		}
 		if(blockID == 0) { // Air (clear block).
 			blockObjects[byteArrayIndex] = null;
+			canWalkThrough[byteArrayIndex] = true;
 		}
 		else {
 
@@ -169,7 +170,7 @@ public class WorldBlockManagement : MonoBehaviour {
 				}
 			}
 
-			// Load the texture.
+			// Load the texture, shader and canWalkThrough value (Depends on blockID).
 			string textureFileName = "textureNotFoundTexture.png";
 			string shaderName = "Diffuse";
 			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
