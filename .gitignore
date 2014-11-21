@@ -29,7 +29,7 @@ Unity project/*.sln
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.sln
+*.csproj
 Unity project/Unity project.sln
-Unity project/Unity project-csharp.sln
-Unity project/Unity project-csharp.sln
 Unity project/Unity project-csharp.sln
