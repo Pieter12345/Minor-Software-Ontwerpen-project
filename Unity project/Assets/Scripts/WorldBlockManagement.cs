@@ -31,9 +31,6 @@ public class WorldBlockManagement : MonoBehaviour {
 //		block = this.blockPrefab;
 		parent = this.parentObject;
 
-		// Create a floor plane with the size of the loaded level.
-		createGroundPlane();
-
 		// Load the level to the scene (Does not clear an old loaded level).
 		int byteArrayIndex = 0;
 		for(int y=0; y < levelHeight; y++) {
@@ -419,12 +416,6 @@ public class WorldBlockManagement : MonoBehaviour {
 				}
 			}
 		}
-	}
-
-	private void createGroundPlane() {
-		GameObject groundPlane = GameObject.CreatePrimitive(PrimitiveType.Plane); // Create a new plane object.
-		groundPlane.transform.Translate(new Vector3(levelSize/2, 0f, levelSize/2));
-		groundPlane.transform.localScale = new Vector3(levelSize/10f, 0f, levelSize/10f);
 	}
 
 	// Quote to copy:   """""""
