@@ -51,22 +51,17 @@ public class FireController : MonoBehaviour {
 			}
 		}
 
+		if(Input.GetButtonDown("Reload"))
+			Reload();
+
+		if(Input.GetKeyDown(KeyCode.F9))
+			weapons.AddAmmoToCurrent(10);
 		UpdateBlockOutline();
 	}
 
 	void OnFireWeapon () {
 		Screen.lockCursor = true;
-		Vector3 dir = aimTarget.position-camera.position;
-		dir.Normalize();
-		Ray ray = new Ray(camera.position, dir);
-		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit, 100)) {
-
-			Debug.Log("Shot hit " + hit.transform.name);
-
-			Health hp = hit.transform.GetComponent<Health>();
-			weapons.Fire(hp);
-		}
+		weapons.Fire(camera.position, aimTarget.position);
 	}
 
 	void OnPlaceBlock(){
@@ -124,5 +119,9 @@ public class FireController : MonoBehaviour {
 		} else {
 			transBlock.renderer.material.color = Color.red;
 		}
+	}
+
+	public void Reload(){
+		weapons.Reload();
 	}
 }

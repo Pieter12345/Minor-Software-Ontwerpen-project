@@ -22,15 +22,19 @@ public class AmmoManager : MonoBehaviour {
 		contr = GetComponent<WeaponController>();
 	}
 	
-	public void takeAmmo(AmmoTypes type, int amount){
-		addAmmo(type, amount);
+	public void TakeAmmo(AmmoTypes type, int amount){
+		AddAmmo(type, -amount);
 	}
 
-	public void addAmmo(AmmoTypes type, int amount){
+	public void AddAmmo(AmmoTypes type, int amount){
 		pools[(int) type].HeldAmount += amount;
 	}
 
 	public int GetAmmoCount(AmmoTypes type){
 		return pools[(int) type].HeldAmount;
+	}
+
+	public bool HasAmmo(AmmoTypes type){
+		return GetAmmoCount(type) > 0;
 	}
 }

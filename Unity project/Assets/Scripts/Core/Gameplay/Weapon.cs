@@ -25,13 +25,13 @@ public abstract class Weapon : MonoBehaviour {
 
 	public void RefillClip() {
 		if (ClipSize - AmmoInClip <= GetAmmoCount ()){
-			ammoManager.takeAmmo(AmmoType, 
+			ammoManager.TakeAmmo(AmmoType, 
 			                     ClipSize - AmmoInClip
 			                     );
 			ammoInClip = ClipSize;
 		} else {
 			AmmoInClip += GetAmmoCount ();
-			ammoManager.takeAmmo(AmmoType, GetAmmoCount());
+			ammoManager.TakeAmmo(AmmoType, GetAmmoCount());
 		}
 	}
 
@@ -40,4 +40,14 @@ public abstract class Weapon : MonoBehaviour {
 	}
 
 	public abstract void Fire(Health hp);
+
+	public void TakeFromClip(){
+		TakeFromClip(1);
+	}
+
+	public void TakeFromClip(int amount){
+		ammoInClip -= amount;
+		if (ammoInClip < 0)
+			ammoInClip = 0;
+	}
 }
