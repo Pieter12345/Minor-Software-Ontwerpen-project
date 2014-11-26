@@ -423,7 +423,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 	private void createGroundPlane() {
 		GameObject groundPlane = GameObject.CreatePrimitive(PrimitiveType.Plane); // Create a new plane object.
-		groundPlane.transform.Translate(new Vector3(levelSize/2, 0f, levelSize/2));
+		groundPlane.transform.Translate(new Vector3(levelSize/2, -0.01f, levelSize/2));
 		groundPlane.transform.localScale = new Vector3(levelSize/10f, 0f, levelSize/10f);
 	}
 

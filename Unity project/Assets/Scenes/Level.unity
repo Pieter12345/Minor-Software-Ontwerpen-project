@@ -489,7 +489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &57642062
 Transform:
   m_ObjectHideFlags: 0
@@ -517,6 +517,7 @@ MonoBehaviour:
   parentObject: {fileID: 1597395028}
   maxAmountOfEnemies: 1000
   player: {fileID: 1767831526}
+  EnemyPrefab: {fileID: 100000, guid: 97213aba132527d40b3a008c9cd393ca, type: 2}
 --- !u!1 &59695447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,6 +2870,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 176778362}
   - {fileID: 1988667614}
+  camera: {fileID: 0}
 --- !u!114 &621141092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7744,6 +7746,7 @@ MonoBehaviour:
   minVerticalAngle: -80
   mouseSensitivity: .100000001
   reticle: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
+  Fired: 0
 --- !u!1 &1667082276
 GameObject:
   m_ObjectHideFlags: 0
@@ -9326,6 +9329,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1965255758
 GameObject:
   m_ObjectHideFlags: 0
