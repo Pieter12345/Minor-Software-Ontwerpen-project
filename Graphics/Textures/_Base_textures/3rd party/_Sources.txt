@@ -28,3 +28,15 @@ URL     :http://www.cgtextures.com/texview.php?id=107713&PHPSESSID=qeltjn3sb25dv
 Filename:MetalBase0121_9_S.jpg
 Source	:CGTextures
 URL	:http://www.cgtextures.com/texview.php?id=57525&PHPSESSID=mjmrcag74eu30elk81epftl531
+
+Filename:ConcreteRough0076_4_M.jpg
+Source	:CGTextures
+URL	:http://www.cgtextures.com/texview.php?id=40954&PHPSESSID=vd1dqur1h2r1l9iit9q7uneon4
+
+Filename:ConcreteRough0016_M.jpg
+Source	:CGTextures
+URL	:http://www.cgtextures.com/texview.php?id=7167&PHPSESSID=vd1dqur1h2r1l9iit9q7uneon4
+
+Filename:ConcreteRough0058_2_M.jpg
+Source	:CGTextures
+URL	:http://www.cgtextures.com/texview.php?id=23578&PHPSESSID=vd1dqur1h2r1l9iit9q7uneon4
