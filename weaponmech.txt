@@ -1,8 +1,0 @@
-- support voor in praktijk oneindig aantaal wapens
-- wapen stats worden in een apart file gedefineerd
-- individuele wapens kunnen een custom behaviour gebruiken
-- support voor meerdere ammo types(e.g. shotgun shells en pistol bullets)
-- meerdere wapens kunnen een ammo pool delen(e.g. rifle bullets hetzelfde voor alle rifles)
-- wapenmodel onafhankelijk van eigenschappen
-- verschillende lichaamsdelen kunnen een verschillende "defense" stat hebben (e.g. headshots doen meer damage)
-
