@@ -70,7 +70,6 @@ public class FireController : MonoBehaviour {
 	void OnFireWeapon () {
 		Screen.lockCursor = true;
 		weapons.Fire(camera.position, aimTarget.position);
-		// Add Recoil in weapons.Fire //
 	}
 
 	void OnPlaceBlock(){
