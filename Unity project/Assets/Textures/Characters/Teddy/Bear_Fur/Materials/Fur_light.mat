@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Eyes
+  m_Name: Fur_light
   m_Shader: {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,26 +17,26 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: d883e855c14719b4b82032b83fa3f132, type: 3}
+          m_Texture: {fileID: 2800000, guid: 3f24fc41dccf99c4ba216788523faeb3, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Treshold
-        second: .5
+        second: .714285731
       data:
         first:
           name: _Shadow
-        second: .5
+        second: .553571463
       data:
         first:
           name: _Intensity
-        second: .5
+        second: 3.48214293
       data:
         first:
           name: _Diffuse
-        second: 0
+        second: 9.99999975e-05
     m_Colors:
       data:
         first:
