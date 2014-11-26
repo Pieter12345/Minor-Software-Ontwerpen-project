@@ -1013,25 +1013,25 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 176778362}
-  - 33: {fileID: 176778365}
   - 23: {fileID: 176778364}
   - 114: {fileID: 176778363}
+  - 33: {fileID: 176778365}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &176778362
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400086, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176778361}
-  m_LocalRotation: {x: -.382406652, y: .158358917, z: .348292053, w: .841059029}
-  m_LocalPosition: {x: -.256197363, y: .0120423827, z: .213151425}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalRotation: {x: .314592421, y: .113570467, z: .320003092, w: -.886414886}
+  m_LocalPosition: {x: -.204156011, y: -.0532021038, z: .157219991}
+  m_LocalScale: {x: .0500000007, y: .0500000007, z: .0500000007}
   m_Children: []
   m_Father: {fileID: 621141090}
   m_RootOrder: 0
@@ -1072,11 +1072,10 @@ Renderer:
 --- !u!33 &176778365
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300032, guid: f89203309dc0e8740a2accfcb2d1c0b7,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176778361}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: b8df83826f2ceda4d89f8a307818214e, type: 3}
 --- !u!1 &179705324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,7 +1881,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 381778677}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 17.0402069, y: 5.85827637, z: 4.98728752}
+  m_LocalPosition: {x: 15.2392883, y: 1.12939024, z: 2.93576813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1767831527}
