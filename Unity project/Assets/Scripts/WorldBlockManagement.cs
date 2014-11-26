@@ -114,7 +114,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	// Saves the current state of the level.
 	// Argument fileName can be a name without extension.
 	public void saveLevelToFile(string fileName) {
-		string filePath = "Assets/Levels/customSaves/" + fileName + ".binary";
+		string filePath = "Assets/Levels/customSaves/" + fileName + ".bytes";
 		
 		FileStream outStream = new FileStream(filePath, FileMode.Create);
 		BinaryWriter writer = new BinaryWriter(outStream);

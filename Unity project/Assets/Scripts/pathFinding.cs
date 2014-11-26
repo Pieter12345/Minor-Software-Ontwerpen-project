@@ -12,7 +12,7 @@ public class pathFinding {
 	private int[] goalCoords; // Format: {x,y,z}
 
 	// Constructor.
-	public pathFinding(byte xGoal, byte yGoal, byte zGoal) {
+	public pathFinding(int xGoal, int yGoal, int zGoal) {
 		this.levelSize = WorldBlockManagement.getLevelSize();
 		this.levelHeight = WorldBlockManagement.getLevelHeight();
 		this.worldOverlay = new int[levelSize * levelSize * levelHeight];
@@ -132,12 +132,41 @@ public class pathFinding {
 		}
 	}
 
-	// getNextMove method.
+	// getNextMoveCoords method.
 	// x, y, z are the current coordinates of the entity that has to find a path.
-	// Will return which way to move in. Format: 
-	public string getNextMove(int x, int y, int z) {
+	// Will return which way to move in (coords of new location).
+	public Vector3 getNextMoveCoords(int x, int y, int z) {
 		int currentOverlay = getSingleWorldOverlay(x, y, z);
-//		Debug.Log (currentOverlay);
+		Vector3 pos = new Vector3(x, y, z);
+		
+		for(int y2 = y; y2 <= y+1; y2++) {
+			// Diagonal moves.
+			if(getSingleWorldOverlay(x+1, y2, z+1) < currentOverlay && (getSingleWorldOverlay(x, y2, z+1) != int.MaxValue || getSingleWorldOverlay(x+1, y2, z) != int.MaxValue)) { return new Vector3( 1,y2-y, 1) + pos; } // "x+z+"
+			if(getSingleWorldOverlay(x-1, y2, z+1) < currentOverlay && (getSingleWorldOverlay(x, y2, z+1) != int.MaxValue || getSingleWorldOverlay(x-1, y2, z) != int.MaxValue)) { return new Vector3(-1,y2-y, 1) + pos; } // "x-z+"
+			if(getSingleWorldOverlay(x+1, y2, z-1) < currentOverlay && (getSingleWorldOverlay(x, y2, z-1) != int.MaxValue || getSingleWorldOverlay(x+1, y2, z) != int.MaxValue)) { return new Vector3( 1,y2-y,-1) + pos; } // "x+z-"
+			if(getSingleWorldOverlay(x-1, y2, z-1) < currentOverlay && (getSingleWorldOverlay(x, y2, z-1) != int.MaxValue || getSingleWorldOverlay(x-1, y2, z) != int.MaxValue)) { return new Vector3(-1,y2-y,-1) + pos; } // "x-z-"
+		}
+		for(int y2 = y; y2 <= y+1; y2++) {
+			// Left, right, up and down at y (includes falling without y change) and y+1 (jumping).
+			if(getSingleWorldOverlay(x+1, y2, z) < currentOverlay) { return new Vector3( 1,y2-y, 0) + pos; } // "x+"
+			if(getSingleWorldOverlay(x-1, y2, z) < currentOverlay) { return new Vector3(-1,y2-y, 0) + pos; } // "x-"
+			if(getSingleWorldOverlay(x, y2, z+1) < currentOverlay) { return new Vector3( 0,y2-y, 1) + pos; } // "z+"
+			if(getSingleWorldOverlay(x, y2, z-1) < currentOverlay) { return new Vector3( 0,y2-y,-1) + pos; } // "z-"
+		}
+		
+		if(x == this.goalCoords[0] && y == this.goalCoords[1] && z == this.goalCoords[2]) {
+			Debug.Log("At goal pos: x=" + x + " y=" + y + " z=" + z);
+			return pos; // "AlreadyAtGoalPosition"
+		}
+		
+		return pos; // "noPathFoundError"
+	}
+
+	// getNextMoveText method.
+	// x, y, z are the current coordinates of the entity that has to find a path.
+	// Will return which way to move in (string).
+	public string getNextMoveText(int x, int y, int z) {
+		int currentOverlay = getSingleWorldOverlay(x, y, z);
 
 		for(int y2 = y; y2 <= y+1; y2++) {
 			// Diagonal moves.
