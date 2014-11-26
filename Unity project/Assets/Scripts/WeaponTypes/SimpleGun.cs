@@ -1,20 +1,33 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SimpleGun : Weapon {
 
-	public float baseDamage = 1.0f;
+	private float timeLastShot;
 
-	public override int ClipSize{ get{ return 12; } }
+	public override void Fire(Vector3 from, Vector3 to){
+		if(Time.time - timeLastShot > FireInterval){
+			timeLastShot = Time.time;
+			if (AmmoInClip > 0){
+				TakeFromClip();
+				Vector3 dir = to - from;
+				dir.Normalize();
+				Ray ray = new Ray(from, dir);
+				RaycastHit hit;
+				if (Physics.Raycast(ray, out hit, 100)) {
+					
+					Debug.Log("Shot hit " + hit.transform.name);
+					
+					Health hp = hit.transform.GetComponent<Health>();
+					if(hp!= null)
+						hp.Damage(BaseDamage);
+				}
+			}
+		}
 
-	public override AmmoTypes AmmoType { get 
-		{
-			return AmmoTypes.PISTOL_BULLET;
-		} 
 	}
 
-	public override void Fire(Health hp){
-		if(hp!= null)
-			hp.Damage(baseDamage);
+	void Awake(){
+		timeLastShot = 0f;
 	}
 }

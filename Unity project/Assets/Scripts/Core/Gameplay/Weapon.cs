@@ -5,9 +5,18 @@ public abstract class Weapon : MonoBehaviour {
 
 	private AmmoManager ammoManager;
 
-	public abstract AmmoTypes AmmoType { get; }
+	public WeaponStats weaponType;
 
-	public abstract int ClipSize{ get; }
+	public float BaseDamage{ get { return weaponType.BaseDamage(); } }
+
+	public AmmoTypes AmmoType { get{return weaponType.AmmoType();} }
+
+	public int ClipSize{ get{return weaponType.ClipSize();} }
+
+	public float FireInterval{ get {return weaponType.FireInterval();} }
+	public float FireRate{ get{ return (FireInterval != 0) ? 1f/FireInterval : 0; } }
+
+	public float ReloadTime{ get{ return weaponType.ReloadTime();} }
 
 	private int ammoInClip = 0;
 	public int AmmoInClip { 
@@ -39,7 +48,7 @@ public abstract class Weapon : MonoBehaviour {
 		return ammoManager.GetAmmoCount(AmmoType);
 	}
 
-	public abstract void Fire(Health hp);
+	public abstract void Fire(Vector3 from, Vector3 to);
 
 	public void TakeFromClip(){
 		TakeFromClip(1);

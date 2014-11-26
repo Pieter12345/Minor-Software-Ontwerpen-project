@@ -35,20 +35,7 @@ public class WeaponController : MonoBehaviour {
 	public void Fire(Vector3 from, Vector3 to) {
 		if(weapons[selectedWeapon] != null){
 			Weapon weaponScript = (Weapon) weapons[selectedWeapon].GetComponent(typeof(Weapon));
-			if (weaponScript.AmmoInClip > 0){
-				weaponScript.TakeFromClip();
-				Vector3 dir = to - from;
-				dir.Normalize();
-				Ray ray = new Ray(from, dir);
-				RaycastHit hit;
-				if (Physics.Raycast(ray, out hit, 100)) {
-					
-					Debug.Log("Shot hit " + hit.transform.name);
-					
-					Health hp = hit.transform.GetComponent<Health>();
-					weaponScript.Fire(hp);
-				}
-			}
+			weaponScript.Fire(from, to);
 		}
 	}
 

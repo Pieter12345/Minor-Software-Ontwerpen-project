@@ -6,18 +6,19 @@ public class FireController : MonoBehaviour {
 	public Transform aimTarget;
 	public Transform camera;
 	public Transform transBlock;
-//	public Transform blockManager;
 	public Transform weaponController;
 
+	public float blockPlaceTime = 0.5f;
+
 	private bool blockMode = false;
-//	private WorldBlockManagement blocks;
 	private WeaponController weapons;
 	private bool positionValid = true;
 	private int selectedBlock = 2;
+	private float timeLastBlock;
 
 	void Start(){
-//		blocks = blockManager.GetComponent<WorldBlockManagement>();
 		weapons = weaponController.GetComponent<WeaponController>();
+		timeLastBlock = 0;
 	}
 
 	// Update is called once per frame
@@ -35,10 +36,17 @@ public class FireController : MonoBehaviour {
 			selectedBlock = 1;
 		}
 
+		if(Input.GetButtonUp("Fire1")){
+			timeLastBlock = 0;
+		}
 
-		if(Input.GetButtonDown("Fire1")){
+		if(Input.GetButton("Fire1")){
 			if (blockMode && positionValid){
-				OnPlaceBlock();
+				float interval = Time.time - timeLastBlock;
+				if(interval > blockPlaceTime){
+					OnPlaceBlock();
+					timeLastBlock = Time.time;
+				}
 			} else{
 				OnFireWeapon();
 			}

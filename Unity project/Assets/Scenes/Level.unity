@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556e40ea25526ed4291f02b4b9e22699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
+  weaponType: 0
 --- !u!23 &176778364
 Renderer:
   m_ObjectHideFlags: 0
@@ -663,6 +663,7 @@ MonoBehaviour:
   camera: {fileID: 1661318639}
   transBlock: {fileID: 2067389830}
   weaponController: {fileID: 621141090}
+  blockPlaceTime: .5
 --- !u!1 &404746078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,7 +1971,8 @@ Prefab:
       propertyPath: m_Radius
       value: .49000001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
   m_IsPrefabParent: 0
@@ -3217,16 +3219,15 @@ MeshFilter:
 --- !u!114 &1988667617
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: f89203309dc0e8740a2accfcb2d1c0b7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1256726499}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988667613}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 556e40ea25526ed4291f02b4b9e22699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 1
+  weaponType: 1
 --- !u!1 &2021677841
 GameObject:
   m_ObjectHideFlags: 0
