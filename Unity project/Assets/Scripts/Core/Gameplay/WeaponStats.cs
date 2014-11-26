@@ -60,4 +60,14 @@ public static class WeaponStatsExtension{
 		return foo;
 	}
 
+	public static float Recoil(this WeaponStats w){
+		float foo = 1f;
+		switch(w){
+		case WeaponStats.PISTOL:	foo = 0.5f;	break;
+		case WeaponStats.RIFLE:		foo = 1f;	break;
+		case WeaponStats.SHOTGUN:	foo = 1f;	break;
+		}
+		return foo;
+	}
+
 }
