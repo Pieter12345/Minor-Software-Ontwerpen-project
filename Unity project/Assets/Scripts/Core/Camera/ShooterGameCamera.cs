@@ -26,19 +26,43 @@ public class ShooterGameCamera : MonoBehaviour {
 	private LayerMask mask;
 	private Vector3 smoothPlayerPos;
 	
+	private float CameraRecoil;
+	private bool RecoilActive = false;
+	public bool Fired = false;
+		
 	// Use this for initialization
 	void Start () {
 		smoothPlayerPos = player.position;
 	}
+		
 	
 	// Update is called once per frame
 	void LateUpdate () {
 		if (Time.deltaTime == 0 || Time.timeScale == 0 || player == null) 
 			return;
 		
-		angleH += Mathf.Clamp(Input.GetAxis("Mouse X") + Input.GetAxis("Horizontal2"), -1, 1) * horizontalAimingSpeed * Time.deltaTime;
+		// Set Recoil Degrees
+		if (Fired == true) {
+			CameraRecoil = 5.0f; // should be weapon property
+			RecoilActive = true;
+			Fired = false;
+		}
+
+		if (CameraRecoil > -5.0f && RecoilActive == true) {
+			if (CameraRecoil > 0.0f) {
+				
+			}
+				CameraRecoil -= (/* WeaponRecoilProperty */ 1.0f);
+			if (CameraRecoil <= -5.0f) {
+				RecoilActive = false;
+				CameraRecoil = 0.0f;
+			}
+		}
+
 		
-		angleV += Mathf.Clamp(Input.GetAxis("Mouse Y") + Input.GetAxis("Vertical2"), -1, 1) * verticalAimingSpeed * Time.deltaTime;
+		angleH += Mathf.Clamp(Input.GetAxis("Mouse X") + Input.GetAxis("Horizontal2"), -1, 1) * horizontalAimingSpeed * Time.deltaTime ;
+		
+		angleV += Mathf.Clamp(Input.GetAxis("Mouse Y") + Input.GetAxis("Vertical2"), -1, 1) * verticalAimingSpeed * Time.deltaTime + CameraRecoil;
 		// limit vertical angle
 		angleV = Mathf.Clamp(angleV, minVerticalAngle, maxVerticalAngle);
 		

@@ -5,6 +5,7 @@ public class WeaponController : MonoBehaviour {
 
 	public int defaultWeapon = 0;
 	public Transform[] weapons;
+	public GameObject camera;
 
 	private int selectedWeapon;
 	public int SelectedWeapon { 
@@ -37,6 +38,7 @@ public class WeaponController : MonoBehaviour {
 			Weapon weaponScript = (Weapon) weapons[selectedWeapon].GetComponent(typeof(Weapon));
 			weaponScript.Fire(from, to);
 		}
+
 	}
 
 	public void Reload(){
