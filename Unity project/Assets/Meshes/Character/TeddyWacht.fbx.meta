@@ -94,8 +94,9 @@ ModelImporter:
     4300020: Sphere.007
     4300022: Sphere.008
     4300024: Sphere.010
-    7400000: Armature|ArmatureAction
+    7400000: Idle
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Sphere
     13700002: Sphere.001
     13700004: Sphere.002
@@ -124,7 +125,111 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|Bone
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.011
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.011/Armature|Bone.012
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.011/Armature|Bone.012/Armature|Bone.013
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.011/Armature|Bone.012/Armature|Bone.013/Armature|Bone.014
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.015
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.015/Armature|Bone.016
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.015/Armature|Bone.016/Armature|Bone.017
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.015/Armature|Bone.016/Armature|Bone.017/Armature|Bone.018
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.019
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.019/Armature|Bone.020
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.019/Armature|Bone.020/Armature|Bone.021
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.019/Armature|Bone.020/Armature|Bone.021/Armature|Bone.022
+        weight: 1
+      - path: Armature/Armature|Bone/Armature|Bone.010/Armature|Bone.019/Armature|Bone.020/Armature|Bone.021/Armature|Bone.022/Armature|Bone.023
+        weight: 1
+      - path: Armature/Armature|Bone.001
+        weight: 1
+      - path: Armature/Armature|Bone.001/Armature|Bone.002
+        weight: 1
+      - path: Armature/Armature|Bone.001/Armature|Bone.002/Armature|Bone.004
+        weight: 1
+      - path: Armature/Armature|Bone.001/Armature|Bone.002/Armature|Bone.004/Armature|Bone.005
+        weight: 1
+      - path: Armature/Armature|Bone.003
+        weight: 1
+      - path: Armature/Armature|Bone.006
+        weight: 1
+      - path: Armature/Armature|Bone.006/Armature|Bone.007
+        weight: 1
+      - path: Armature/Armature|Bone.006/Armature|Bone.007/Armature|Bone.008
+        weight: 1
+      - path: Armature/Armature|Bone.006/Armature|Bone.007/Armature|Bone.008/Armature|Bone.009
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.004
+        weight: 1
+      - path: Sphere.005
+        weight: 1
+      - path: Sphere.006
+        weight: 1
+      - path: Sphere.007
+        weight: 1
+      - path: Sphere.008
+        weight: 1
+      - path: Sphere.009
+        weight: 1
+      - path: Sphere.010
+        weight: 1
+      - path: Sphere.011
+        weight: 1
+      - path: Sphere.012
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -160,6 +265,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
