@@ -8,6 +8,11 @@ public class NormalCharacterMotor : CharacterMotor {
 	
 	private bool firstframe = true;
 
+	// Jumping/falling variables.
+	private float ySpeed        = 0f   ; // [m/s]
+	private float ySpeedJump = 1.2f; // [m/s] - The speed that will be set when the player jumps.
+	private float gravitation   = 4.00f; // [m/(s*s)]
+
 	// Update is called once per frame
 	void Update () {
 		if (Time.deltaTime == 0 || Time.timeScale == 0)
@@ -48,7 +53,6 @@ public class NormalCharacterMotor : CharacterMotor {
 		
 		// Calculate how fast we should be moving
 		Vector3 movement = velocity;
-		IsJumping = false;
 		if (OnGround) {
 			// Apply a force that attempts to reach our target velocity
 			Vector3 velocityChange = (desiredVelocity - velocity);
@@ -56,28 +60,24 @@ public class NormalCharacterMotor : CharacterMotor {
 				velocityChange = velocityChange.normalized * maxVelocityChange;
 			}
 			movement += velocityChange;
-			
-			// Jump
-			if (canJump && Input.GetButton("Jump")) {
-				movement += transform.up * Mathf.Sqrt(2 * jumpHeight * gravity);
-				IsJumping = true;
-			}
+		}
+
+
+		// If the player is on the ground with a negative speed, set his speed to 0.
+		if(OnGround && ySpeed < 0) { ySpeed = 0; }
+
+		// Update y speed.
+		float yPosDelta = ySpeed; // Time.deltaTime is added later.
+		if(!OnGround) { ySpeed -= gravitation * Time.deltaTime; }
+
+		movement += transform.up * yPosDelta;
+
+		// If Jump button pressed and able to jump.
+		if (Input.GetButton("Jump") && OnGround) {
+			ySpeed = ySpeedJump;
 		}
 		
-		float maxVerticalVelocity = 1.0f;
-		if (Mathf.Abs(velocity.y) > maxVerticalVelocity) {
-			movement *= Mathf.Max(0.0f, Mathf.Abs(maxVerticalVelocity / velocity.y));
-		}
-		
-		// Apply downwards gravity
-		movement += transform.up * -gravity * Time.deltaTime;
-		
-		if (IsJumping) {
-			movement -= transform.up * -gravity * Time.deltaTime / 2;
-			
-		}
-		
-		// Apply movement
+		// Apply movement.
 		CollisionFlags flags = controller.Move(movement * Time.deltaTime);
 		OnGround = (flags & CollisionFlags.CollidedBelow) != 0;
 	}
