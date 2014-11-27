@@ -1049,6 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
+  camera: {fileID: 1661318639}
 --- !u!23 &176778364
 Renderer:
   m_ObjectHideFlags: 0
@@ -7747,6 +7748,7 @@ MonoBehaviour:
   mouseSensitivity: .100000001
   reticle: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
   Fired: 0
+  weapon: {fileID: 621141090}
 --- !u!1 &1667082276
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,6 +9472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
+  camera: {fileID: 1661318639}
 --- !u!1 &1988969096
 GameObject:
   m_ObjectHideFlags: 0

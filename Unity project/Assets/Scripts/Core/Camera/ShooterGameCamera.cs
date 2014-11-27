@@ -31,7 +31,8 @@ public class ShooterGameCamera : MonoBehaviour {
 	private float CameraRecoil;
 	private bool RecoilActive = false;
 	public bool Fired = false;
-		
+	public Transform weapon;
+	
 	// Use this for initialization
 	void Start () {
 		smoothPlayerPos = player.position;
@@ -46,7 +47,7 @@ public class ShooterGameCamera : MonoBehaviour {
 		// Set Recoil Degrees
 		
 		/*weapon property*/
-		float weaponRecoilIntensity = 2.0f; 
+		float weaponRecoilIntensity = weapon.GetComponent<WeaponController>().SelectedWeaponTransform.GetComponent(typeof(Weapon)).Recoil; 
 		
 		if (Fired == true) {
 			CameraRecoil = weaponRecoilIntensity * 5.0f;		
