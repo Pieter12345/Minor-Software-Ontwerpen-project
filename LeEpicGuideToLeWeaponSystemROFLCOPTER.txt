@@ -1,0 +1,14 @@
+=================================
+=	Le Epic Guide		=
+=================================
+
+Fire controller handles keypresses etc and stuffs. Also blocks
+Weponcontroller handles the selected weapons and stuffs. Is a manager class thingymadoohicky for le epic wins.
+weapons are created with a gameobject as child of weponcontroller. gameobject must have a component which is a subclass of weapon(eg simple gun)
+this shit does shit that makes the gun go pew pew. other pew pews can be defined for custom pew pews.
+WeaponStats define new weapontypes. the behaviour is defined by le scripts(ze subclass of weapons)
+
+Ammo manager keeps the ammo pools for this instance
+Ammo pool is a struct that simply holds the ammo and stuffs.
+Ammo type defines the ammo properties.
+
