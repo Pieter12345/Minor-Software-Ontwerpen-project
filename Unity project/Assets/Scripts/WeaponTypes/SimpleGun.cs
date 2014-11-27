@@ -4,6 +4,8 @@ using System.Collections;
 public class SimpleGun : Weapon {
 
 	private float timeLastShot;
+	
+	public Transform camera;
 
 	public override void Fire(Vector3 from, Vector3 to){
 		if(Time.time - timeLastShot > FireInterval){
@@ -11,7 +13,7 @@ public class SimpleGun : Weapon {
 			if (AmmoInClip > 0){
 				// Add Recoil
 				//weaponScript.weaponType.Recoil();
-				GameObject.Find("Main Camera").GetComponent<ShooterGameCamera>().Fired = true;
+				camera.GetComponent<ShooterGameCamera>().Fired = true;
 				
 				TakeFromClip();
 				Vector3 dir = to - from;

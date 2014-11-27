@@ -26,6 +26,8 @@ public class ShooterGameCamera : MonoBehaviour {
 	private LayerMask mask;
 	private Vector3 smoothPlayerPos;
 	
+	//Recoil parameters
+	private float maxRecoil;
 	private float CameraRecoil;
 	private bool RecoilActive = false;
 	public bool Fired = false;
@@ -42,18 +44,22 @@ public class ShooterGameCamera : MonoBehaviour {
 			return;
 		
 		// Set Recoil Degrees
+		
+		/*weapon property*/
+		float weaponRecoilIntensity = 2.0f; 
+		
 		if (Fired == true) {
-			CameraRecoil = 5.0f; // should be weapon property
+			CameraRecoil = weaponRecoilIntensity * 5.0f;		
+			maxRecoil = CameraRecoil;
 			RecoilActive = true;
 			Fired = false;
 		}
 
-		if (CameraRecoil > -5.0f && RecoilActive == true) {
-			if (CameraRecoil > 0.0f) {
-				
+		if (CameraRecoil > -maxRecoil && RecoilActive == true) {
+			if (true) {
+				CameraRecoil -= weaponRecoilIntensity * 1.0f;
 			}
-				CameraRecoil -= (/* WeaponRecoilProperty */ 1.0f);
-			if (CameraRecoil <= -5.0f) {
+			if (CameraRecoil <= -maxRecoil) {
 				RecoilActive = false;
 				CameraRecoil = 0.0f;
 			}
