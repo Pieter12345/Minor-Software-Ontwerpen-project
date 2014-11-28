@@ -28,6 +28,9 @@ public class EnemyController : MonoBehaviour {
 	private Vector3 playerCoordsOld = new Vector3(0f, 0f, 0f); // Used to check if the player has moved.
 
 	public Object EnemyPrefab; // The prefab of the enemy.
+
+	private int wave = 0;
+	private int amountOfEnemiesOnThisWave = 0; // The initial spawned amount of enemies on the current wave.
 	
 
 	// Use this for initialization.
@@ -40,8 +43,11 @@ public class EnemyController : MonoBehaviour {
 		pathToPlayer = new pathFinding((int) Mathf.Round(playerCoords.x), (int) Mathf.Round(playerCoords.y), (int) Mathf.Round(playerCoords.z));
 		pathToFlag = new pathFinding(0, 0, 0); // <-- Initial goal coords. TODO - Add a flag somewhere.
 
-		// Test code.
-		spawnEnemy((int) 4, (int) 0, (int) 4);
+		// Start a new wave.
+		startNextWave();
+
+//		// Test code.
+//		spawnEnemy((int) 4, (int) 0, (int) 4);
 
 	}
 	
@@ -52,6 +58,7 @@ public class EnemyController : MonoBehaviour {
 
 		// Update the pathfinding to the player if the player moves.
 		if((playerCoordsOld - player.transform.position).sqrMagnitude > 0.5f*0.5f) {
+			destroyAllEnemies = player.transform.position;
 			this.updatePlayerPathfinding();
 		}
 
@@ -100,6 +107,24 @@ public class EnemyController : MonoBehaviour {
 		pathToPlayer.updateGoalLocation((int) Mathf.Round(playerCoords.x), (int) Mathf.Round(playerCoords.y), (int) Mathf.Round(playerCoords.z));
 	}
 
+	// destroyAllEnemies method.
+	// Removes all enemies from the game.
+	public void destroyAllEnemies() {
+
+		// For all enemies.
+		foreach(GameObject enemy in enemyObjects) {
+			if(enemy != null) {
+				GameObject.Destroy(enemy); // Destroy the enemy.
+			}
+		}
+
+		// Clear the variables.
+		for(int i=0; i < enemyObjectSize; i++) {
+			enemyObjects[i] = null;
+		}
+		enemyObjectSize = 0;
+	}
+
 	// getPathToPlayer method.
 	// Returns the pathFinding object used to get to the player.
 	public static pathFinding getPathToPlayer() {
@@ -111,4 +136,44 @@ public class EnemyController : MonoBehaviour {
 	public static pathFinding getPathToFlag() {
 		return pathToFlag;
 	}
+
+
+	// ----------------------------------
+	// WaveSystem.
+	// ----------------------------------
+
+	// startNextWave method.
+	// Destroys all current enemies and spawns new enemies.
+	public void startNextWave() {
+		destroyAllEnemies(); // Just to make sure the next wave starts with an empty list.
+		wave++;
+		float a = 0f;
+		float b = 2f;
+		int c = 3;
+		amountOfEnemiesOnThisWave = (int) (a * (wave * wave) + b * wave + c);
+
+		// Spawn the amountOfEnemiesOnThisWave enemies on random positions on the sides of the grid.
+		for(int i=0; i < amountOfEnemiesOnThisWave; i++) {
+
+			// Stick to x or z border (50% chance). Pick the other value randomly.
+			int x;
+			int z;
+			if(Random.Range(0f, 1f) > 0.5) {
+				x = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize-1;
+				z = Random.Range(0f, WorldBlockManagement.getLevelSize-1);
+			} else {
+				z = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize-1;
+				x = Random.Range(0f, WorldBlockManagement.getLevelSize-1);
+			}
+
+			// Spawn the enemy.
+			spawnEnemy(x, WorldBlockManagement.getHighestBlockAt(x, z), z);
+		}
+
+	}
+
+
+
+
+
 }
