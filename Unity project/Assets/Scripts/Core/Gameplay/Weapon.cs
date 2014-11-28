@@ -9,14 +9,14 @@ public abstract class Weapon : MonoBehaviour {
 
 	public float BaseDamage{ get { return weaponType.BaseDamage(); } }
 
-	public AmmoTypes AmmoType { get{return weaponType.AmmoType();} }
+	public AmmoTypes AmmoType { get { return weaponType.AmmoType(); } }
 
-	public int ClipSize{ get{return weaponType.ClipSize();} }
+	public int ClipSize{ get { return weaponType.ClipSize(); } }
 
-	public float FireInterval{ get {return weaponType.FireInterval();} }
-	public float FireRate{ get{ return (FireInterval != 0) ? 1f/FireInterval : 0; } }
+	public float FireInterval{ get { return weaponType.FireInterval(); } }
+	public float FireRate{ get { return (FireInterval != 0) ? 1f/FireInterval : 0; } }
 
-	public float ReloadTime{ get{ return weaponType.ReloadTime();} }
+	public float ReloadTime{ get { return weaponType.ReloadTime(); } }
 	
 	public float Recoil{ get { return weaponType.Recoil(); } }
 
