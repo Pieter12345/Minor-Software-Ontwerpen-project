@@ -18,7 +18,7 @@ public abstract class Weapon : MonoBehaviour {
 
 	public float ReloadTime{ get{ return weaponType.ReloadTime();} }
 	
-	//public float Recoil = weaponType.Recoil();
+	public float Recoil{ get { return weaponType.Recoil(); } }
 
 	private int ammoInClip = 0;
 	public int AmmoInClip { 
