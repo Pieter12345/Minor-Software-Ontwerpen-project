@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour {
 
 		// Update the pathfinding to the player if the player moves.
 		if((playerCoordsOld - player.transform.position).sqrMagnitude > 0.5f*0.5f) {
-			destroyAllEnemies = player.transform.position;
+			playerCoordsOld = player.transform.position;
 			this.updatePlayerPathfinding();
 		}
 
@@ -159,11 +159,11 @@ public class EnemyController : MonoBehaviour {
 			int x;
 			int z;
 			if(Random.Range(0f, 1f) > 0.5) {
-				x = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize-1;
-				z = Random.Range(0f, WorldBlockManagement.getLevelSize-1);
+				x = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize()-1;
+				z = (int) (0.5f + Random.Range(0f, WorldBlockManagement.getLevelSize()-1));
 			} else {
-				z = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize-1;
-				x = Random.Range(0f, WorldBlockManagement.getLevelSize-1);
+				z = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize()-1;
+				x = (int) (0.5f + Random.Range(0f, WorldBlockManagement.getLevelSize()-1));
 			}
 
 			// Spawn the enemy.
