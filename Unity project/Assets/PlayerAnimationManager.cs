@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerAnimationManager : MonoBehaviour {
 
 	public Transform playerMesh;
@@ -20,11 +21,11 @@ public class PlayerAnimationManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(controller.velocity.y > epsilon){
-			anim.Play("Jump");
+			anim.CrossFade("Jump");
 		} else if(controller.velocity.magnitude > 1){
-			anim.Play("Run");
+			anim.CrossFade("Run");
 		} else {
-			anim.Play("IdleGun");
+			anim.CrossFade("IdleGun");
 		}
 	}
 

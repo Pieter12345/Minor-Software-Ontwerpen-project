@@ -517,7 +517,7 @@ MonoBehaviour:
   parentObject: {fileID: 1597395028}
   maxAmountOfEnemies: 1000
   player: {fileID: 1767831526}
-  EnemyPrefab: {fileID: 100000, guid: 97213aba132527d40b3a008c9cd393ca, type: 2}
+  EnemyPrefab: {fileID: 100004, guid: 493106cab63fb494c9f6a1fa49427110, type: 2}
 --- !u!1 &59695447
 GameObject:
   m_ObjectHideFlags: 0
@@ -8650,7 +8650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ba378ae5e249240b09c19080e407f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 3
+  maxForwardSpeed: 3.5
   maxBackwardsSpeed: 1.5
   maxSidewaysSpeed: 1.5
   maxVelocityChange: 2
@@ -8659,6 +8659,7 @@ MonoBehaviour:
   jumpHeight: 100
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
+  ySpeedJump: 1.60000002
 --- !u!143 &1767831530
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8686,7 +8687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMesh: {fileID: 800289720}
-  epsilon: .100000001
+  epsilon: .300000012
 --- !u!1 &1770361057
 GameObject:
   m_ObjectHideFlags: 0
@@ -9441,15 +9442,15 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1988667614
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400084, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988667613}
-  m_LocalRotation: {x: -1.17793981e-07, y: -7.95576014e-08, z: .707106888, w: .707106769}
-  m_LocalPosition: {x: .159999996, y: .130059198, z: -.00319441082}
+  m_LocalRotation: {x: -.213337064, y: .649932921, z: -.436290294, w: -.584572852}
+  m_LocalPosition: {x: .0154032214, y: -.196294174, z: .317211121}
   m_LocalScale: {x: .0999999866, y: -.529999971, z: .100000001}
   m_Children: []
   m_Father: {fileID: 621141090}

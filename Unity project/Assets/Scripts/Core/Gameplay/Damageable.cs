@@ -15,6 +15,7 @@ public class Damageable : MonoBehaviour {
 	}
 	
 	public void Damage(float baseAmount){
+		Debug.Log ("Damaged for: " + baseAmount/defense + " points");
 		hp.Damage(baseAmount/defense);
 	}
 

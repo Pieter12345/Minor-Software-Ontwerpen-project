@@ -24,7 +24,7 @@ public class SimpleGun : Weapon {
 					Debug.Log("Shot hit " + hit.transform.name);
 									
 					
-					Health hp = hit.transform.GetComponent<Health>();
+					Damageable hp = hit.transform.GetComponent<Damageable>();
 					if(hp!= null)
 						hp.Damage(BaseDamage);
 				}
