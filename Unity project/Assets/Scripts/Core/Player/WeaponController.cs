@@ -16,6 +16,11 @@ public class WeaponController : MonoBehaviour {
 			selectedWeapon = value;
 		}
 	}
+	public Transform SelectedWeaponTransform { 
+		get {
+			return weapons[selectedWeapon];
+		}
+	}
 
 	// Use this for initialization
 	void Start () {

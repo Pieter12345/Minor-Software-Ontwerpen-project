@@ -17,6 +17,8 @@ public abstract class Weapon : MonoBehaviour {
 	public float FireRate{ get{ return (FireInterval != 0) ? 1f/FireInterval : 0; } }
 
 	public float ReloadTime{ get{ return weaponType.ReloadTime();} }
+	
+	//public float Recoil = weaponType.Recoil();
 
 	private int ammoInClip = 0;
 	public int AmmoInClip { 

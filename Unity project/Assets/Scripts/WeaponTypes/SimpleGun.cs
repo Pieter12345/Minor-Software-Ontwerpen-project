@@ -12,7 +12,6 @@ public class SimpleGun : Weapon {
 			timeLastShot = Time.time;
 			if (AmmoInClip > 0){
 				// Add Recoil
-				//weaponScript.weaponType.Recoil();
 				camera.GetComponent<ShooterGameCamera>().Fired = true;
 				
 				TakeFromClip();
