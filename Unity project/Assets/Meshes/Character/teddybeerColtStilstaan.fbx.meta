@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 868501658d66ccf4bb67b904a748921c
+guid: e0fa96cb75e60c844a19aaca40d774ee
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -28,7 +28,7 @@ ModelImporter:
     100044: Armature|Bone.021
     100046: Armature|Bone.022
     100048: Armature|Bone.023
-    100050: Buik
+    100050: Sphere
     100052: Sphere.001
     100054: Sphere.002
     100056: Sphere.003
@@ -67,7 +67,7 @@ ModelImporter:
     400044: Armature|Bone.021
     400046: Armature|Bone.022
     400048: Armature|Bone.023
-    400050: Buik
+    400050: Sphere
     400052: Sphere.001
     400054: Sphere.002
     400056: Sphere.003
@@ -89,15 +89,15 @@ ModelImporter:
     4300010: Sphere.005
     4300012: Sphere.003
     4300014: Sphere.001
-    4300016: Buik
+    4300016: Sphere
     4300018: Sphere.002
     4300020: Sphere.007
     4300022: Sphere.008
     4300024: Sphere.010
-    7400000: Jump
+    7400000: IdleGun
     9500000: //RootNode
     11100000: //RootNode
-    13700000: Buik
+    13700000: Sphere
     13700002: Sphere.001
     13700004: Sphere.002
     13700006: Sphere.003
@@ -127,10 +127,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jump
-      takeName: Armature|ArmatureAction
+      name: IdleGun
+      takeName: Armature|runWithGun
       firstFrame: 0
-      lastFrame: 89
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -202,7 +202,7 @@ ModelImporter:
         weight: 1
       - path: Armature/Armature|Bone.006/Armature|Bone.007/Armature|Bone.008/Armature|Bone.009
         weight: 1
-      - path: Buik
+      - path: Sphere
         weight: 1
       - path: Sphere.001
         weight: 1
