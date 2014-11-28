@@ -155,7 +155,7 @@ public class pathFinding {
 		}
 		
 		if(x == this.goalCoords[0] && y == this.goalCoords[1] && z == this.goalCoords[2]) {
-			Debug.Log("At goal pos: x=" + x + " y=" + y + " z=" + z);
+//			Debug.Log("At goal pos: x=" + x + " y=" + y + " z=" + z);
 			return pos; // "AlreadyAtGoalPosition"
 		}
 		
@@ -184,7 +184,7 @@ public class pathFinding {
 		}
 
 		if(x == this.goalCoords[0] && y == this.goalCoords[1] && z == this.goalCoords[2]) {
-			Debug.Log("At goal pos: x=" + x + " y=" + y + " z=" + z);
+//			Debug.Log("At goal pos: x=" + x + " y=" + y + " z=" + z);
 			return "AlreadyAtGoalPosition";
 		}
 

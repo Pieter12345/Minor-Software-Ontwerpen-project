@@ -2872,7 +2872,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 176778362}
   - {fileID: 1988667614}
-  camera: {fileID: 0}
+  camera: {fileID: 1661318638}
 --- !u!114 &621141092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8654,12 +8654,13 @@ MonoBehaviour:
   maxBackwardsSpeed: 1.5
   maxSidewaysSpeed: 1.5
   maxVelocityChange: 2
-  gravity: 10
+  gravity: 9999999830000
   canJump: 1
   jumpHeight: 100
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
   ySpeedJump: 1.60000002
+  gravitation: 4
 --- !u!143 &1767831530
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8687,7 +8688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMesh: {fileID: 800289720}
-  epsilon: .300000012
+  epsilon: .00999999978
 --- !u!1 &1770361057
 GameObject:
   m_ObjectHideFlags: 0
@@ -9356,6 +9357,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1965255758
 GameObject:
   m_ObjectHideFlags: 0

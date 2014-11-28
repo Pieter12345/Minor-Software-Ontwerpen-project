@@ -56,7 +56,7 @@ public class EnemyAI : MonoBehaviour {
 //			Debug.Log(singleMoveGoalCoords[1]);
 //			Debug.Log(singleMoveGoalCoords[1] - (int) (pos[1]+0.5));
 			if(isJumpingMove) {
-				Debug.Log("DEBUG: Jump detected!");
+//				Debug.Log("DEBUG: Jump detected!");
 				yAcceleration = yInitialAcceleration;
 			} else {
 //				yAcceleration = 0;

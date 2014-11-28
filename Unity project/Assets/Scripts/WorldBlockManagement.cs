@@ -177,8 +177,9 @@ public class WorldBlockManagement : MonoBehaviour {
 			string textureFileName = "textureNotFoundTexture.png";
 			string shaderName = "Diffuse";
 			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
-			bool canWalkThroughLocal = false; // True if players and monsters can walk in this block.
-			bool blockInvisible = false; // To spawn invisible blocks with a hitbox/collider.
+			bool canWalkThroughLocal = false; // True if enemies can walk through this block.
+			bool blockInvisible = false; // To spawn invisible blocks.
+			bool hasCollider = true; // Disables collider but can still stop enemies.
 			switch(blockID) {
 			case 1: {
 				textureFileName = "stone.png";
@@ -204,8 +205,9 @@ public class WorldBlockManagement : MonoBehaviour {
 				canWalkThroughLocal = true;
 				break;
 			}
-			case 255: { // Invisible block with hitbox/collider.
+			case 255: { // Invisible block without hitbox/collider.
 				blockInvisible = true;
+				hasCollider = false;
 				break;
 			}
 			default: {
@@ -242,6 +244,7 @@ public class WorldBlockManagement : MonoBehaviour {
 			b.transform.parent = parent; // Puts the block object in a tab in the hierarchy window.
 			b.renderer.material.mainTexture = texture;
 			b.renderer.material.shader = shader;
+			b.transform.collider.enabled = hasCollider;
 			blockObjects[byteArrayIndex] = b;
 
 			// Adjust the shape of the block (allow half blocks).

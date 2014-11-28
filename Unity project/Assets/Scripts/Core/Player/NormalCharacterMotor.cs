@@ -9,9 +9,9 @@ public class NormalCharacterMotor : CharacterMotor {
 	private bool firstframe = true;
 
 	// Jumping/falling variables.
-	private float ySpeed        = 0f   ; // [m/s]
-	public float ySpeedJump = 1.2f; // [m/s] - The speed that will be set when the player jumps.
-	private float gravitation   = 9.8f; // [m/(s*s)]
+	private float ySpeed     = 0f  ; // [m/s]
+	public float ySpeedJump  = 1.2f; // [m/s] - The speed that will be set when the player jumps.
+	public float gravitation = 4.0f; // [m/(s*s)]
 
 	// Update is called once per frame
 	void Update () {
