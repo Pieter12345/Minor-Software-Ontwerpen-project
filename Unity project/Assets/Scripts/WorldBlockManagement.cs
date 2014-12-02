@@ -8,15 +8,12 @@ using System.IO;
 public class WorldBlockManagement : MonoBehaviour {
 
 	// Variables & Constants.
-	private static byte levelSize; // Length and width of the buildable floor plane.
-	private static byte levelHeight; // Height in which can be built.
+	private static int levelSize; // Length and width of the buildable floor plane.
+	private static int levelHeight; // Height in which can be built.
 	private static byte[] blockData; // The array of blockData.
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	private static byte[] heightMap; // Heights for every (x,z).
 	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
-	
-//	public Object blockPrefab; // Drag the block prefab to this field. (Default: Block)
-//	private static Object block;
 
 	public Transform parentObject; // The (empty) parent GameObject to create new blocks in.
 	private static Transform parent; // Block objects will be created as childs of this GameObject. (Default: World/Blocks)
@@ -25,10 +22,10 @@ public class WorldBlockManagement : MonoBehaviour {
 	void Awake () {
 
 		// Load the default level to variables.
-		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
+		generateNewLevel(100, 30);
+//		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
 
-		// Make the blockPrefab and parentObject static.
-//		block = this.blockPrefab;
+		// Make the parentObject static.
 		parent = this.parentObject;
 
 		// Create a floor plane with the size of the loaded level.
@@ -77,6 +74,33 @@ public class WorldBlockManagement : MonoBehaviour {
 
 	}
 
+	// generateNewLevel method.
+	// Generates a new empty level with the given properties.
+	private static void generateNewLevel(int levelSize1, int levelHeight1) {
+
+		// Initialize empty level.
+		levelSize = levelSize1;
+		levelHeight = levelHeight1;
+		int arraySize = levelSize * levelSize * levelHeight;
+		blockData = new byte[arraySize];
+		for(int i=0; i < arraySize; i++) {
+			blockData[i] = 0;
+		}
+		blockObjects = new GameObject[arraySize];
+		
+		// Create an empty heightmap.
+		heightMap = new byte[levelSize * levelSize];
+		for(int i=0; i < heightMap.Length; i++) {
+			heightMap[i] = 0;
+		}
+		
+		// Initialize canWalkThrough property.
+		canWalkThrough = new bool[levelSize * levelSize * levelHeight];
+		for(int i=0; i < canWalkThrough.Length; i++) {
+			canWalkThrough[i] = true;
+		}
+	}
+	
 	// loadLevelFromFile method.
 	// Loads the levelSize, levelHeight and blockData from file.
 	private static void loadLevelFromFile(string fileName) {
@@ -395,13 +419,13 @@ public class WorldBlockManagement : MonoBehaviour {
 
 	// getLevelSize method.
 	// Returns the level size.
-	public static byte getLevelSize() {
+	public static int getLevelSize() {
 		return levelSize;
 	}
 
 	// getLevelHeight method.
 	// Returns the level size.
-	public static byte getLevelHeight() {
+	public static int getLevelHeight() {
 		return levelHeight;
 	}
 

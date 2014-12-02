@@ -155,7 +155,7 @@ public class EnemyController : MonoBehaviour {
 		float a = 0f;
 		float b = 2f;
 		int c = 3;
-		int amountOfEnemiesOnThisWave = 1000; //(int) (a * (wave * wave) + b * wave + c);
+		int amountOfEnemiesOnThisWave = (int) (a * (wave * wave) + b * wave + c);
 
 		// Spawn the amountOfEnemiesOnThisWave enemies on random positions on the sides of the grid.
 		for(int i=0; i < amountOfEnemiesOnThisWave; i++) {
@@ -172,7 +172,7 @@ public class EnemyController : MonoBehaviour {
 			}
 
 			// Spawn the enemy.
-			spawnEnemy(x, WorldBlockManagement.getHighestBlockAt(x, z)+1, z);
+			spawnEnemy(x, WorldBlockManagement.getHighestBlockAt(x, z), z);
 		}
 
 	}
@@ -197,7 +197,11 @@ public class EnemyController : MonoBehaviour {
 		Debug.Log("Enemies left: " + enemiesLeft);
     }
 
-
+	// FixedUpdate method.
+	// Runs every fixed amount of time.
+	void FixedUpdate() {
+		pathToPlayer.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
+	}
 
 
 
