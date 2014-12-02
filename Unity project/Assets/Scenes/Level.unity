@@ -8723,7 +8723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_IsActive
@@ -9289,7 +9289,7 @@ MonoBehaviour:
   jumpHeight: 100
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
-  ySpeedJump: 1.60000002
+  ySpeedJump: .800000012
   gravitation: 4
 --- !u!143 &1767831530
 CharacterController:
@@ -9917,7 +9917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1937695143
 Transform:
   m_ObjectHideFlags: 0

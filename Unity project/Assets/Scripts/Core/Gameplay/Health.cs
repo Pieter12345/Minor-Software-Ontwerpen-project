@@ -14,8 +14,10 @@ public class Health : MonoBehaviour {
 
 	void Update(){
 		if (hp <= 0){
-			if(DestroyOnDeath)
-				Destroy(gameObject);
+			if(DestroyOnDeath) {
+				DestroyImmediate(gameObject);
+				EnemyController.refreshEnemiesLeft(); // Call this after the Destroy.
+            }
 		}
 	}
 
