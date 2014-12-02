@@ -28,13 +28,18 @@ public class EnemyController : MonoBehaviour {
 	private Vector3 playerCoordsOld = new Vector3(0f, 0f, 0f); // Used to check if the player has moved.
 
 	public Object EnemyPrefab; // The prefab of the enemy.
+	private static Object EnemyPrefabStatic;
 
-	private int wave = 0;
-	private int amountOfEnemiesOnThisWave = 0; // The initial spawned amount of enemies on the current wave.
+	private static int wave = 0;
+//	private int amountOfEnemiesOnThisWave = 0; // The initial spawned amount of enemies on the current wave.
+//  private int enemiesKilledOnThisWave = 0;
 	
 
 	// Use this for initialization.
 	void Start () {
+		EnemyPrefabStatic = EnemyPrefab; // Create static reference.
+
+
 		parent = this.parentObject;
 		enemyObjects = new GameObject[maxAmountOfEnemies];
 
@@ -87,11 +92,11 @@ public class EnemyController : MonoBehaviour {
 
 	// spawnEnemy method.
 	// Spawns an enemy.
-	public void spawnEnemy(int x, int y, int z) {
+	public static void spawnEnemy(int x, int y, int z) {
 
 		// Create the capsule and store a reference to it.
 //		enemy = GameObject.CreatePrimitive(PrimitiveType.Capsule); // Create a new capsule object.
-		enemy = (GameObject) Instantiate(EnemyPrefab); // Create a new enemy object.
+		enemy = (GameObject) Instantiate(EnemyPrefabStatic); // Create a new enemy object.
 		enemy.transform.position = new Vector3(x, y, z); // Put the enemy in position.
 		enemy.transform.parent = parent; // Puts the enemy object in a tab in the hierarchy window.
 //		enemy.renderer.material.mainTexture = texture;
@@ -109,7 +114,7 @@ public class EnemyController : MonoBehaviour {
 
 	// destroyAllEnemies method.
 	// Removes all enemies from the game.
-	public void destroyAllEnemies() {
+	public static void destroyAllEnemies() {
 
 		// For all enemies.
 		foreach(GameObject enemy in enemyObjects) {
@@ -144,13 +149,13 @@ public class EnemyController : MonoBehaviour {
 
 	// startNextWave method.
 	// Destroys all current enemies and spawns new enemies.
-	public void startNextWave() {
+	public static void startNextWave() {
 		destroyAllEnemies(); // Just to make sure the next wave starts with an empty list.
 		wave++;
 		float a = 0f;
 		float b = 2f;
 		int c = 3;
-		amountOfEnemiesOnThisWave = (int) (a * (wave * wave) + b * wave + c);
+		int amountOfEnemiesOnThisWave = 1000; //(int) (a * (wave * wave) + b * wave + c);
 
 		// Spawn the amountOfEnemiesOnThisWave enemies on random positions on the sides of the grid.
 		for(int i=0; i < amountOfEnemiesOnThisWave; i++) {
@@ -159,18 +164,38 @@ public class EnemyController : MonoBehaviour {
 			int x;
 			int z;
 			if(Random.Range(0f, 1f) > 0.5) {
-				x = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize()-1;
-				z = (int) (0.5f + Random.Range(0f, WorldBlockManagement.getLevelSize()-1));
+				x = (Random.Range(0f, 1f) > 0.5)? 1 : WorldBlockManagement.getLevelSize()-2;
+				z = (int) (1f + Random.Range(0f, WorldBlockManagement.getLevelSize()-2));
 			} else {
-				z = (Random.Range(0f, 1f) > 0.5)? 0 : WorldBlockManagement.getLevelSize()-1;
-				x = (int) (0.5f + Random.Range(0f, WorldBlockManagement.getLevelSize()-1));
+				z = (Random.Range(0f, 1f) > 0.5)? 1 : WorldBlockManagement.getLevelSize()-2;
+				x = (int) (1f + Random.Range(0f, WorldBlockManagement.getLevelSize()-2));
 			}
 
 			// Spawn the enemy.
-			spawnEnemy(x, WorldBlockManagement.getHighestBlockAt(x, z), z);
+			spawnEnemy(x, WorldBlockManagement.getHighestBlockAt(x, z)+1, z);
 		}
 
 	}
+    
+    // refreshEnemiesLeft method.
+    // Updates the amount of enemies left. Call this when an enemy is destroyed.
+    public static void refreshEnemiesLeft() {
+        
+        // Count the amount of enemies left.
+        int enemiesLeft = 0;
+        for(int i=0; i < enemyObjectSize; i++) {
+            if(enemyObjects[i] != null) {
+                enemiesLeft++;
+            }
+        }
+        
+        // Spawn a new wave if there are no enemies left.
+        if(enemiesLeft == 0) {
+            startNextWave();
+        }
+
+		Debug.Log("Enemies left: " + enemiesLeft);
+    }
 
 
 
