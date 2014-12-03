@@ -8748,7 +8748,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400046, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8756,7 +8756,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8788,7 +8788,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 80296e8b18e489a4cbc9a0bb2a244b78, type: 3}
       propertyPath: m_IsActive
@@ -9352,14 +9352,11 @@ MonoBehaviour:
   maxForwardSpeed: 3.5
   maxBackwardsSpeed: 1.5
   maxSidewaysSpeed: 1.5
-  maxVelocityChange: 2
-  gravity: 9999999830000
-  canJump: 1
-  jumpHeight: 100
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
   ySpeedJump: .800000012
   gravitation: 4
+  HorizontalSpeedMultiplierWhenInAir: .5
 --- !u!143 &1767831530
 CharacterController:
   m_ObjectHideFlags: 0
@@ -9986,7 +9983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1937695143
 Transform:
   m_ObjectHideFlags: 0
@@ -9994,7 +9991,7 @@ Transform:
   m_PrefabInternal: {fileID: 1702683777}
   m_GameObject: {fileID: 1937695142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46, y: 0, z: 64}
+  m_LocalPosition: {x: 80, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1699866866}

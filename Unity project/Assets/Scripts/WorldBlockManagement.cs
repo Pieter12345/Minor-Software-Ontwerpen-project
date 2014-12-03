@@ -31,6 +31,9 @@ public class WorldBlockManagement : MonoBehaviour {
 		// Create a floor plane with the size of the loaded level.
 		createGroundPlane();
 
+		// Blockify all already-in-scene objects with invisible blocks.
+		blockifyWorld();
+
 		// Load the level to the scene (Does not clear an old loaded level).
 		int byteArrayIndex = 0;
 		for(int y=0; y < levelHeight; y++) {
@@ -177,6 +180,11 @@ public class WorldBlockManagement : MonoBehaviour {
 			canWalkThrough[byteArrayIndex] = true;
 		}
 		else {
+			if(blockID == 255) { // PathFinding block (Enemies cant walk here, no physical block).
+				blockObjects[byteArrayIndex] = null;
+				canWalkThrough[byteArrayIndex] = false;
+				return;
+			}
 
 			// Update the heightmap.
 			if(blockID != 0) { // Block placed.
@@ -229,11 +237,11 @@ public class WorldBlockManagement : MonoBehaviour {
 				canWalkThroughLocal = true;
 				break;
 			}
-			case 255: { // Invisible block without hitbox/collider.
-				blockInvisible = true;
-				hasCollider = false;
-				break;
-			}
+//			case 255: { // Invisible block without hitbox/collider.
+//				blockInvisible = true;
+//				hasCollider = false;
+//				break;
+//			}
 			default: {
 				Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with an unknown blockID: " + blockID + ". Setting the block with textureNotFoundTexture and Diffuse shader.");
 				break;
@@ -440,8 +448,8 @@ public class WorldBlockManagement : MonoBehaviour {
 		int Zmax = Mathf.Max(z1, z2);
 
 		for(int x = Xmin; x <= Xmax; x++) {
-			for(int y = Ymin; y <= Ymax; y++) {
-				for(int z = Zmin; z <= Zmax; z++) {
+			for(int z = Zmin; z <= Zmax; z++) {
+				for(int y = Ymin; y <= Ymax; y++) {
 					setBlockAt(x, y, z, blockID);
 				}
 			}
@@ -452,6 +460,24 @@ public class WorldBlockManagement : MonoBehaviour {
 		GameObject groundPlane = GameObject.CreatePrimitive(PrimitiveType.Plane); // Create a new plane object.
 		groundPlane.transform.Translate(new Vector3(levelSize/2, -0.01f, levelSize/2));
 		groundPlane.transform.localScale = new Vector3(levelSize/10f, 0f, levelSize/10f);
+	}
+
+	// blockifyWorld Method.
+	// Blockifies all objects which have a collider. This is used to indicate where objects are for pathFinding.
+	private void blockifyWorld() {
+		for(int x = 0; x < levelSize; x++) {
+			for(int z = 0; z < levelSize; z++) {
+				for(int y = 0; y < levelHeight-1; y++) {
+					if(Physics.CheckSphere(new Vector3(x+0.5f, y+0.5f, z+0.5f), 0.49f)) {
+						if(getBlockAt(x, y, z) == 0) {
+							setBlockAt(x, y, z, 255); // Invisible block.
+						}
+					}
+				}
+			}
+		}
+
+
 	}
 
 	// Quote to copy:   """""""
