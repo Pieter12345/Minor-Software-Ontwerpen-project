@@ -12,6 +12,7 @@ public class NormalCharacterMotor : CharacterMotor {
 	private float ySpeed     = 0f  ; // [m/s]
 	public float ySpeedJump  = 1.2f; // [m/s] - The speed that will be set when the player jumps.
 	public float gravitation = 4.0f; // [m/(s*s)]
+	public float HorizontalSpeedMultiplierWhenInAir = 0.5f; // Slows down the player in the x-z plane when jumping/falling.
 
 	// Update is called once per frame
 	void Update () {
@@ -49,17 +50,18 @@ public class NormalCharacterMotor : CharacterMotor {
 			velocity = Vector3.zero;
 			firstframe = false;
 		}
-		if (OnGround) velocity -= Vector3.Project(velocity, transform.up);
-		
+
+		velocity -= Vector3.Project((new Vector3(velocity.x, 0, velocity.z)), transform.up);
+
 		// Calculate how fast we should be moving
 		Vector3 movement = velocity;
-		if (OnGround) {
-			// Apply a force that attempts to reach our target velocity
-			Vector3 velocityChange = (desiredVelocity - velocity);
-			if (velocityChange.magnitude > maxVelocityChange) {
-				velocityChange = velocityChange.normalized * maxVelocityChange;
-			}
-			movement += velocityChange;
+		
+		// Apply a force that attempts to reach our target velocity
+		Vector3 velocityChange = (desiredVelocity - velocity);
+		movement += new Vector3(velocityChange.x, 0f, velocityChange.z); // Ignore height velocity. Jumping is handled somewhere else.
+		if(velocityChange.y > 1f || velocityChange.y < -1f) {
+			movement.x *= HorizontalSpeedMultiplierWhenInAir;
+			movement.z *= HorizontalSpeedMultiplierWhenInAir;
 		}
 
 

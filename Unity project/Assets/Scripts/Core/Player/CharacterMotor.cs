@@ -6,11 +6,6 @@ public abstract class CharacterMotor : MonoBehaviour {
 	public float maxForwardSpeed = 1.5f;
 	public float maxBackwardsSpeed = 1.5f;
 	public float maxSidewaysSpeed = 1.5f;
-	public float maxVelocityChange = 0.2f;
-	
-	public float gravity = 10.0f;
-	public bool canJump = true;
-	public float jumpHeight = 1.0f;
 	
 	public Vector3 forwardVector = Vector3.forward;
 	protected Quaternion alignCorrection;
