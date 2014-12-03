@@ -2322,6 +2322,7 @@ MonoBehaviour:
   m_LightmapIndex: -1
   m_LightmapSize: 1024
   m_DrawTreesAndFoliage: 1
+  m_CollectDetailPatches: 1
   m_MaterialTemplate: {fileID: 0}
 --- !u!4 &196004923
 Transform:
@@ -4511,6 +4512,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &800289719
 GameObject:
   m_ObjectHideFlags: 0
@@ -9869,14 +9871,11 @@ MonoBehaviour:
   maxForwardSpeed: 3.5
   maxBackwardsSpeed: 1.5
   maxSidewaysSpeed: 1.5
-  maxVelocityChange: 2
-  gravity: 9999999830000
-  canJump: 1
-  jumpHeight: 100
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
   ySpeedJump: .800000012
   gravitation: 4
+  HorizontalSpeedMultiplierWhenInAir: .5
 --- !u!143 &1767831530
 CharacterController:
   m_ObjectHideFlags: 0
