@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PauseController.cs" />
+     <Compile Include="Assets\PickUpHandler.cs" />
      <Compile Include="Assets\PlayerAnimationManager.cs" />
      <Compile Include="Assets\RuntimeParenting.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\BindPosition.cs" />
@@ -67,6 +69,7 @@
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleGun.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
      <Compile Include="Assets\Scripts\pathFinding.cs" />
+     <Compile Include="Assets\WeaponPickUp.cs" />
      <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 3.shader" />
