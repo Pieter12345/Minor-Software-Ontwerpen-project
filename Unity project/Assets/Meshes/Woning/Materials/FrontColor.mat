@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FrontColor
-  m_Shader: {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
+  m_Shader: {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:

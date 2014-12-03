@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Weapon.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\WeaponStats.cs" />
+     <Compile Include="Assets\Scripts\Core\PauseController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\FireController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleGun.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
      <Compile Include="Assets\Scripts\pathFinding.cs" />
+     <Compile Include="Assets\WeaponPickUp.cs" />
      <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 3.shader" />

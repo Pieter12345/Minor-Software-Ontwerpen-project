@@ -55,21 +55,28 @@ public class WeaponController : MonoBehaviour {
 	void Update () {
 		wrapSelectedWeaponIndex();
 		foreach (Transform w in weapons){
-			w.gameObject.SetActive(w.Equals(weapons[selectedWeapon]));
+			if (hasWeapon)
+				w.gameObject.SetActive(w.Equals(weapons[selectedWeapon]));
+			else
+				w.gameObject.SetActive(false);
 		}
 	}
 
 	public void SelectNextWeaponUp(){
-		while (!weaponsInInventory[(int) SelectedWeaponType]){
-			selectedWeapon++;
-			wrapSelectedWeaponIndex();
+		if(hasWeapon){
+			while (!weaponsInInventory[(int) SelectedWeaponType]){
+				selectedWeapon++;
+				wrapSelectedWeaponIndex();
+			}
 		}
 	}
 
 	public void SelectNextWeaponDown(){
-		while (!weaponsInInventory[(int) SelectedWeaponType]){
-			selectedWeapon--;
-			wrapSelectedWeaponIndex();
+		if(hasWeapon){
+			while (!weaponsInInventory[(int) SelectedWeaponType]){
+				selectedWeapon--;
+				wrapSelectedWeaponIndex();
+			}
 		}
 	}
 
