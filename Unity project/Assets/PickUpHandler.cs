@@ -11,6 +11,7 @@ public class PickUpHandler : MonoBehaviour {
 	}
 
 	public void PickUp(WeaponStats w){
+
 		weaponController.PickUpWeapon(w);
 	}
 
