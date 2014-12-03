@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PauseController.cs" />
      <Compile Include="Assets\PickUpHandler.cs" />
      <Compile Include="Assets\PlayerAnimationManager.cs" />
      <Compile Include="Assets\RuntimeParenting.cs" />
@@ -59,6 +58,7 @@
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Weapon.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\WeaponStats.cs" />
+     <Compile Include="Assets\Scripts\Core\PauseController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\FireController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
