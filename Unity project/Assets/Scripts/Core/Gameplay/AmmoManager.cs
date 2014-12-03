@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(WeaponController))]
 public class AmmoManager : MonoBehaviour {
 
-	WeaponController contr;
+//	WeaponController contr;
 	AmmoPool[] pools;
 
 	void Awake(){
@@ -19,7 +19,7 @@ public class AmmoManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		contr = GetComponent<WeaponController>();
+//		contr = GetComponent<WeaponController>();
 	}
 	
 	public void TakeAmmo(AmmoTypes type, int amount){

@@ -3017,7 +3017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bece8d1d0f9d4479611ed7dc7424e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 1
+  weaponType: 0
+  amountOfAmmo: 10
 --- !u!23 &591644445
 Renderer:
   m_ObjectHideFlags: 0
