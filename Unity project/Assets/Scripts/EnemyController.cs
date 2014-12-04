@@ -203,6 +203,13 @@ public class EnemyController : MonoBehaviour {
 		pathToPlayer.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 	}
 
+	// updatePathFinding method.
+	// Updates the pathfinding to the player and flag. This should be called when the scene changes (Block places/breaks).
+	public static void updatePathFinding() {
+		pathToPlayer.updatePathFinding();
+		pathToFlag.updatePathFinding();
+	}
+
 
 
 }

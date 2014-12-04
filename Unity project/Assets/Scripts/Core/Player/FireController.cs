@@ -80,6 +80,7 @@ public class FireController : MonoBehaviour {
 		                  Mathf.FloorToInt(transBlock.position.y),
 		                  Mathf.FloorToInt(transBlock.position.z),
 		                  (byte) selectedBlock);
+		EnemyController.updatePathFinding();
 	}
 
 	void OnDestroyBlock(){
@@ -100,6 +101,7 @@ public class FireController : MonoBehaviour {
 			                  Mathf.FloorToInt(destroyPosition.y),
 			                  Mathf.FloorToInt(destroyPosition.z),
 			                  (byte)0);
+			EnemyController.updatePathFinding();
 		}
 	}
 

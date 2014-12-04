@@ -15,16 +15,14 @@ public class EnemyAI : MonoBehaviour {
 
 	private string status = "ready";
 	private Vector3 singleMoveGoalCoords; // Goal coords of each step.
-	private bool isJumpingMove; // True if the move from current to singleMoveGoal has to be achieved with a jump.
 
 	private float acceptableErrorDistance = 0.1f; // Distance from singleMoveGoal which is acceptable to stop at.
 	private float speed = 5f/3.6f; // Speed in m/s.
 
 	// Jumping variables.
-	private float yInitialAcceleration = 6f; // [m/(s*s)] This represents the jumping power.
 	private float gravitation = 9.81f; // [m/(s*s)] Gravitation constant (average 9.81 on earth).
-	private float yAcceleration; // [m/(s*s)] Up is positive.
 	private float ySpeed; // Up is positive.
+	private float yInitialSpeed = 6f; // [m/s] This represents the jumping force.
 
 	// Runs when this enemy spawns.
 	void Start () {
@@ -50,18 +48,11 @@ public class EnemyAI : MonoBehaviour {
 		case "ready": {
 			// Find a new goal position to walk to (one square each time).
 			singleMoveGoalCoords = pathToPlayer.getNextMoveCoords((int) Mathf.Round(pos[0]), (int) Mathf.Round(pos[1]), (int) Mathf.Round(pos[2]));
-//			singleMoveGoalCoords.x += 0.5f; // Set goal to the middle of a block instead of the corner.
-//			singleMoveGoalCoords.z += 0.5f; // Set goal to the middle of a block instead of the corner.
-			isJumpingMove = (singleMoveGoalCoords[1] - (int) Mathf.Round(pos[1])) == 1;
-//			Debug.Log(singleMoveGoalCoords[1]);
-//			Debug.Log(singleMoveGoalCoords[1] - (int) (pos[1]+0.5));
+			bool isJumpingMove = (singleMoveGoalCoords[1] - (int) Mathf.Round(pos[1])) == 1; // True if the move from current to singleMoveGoal has to be achieved with a jump.
 			if(isJumpingMove) {
 //				Debug.Log("DEBUG: Jump detected!");
-				yAcceleration = yInitialAcceleration;
-			} else {
-//				yAcceleration = 0;
+				ySpeed = yInitialSpeed;
 			}
-//			ySpeed = 0;
 			status = "walking";
 			break;
 		}
@@ -84,29 +75,29 @@ public class EnemyAI : MonoBehaviour {
 			// Determine the new y position.
 			float yPosNew;
 			// If y is an int value AND the enemy can stand here, set the acceleration and speed to 0 if they were negative.
-			if(pos[1] % 1 == 0 && WorldBlockManagement.canStandHere((int) Mathf.Round(pos[0]), (int) Mathf.Round(pos[1]), (int) Mathf.Round(pos[2]))) {
-				if(yAcceleration < 0) { yAcceleration = 0; }
+			if(pos[1] % 1 == 0 && WorldBlockManagement.canStandHere(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2]))) {
 				if(ySpeed < 0) { ySpeed = 0; }
 			}
 
 			// Update y physics.
 			yPosNew = pos[1] + ySpeed * Time.deltaTime;
-			ySpeed += yAcceleration * Time.deltaTime;
-			yAcceleration -= gravitation * Time.deltaTime;
+			ySpeed -= gravitation * Time.deltaTime;
 
 			// Snap the new y position to a block if its very close to it if the enemy is falling.
-			if(yPosNew % 1f < 0.2f && ySpeed <= 0) { yPosNew = Mathf.Round(yPosNew); }
+			if(yPosNew % 1f < 0.2f && ySpeed <= 0 && WorldBlockManagement.canStandHere(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2]))) { yPosNew = Mathf.Round(yPosNew); }
 
-//			Debug.Log("DEBUG: ySpeed = " + ySpeed);
+			// Bugfix: Teleport enemies to the highest block at their x-z position if they fall out of the scene.
+			if(yPosNew < -0.5f) { yPosNew = WorldBlockManagement.getHighestBlockAt(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[2])); }
 
 			// Move the enemy (y already depends on time).
 //			Debug.Log("Enemy move called with dx/dy/dx: " + (((dx0dzUnit * speed) * Time.deltaTime) + new Vector3(0f, yPosNew-pos[1], 0f)));
 			Vector3 x0z = new Vector3(pos[0], 0f, pos[2]);
-			enemyObject.transform.position = x0z + ((dx0dzUnit * speed) * Time.deltaTime) + new Vector3(0f, yPosNew, 0f);
+			enemyObject.transform.position = x0z + ((dx0dzUnit * speed) * Time.deltaTime) + yPosNew * transform.up;
 
 			break;
 		}
 		}
 
 	}
+	
 }
