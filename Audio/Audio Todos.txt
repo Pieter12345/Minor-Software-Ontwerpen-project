@@ -1,3 +1,19 @@
 TODO:
 
 lijst van benodigde geluiden:
+
+Ap
+> plaatsen van blokjes en ze verwijderen
+> menu geluiden (maken van keuze)
+> achtergrond geluid (8-bits?)
+> spring
+> low health-bar (indien we het gaan gebruiken) soort van hijg geluid?
+> afbreken van blokjes door enemy?
+> afbreken van deuren en ramen
+> reparen van deuren en ramen
+> soort error geluid indien er geen blokjes geplaatst kan worden
+> Jaws geluid bij benaderen van enemy op the flag
+> kind die krijst wanneer die wakker is
+> als een enemy spawnt vanuit de wc een flush geluid (niet reeel maar wel grappig :P)
+> switchen van wapens en blokken
+> pickup objects
