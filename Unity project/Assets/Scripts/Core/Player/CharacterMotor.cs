@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class CharacterMotor : MonoBehaviour {
 	
-	public float maxForwardSpeed = 1.5f;
+	public float maxForwardSpeed = 1.5f; // While walking.
 	public float maxBackwardsSpeed = 1.5f;
 	public float maxSidewaysSpeed = 1.5f;
 	

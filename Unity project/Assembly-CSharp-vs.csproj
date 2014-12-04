@@ -49,6 +49,7 @@
      <Compile Include="Assets\PickUpHandler.cs" />
      <Compile Include="Assets\PlayerAnimationManager.cs" />
      <Compile Include="Assets\RuntimeParenting.cs" />
+     <Compile Include="Assets\Scripts\Animation\SkyScrollerScript.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\BindPosition.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoManager.cs" />

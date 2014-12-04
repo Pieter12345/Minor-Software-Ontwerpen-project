@@ -7,9 +7,6 @@ public class PlatformCharacterController : MonoBehaviour {
 	
 	private CharacterMotor motor;
 	
-	public float walkMultiplier = 0.5f;
-	public bool walkAsDefault = false;
-	
 	// Use this for initialization
 	void Start () {
 		motor = GetComponent(typeof(CharacterMotor)) as CharacterMotor;
@@ -31,12 +28,6 @@ public class PlatformCharacterController : MonoBehaviour {
 		
 		// Make input vector relative to Character's own orientation
 		directionVector = Quaternion.Inverse(transform.rotation) * directionVector;
-		
-		if (walkMultiplier!=1) {
-			if ( (Input.GetKey("left shift") || Input.GetKey("right shift") || Input.GetButton("Sneak")) != walkAsDefault ) {
-				directionVector *= walkMultiplier;
-			}
-		}
 		
 		// Apply direction
 		motor.desiredMovementDirection = directionVector;

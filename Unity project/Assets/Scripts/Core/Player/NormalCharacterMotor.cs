@@ -14,6 +14,10 @@ public class NormalCharacterMotor : CharacterMotor {
 	public float gravitation = 4.0f; // [m/(s*s)]
 	public float HorizontalSpeedMultiplierWhenInAir = 0.5f; // Slows down the player in the x-z plane when jumping/falling.
 
+	public float sneakMultiplier = 0.5f;
+	public float sprintMultiplier = 2f;
+
+
 	// Update is called once per frame
 	void Update () {
 		if (Time.deltaTime == 0 || Time.timeScale == 0)
@@ -62,6 +66,18 @@ public class NormalCharacterMotor : CharacterMotor {
 		if(velocityChange.y > 1f || velocityChange.y < -1f) {
 			movement.x *= HorizontalSpeedMultiplierWhenInAir;
 			movement.z *= HorizontalSpeedMultiplierWhenInAir;
+		}
+		
+		// Sneaking.
+		if(Input.GetKey("left ctrl") || Input.GetButton("Sneak")) {
+			movement.x *= sneakMultiplier;
+			movement.z *= sneakMultiplier;
+		}
+		
+		// Sprinting.
+		if(Input.GetKey("left shift") || Input.GetButton("Sprint")) {
+			movement.x *= sprintMultiplier;
+			movement.z *= sprintMultiplier;
 		}
 
 
