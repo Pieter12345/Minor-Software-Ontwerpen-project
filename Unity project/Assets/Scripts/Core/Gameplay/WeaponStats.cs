@@ -35,7 +35,7 @@ public static class WeaponStatsExtension{
 		switch(w){
 		case WeaponStats.PISTOL:	foo = 1f;	break;
 		case WeaponStats.RIFLE:		foo = 1.2f;	break;
-		case WeaponStats.SHOTGUN:	foo = 0.2f;	break;
+		case WeaponStats.SHOTGUN:	foo = 2f;	break;
 		}
 		return foo;
 	}

@@ -64,19 +64,19 @@ public class WeaponController : MonoBehaviour {
 
 	public void SelectNextWeaponUp(){
 		if(hasWeapon){
-			while (!weaponsInInventory[(int) SelectedWeaponType]){
+			do{
 				selectedWeapon++;
 				wrapSelectedWeaponIndex();
-			}
+			}while (!weaponsInInventory[(int) SelectedWeaponType]);
 		}
 	}
 
 	public void SelectNextWeaponDown(){
 		if(hasWeapon){
-			while (!weaponsInInventory[(int) SelectedWeaponType]){
+			do{
 				selectedWeapon--;
 				wrapSelectedWeaponIndex();
-			}
+			}while (!weaponsInInventory[(int) SelectedWeaponType]);
 		}
 	}
 
@@ -96,8 +96,11 @@ public class WeaponController : MonoBehaviour {
 	}
 
 	public void PickUpWeapon(WeaponStats w){
-		hasWeapon = true;
 		weaponsInInventory[(int) w] = true;
+		if(!hasWeapon){	
+			hasWeapon = true;
+			SelectNextWeaponUp();
+		}
 	}
 
 	public void DropWeapon(WeaponStats w){
