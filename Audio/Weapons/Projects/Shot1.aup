@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Shot1_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="1378.1250000000" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
+	<tags>
+		<tag name="ARTIST" value="AB van Ramshorst"/>
+		<tag name="YEAR" value="2014"/>
+		<tag name="ALBUM" value="TedDyfence"/>
+	</tags>
+	<wavetrack name="Audiospoor" channel="0" linked="1" mute="0" solo="0" height="384" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="17760">
+				<waveblock start="0">
+					<simpleblockfile filename="e000046e.au" len="17760" min="-0.048665" max="0.070864" rms="0.004037"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.346848072562" val="0.989417970181"/>
+				<controlpoint t="0.402716088435" val="0.222222223878"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Audiospoor" channel="1" linked="0" mute="0" solo="0" height="384" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="17760">
+				<waveblock start="0">
+					<simpleblockfile filename="e00007e9.au" len="17760" min="-0.0486" max="0.071016" rms="0.004052"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.346848072562" val="0.989417970181"/>
+				<controlpoint t="0.402716088435" val="0.222222223878"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>

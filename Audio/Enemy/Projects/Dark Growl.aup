@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Dark Growl_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="2.0897959184" vpos="0" h="0.0000000000" zoom="86.1328125000" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
+	<tags>
+		<tag name="ALBUM" value="TedDyfence"/>
+		<tag name="TITLE" value="Dark Growl"/>
+		<tag name="YEAR" value="2014"/>
+		<tag name="ARTIST" value="AB van Ramshorst"/>
+	</tags>
+	<wavetrack name="Audiospoor" channel="0" linked="1" mute="0" solo="0" height="152" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="92160">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000985.au" len="92160" min="-0.014912" max="0.009234" rms="0.001223"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.000005000000" val="0.068493150175"/>
+				<controlpoint t="0.150929705215" val="1.000000000000"/>
+				<controlpoint t="1.300317460317" val="1.000000000000"/>
+				<controlpoint t="2.089790918367" val="0.041095890105"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Audiospoor" channel="1" linked="0" mute="0" solo="0" height="148" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="92160">
+				<waveblock start="0">
+					<simpleblockfile filename="e00005fc.au" len="92160" min="-0.014944" max="0.008203" rms="0.001234"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.000005000000" val="0.068493150175"/>
+				<controlpoint t="0.150929705215" val="1.000000000000"/>
+				<controlpoint t="1.300317460317" val="1.000000000000"/>
+				<controlpoint t="2.089790918367" val="0.041095890105"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>
