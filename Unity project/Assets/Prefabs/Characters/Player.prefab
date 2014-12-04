@@ -1459,14 +1459,11 @@ MonoBehaviour:
   maxForwardSpeed: 3.5
   maxBackwardsSpeed: 1.5
   maxSidewaysSpeed: 1.5
-  maxVelocityChange: 2
-  gravity: 9999999830000
-  canJump: 1
-  jumpHeight: 100
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
   ySpeedJump: .800000012
   gravitation: 4
+  HorizontalSpeedMultiplierWhenInAir: .5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
