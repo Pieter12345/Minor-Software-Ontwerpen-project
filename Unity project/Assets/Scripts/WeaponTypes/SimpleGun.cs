@@ -4,8 +4,13 @@ using System.Collections;
 public class SimpleGun : Weapon {
 
 	private float timeLastShot;
-	
+	private ObjectPool shellPool;
+
 	public Transform camera;
+
+	public GameObject shell;
+	public Vector3 ejectLocation;
+	public Vector3 ejectForce;
 
 	public override void Fire(Vector3 from, Vector3 to){
 		if(Time.time - timeLastShot > FireInterval){
@@ -15,6 +20,7 @@ public class SimpleGun : Weapon {
 				camera.GetComponent<ShooterGameCamera>().Fired = true;
 				ShotEffects();
 				TakeFromClip();
+				EjectShell();
 				Vector3 dir = to - from;
 				dir.Normalize();
 				Ray ray = new Ray(from, dir);
@@ -35,5 +41,15 @@ public class SimpleGun : Weapon {
 
 	void Awake(){
 		timeLastShot = 0f;
+		if(shell != null)
+			shellPool = new ObjectPool(shell);
+	}
+
+	public void EjectShell(){
+		GameObject s = shellPool.GetFreeObject();
+		s.SetActive(true);
+		s.transform.rotation = transform.rotation;
+		s.transform.position = transform.position + ejectLocation;
+		s.rigidbody.AddForce(s.transform.rotation* ejectForce);
 	}
 }
