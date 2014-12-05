@@ -7,7 +7,7 @@ Ap
 > menu geluiden (maken van keuze)
 > achtergrond geluid (8-bits?)
 > spring
-> low health-bar (indien we het gaan gebruiken) soort van hijg geluid?
+/> low health-bar (indien we het gaan gebruiken) soort van hijg geluid?
 > afbreken van blokjes door enemy?
 > afbreken van deuren en ramen
 > reparen van deuren en ramen
