@@ -13,7 +13,7 @@ public class SimpleGun : Weapon {
 			if (AmmoInClip > 0){
 				// Add Recoil
 				camera.GetComponent<ShooterGameCamera>().Fired = true;
-				MuzzleFlash();
+				ShotEffects();
 				TakeFromClip();
 				Vector3 dir = to - from;
 				dir.Normalize();

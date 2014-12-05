@@ -26,7 +26,7 @@ public class SimpleShotgun : Weapon {
 			if (AmmoInClip > 0){
 				// Add Recoil
 				camera.GetComponent<ShooterGameCamera>().Fired = true;
-				MuzzleFlash();
+				ShotEffects();
 				TakeFromClip();
 				Vector3 centerDir = to - from;
 				centerDir.Normalize();

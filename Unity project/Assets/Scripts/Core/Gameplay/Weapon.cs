@@ -7,6 +7,7 @@ public abstract class Weapon : MonoBehaviour {
 
 	public WeaponStats weaponType;
 	public GameObject muzzleFlash;
+	public AudioClip shotSound;
 
 	protected MuzzleFlash flashScript;
 
@@ -66,8 +67,18 @@ public abstract class Weapon : MonoBehaviour {
 		if (ammoInClip < 0)
 			ammoInClip = 0;
 	}
+	public void ShotEffects(){
+		MuzzleFlash();
+		ShootSound();
+	}
 	public void MuzzleFlash(){
 		if (flashScript != null)
 			flashScript.Flash();
+	}
+	public void ShootSound(){
+		if(shotSound != null){
+			audio.pitch = Random.Range(0.9f, 1.1f);
+			audio.PlayOneShot(shotSound);
+		}
 	}
 }

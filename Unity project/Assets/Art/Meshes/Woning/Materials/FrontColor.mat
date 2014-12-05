@@ -24,7 +24,7 @@ Material:
       data:
         first:
           name: _Treshold
-        second: .5
+        second: .321428567
       data:
         first:
           name: _Shadow
