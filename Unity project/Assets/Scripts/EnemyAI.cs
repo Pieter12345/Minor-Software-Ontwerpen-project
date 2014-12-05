@@ -41,11 +41,31 @@ public class EnemyAI : MonoBehaviour {
 		Vector3 pos = enemyObject.transform.position;
 
 		// Select actions based on what the enemy is doing.
+		// Status activation variables / state indicators. TODO - Calculate each of the values of the variables.
+		bool canHitPlayer = false;
+		bool canHitFlag = false;
+		bool standingUnderPlayer = false;
+		bool canSeePlayer = false;
+		bool playerInRadius = false;
+
+
 //		Debug.Log("DEBUG: status = " + status);
 		switch(status) {
 
 		// If ready for a new task.
 		case "ready": {
+			// TODO - Implement AI choices here.
+			// If close to the player, hit him.
+			// elseif close to the flag, hit it.
+			// elseif standing under player, use some ability to break the block above the enemy to make the player fall.
+			// elseif enemy can see the player OR enemy is within a radius of the player, set path and move to player (choose between blockbreaking or normal pathfinding?).
+			//     if path to player could not be found, set ignoreBlockPath and move to player.
+			// else set path and move to flag (chooce between blockbreaking or normal pathfinding?).
+			//     if path to flag could not be found, set ignoreBlockPath and move to flag.
+			// TODO - End of todo.
+
+
+
 			// Find a new goal position to walk to (one square each time).
 			singleMoveGoalCoords = pathToPlayer.getNextMoveCoords((int) Mathf.Round(pos[0]), (int) Mathf.Round(pos[1]), (int) Mathf.Round(pos[2]));
 			bool isJumpingMove = (singleMoveGoalCoords[1] - (int) Mathf.Round(pos[1])) == 1; // True if the move from current to singleMoveGoal has to be achieved with a jump.
