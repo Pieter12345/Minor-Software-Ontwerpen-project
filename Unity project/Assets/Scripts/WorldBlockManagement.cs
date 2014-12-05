@@ -14,6 +14,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static GameObject[] blockObjects; // Same size as blockData, contains the block objects.
 	private static byte[] heightMap; // Heights for every (x,z).
 	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
+	private static bool[] canWalkThroughOnlyId255; // Only checks for blockID 255. This is the blockifyWorld invisible block.
 
 	public Transform parentObject; // The (empty) parent GameObject to create new blocks in.
 	private static Transform parent; // Block objects will be created as childs of this GameObject. (Default: World/Blocks)
@@ -99,8 +100,10 @@ public class WorldBlockManagement : MonoBehaviour {
 		
 		// Initialize canWalkThrough property.
 		canWalkThrough = new bool[levelSize * levelSize * levelHeight];
+		canWalkThroughOnlyId255 = new bool[levelSize * levelSize * levelHeight];
 		for(int i=0; i < canWalkThrough.Length; i++) {
 			canWalkThrough[i] = true;
+			canWalkThroughOnlyId255[i] = true;
 		}
 	}
 	
@@ -128,8 +131,10 @@ public class WorldBlockManagement : MonoBehaviour {
 
 			// Initialize canWalkThrough property.
 			canWalkThrough = new bool[levelSize * levelSize * levelHeight];
+			canWalkThroughOnlyId255 = new bool[levelSize * levelSize * levelHeight];
 			for(int i=0; i < canWalkThrough.Length; i++) {
 				canWalkThrough[i] = true;
+				canWalkThroughOnlyId255[i] = true;
 			}
 		}
 		else {
@@ -178,11 +183,13 @@ public class WorldBlockManagement : MonoBehaviour {
 		if(blockID == 0) { // Air (clear block).
 			blockObjects[byteArrayIndex] = null;
 			canWalkThrough[byteArrayIndex] = true;
+			canWalkThroughOnlyId255[byteArrayIndex] = true;
 		}
 		else {
 			if(blockID == 255) { // PathFinding block (Enemies cant walk here, no physical block).
 				blockObjects[byteArrayIndex] = null;
 				canWalkThrough[byteArrayIndex] = false;
+				canWalkThroughOnlyId255[byteArrayIndex] = false;
 				return;
 			}
 
@@ -249,6 +256,7 @@ public class WorldBlockManagement : MonoBehaviour {
 			}
 			
 			canWalkThrough[byteArrayIndex] = canWalkThroughLocal; // Set "canWalkThrough" block property.
+// Redundant			canWalkThroughOnlyId255[byteArrayIndex] = true; // If a new block is set and it wasnt ID 255.
 			
 			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
 			if(texture == null) {
@@ -372,9 +380,10 @@ public class WorldBlockManagement : MonoBehaviour {
 		return(heightMap[byteArrayIndex]);
 	}
 	
-	// canWalkHere method.
+	// canWalkHere method + overload.
 	// Returns true if the given location AND the location above it are available.
-	public static bool canWalkHere(int x, int y, int z) {
+	public static bool canWalkHere(int x, int y, int z) { return canWalkHere(x, y, z, false); }
+	public static bool canWalkHere(int x, int y, int z, bool onlyCheckId255) {
 
 		// Catch outOfBounds errors (not yMax).
 		if(x<0 || y<0 || z<0 || x >= levelSize || z >= levelSize) {
@@ -389,16 +398,20 @@ public class WorldBlockManagement : MonoBehaviour {
 			return true; // Return true as we could walk on top of the highest block.
 		}
 		else if(y == levelHeight-1) {
-			return canWalkThrough[byteArrayIndex];
+			if(onlyCheckId255) { return canWalkThroughOnlyId255[byteArrayIndex]; }
+			else { return canWalkThrough[byteArrayIndex]; }
 		} else {
 //			Debug.Log ("x=" + x + " y=" + y + " z=" + z);
 			return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); // Block && one block higher.
+			if(onlyCheckId255) { return(canWalkThroughOnlyId255[byteArrayIndex] && canWalkThroughOnlyId255[byteArrayIndex + levelSize*levelSize]); }
+			else { return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); }
 		}
 	}
 
-	// canStandHere method.
+	// canStandHere method + overload.
 	// Returns true if a player/enemy can stand here without falling.
-	public static bool canStandHere(int x, int y, int z) {
+	public static bool canStandHere(int x, int y, int z) { return canStandHere(x, y, z, false); }
+	public static bool canStandHere(int x, int y, int z, bool onlyCheckId255) {
 
 		// Catch outOfBounds errors.
 		if(x<0 || y<0 || z<0 || x >= levelSize || y >= levelHeight || z >= levelSize) {
@@ -408,12 +421,14 @@ public class WorldBlockManagement : MonoBehaviour {
 		if(!canWalkHere(x,y,z)) { return false; }
 		if(y == 0) { return true; } // Entities can always walk on the bottom. There should be a ground plane here.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*(y-1);
-		return !canWalkThrough[byteArrayIndex]; // True if there is a solid block below.
+		if(onlyCheckId255) { return !canWalkThroughOnlyId255[byteArrayIndex]; }
+		else { return !canWalkThrough[byteArrayIndex]; } // True if there is a solid block below.
 	}
 
-	// canJumpAt method.
+	// canJumpAt method + overload.
 	// Returns true if the player can jump at this location.
-	public static bool canJumpAt(int x, int y, int z) {
+	public static bool canJumpAt(int x, int y, int z) { return canJumpAt(x, y, z, false); }
+	public static bool canJumpAt(int x, int y, int z, bool onlyCheckId255) {
 
 		// Catch outOfBounds errors.
 		if(x<0 || y<0 || z<0 || x >= levelSize || y >= levelHeight || z >= levelSize) {
@@ -422,7 +437,9 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		if(y+2 >= levelHeight) { return true; } // Jumping is always possible above max block height.
 		int byteArrayIndex = x + levelSize*z + levelSize*levelSize*(y+2);
-		return canWalkThrough[byteArrayIndex]; // True is no block above head.
+		
+		if(onlyCheckId255) { return canWalkThroughOnlyId255[byteArrayIndex]; }
+		else { return canWalkThrough[byteArrayIndex]; } // True is no block above head.
 	}
 
 	// getLevelSize method.

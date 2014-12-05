@@ -13,13 +13,15 @@ public class pathFinding {
 	private int currentDistance = 0; // Update state, length of the calculated path.
 	private int updateSize = 5; // The distance in the worldOverlay that will be updated per FixedUpdate.
 	private int[] goalCoords; // Format: {x,y,z}
+	private bool onlyCheckId255; // True for pathfinding that ignores all blocks (except for the fundamental invisible level blocks).
 
 	// Constructor.
-	public pathFinding(int xGoal, int yGoal, int zGoal) {
+	public pathFinding(int xGoal, int yGoal, int zGoal, bool onlyCheckId255 = false) {
 		this.levelSize = WorldBlockManagement.getLevelSize();
 		this.levelHeight = WorldBlockManagement.getLevelHeight();
 		this.worldOverlay = new int[levelSize * levelSize * levelHeight];
 		this.tempWorldOverlay = new int[levelSize * levelSize * levelHeight];
+		this.onlyCheckId255 = onlyCheckId255;
 
 		for(int i=0; i < worldOverlay.Length; i++) {
 			worldOverlay[i] = int.MaxValue;
@@ -95,11 +97,11 @@ public class pathFinding {
 //							if(WorldBlockManagement.canStandHere(x  , y, z-1)) { setSingleWorldOverlay(x  , y, z-1, currentDistance+1); }
 							
 							// All directions, jumping (jump required to get here).
-							if(WorldBlockManagement.canStandHere(x+1, y-1, z  ) && WorldBlockManagement.canJumpAt(x+1, y-1, z  )) { setSingleWorldOverlay(x+1, y-1, z  , currentDistance+1); }
-							if(WorldBlockManagement.canStandHere(x-1, y-1, z  ) && WorldBlockManagement.canJumpAt(x-1, y-1, z  )) { setSingleWorldOverlay(x-1, y-1, z  , currentDistance+1); }
-							if(WorldBlockManagement.canStandHere(x  , y-1, z+1) && WorldBlockManagement.canJumpAt(x  , y-1, z+1)) { setSingleWorldOverlay(x  , y-1, z+1, currentDistance+1); }
-							if(WorldBlockManagement.canStandHere(x  , y-1, z-1) && WorldBlockManagement.canJumpAt(x  , y-1, z-1)) { setSingleWorldOverlay(x  , y-1, z-1, currentDistance+1); }
-							
+							if(WorldBlockManagement.canStandHere(x+1, y-1, z  , onlyCheckId255) && WorldBlockManagement.canJumpAt(x+1, y-1, z  , onlyCheckId255)) { setSingleWorldOverlay(x+1, y-1, z  , currentDistance+1); }
+							if(WorldBlockManagement.canStandHere(x-1, y-1, z  , onlyCheckId255) && WorldBlockManagement.canJumpAt(x-1, y-1, z  , onlyCheckId255)) { setSingleWorldOverlay(x-1, y-1, z  , currentDistance+1); }
+							if(WorldBlockManagement.canStandHere(x  , y-1, z+1, onlyCheckId255) && WorldBlockManagement.canJumpAt(x  , y-1, z+1, onlyCheckId255)) { setSingleWorldOverlay(x  , y-1, z+1, currentDistance+1); }
+							if(WorldBlockManagement.canStandHere(x  , y-1, z-1, onlyCheckId255) && WorldBlockManagement.canJumpAt(x  , y-1, z-1, onlyCheckId255)) { setSingleWorldOverlay(x  , y-1, z-1, currentDistance+1); }
+
 							// All directions, y constant and falling (There can be more than one way to fall here per direction).
 							int[] xValues = {1, -1, 0,  0};
 							int[] zValues = {0,  0, 1, -1};
@@ -110,12 +112,12 @@ public class pathFinding {
 								for(int y2 = y; y2 <= WorldBlockManagement.getHighestBlockAt(x+x2,z+z2)+1; y2++) { // For current y to the highest y an enemy can stand at.
 									
 									// Break if entities can not fall on the desired location anymore.
-									if(!WorldBlockManagement.canWalkHere(x,y2,z)) { break; }
+									if(!WorldBlockManagement.canWalkHere(x,y2,z, onlyCheckId255)) { break; }
 									
 									setSingleWorldOverlay(x, y2, z, this.currentDistance); // Create a pilar of the same values in the air so players don't have to simulate falling later.
 									
 									// Set distance in worldOverlay if the player can fall here from there.
-									if(WorldBlockManagement.canStandHere(x+x2, y2, z+z2)) { setSingleWorldOverlay(x+x2, y2, z+z2, currentDistance+1); }
+									if(WorldBlockManagement.canStandHere(x+x2, y2, z+z2, onlyCheckId255)) { setSingleWorldOverlay(x+x2, y2, z+z2, currentDistance+1); }
 								}
 							}
 						}
@@ -226,6 +228,13 @@ public class pathFinding {
 			return int.MaxValue;
 		}
 		return worldOverlay[index];
+	}
+
+	// setUpdateSize method.
+	// Sets the length of that path flow that is calculated per FixedUpdate call.
+	// Set this to int.maxValue if the path is generated once and it is a static path. Dont call FixedUpdate more than once per new path.
+	public void setUpdateSize(int size) {
+		this.updateSize = size;
 	}
 
 }

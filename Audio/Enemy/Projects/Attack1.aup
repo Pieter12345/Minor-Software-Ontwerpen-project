@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Attack1_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="0.2581405896" vpos="0" h="0.0000000000" zoom="1978.0163757145" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
+	<tags>
+		<tag name="ARTIST" value="AB van Ramshorst"/>
+		<tag name="YEAR" value="2014"/>
+		<tag name="ALBUM" value="TedDyfence"/>
+	</tags>
+	<wavetrack name="Audiospoor" channel="0" linked="1" mute="0" solo="0" height="393" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="11384">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000782.au" len="11384" min="-0.026479" max="0.021804" rms="0.002158"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.000005000000" val="0.674437999725"/>
+				<controlpoint t="0.018200051548" val="1.000000000000"/>
+				<controlpoint t="0.156722666104" val="1.000000000000"/>
+				<controlpoint t="0.258135589569" val="0.147337675095"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Audiospoor" channel="1" linked="0" mute="0" solo="0" height="393" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="11384">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000bef.au" len="11384" min="-0.026399" max="0.02182" rms="0.002158"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.000005000000" val="0.674437999725"/>
+				<controlpoint t="0.018200051548" val="1.000000000000"/>
+				<controlpoint t="0.156722666104" val="1.000000000000"/>
+				<controlpoint t="0.258135589569" val="0.147337675095"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>
