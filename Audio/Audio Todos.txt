@@ -17,3 +17,6 @@ Ap
 > als een enemy spawnt vanuit de wc een flush geluid (niet reeel maar wel grappig :P)
 > switchen van wapens en blokken
 > pickup objects
+> reload weapons
+> shot with empty gun
+> explosion???
