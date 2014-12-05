@@ -1,6 +1,5 @@
 ﻿// EnemyController script.
 // This script spawns enemies and determines what they choose to do (AI).
-// TODO - Script not finished.
 
 using UnityEngine;
 using System.Collections;
@@ -11,12 +10,16 @@ public class EnemyController : MonoBehaviour {
 	public Transform parentObject;
 	private static Transform parent;
 
+	private static int[] flagPos = new int[] {0, 0, 0}; // x, y and z coordinates of the flag.
+
 	private static GameObject[] enemyObjects;
 	private static int enemyObjectSize = 0; // Array size of enemyObjects.
 	public int maxAmountOfEnemies = 1000; // Max array size of enemyObjects.
 
 	private static pathFinding pathToPlayer;
 	private static pathFinding pathToFlag;
+	private static pathFinding pathToPlayerIgnoringBlocks; // Used for block-breaking enemies.
+	private static pathFinding pathToFlagIgnoringBlocks; // User for block-breaking enemies.
 
 
 	private static int[] coords;
@@ -46,7 +49,9 @@ public class EnemyController : MonoBehaviour {
 		// Initialize pathFinding.
 		Vector3 playerCoords = player.transform.position;
 		pathToPlayer = new pathFinding((int) Mathf.Round(playerCoords.x), (int) Mathf.Round(playerCoords.y), (int) Mathf.Round(playerCoords.z));
-		pathToFlag = new pathFinding(0, 0, 0); // <-- Initial goal coords. TODO - Add a flag somewhere.
+		pathToFlag = new pathFinding(flagPos[0], flagPos[1], flagPos[2]); // <-- Initial goal coords.
+		pathToPlayerIgnoringBlocks = new pathFinding((int) Mathf.Round(playerCoords.x), 0, (int) Mathf.Round(playerCoords.z), true);
+		pathToFlagIgnoringBlocks = new pathFinding(flagPos[0], flagPos[1], flagPos[2], true); // <-- Initial goal coords.
 
 		// Start a new wave.
 		startNextWave();
@@ -110,6 +115,7 @@ public class EnemyController : MonoBehaviour {
 	public void updatePlayerPathfinding() {
 		Vector3 playerCoords = player.transform.position;
 		pathToPlayer.updateGoalLocation((int) Mathf.Round(playerCoords.x), (int) Mathf.Round(playerCoords.y), (int) Mathf.Round(playerCoords.z));
+		pathToPlayerIgnoringBlocks.updateGoalLocation((int) Mathf.Round(playerCoords.x), 0, (int) Mathf.Round(playerCoords.z));
 	}
 
 	// destroyAllEnemies method.
@@ -136,10 +142,22 @@ public class EnemyController : MonoBehaviour {
 		return pathToPlayer;
 	}
 
+	// getPathToPlayerIgnoringBlocks method.
+	// Returns the pathFinding object used to get to the player.
+	public static pathFinding getPathToPlayerIgnoringBlocks() {
+		return pathToPlayerIgnoringBlocks;
+	}
+
 	// getPathToFlag method.
 	// Returns the pathFinding object used to get to the flag.
 	public static pathFinding getPathToFlag() {
 		return pathToFlag;
+	}
+
+	// getPathToFlagIgnoringBlocks method.
+	// Returns the pathFinding object used to get to the player.
+	public static pathFinding getPathToFlagIgnoringBlocks() {
+		return pathToFlagIgnoringBlocks;
 	}
 
 
@@ -201,6 +219,9 @@ public class EnemyController : MonoBehaviour {
 	// Runs every fixed amount of time.
 	void FixedUpdate() {
 		pathToPlayer.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
+		pathToPlayerIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
+		pathToFlag.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
+		pathToFlagIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 	}
 
 	// updatePathFinding method.
