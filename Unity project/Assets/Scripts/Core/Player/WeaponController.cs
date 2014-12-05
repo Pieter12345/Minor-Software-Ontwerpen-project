@@ -115,8 +115,10 @@ public class WeaponController : MonoBehaviour {
 	}
 
 	public void Reload(){
-		Weapon weaponScript = (Weapon) weapons[selectedWeapon].GetComponent(typeof(Weapon));
-		weaponScript.RefillClip();
+		if(hasWeapon){
+			Weapon weaponScript = (Weapon) weapons[selectedWeapon].GetComponent(typeof(Weapon));
+			weaponScript.RefillClip();
+		}
 	}
 
 	public void AddAmmoToCurrent(int amount){

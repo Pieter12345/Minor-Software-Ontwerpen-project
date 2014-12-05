@@ -6,6 +6,9 @@ public abstract class Weapon : MonoBehaviour {
 	private AmmoManager ammoManager;
 
 	public WeaponStats weaponType;
+	public GameObject muzzleFlash;
+
+	protected MuzzleFlash flashScript;
 
 	public float BaseDamage{ get { return weaponType.BaseDamage(); } }
 
@@ -32,6 +35,8 @@ public abstract class Weapon : MonoBehaviour {
 
 	void Start() {
 		ammoManager = transform.parent.GetComponent<AmmoManager>();
+		if(muzzleFlash != null)
+			flashScript = muzzleFlash.GetComponent(typeof(MuzzleFlash)) as MuzzleFlash;
 	}
 
 	public void RefillClip() {
@@ -60,5 +65,9 @@ public abstract class Weapon : MonoBehaviour {
 		ammoInClip -= amount;
 		if (ammoInClip < 0)
 			ammoInClip = 0;
+	}
+	public void MuzzleFlash(){
+		if (flashScript != null)
+			flashScript.Flash();
 	}
 }

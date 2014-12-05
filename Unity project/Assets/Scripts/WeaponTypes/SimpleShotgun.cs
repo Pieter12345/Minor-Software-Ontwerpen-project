@@ -6,14 +6,27 @@ public class SimpleShotgun : Weapon {
 	private float timeLastShot;
 
 	public Transform camera;
-	
+
+	Vector3 from, to;
+
+	void Update(){
+		Vector3 centerDir = to - from;
+		centerDir.Normalize();
+		Vector3[] directions = CalculateRayDirections(centerDir);
+		foreach(Vector3 dir in directions){
+			Debug.DrawRay(from, dir, Color.red);
+		}
+	}
+
 	public override void Fire(Vector3 from, Vector3 to){
+		this.from = from;
+		this.to = to;
 		if(Time.time - timeLastShot > FireInterval){
 			timeLastShot = Time.time;
 			if (AmmoInClip > 0){
 				// Add Recoil
 				camera.GetComponent<ShooterGameCamera>().Fired = true;
-				
+				MuzzleFlash();
 				TakeFromClip();
 				Vector3 centerDir = to - from;
 				centerDir.Normalize();
