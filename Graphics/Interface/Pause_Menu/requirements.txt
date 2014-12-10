@@ -1,0 +1,17 @@
+Pause Screen:
+
+Primary:
+
+1: it must exist
+
+2: Restart + confirmation
+3: Resume
+4: Quit to Start + confirmation
+5: Quit to Desktop + confirmation
+
+Secondary:
+Looks
+
+Tertiary:
+Animations
+Sounds
