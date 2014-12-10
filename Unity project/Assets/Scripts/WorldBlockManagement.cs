@@ -402,9 +402,8 @@ public class WorldBlockManagement : MonoBehaviour {
 			else { return canWalkThrough[byteArrayIndex]; }
 		} else {
 //			Debug.Log ("x=" + x + " y=" + y + " z=" + z);
-			return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); // Block && one block higher.
 			if(onlyCheckId255) { return(canWalkThroughOnlyId255[byteArrayIndex] && canWalkThroughOnlyId255[byteArrayIndex + levelSize*levelSize]); }
-			else { return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); }
+			else { return(canWalkThrough[byteArrayIndex] && canWalkThrough[byteArrayIndex + levelSize*levelSize]); } // Block && one block higher.
 		}
 	}
 
@@ -493,8 +492,6 @@ public class WorldBlockManagement : MonoBehaviour {
 				}
 			}
 		}
-
-
 	}
 
 	// Quote to copy:   """""""
