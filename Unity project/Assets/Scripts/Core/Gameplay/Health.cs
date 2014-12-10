@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Health : MonoBehaviour {
+public class Health : MonoBehaviour {
 
 	public float maxHP = 10;
 	protected float hp;
@@ -15,27 +15,34 @@ public abstract class Health : MonoBehaviour {
 	void Update(){
 		if (IsDead)
 			OnDeath();
+		OnRegen();
 	}
 
 	public void Damage(float amount){
-		OnDamaged();
-		OnDamaged(amount);
 		hp -= amount;
+
+		OnDamage();
+		OnDamage(amount);
 	}
 
 	public void Heal(float amount){
-		OnHeal();
 		hp += amount;
 		if(hp > maxHP)
 			hp = maxHP;
+
+		OnHeal();
+		OnHeal(amount);
 	}
 
 	protected virtual void OnDeath(){
 		Destroy(gameObject);
 	}
 	
-	protected virtual void OnDamaged(){}
-	protected virtual void OnDamaged(float amount){}
+	protected virtual void OnDamage(){}
+	protected virtual void OnDamage(float amount){}
 
 	protected virtual void OnHeal(){}
+	protected virtual void OnHeal(float amount){}
+
+	protected virtual void OnRegen(){}
 }

@@ -1172,8 +1172,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400028}
-  - {fileID: 400082}
   - {fileID: 400096}
+  - {fileID: 400082}
   m_Father: {fileID: 400070}
   m_RootOrder: 0
 --- !u!4 &400060
@@ -1244,7 +1244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41, y: 0, z: 30}
+  m_LocalPosition: {x: 41, y: -.823903084, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400058}
@@ -1322,14 +1322,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100082}
   m_LocalRotation: {x: .00929642189, y: -.150632784, z: -.286646962, w: .946074486}
-  m_LocalPosition: {x: .753445446, y: .559603095, z: -.0312682129}
+  m_LocalPosition: {x: .753444672, y: .559603095, z: -.0312690735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400086}
   - {fileID: 400084}
   - {fileID: 400092}
   m_Father: {fileID: 400058}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &400084
 Transform:
   m_ObjectHideFlags: 1
@@ -1415,7 +1415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400058}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
   ejectLocation: {x: .100000001, y: 0, z: 0}
-  ejectForce: {x: 2, y: 1, z: 0}
+  ejectForce: {x: 0, y: 1, z: 2}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1926,6 +1926,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
+  playerCanRegen: 1
+  regeneratingFraction: .200000003
+  regenSpeed: 1
+  regenCooldown: 10
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
