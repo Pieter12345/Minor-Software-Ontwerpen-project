@@ -183,7 +183,7 @@
  			if (max(0.0, dot(normalDirection, lightDirection) > _Treshold)) {temp = (_Intensity,_Intensity,_Intensity);}
  			else {temp = (_Shadow,_Shadow,_Shadow);}
 
-            float3 diffuseReflection = attenuation * _LightColor0.rgb * temp * pow(max(0.0, dot(normalDirection, lightDirection)),_Diffuse);              
+            float3 diffuseReflection = attenuation * _LightColor0.rgb * temp * pow(max(0.0, normalize(dot(normalDirection, lightDirection))),_Diffuse);              
  
             //texture maps
             float4 tex = tex2D(_MainTex, input.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);

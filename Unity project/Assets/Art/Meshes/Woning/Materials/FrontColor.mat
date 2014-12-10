@@ -17,28 +17,39 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 2894099cd6cbaa348b2a67801eea9610, type: 3}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Treshold
-        second: .321428567
+        second: .785714328
       data:
         first:
           name: _Shadow
-        second: .5
+        second: .37500006
       data:
         first:
           name: _Intensity
-        second: 1.51785719
+        second: 1.96428561
       data:
         first:
           name: _Diffuse
-        second: .214285716
+        second: 9.99999975e-05
+      data:
+        first:
+          name: _Alpha
+        second: 1
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .161764681, g: .161764681, b: .161764681, a: 1}
+        second: {r: .308823526, g: .308823526, b: .308823526, a: 1}
