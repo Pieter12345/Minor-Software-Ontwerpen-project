@@ -497,7 +497,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	// isSupportedAt method.
 	// Returns wether a player/enemy is being supported at a certain position. If true, the enemy/player should not fall.
 	// capsuleRadius is the radius of your support, this should not exceed 0.5.
-	public bool isSupportedAt(Vector3 pos, float capsuleRadius) {
+	public static bool isSupportedAt(Vector3 pos, float capsuleRadius) {
 
 		// Give warning on wrong input.
 		if(capsuleRadius > 0.5f) { Debug.Log("[SEVERE] [WorldBlockManagement] isSupportedAt method is called with too large capsuleRadius."); }
@@ -511,14 +511,14 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Get the on-grid position.
 		int x = Mathf.FloorToInt(pos.x);
-		int y = Mathf.FloorToInt(pos.y);
+		int y = Mathf.RoundToInt(pos.y);
 		int z = Mathf.FloorToInt(pos.z);
-		Vector3 gridPos = new Vector3(x, y, z);
 
 		// Return true if the current position is supportive.
 		if(canStandHere(x, y, z)) { return true; }
 
 		// Check blocks around the entity and return true if the entity has support on them.
+		// TODO - Enemies glitch when going in the z- x+ direction. Fix this.
 		float capsuleRadiusSqr = capsuleRadius * capsuleRadius;
 		if(canStandHere(x+1, y, z  ) && x+1 - pos.x <= capsuleRadius) { return true; }
 		if(canStandHere(x-1, y, z  ) && pos.x - x   <= capsuleRadius) { return true; }
@@ -527,7 +527,7 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		if(canStandHere(x+1, y, z+1) && (pos - new Vector3(x+1, pos.y, z+1)).sqrMagnitude <= capsuleRadiusSqr) { return true; }
 		if(canStandHere(x-1, y, z+1) && (pos - new Vector3(x  , pos.y, z+1)).sqrMagnitude <= capsuleRadiusSqr) { return true; }
-		if(canStandHere(x+1, y, z-1) && (pos - new Vector3(x+1, pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; }
+		if(canStandHere(x+1, y, z-1) && (pos - new Vector3(x+1, pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; } // Fails?
 		if(canStandHere(x-1, y, z-1) && (pos - new Vector3(x  , pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; }
 
 		// Return false if no support was found.

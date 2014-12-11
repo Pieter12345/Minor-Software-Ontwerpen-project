@@ -22,6 +22,8 @@ public class EnemyAI : MonoBehaviour {
 	private float acceptableErrorDistance = 0.1f; // Distance from singleMoveGoal which is acceptable to stop at.
 	private float speed = 5f/3.6f; // Speed in m/s.
 
+	private float enemyRadius = 0.4f; // The supportive radius of the enemy. This is used to determine wether an enemy can stand at a position or not.
+
 	// Jumping variables.
 	private float gravitation = 9.81f; // [m/(s*s)] Gravitation constant (average 9.81 on earth).
 	private float ySpeed; // Up is positive.
@@ -173,8 +175,8 @@ public class EnemyAI : MonoBehaviour {
 			// Determine the new y position.
 			float yPosNew;
 			// If y is an int value AND the enemy can stand here, set the acceleration and speed to 0 if they were negative.
-			if(pos[1] % 1 == 0 && WorldBlockManagement.canStandHere(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2]))) {
-				if(ySpeed < 0) { ySpeed = 0; }
+			if(pos[1] % 1f == 0f && WorldBlockManagement.isSupportedAt(pos, enemyRadius)) {
+				if(ySpeed < 0f) { ySpeed = 0f; }
 			}
 
 			// Update y physics.
@@ -182,7 +184,7 @@ public class EnemyAI : MonoBehaviour {
 			ySpeed -= gravitation * Time.deltaTime;
 
 			// Snap the new y position to a block if its very close to it if the enemy is falling.
-			if(yPosNew % 1f < 0.2f && ySpeed <= 0 && WorldBlockManagement.canStandHere(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2]))) { yPosNew = Mathf.Round(yPosNew); }
+			if(yPosNew % 1f < 0.2f && ySpeed <= 0 && WorldBlockManagement.isSupportedAt(new Vector3(pos.x, Mathf.Round(pos.y), pos.z), enemyRadius)) { yPosNew = Mathf.Round(yPosNew); }
 
 			// Bugfix: Teleport enemies to the highest block at their x-z position if they fall out of the scene.
 			if(yPosNew < -0.5f) { yPosNew = WorldBlockManagement.getHighestBlockAt(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[2])); }
