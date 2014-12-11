@@ -498,7 +498,7 @@ public class WorldBlockManagement : MonoBehaviour {
 	// Returns wether a player/enemy is being supported at a certain position. If true, the enemy/player should not fall.
 	// capsuleRadius is the radius of your support, this should not exceed 0.5.
 	public static bool isSupportedAt(Vector3 pos, float capsuleRadius) {
-
+		pos += new Vector3(0.5f, 0f, 0.5f); // Scale the entitypos with the level.
 		// Give warning on wrong input.
 		if(capsuleRadius > 0.5f) { Debug.Log("[SEVERE] [WorldBlockManagement] isSupportedAt method is called with too large capsuleRadius."); }
 		if(pos.x<0 || pos.y<0 || pos.z<0 || pos.x >= levelSize || pos.y >= levelHeight || pos.z >= levelSize) {
