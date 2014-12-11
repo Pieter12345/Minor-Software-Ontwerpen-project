@@ -7988,6 +7988,14 @@ Prefab:
       propertyPath: regeneratingFraction
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11400028, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400028, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: toLookAt
+      value: 
+      objectReference: {fileID: 1579508058}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -8185,7 +8193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e7e9a0ea72b52469e7464d24633727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toLookAt: {fileID: 1391955342}
+  toLookAt: {fileID: 1579508058}
 --- !u!1 &1404851029
 GameObject:
   m_ObjectHideFlags: 0
