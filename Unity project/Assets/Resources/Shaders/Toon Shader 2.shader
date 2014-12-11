@@ -4,7 +4,7 @@
       _Treshold ("Shadow-Treshold", range(0,1)) = 0.5
       _Shadow ("Shadow-Darkness", range(0,3)) = 0.5
       _Intensity ("Intensity-Light", range(0,5)) = 0.5
-      _Diffuse ("Toon-Factor", range(1,0.0001)) = 0
+      _Diffuse ("Toon-Factor", range(1,0)) = 0
    }
    SubShader {
       Pass {	
@@ -81,12 +81,12 @@
  
  			float3 temp;
  
- 			if (max(0.0, dot(normalDirection, lightDirection) > _Treshold)) {temp = (_Intensity,_Intensity,_Intensity);}
+ 			if (max(0.0, normalize(dot(normalDirection, lightDirection))) > _Treshold) {temp = normalize(dot(normalDirection, lightDirection))*(_Intensity,_Intensity,_Intensity);}
  			else {temp = (_Shadow,_Shadow,_Shadow);}
 
             float3 diffuseReflection = 
                attenuation * _LightColor0.rgb * _Color.rgb * temp
-               * pow(max(0.0, dot(normalDirection, lightDirection)),_Diffuse);              
+               * pow(max(0.0, normalize(dot(normalDirection, lightDirection))),_Diffuse);              
  
              
             return float4(ambientLighting + diffuseReflection
@@ -171,12 +171,12 @@
  
  			float3 temp;
  
- 			if (max(0.0, dot(normalDirection, lightDirection) > _Treshold)) {temp = (_Intensity,_Intensity,_Intensity);}
+ 			if (max(0.0, normalize(dot(normalDirection, lightDirection))) > _Treshold) {temp = normalize(dot(normalDirection, lightDirection))*(_Intensity,_Intensity,_Intensity);}
  			else {temp = (_Shadow,_Shadow,_Shadow);}
  
             float3 diffuseReflection = 
                attenuation * _LightColor0.rgb * _Color.rgb
-               * temp * pow(max(0.0, dot(normalDirection, lightDirection)),_Diffuse);
+               * temp * pow(max(0.0, normalize(dot(normalDirection, lightDirection))),_Diffuse);
           
  
              
