@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour {
 	public Transform parentObject;
 	private static Transform parent;
 
-	private static int[] flagPos = new int[] {0, 0, 0}; // x, y and z coordinates of the flag.
+	public static int[] flagPos = new int[] {0, 0, 0}; // x, y and z coordinates of the flag.
 
 	private static GameObject[] enemyObjects;
 	private static int enemyObjectSize = 0; // Array size of enemyObjects.
@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour {
 	private pathFinding pathFind;
 
 	public GameObject player;
+	public static GameObject playerStatic;
 	private Vector3 playerCoordsOld = new Vector3(0f, 0f, 0f); // Used to check if the player has moved.
 
 	public Object EnemyPrefab; // The prefab of the enemy.
@@ -41,6 +42,7 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization.
 	void Start () {
 		EnemyPrefabStatic = EnemyPrefab; // Create static reference.
+		playerStatic = player;
 
 
 		parent = this.parentObject;
