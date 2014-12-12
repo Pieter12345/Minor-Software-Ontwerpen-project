@@ -529,11 +529,20 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		if(canStandHere(x+1, y, z+1) && (pos - new Vector3(x+1, pos.y, z+1)).sqrMagnitude <= capsuleRadiusSqr) { return true; }
 		if(canStandHere(x-1, y, z+1) && (pos - new Vector3(x  , pos.y, z+1)).sqrMagnitude <= capsuleRadiusSqr) { return true; }
-		if(canStandHere(x+1, y, z-1) && (pos - new Vector3(x+1, pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; } // Fails?
+		if(canStandHere(x+1, y, z-1) && (pos - new Vector3(x+1, pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; }
 		if(canStandHere(x-1, y, z-1) && (pos - new Vector3(x  , pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; }
 
 		// Return false if no support was found.
 		return false;
+	}
+
+	// breakBlockAt method.
+	// Breaks a block at the given position, does nothing if called on blockID 0 or 255, or with out-of-bounds arguments.
+	public static void breakBlockAt(int x, int y, int z) {
+		if(getBlockAt(x, y, z) == 0 || getBlockAt(x, y, z) == 255) { return; }
+		if(x < 0 || y < 0 || z < 0 || x >= levelSize || y >= levelHeight || z >= levelSize) { return; }
+		setBlockAt(x, y, z, 0);
+		EnemyController.updatePathFinding();
 	}
 
 	// Quote to copy:   """""""

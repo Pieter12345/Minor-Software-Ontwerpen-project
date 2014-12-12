@@ -127,8 +127,7 @@ public class EnemyAI : MonoBehaviour {
 						if(blockID != 0 && blockID != 255) {
 							Debug.Log("Blockbreak above head finished. Removing block at: " + Mathf.RoundToInt(pos[0]) + " " +  (int) singleMoveGoalCoords[1] + " " + Mathf.RoundToInt(pos[2]));
 							// TODO - Add block break animation here.
-							WorldBlockManagement.setBlockAt(Mathf.RoundToInt(pos[0]), (int) singleMoveGoalCoords[1], Mathf.RoundToInt(pos[2]), 0);
-							EnemyController.updatePathFinding();
+							WorldBlockManagement.breakBlockAt(Mathf.RoundToInt(pos[0]), (int) singleMoveGoalCoords[1], Mathf.RoundToInt(pos[2]), 0);
 							break;
 						}
 					} while(yAboveEnemy < WorldBlockManagement.getLevelHeight());
@@ -183,8 +182,7 @@ public class EnemyAI : MonoBehaviour {
 				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
 					Debug.Log("Blockbreak finished. Removing block.");
 					// TODO - Add block break animation here.
-					WorldBlockManagement.setBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1], (int) singleMoveGoalCoords[2], 0);
-					EnemyController.updatePathFinding();
+					WorldBlockManagement.breakBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1], (int) singleMoveGoalCoords[2], 0);
 					isBreakingBlock = false;
 					blockBreakTimer = Time.time;
 				}
@@ -198,8 +196,7 @@ public class EnemyAI : MonoBehaviour {
 				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
 					Debug.Log("Blockbreak finished. Removing block.");
 					// TODO - Add block break animation here.
-					WorldBlockManagement.setBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1]+1, (int) singleMoveGoalCoords[2], 0);
-					EnemyController.updatePathFinding();
+					WorldBlockManagement.breakBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1]+1, (int) singleMoveGoalCoords[2], 0);
 					isBreakingBlock = false;
 					blockBreakTimer = Time.time;
 				}
