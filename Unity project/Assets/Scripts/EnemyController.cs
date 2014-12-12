@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour {
 	public Transform parentObject;
 	private static Transform parent;
 
-	public static int[] flagPos = new int[] {0, 0, 0}; // x, y and z coordinates of the flag.
+	public static int[] flagPos = new int[] {10, 0, 10}; // x, y and z coordinates of the flag.
 
 	private static GameObject[] enemyObjects;
 	private static int enemyObjectSize = 0; // Array size of enemyObjects.
@@ -224,6 +224,11 @@ public class EnemyController : MonoBehaviour {
 		pathToPlayerIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 		pathToFlag.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 		pathToFlagIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
+
+		// DEBUG - Spawns enemies when pressing F8.
+		if(Input.GetKeyDown(KeyCode.F8)) {
+			startNextWave();
+		}
 	}
 
 	// updatePathFinding method.

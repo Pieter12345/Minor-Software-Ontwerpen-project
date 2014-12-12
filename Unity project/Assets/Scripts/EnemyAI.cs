@@ -102,8 +102,10 @@ public class EnemyAI : MonoBehaviour {
 					hittTimer = Time.time;
 					if(canHitPlayer) {
 						// TODO - Damage the player here + animation?
+						Debug.Log("Damaging player!");
 					} else {
 						// TODO - Damage the flag here + animation?
+						Debug.Log("Damaging flag!");
 					}
 					break;
 				}
@@ -111,11 +113,30 @@ public class EnemyAI : MonoBehaviour {
 
 			// Break block above enemy if standing under player.
 			if(standingUnderPlayer) {
-				if(Time.time - blockBreakTimer >= blockBreakCooldown) {
+				if(!isBreakingBlock) {
+					isBreakingBlock = true;
 					blockBreakTimer = Time.time;
-					// TODO - Break the block above the enemy here.
-					break;
+					Debug.Log("Blockbreak above head started. Time.time = " + blockBreakTimer);
 				}
+				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
+
+					int yAboveEnemy = Mathf.RoundToInt(pos[1]);
+					do {
+						yAboveEnemy++;
+						int blockID = WorldBlockManagement.getBlockAt(Mathf.RoundToInt(pos[0]), yAboveEnemy, Mathf.RoundToInt(pos[2]));
+						if(blockID != 0 && blockID != 255) {
+							Debug.Log("Blockbreak above head finished. Removing block at: " + Mathf.RoundToInt(pos[0]) + " " +  (int) singleMoveGoalCoords[1] + " " + Mathf.RoundToInt(pos[2]));
+							// TODO - Add block break animation here.
+							WorldBlockManagement.setBlockAt(Mathf.RoundToInt(pos[0]), (int) singleMoveGoalCoords[1], Mathf.RoundToInt(pos[2]), 0);
+							EnemyController.updatePathFinding();
+							break;
+						}
+					} while(yAboveEnemy < WorldBlockManagement.getLevelHeight());
+
+					isBreakingBlock = false;
+					blockBreakTimer = Time.time;
+				}
+				if(isBreakingBlock) { break; } // Dont continue moving while breaking a block.
 			}
 
 			// If enemy can see player or is within a radius of the player, set path to player. If no path can be found, use the block-breaking pathFinding.
@@ -157,14 +178,34 @@ public class EnemyAI : MonoBehaviour {
 				if(!isBreakingBlock) {
 					isBreakingBlock = true;
 					blockBreakTimer = Time.time;
+					Debug.Log("Blockbreak started. Time.time = " + blockBreakTimer);
 				}
 				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
+					Debug.Log("Blockbreak finished. Removing block.");
 					// TODO - Add block break animation here.
 					WorldBlockManagement.setBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1], (int) singleMoveGoalCoords[2], 0);
+					EnemyController.updatePathFinding();
 					isBreakingBlock = false;
 					blockBreakTimer = Time.time;
 				}
 			}
+			else if(WorldBlockManagement.getBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1]+1, (int) singleMoveGoalCoords[2]) != 0) {
+				if(!isBreakingBlock) {
+					isBreakingBlock = true;
+					blockBreakTimer = Time.time;
+					Debug.Log("Blockbreak started. Time.time = " + blockBreakTimer);
+				}
+				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
+					Debug.Log("Blockbreak finished. Removing block.");
+					// TODO - Add block break animation here.
+					WorldBlockManagement.setBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1]+1, (int) singleMoveGoalCoords[2], 0);
+					EnemyController.updatePathFinding();
+					isBreakingBlock = false;
+					blockBreakTimer = Time.time;
+				}
+			}
+
+			if(isBreakingBlock) { break; } // Dont continue moving while breaking a block.
 
 			// Calculate the x-z direction to move in (x-z speed will not depend on y).
 			float dx = singleMoveGoalCoords[0] - pos[0];
