@@ -44,6 +44,9 @@ public class WeaponController : MonoBehaviour {
 		}
 	}
 
+	public int SelectedWeaponInClip{ get { return (SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon).AmmoInClip; } }
+	public int SelectedWeaponInPool{ get { return (SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon).AmmoCount; } }
+
 	// Use this for initialization
 	void Start () {
 		selectedWeapon = defaultWeapon;
