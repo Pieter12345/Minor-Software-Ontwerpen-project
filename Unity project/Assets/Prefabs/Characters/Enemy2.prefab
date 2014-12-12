@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot: {fileID: 100000, guid: ef4700c35f1a014469accbb198a861db, type: 2}
-  dropProbability: .5
+  dropProbability: .100000001
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
