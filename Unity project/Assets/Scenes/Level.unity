@@ -720,7 +720,7 @@ MonoBehaviour:
   parentObject: {fileID: 1597395028}
   maxAmountOfEnemies: 1000
   player: {fileID: 1767831526}
-  EnemyPrefab: {fileID: 100004, guid: 493106cab63fb494c9f6a1fa49427110, type: 2}
+  EnemyPrefab: {fileID: 134244, guid: 00d08ea2f608bd64c892d22b6b0e8497, type: 2}
 --- !u!1 &60444321
 GameObject:
   m_ObjectHideFlags: 0

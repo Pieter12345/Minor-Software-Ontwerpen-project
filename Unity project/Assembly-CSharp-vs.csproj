@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
+     <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\PickUpHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimationManager.cs" />
      <Compile Include="Assets\Scripts\RuntimeParenting.cs" />

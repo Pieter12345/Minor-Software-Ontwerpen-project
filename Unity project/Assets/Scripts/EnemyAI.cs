@@ -213,6 +213,7 @@ public class EnemyAI : MonoBehaviour {
 			float dz = singleMoveGoalCoords[2] - pos[2];
 			Vector3 dx0dzUnit = new Vector3(dx, 0f, dz);
 			dx0dzUnit.Normalize(); // Normalize the vector for the x-z direction.
+			this.turnTo(dx0dzUnit); // Turn to the goal direction.
 
 			// Determine the new y position.
 			float yPosNew;
@@ -241,4 +242,9 @@ public class EnemyAI : MonoBehaviour {
 		}
 	}
 
+	// turnTo method. TODO - Make a more smooth rotation.
+	// (Slowly) turns this enemy to a given direction. This method should be called in an update loop to reach the desired rotation.
+	private void turnTo(Vector3 directionVector) {
+		enemyObject.transform.FindChild("EnemyModel").transform.LookAt(directionVector + transform.position);
+	}
 }
