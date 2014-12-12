@@ -7,6 +7,8 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 
+	private Transform player;
+
 	// Variables & Constants.
 	public GameObject enemyObject; // The object that represents this enemy.
 
@@ -47,6 +49,7 @@ public class EnemyAI : MonoBehaviour {
 		pathToPlayerIgnoringBlocks = EnemyController.getPathToPlayerIgnoringBlocks();
 		pathToFlagIgnoringBlocks = EnemyController.getPathToFlagIgnoringBlocks();
 
+		player = GameObject.FindGameObjectWithTag("Player").transform;
 		// TODO - Load random enemy texture here.
 		// TODO - Initialize any random selected AI variables here.
 	}
@@ -103,6 +106,7 @@ public class EnemyAI : MonoBehaviour {
 					if(canHitPlayer) {
 						// TODO - Damage the player here + animation?
 						Debug.Log("Damaging player!");
+						(player.parent.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt);
 					} else {
 						// TODO - Damage the flag here + animation?
 						Debug.Log("Damaging flag!");
@@ -127,7 +131,7 @@ public class EnemyAI : MonoBehaviour {
 						if(blockID != 0 && blockID != 255) {
 							Debug.Log("Blockbreak above head finished. Removing block at: " + Mathf.RoundToInt(pos[0]) + " " +  (int) singleMoveGoalCoords[1] + " " + Mathf.RoundToInt(pos[2]));
 							// TODO - Add block break animation here.
-							WorldBlockManagement.breakBlockAt(Mathf.RoundToInt(pos[0]), (int) singleMoveGoalCoords[1], Mathf.RoundToInt(pos[2]), 0);
+							WorldBlockManagement.breakBlockAt(Mathf.RoundToInt(pos[0]), (int) singleMoveGoalCoords[1], Mathf.RoundToInt(pos[2]));
 							break;
 						}
 					} while(yAboveEnemy < WorldBlockManagement.getLevelHeight());
@@ -182,7 +186,7 @@ public class EnemyAI : MonoBehaviour {
 				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
 					Debug.Log("Blockbreak finished. Removing block.");
 					// TODO - Add block break animation here.
-					WorldBlockManagement.breakBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1], (int) singleMoveGoalCoords[2], 0);
+					WorldBlockManagement.breakBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1], (int) singleMoveGoalCoords[2]);
 					isBreakingBlock = false;
 					blockBreakTimer = Time.time;
 				}
@@ -196,7 +200,7 @@ public class EnemyAI : MonoBehaviour {
 				else if(Time.time - blockBreakTimer >= blockBreakCooldown) {
 					Debug.Log("Blockbreak finished. Removing block.");
 					// TODO - Add block break animation here.
-					WorldBlockManagement.breakBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1]+1, (int) singleMoveGoalCoords[2], 0);
+					WorldBlockManagement.breakBlockAt((int) singleMoveGoalCoords[0], (int) singleMoveGoalCoords[1]+1, (int) singleMoveGoalCoords[2]);
 					isBreakingBlock = false;
 					blockBreakTimer = Time.time;
 				}

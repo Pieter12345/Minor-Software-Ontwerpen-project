@@ -3898,7 +3898,7 @@ GameObject:
   - 114: {fileID: 381778680}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17619,6 +17619,14 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1661318638}
+    - target: {fileID: 100058, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
