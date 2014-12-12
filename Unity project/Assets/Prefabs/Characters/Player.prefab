@@ -556,7 +556,7 @@ GameObject:
   - 114: {fileID: 11400026}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,7 +776,7 @@ GameObject:
   - 108: {fileID: 10801584}
   - 114: {fileID: 11401584}
   m_Layer: 0
-  m_Name: ShotgunMuzzleFlash
+  m_Name: RifleMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -796,6 +796,25 @@ GameObject:
   - 82: {fileID: 8255238}
   m_Layer: 0
   m_Name: Rifle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &195260
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 495260}
+  - 33: {fileID: 3395260}
+  - 23: {fileID: 2395260}
+  - 108: {fileID: 10895260}
+  - 114: {fileID: 11495260}
+  m_Layer: 0
+  m_Name: ShotgunMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1399,7 +1418,7 @@ Transform:
   m_LocalPosition: {x: -.223723322, y: -.185048848, z: .35033378}
   m_LocalScale: {x: .150000006, y: .150000006, z: .150000006}
   m_Children:
-  - {fileID: 401584}
+  - {fileID: 495260}
   m_Father: {fileID: 400082}
   m_RootOrder: 2
 --- !u!4 &400094
@@ -1432,11 +1451,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101584}
-  m_LocalRotation: {x: -.397165149, y: -.614025831, z: .506940126, w: .456337452}
-  m_LocalPosition: {x: 4.78999996, y: .389999986, z: .0599999987}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalRotation: {x: .556907713, y: .523044884, z: -.467278302, w: -.444892019}
+  m_LocalPosition: {x: .713999987, y: -.130999997, z: .061999999}
+  m_LocalScale: {x: .449999928, y: .450000018, z: .449999958}
   m_Children: []
-  m_Father: {fileID: 400092}
+  m_Father: {fileID: 433020}
   m_RootOrder: 0
 --- !u!4 &433020
 Transform:
@@ -1447,9 +1466,22 @@ Transform:
   m_LocalRotation: {x: .285804808, y: .0660130084, z: .43841958, w: -.849556506}
   m_LocalPosition: {x: -.0450000688, y: -.144319132, z: .237683222}
   m_LocalScale: {x: .99999994, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 401584}
   m_Father: {fileID: 400082}
   m_RootOrder: 1
+--- !u!4 &495260
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195260}
+  m_LocalRotation: {x: -.397165149, y: -.614025831, z: .506940126, w: .456337452}
+  m_LocalPosition: {x: 4.78999996, y: .389999986, z: .0599999987}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 400092}
+  m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -1590,6 +1622,26 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2395260
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195260}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 7db40d1b59e31f74d896d0d3bea779e3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1639,6 +1691,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133020}
   m_Mesh: {fileID: 4300000, guid: 9fc59e92fdba7064d955aaf6e574fbdc, type: 3}
+--- !u!33 &3395260
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195260}
+  m_Mesh: {fileID: 4300000, guid: 3bd0ce01dc1451647bbdfb223f4e641e, type: 3}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1918,6 +1977,41 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!108 &10895260
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195260}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 2
+  m_Color: {r: 1, g: .806896567, b: 0, a: 1}
+  m_Intensity: .5
+  m_Range: 20
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!111 &11100000
 Animation:
   m_ObjectHideFlags: 1
@@ -2079,7 +2173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
-  muzzleFlash: {fileID: 101584}
+  muzzleFlash: {fileID: 195260}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
   camera: {fileID: 0}
 --- !u!114 &11400022
@@ -2151,7 +2245,7 @@ MonoBehaviour:
   fadeSpeed: .25
   epsilon: .0500000007
   baseAlpha: 64
-  baseIntensity: .5
+  baseIntensity: .800000012
 --- !u!114 &11433020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2164,12 +2258,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 101584}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
   camera: {fileID: 0}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
   ejectLocation: {x: .100000001, y: 0, z: 0}
   ejectForce: {x: 0, y: 1, z: 2}
+--- !u!114 &11495260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d8f2061c2c3a0489349092c111798a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: .25
+  epsilon: .0500000007
+  baseAlpha: 64
+  baseIntensity: .5
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
