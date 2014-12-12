@@ -34,6 +34,12 @@ public abstract class Weapon : MonoBehaviour {
 		} 
 	}
 
+	public int AmmoCount{ 
+		get { 
+			return (ammoManager!=null) ? ammoManager.GetAmmoCount(AmmoType) : 0; 
+		} 
+	}
+
 	void Start() {
 		ammoManager = transform.parent.GetComponent<AmmoManager>();
 		if(muzzleFlash != null)
@@ -52,6 +58,7 @@ public abstract class Weapon : MonoBehaviour {
 		}
 	}
 
+	//depreciated
 	public int GetAmmoCount(){
 		return ammoManager.GetAmmoCount(AmmoType);
 	}
