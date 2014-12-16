@@ -43,7 +43,7 @@ public static class WeaponStatsExtension{
 	public static float FireInterval(this WeaponStats w){
 		float foo = 1f;
 		switch(w){
-		case WeaponStats.PISTOL:	foo = 1f;	break;
+		case WeaponStats.PISTOL:	foo = 0.2f;	break;
 		case WeaponStats.RIFLE:		foo = 0.2f;	break;
 		case WeaponStats.SHOTGUN:	foo = 1f;	break;
 		}
