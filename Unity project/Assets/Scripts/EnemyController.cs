@@ -10,7 +10,8 @@ public class EnemyController : MonoBehaviour {
 	public Transform parentObject;
 	private static Transform parent;
 
-	public static int[] flagPos = new int[] {0, 0, 0}; // x, y and z coordinates of the flag.
+	public Transform flag;
+	public static int[] flagPos = new int[] {10, 0, 10}; // x, y and z coordinates of the flag.
 
 	private static GameObject[] enemyObjects;
 	private static int enemyObjectSize = 0; // Array size of enemyObjects.
@@ -41,9 +42,15 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization.
 	void Start () {
+		if (flag != null)
+			flagPos = new int[] {
+				Mathf.FloorToInt(flag.position.x), 
+				Mathf.FloorToInt(flag.position.y), 
+				Mathf.FloorToInt(flag.position.z)
+			};
+
 		EnemyPrefabStatic = EnemyPrefab; // Create static reference.
 		playerStatic = player;
-
 
 		parent = this.parentObject;
 		enemyObjects = new GameObject[maxAmountOfEnemies];
@@ -224,6 +231,11 @@ public class EnemyController : MonoBehaviour {
 		pathToPlayerIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 		pathToFlag.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 		pathToFlagIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
+
+		// DEBUG - Spawns enemies when pressing F8.
+		if(Input.GetKeyDown(KeyCode.F8)) {
+			startNextWave();
+		}
 	}
 
 	// updatePathFinding method.
@@ -231,6 +243,12 @@ public class EnemyController : MonoBehaviour {
 	public static void updatePathFinding() {
 		pathToPlayer.updatePathFinding();
 		pathToFlag.updatePathFinding();
+	}
+
+	// getWave method.
+	// Returns the current wave number.
+	public static int getWave() {
+		return wave;
 	}
 
 

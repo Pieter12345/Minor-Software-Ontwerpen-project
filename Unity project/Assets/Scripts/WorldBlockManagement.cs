@@ -73,6 +73,8 @@ public class WorldBlockManagement : MonoBehaviour {
 		setBlockAt(0,           levelHeight-2, levelSize-1, 1);
 		setBlockAt(levelSize-1, levelHeight-2, levelSize-1, 1);
 
+		setBlockAt (10, 2, 10, 3); // A block at the flag pos (Set flag pos in EnemyController!).
+
 		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
 		saveLevelToFile("save1");
 
@@ -478,7 +480,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		groundPlane.transform.localScale = new Vector3(levelSize/10f, 0f, levelSize/10f);
 	}
 
-	// blockifyWorld Method.
+	// blockifyWorld method.
 	// Blockifies all objects which have a collider. This is used to indicate where objects are for pathFinding.
 	private void blockifyWorld() {
 		for(int x = 0; x < levelSize; x++) {
@@ -492,6 +494,55 @@ public class WorldBlockManagement : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	// isSupportedAt method.
+	// Returns wether a player/enemy is being supported at a certain position. If true, the enemy/player should not fall.
+	// capsuleRadius is the radius of your support, this should not exceed 0.5.
+	public static bool isSupportedAt(Vector3 pos, float capsuleRadius) {
+		pos += new Vector3(0.5f, 0f, 0.5f); // Scale the entitypos with the level.
+		// Give warning on wrong input.
+		if(capsuleRadius > 0.5f) { Debug.Log("[SEVERE] [WorldBlockManagement] isSupportedAt method is called with too large capsuleRadius."); }
+		if(pos.x<0 || pos.y<0 || pos.z<0 || pos.x >= levelSize || pos.y >= levelHeight || pos.z >= levelSize) {
+			Debug.Log("[SEVERE] [WorldBlockManagement] isSupportedAt method is called with an out of bounds position.");
+			return false;
+		}
+
+		// Check if the entity is an integer y value.
+		if(Mathf.Abs(pos.y % 1f) > 0f) { return false; } // TODO - Maybe increase this value a little to prevent glitching?
+
+		// Get the on-grid position.
+		int x = Mathf.FloorToInt(pos.x);
+		int y = Mathf.RoundToInt(pos.y);
+		int z = Mathf.FloorToInt(pos.z);
+
+		// Return true if the current position is supportive.
+		if(canStandHere(x, y, z)) { return true; }
+
+		// Check blocks around the entity and return true if the entity has support on them.
+		// TODO - Enemies glitch when going in the z- x+ direction. Fix this.
+		float capsuleRadiusSqr = capsuleRadius * capsuleRadius;
+		if(canStandHere(x+1, y, z  ) && x+1 - pos.x <= capsuleRadius) { return true; }
+		if(canStandHere(x-1, y, z  ) && pos.x - x   <= capsuleRadius) { return true; }
+		if(canStandHere(x  , y, z+1) && z+1 - pos.z <= capsuleRadius) { return true; }
+		if(canStandHere(x  , y, z-1) && pos.z - z   <= capsuleRadius) { return true; }
+
+		if(canStandHere(x+1, y, z+1) && (pos - new Vector3(x+1, pos.y, z+1)).sqrMagnitude <= capsuleRadiusSqr) { return true; }
+		if(canStandHere(x-1, y, z+1) && (pos - new Vector3(x  , pos.y, z+1)).sqrMagnitude <= capsuleRadiusSqr) { return true; }
+		if(canStandHere(x+1, y, z-1) && (pos - new Vector3(x+1, pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; }
+		if(canStandHere(x-1, y, z-1) && (pos - new Vector3(x  , pos.y, z  )).sqrMagnitude <= capsuleRadiusSqr) { return true; }
+
+		// Return false if no support was found.
+		return false;
+	}
+
+	// breakBlockAt method.
+	// Breaks a block at the given position, does nothing if called on blockID 0 or 255, or with out-of-bounds arguments.
+	public static void breakBlockAt(int x, int y, int z) {
+		if(getBlockAt(x, y, z) == 0 || getBlockAt(x, y, z) == 255) { return; }
+		if(x < 0 || y < 0 || z < 0 || x >= levelSize || y >= levelHeight || z >= levelSize) { return; }
+		setBlockAt(x, y, z, 0);
+		EnemyController.updatePathFinding();
 	}
 
 	// Quote to copy:   """""""

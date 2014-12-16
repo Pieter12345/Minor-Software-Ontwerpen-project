@@ -7,6 +7,7 @@ public class FireController : MonoBehaviour {
 	public Transform camera;
 	public Transform transBlock;
 	public Transform weaponController;
+	public GameObject torch;
 
 	public float blockPlaceTime = 0.5f;
 
@@ -23,6 +24,11 @@ public class FireController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetButtonUp("Torch")){
+			if(torch != null)
+				torch.SetActive(!torch.activeInHierarchy);
+		}
+
 		if(Input.GetButton("Modifier")){ //Place block mode enabled
 			blockMode = true;
 			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
@@ -97,11 +103,9 @@ public class FireController : MonoBehaviour {
 			                                   Mathf.Floor(hit.point.z-0.5f*hit.normal.z))
 			                       ) + (new Vector3(0.5f, 0.5f, 0.5f));
 
-			WorldBlockManagement.setBlockAt(Mathf.FloorToInt(destroyPosition.x),
+			WorldBlockManagement.breakBlockAt(Mathf.FloorToInt(destroyPosition.x),
 			                  Mathf.FloorToInt(destroyPosition.y),
-			                  Mathf.FloorToInt(destroyPosition.z),
-			                  (byte)0);
-			EnemyController.updatePathFinding();
+			                  Mathf.FloorToInt(destroyPosition.z));
 		}
 	}
 

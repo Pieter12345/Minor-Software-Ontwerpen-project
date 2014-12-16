@@ -21,4 +21,11 @@ public class PickUpHandler : MonoBehaviour {
 		ammoManager.AddAmmo(a, amount);
 	}
 
+	void Update(){
+		//cheat gun
+		if(Input.GetKeyUp(KeyCode.F10)){
+			PickUp(WeaponStats.PISTOL);
+		}
+	}
+
 }

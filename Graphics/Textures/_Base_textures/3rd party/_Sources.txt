@@ -40,3 +40,7 @@ URL	:http://www.cgtextures.com/texview.php?id=7167&PHPSESSID=vd1dqur1h2r1l9iit9q
 Filename:ConcreteRough0058_2_M.jpg
 Source	:CGTextures
 URL	:http://www.cgtextures.com/texview.php?id=23578&PHPSESSID=vd1dqur1h2r1l9iit9q7uneon4
+
+Filename:MetalBase0123_S.jpg
+Source  :CGTextures
+URL	:http://www.cgtextures.com/texview.php?id=65313&PHPSESSID=e8rbn81bf261mu9j2mb6bsbfk0
