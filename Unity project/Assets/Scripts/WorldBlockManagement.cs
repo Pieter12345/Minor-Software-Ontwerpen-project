@@ -488,7 +488,7 @@ public class WorldBlockManagement : MonoBehaviour {
 				for(int y = 0; y < levelHeight-1; y++) {
 					if(Physics.CheckSphere(new Vector3(x+0.5f, y+0.5f, z+0.5f), 0.49f)) {
 						if(getBlockAt(x, y, z) == 0) {
-							setBlockAt(x, y, z, 255); // Invisible block.
+							setBlockAt(x, y, z, 255); // 255 = Invisible block.
 						}
 					}
 				}
@@ -509,7 +509,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		}
 
 		// Check if the entity is an integer y value.
-		if(Mathf.Abs(pos.y % 1f) > 0f) { return false; } // TODO - Maybe increase this value a little to prevent glitching?
+		if(Mathf.Abs(pos.y % 1f) > 0f) { return false; }
 
 		// Get the on-grid position.
 		int x = Mathf.FloorToInt(pos.x);
@@ -520,7 +520,6 @@ public class WorldBlockManagement : MonoBehaviour {
 		if(canStandHere(x, y, z)) { return true; }
 
 		// Check blocks around the entity and return true if the entity has support on them.
-		// TODO - Enemies glitch when going in the z- x+ direction. Fix this.
 		float capsuleRadiusSqr = capsuleRadius * capsuleRadius;
 		if(canStandHere(x+1, y, z  ) && x+1 - pos.x <= capsuleRadius) { return true; }
 		if(canStandHere(x-1, y, z  ) && pos.x - x   <= capsuleRadius) { return true; }
