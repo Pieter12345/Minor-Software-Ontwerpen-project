@@ -245,6 +245,12 @@ public class EnemyController : MonoBehaviour {
 		pathToFlag.updatePathFinding();
 	}
 
+	// getWave method.
+	// Returns the current wave number.
+	public static int getWave() {
+		return wave;
+	}
+
 
 
 }
