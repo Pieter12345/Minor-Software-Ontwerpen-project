@@ -11,7 +11,7 @@ public class pathFinding {
 	private int[] worldOverlay;
 	private int[] tempWorldOverlay;
 	private int currentDistance = 0; // Update state, length of the calculated path.
-	private int updateSize = 5; // The distance in the worldOverlay that will be updated per FixedUpdate.
+	private int updateSize = 3; // The distance in the worldOverlay that will be updated per FixedUpdate.
 	private int[] goalCoords; // Format: {x,y,z}
 	private bool onlyCheckId255; // True for pathfinding that ignores all blocks (except for the fundamental invisible level blocks).
 
