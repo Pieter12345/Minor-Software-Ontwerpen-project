@@ -17,7 +17,9 @@ public class EnemyAI : MonoBehaviour {
 	private Vector3 singleMoveGoalCoords; // Goal coords of each step.
 	
 	private float acceptableErrorDistance = 0.1f; // Distance from singleMoveGoal which is acceptable to stop at.
-	private float speed = 5f/3.6f; // Speed in m/s.
+	private float speedMax = 10f/3.6f; // Speed in m/s.
+	private float speedMin = 5f/3.6f; // Speed in m/s.
+	private float speed;
 	
 	private float enemyRadius = 0.4f; // The supportive radius of the enemy. This is used to determine wether an enemy can stand at a position or not.
 
@@ -58,6 +60,8 @@ public class EnemyAI : MonoBehaviour {
 
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		flag = GameObject.FindGameObjectWithTag("Flag").transform;
+
+		speed = Random.Range(speedMin, speedMax);
 		// TODO - Load random enemy texture here.
 		// TODO - Initialize any random selected AI variables here.
 	}

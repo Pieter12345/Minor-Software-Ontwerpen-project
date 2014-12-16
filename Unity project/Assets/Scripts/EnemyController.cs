@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour {
 	private static Object EnemyPrefabStatic;
 
 	private static int wave = 0;
+	private static int enemiesLeft = 0;
 //	private int amountOfEnemiesOnThisWave = 0; // The initial spawned amount of enemies on the current wave.
 //  private int enemiesKilledOnThisWave = 0;
 	
@@ -183,6 +184,7 @@ public class EnemyController : MonoBehaviour {
 		float b = 2f;
 		int c = 3;
 		int amountOfEnemiesOnThisWave = (int) (a * (wave * wave) + b * wave + c);
+		enemiesLeft = amountOfEnemiesOnThisWave; // Initialize every wave.
 
 		// Spawn the amountOfEnemiesOnThisWave enemies on random positions on the sides of the grid.
 		for(int i=0; i < amountOfEnemiesOnThisWave; i++) {
@@ -209,19 +211,20 @@ public class EnemyController : MonoBehaviour {
     public static void refreshEnemiesLeft() {
         
         // Count the amount of enemies left.
-        int enemiesLeft = 0;
+        int enemiesLeft2 = 0;
         for(int i=0; i < enemyObjectSize; i++) {
             if(enemyObjects[i] != null) {
-                enemiesLeft++;
+                enemiesLeft2++;
             }
         }
         
         // Spawn a new wave if there are no enemies left.
-        if(enemiesLeft == 0) {
+        if(enemiesLeft2 == 0) {
             startNextWave();
         }
 
-		Debug.Log("Enemies left: " + enemiesLeft);
+		enemiesLeft = enemiesLeft2;
+		Debug.Log("Enemies left: " + enemiesLeft2);
     }
 
 	// FixedUpdate method.
@@ -249,6 +252,12 @@ public class EnemyController : MonoBehaviour {
 	// Returns the current wave number.
 	public static int getWave() {
 		return wave;
+	}
+
+	// getEnemiesLeft method.
+	// Returns the amount of enemies left on the current wave (and therefor in the scene).
+	public int getEnemiesLeft() {
+		return enemiesLeft;
 	}
 
 
