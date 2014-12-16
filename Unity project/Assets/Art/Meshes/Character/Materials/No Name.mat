@@ -24,19 +24,19 @@ Material:
       data:
         first:
           name: _Treshold
-        second: .25
+        second: .375
       data:
         first:
           name: _Shadow
-        second: .5
+        second: .928571403
       data:
         first:
           name: _Intensity
-        second: 1.12500012
+        second: 1.25
       data:
         first:
           name: _Diffuse
-        second: 9.99999975e-05
+        second: .303641051
       data:
         first:
           name: _Alpha
