@@ -15,6 +15,7 @@ public class MenuButtons : MonoBehaviour {
 
 	public void RetryLevel(){
 		Debug.Log ("Loading Level");
+		Screen.lockCursor = true;
 		Application.LoadLevel("Level");
 	}
 
