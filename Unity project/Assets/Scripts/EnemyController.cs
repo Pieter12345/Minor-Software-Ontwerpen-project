@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
 	public Transform parentObject;
 	private static Transform parent;
 
+	public Transform flag;
 	public static int[] flagPos = new int[] {10, 0, 10}; // x, y and z coordinates of the flag.
 
 	private static GameObject[] enemyObjects;
@@ -41,9 +42,15 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization.
 	void Start () {
+		if (flag != null)
+			flagPos = new int[] {
+				Mathf.FloorToInt(flag.position.x), 
+				Mathf.FloorToInt(flag.position.y), 
+				Mathf.FloorToInt(flag.position.z)
+			};
+
 		EnemyPrefabStatic = EnemyPrefab; // Create static reference.
 		playerStatic = player;
-
 
 		parent = this.parentObject;
 		enemyObjects = new GameObject[maxAmountOfEnemies];

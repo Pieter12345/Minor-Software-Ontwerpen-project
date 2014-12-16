@@ -8,6 +8,7 @@ using System.Collections;
 public class EnemyAI : MonoBehaviour {
 
 	private Transform player;
+	private Transform flag;
 
 	// Variables & Constants.
 	public GameObject enemyObject; // The object that represents this enemy.
@@ -50,6 +51,7 @@ public class EnemyAI : MonoBehaviour {
 		pathToFlagIgnoringBlocks = EnemyController.getPathToFlagIgnoringBlocks();
 
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+		flag = GameObject.FindGameObjectWithTag("Flag").transform;
 		// TODO - Load random enemy texture here.
 		// TODO - Initialize any random selected AI variables here.
 	}
@@ -110,6 +112,7 @@ public class EnemyAI : MonoBehaviour {
 					} else {
 						// TODO - Damage the flag here + animation?
 						Debug.Log("Damaging flag!");
+						(flag.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt);
 					}
 					break;
 				}
