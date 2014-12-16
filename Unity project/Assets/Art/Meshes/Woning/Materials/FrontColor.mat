@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FrontColor
-  m_Shader: {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
+  m_Shader: {fileID: 4800000, guid: 14ea298b5c298bf4cbd742061379909f, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -31,7 +31,7 @@ Material:
       data:
         first:
           name: _Treshold
-        second: .785714328
+        second: 0
       data:
         first:
           name: _Shadow
@@ -39,7 +39,7 @@ Material:
       data:
         first:
           name: _Intensity
-        second: 1.96428561
+        second: .624999881
       data:
         first:
           name: _Diffuse
