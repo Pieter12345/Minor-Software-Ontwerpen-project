@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\RuntimeParenting.cs" />
      <Compile Include="Assets\Scripts\UI\AmmoCounter.cs" />
      <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />
+     <Compile Include="Assets\Scripts\UI\Healthbar.cs" />
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />

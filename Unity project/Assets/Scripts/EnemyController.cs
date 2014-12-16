@@ -256,7 +256,7 @@ public class EnemyController : MonoBehaviour {
 
 	// getEnemiesLeft method.
 	// Returns the amount of enemies left on the current wave (and therefor in the scene).
-	public int getEnemiesLeft() {
+	public static int getEnemiesLeft() {
 		return enemiesLeft;
 	}
 
