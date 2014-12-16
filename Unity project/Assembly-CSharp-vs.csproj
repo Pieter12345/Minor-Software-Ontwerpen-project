@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\RuntimeParenting.cs" />
      <Compile Include="Assets\Scripts\UI\AmmoCounter.cs" />
      <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />
+     <Compile Include="Assets\Scripts\UI\Healthbar.cs" />
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
@@ -88,6 +89,7 @@
      <None Include="Assets\Resources\Shaders\Toon Shader 5.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 4.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader.shader" />
+     <None Include="Assets\Resources\Shaders\Toon Shader 6.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 3.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
