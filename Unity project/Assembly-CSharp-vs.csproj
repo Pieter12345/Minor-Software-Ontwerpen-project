@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AmmoCounter.cs" />
      <Compile Include="Assets\Scripts\Animation\MuzzleFlash.cs" />
      <Compile Include="Assets\Scripts\Animation\Shell.cs" />
      <Compile Include="Assets\Scripts\Animation\SkyScrollerScript.cs" />
@@ -57,6 +56,7 @@
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoTypes.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Damageable.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\FlagHealth.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\PauseController.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\PlayerHealth.cs" />
@@ -70,12 +70,15 @@
      <Compile Include="Assets\Scripts\Core\Util\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
-     <Compile Include="Assets\Scripts\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\PickUpHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimationManager.cs" />
      <Compile Include="Assets\Scripts\RuntimeParenting.cs" />
+     <Compile Include="Assets\Scripts\UI\AmmoCounter.cs" />
+     <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
+     <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleGun.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleShotgun.cs" />
