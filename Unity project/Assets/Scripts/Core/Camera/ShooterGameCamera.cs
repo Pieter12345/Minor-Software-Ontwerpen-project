@@ -49,7 +49,7 @@ public class ShooterGameCamera : MonoBehaviour {
 		/*weapon property*/
 		WeaponController wcont = weapon.GetComponent<WeaponController>();
 		Weapon selected =  wcont.SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon;
-		float weaponRecoilIntensity = selected.Recoil; 
+		float weaponRecoilIntensity = (selected != null) ? selected.Recoil : 0f; 
 		
 		if (Fired == true) {
 			CameraRecoil = weaponRecoilIntensity * 5.0f;		

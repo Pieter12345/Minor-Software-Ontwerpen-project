@@ -84,6 +84,8 @@
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
+     <Compile Include="Assets\Scripts\WeaponTypes\RPG.cs" />
+     <Compile Include="Assets\Scripts\WeaponTypes\RPGGrenade.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleGun.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleShotgun.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />

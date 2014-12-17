@@ -32,6 +32,7 @@ public class FireController : MonoBehaviour {
 		if(Input.GetButton("Modifier")){ //Place block mode enabled
 			blockMode = true;
 			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
+			UpdateAimBlockTex(selectedBlock);
 		} else {
 			blockMode = false;
 			if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
@@ -138,6 +139,34 @@ public class FireController : MonoBehaviour {
 		}
 	}
 
+	void UpdateAimBlockTex(int BlockID) {
+		
+		string textureFileName = "textureNotFoundTexture.png";
+		
+		// TODO Copied from WorldBlockManagement.cs, consider referencing directly!
+		switch(BlockID) {
+		case 1: {textureFileName = "stone.png";
+			break;
+		}
+		case 2: {textureFileName = "brick.png";
+			break;
+		}
+		case 3: {textureFileName = "leaves.png";
+			break;
+		}
+		case 4: {textureFileName = "brick.png";
+			break;
+		}
+		case 5: {textureFileName = "brick.png";
+			break;
+		}
+		}
+
+		Texture2D CurrentTexture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+		transBlock.renderer.material.SetTexture("_MainTex",CurrentTexture);
+		
+	}
+	
 	public void Reload(){
 		weapons.Reload();
 	}
