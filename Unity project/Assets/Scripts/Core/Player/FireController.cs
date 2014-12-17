@@ -32,6 +32,7 @@ public class FireController : MonoBehaviour {
 		if(Input.GetButton("Modifier")){ //Place block mode enabled
 			blockMode = true;
 			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
+			UpdateAimBlockTex(selectedBlock);
 		} else {
 			blockMode = false;
 			if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
@@ -138,6 +139,12 @@ public class FireController : MonoBehaviour {
 		}
 	}
 
+	void UpdateAimBlockTex(int BlockID) {
+		string textureFileName = "textureNotFoundTexture.png";
+		Texture2D CurrentTexture = WorldBlockManagement.getTextureFromBlockID(BlockID);
+		transBlock.renderer.material.SetTexture("_MainTex",CurrentTexture);
+	}
+	
 	public void Reload(){
 		weapons.Reload();
 	}
