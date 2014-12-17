@@ -1,4 +1,4 @@
-Shader "Toon Shader/transparent" {
+Shader "Toon Shader/TexturedTransparent" {
    Properties {
       _Color ("Diffuse Material Color", Color) = (1,1,1,1) 
       _Treshold ("Shadow-Treshold", range(0,1)) = 0.5
@@ -39,12 +39,13 @@ Shader "Toon Shader/transparent" {
          struct vertexInput {
             float4 vertex : POSITION;
             float3 normal : NORMAL;
+			float4 texcoord : TEXCOORD0;
          };
          struct vertexOutput {
 		    float4 tex : TEXCOORD0;
             float4 pos : SV_POSITION;
-            float4 posWorld : TEXCOORD0;
-            float3 normalDir : TEXCOORD1;
+            float4 posWorld : TEXCOORD1;
+            float3 normalDir : TEXCOORD2;
          };
  
          vertexOutput vert(vertexInput input) 
@@ -91,13 +92,13 @@ Shader "Toon Shader/transparent" {
                UNITY_LIGHTMODEL_AMBIENT.rgb * _Color.rgb;
 
             float3 diffuseReflection = 
-               attenuation * _LightColor0.rgb * _Color.rgb            
+               attenuation * _LightColor0.rgb * _Color.rgb;
  
 			//texture maps
             float4 tex = tex2D(_MainTex, input.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
             float3 texLighting = tex.xyz * _LightColor0.rgb;
              
-            return float4(ambientLighting + diffuseReflection
+            return float4((ambientLighting + diffuseReflection)* texLighting.xyz
                , _Alpha);
          }
  
@@ -130,12 +131,13 @@ Shader "Toon Shader/transparent" {
          struct vertexInput {
             float4 vertex : POSITION;
             float3 normal : NORMAL;
+			float4 texcoord : TEXCOORD0;
          };
          struct vertexOutput {
 		    float4 tex : TEXCOORD0;
             float4 pos : SV_POSITION;
-            float4 posWorld : TEXCOORD0;
-            float3 normalDir : TEXCOORD1;
+            float4 posWorld : TEXCOORD1;
+            float3 normalDir : TEXCOORD2;
          };
  
          vertexOutput vert(vertexInput input) 
@@ -182,13 +184,13 @@ Shader "Toon Shader/transparent" {
                UNITY_LIGHTMODEL_AMBIENT.rgb * _Color.rgb;
 
             float3 diffuseReflection = 
-               attenuation * _LightColor0.rgb * _Color.rgb            
+               attenuation * _LightColor0.rgb * _Color.rgb;            
  
 			//texture maps
             float4 tex = tex2D(_MainTex, input.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
             float3 texLighting = tex.xyz * _LightColor0.rgb;
              
-            return float4(ambientLighting + diffuseReflection
+            return float4(diffuseReflection * texLighting.xyz
                , _Alpha);
          }
  
