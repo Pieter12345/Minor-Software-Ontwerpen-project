@@ -240,6 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 134244}
+  hittCooldown: .5
+  damagePerHitt: 5
 --- !u!136 &13634238
 CapsuleCollider:
   m_ObjectHideFlags: 1

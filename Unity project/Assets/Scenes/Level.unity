@@ -4092,7 +4092,7 @@ MonoBehaviour:
   playerCanRegen: 1
   regeneratingFraction: .200000003
   regenSpeed: 1
-  regenCooldown: 10
+  regenCooldown: 5
 --- !u!1 &383894176
 GameObject:
   m_ObjectHideFlags: 0
@@ -8995,6 +8995,10 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1661318639}
+    - target: {fileID: 11400026, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: regenCooldown
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -17911,7 +17915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69723cd160dbf7f4abe71909399b7f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 60
 --- !u!23 &1699489586
 Renderer:
   m_ObjectHideFlags: 0
