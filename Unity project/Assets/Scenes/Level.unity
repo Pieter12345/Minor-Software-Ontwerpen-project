@@ -2190,6 +2190,10 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1661318639}
+    - target: {fileID: 11429844, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: grenade
+      value: 
+      objectReference: {fileID: 1232833560}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -5318,6 +5322,7 @@ MonoBehaviour:
   weaponType: 3
   muzzleFlash: {fileID: 0}
   shotSound: {fileID: 0}
+  grenade: {fileID: 1232833560}
 --- !u!1 &491147894
 GameObject:
   m_ObjectHideFlags: 0
@@ -13021,6 +13026,8 @@ GameObject:
   - 4: {fileID: 1232833560}
   - 33: {fileID: 1232833562}
   - 23: {fileID: 1232833561}
+  - 114: {fileID: 1232833564}
+  - 135: {fileID: 1232833563}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -13069,6 +13076,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 172699653}
   m_GameObject: {fileID: 1232833559}
   m_Mesh: {fileID: 4300000, guid: a12fd661b9f8cbe4cad1cd4aa7cbd822, type: 3}
+--- !u!135 &1232833563
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232833559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .100000001
+  m_Center: {x: .529999971, y: -1.85741544e-06, z: .0369522721}
+--- !u!114 &1232833564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232833559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f39fff48b1c3d448a3b371a29f5367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1234997280
 GameObject:
   m_ObjectHideFlags: 0
