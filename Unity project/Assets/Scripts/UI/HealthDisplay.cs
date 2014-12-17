@@ -19,7 +19,7 @@ public class HealthDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(playerHP != null){
-			displayText.text = "HP: " + playerHP.HP + "/" + playerHP.maxHP;
+			displayText.text = "HP: " + Mathf.CeilToInt(playerHP.HP) + "/" + Mathf.CeilToInt(playerHP.maxHP);
 		}
 	}
 }
