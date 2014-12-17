@@ -3,14 +3,16 @@ using System.Collections;
 
 public class RPG : Weapon {
 
-	public Transform grenade;
+	public Transform firedGrenade;
+	public Transform unfiredGrenade;
 
 	public override void Fire(Vector3 from, Vector3 to){
-		if(grenade == null){
+		if(firedGrenade == null || unfiredGrenade == null){
 			Debug.LogError("RPG has no grenade!");
 			return;
 		}
-		grenade.GetComponent<RPGGrenade>().Fire(to);
-
+		unfiredGrenade.gameObject.SetActive(false);
+		firedGrenade.gameObject.SetActive(true);
+		firedGrenade.GetComponent<RPGGrenade>().Fire(to);
 	}
 }
