@@ -76,6 +76,8 @@
      <Compile Include="Assets\Scripts\PlayerAnimationManager.cs" />
      <Compile Include="Assets\Scripts\RuntimeParenting.cs" />
      <Compile Include="Assets\Scripts\UI\AmmoCounter.cs" />
+     <Compile Include="Assets\Scripts\UI\EnemiesCounter.cs" />
+     <Compile Include="Assets\Scripts\UI\FlagHealthbar.cs" />
      <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\UI\Healthbar.cs" />
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
