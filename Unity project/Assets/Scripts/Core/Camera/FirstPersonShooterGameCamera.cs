@@ -7,6 +7,7 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 	public Transform player;
 	public Transform aimTarget;
 	public Transform weapon;
+	public Texture crosshair;
 
 	// Camera & control variables.
 	private Vector3 cameraRotation;
@@ -116,6 +117,6 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 	// Draw a crosshair.
 	void OnGUI () {
 		if (Time.time != 0 && Time.timeScale != 0)
-			GUI.DrawTexture(new Rect(Screen.width/2-(reticle.width*0.5f), Screen.height/2-(reticle.height*0.5f), reticle.width, reticle.height), reticle);
+			GUI.DrawTexture(new Rect(Screen.width/2-(crosshair.width*0.5f), Screen.height/2-(crosshair.height*0.5f), crosshair.width, crosshair.height), crosshair);
 	}
 }
