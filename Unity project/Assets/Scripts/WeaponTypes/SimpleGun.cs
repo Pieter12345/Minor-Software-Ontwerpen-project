@@ -17,7 +17,12 @@ public class SimpleGun : Weapon {
 			timeLastShot = Time.time;
 			if (AmmoInClip > 0){
 				// Add Recoil
-				camera.GetComponent<ShooterGameCamera>().Fired = true;
+				if(camera.GetComponent<ShooterGameCamera>().enabled) {
+					camera.GetComponent<ShooterGameCamera>().setFired(true);
+				}
+				if(camera.GetComponent<FirstPersonShooterGameCamera>().enabled){
+					camera.GetComponent<FirstPersonShooterGameCamera>().setFired(true);
+				}
 				ShotEffects();
 				TakeFromClip();
 				EjectShell();
