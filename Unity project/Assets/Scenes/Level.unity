@@ -8995,6 +8995,14 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1661318639}
+    - target: {fileID: 2300000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300028, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -16300,7 +16308,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 838275205}
   m_GameObject: {fileID: 1579508057}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -17655,6 +17663,7 @@ GameObject:
   - 92: {fileID: 1661318641}
   - 81: {fileID: 1661318640}
   - 114: {fileID: 1661318644}
+  - 114: {fileID: 1661318645}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -17736,6 +17745,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cf760d35390f244aa50e40d650a3006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1767831527}
+  aimTarget: {fileID: 1579508058}
+  smoothingTime: .5
+  pivotOffset: {x: 1.29999995, y: .400000006, z: 0}
+  camOffset: {x: 0, y: .699999988, z: -2.4000001}
+  closeOffset: {x: .349999994, y: 1.70000005, z: 0}
+  horizontalAimingSpeed: 270
+  verticalAimingSpeed: 270
+  maxVerticalAngle: 80
+  minVerticalAngle: -80
+  mouseSensitivity: .100000001
+  reticle: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
+  Fired: 0
+  weapon: {fileID: 621141090}
+--- !u!114 &1661318645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1661318638}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95903f008e0c0ad42855ed2964bdee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1767831527}
@@ -22104,7 +22138,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 838275205}
   m_GameObject: {fileID: 2067389829}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
