@@ -221,6 +221,7 @@ public class EnemyController : MonoBehaviour {
         // Spawn a new wave if there are no enemies left.
         if(enemiesLeft2 == 0) {
             startNextWave();
+			return;
         }
 
 		enemiesLeft = enemiesLeft2;

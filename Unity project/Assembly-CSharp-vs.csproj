@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Animation\Shell.cs" />
      <Compile Include="Assets\Scripts\Animation\SkyScrollerScript.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\BindPosition.cs" />
+     <Compile Include="Assets\Scripts\Core\Camera\FirstPersonShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoPool.cs" />

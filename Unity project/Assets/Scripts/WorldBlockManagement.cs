@@ -544,12 +544,23 @@ public class WorldBlockManagement : MonoBehaviour {
 		EnemyController.updatePathFinding();
 	}
 
+	// getTextureFromBlockID method.
+	// Returns the texture for the given blockID.
+	public static Texture2D getTextureFromBlockID(int blockID) {
+		string textureFileName = "textureNotFoundTexture.png";
+		switch(blockID) {
+		case 1: { textureFileName = "stone.png" ; break; }
+		case 2: { textureFileName = "brick.png" ; break; }
+		case 3: { textureFileName = "leaves.png"; break; }
+		case 4: { textureFileName = "brick.png" ; break; }
+		case 5: { textureFileName = "brick.png" ; break; }
+		default: {
+			Debug.Log("[SEVERE]: [WorldBlockManagement] The getTextureFromBlockID method has been called with an unknown blockID: " + blockID + ". Returning textureNotFoundTexture.");
+			break;
+		}
+		}
+		return Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+	}
+
 	// Quote to copy:   """""""
-
-
-
-//	// Update is called once per frame.
-//	void Update () {
-//		
-//	}
 }
