@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\Animation\Shell.cs" />
      <Compile Include="Assets\Scripts\Animation\SkyScrollerScript.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\BindPosition.cs" />
-     <Compile Include="Assets\Scripts\Core\Camera\FirstPersonShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoPool.cs" />
@@ -85,7 +84,6 @@
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\RPG.cs" />
-     <Compile Include="Assets\Scripts\WeaponTypes\RPGGrenade.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleGun.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleShotgun.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
