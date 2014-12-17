@@ -140,31 +140,9 @@ public class FireController : MonoBehaviour {
 	}
 
 	void UpdateAimBlockTex(int BlockID) {
-		
 		string textureFileName = "textureNotFoundTexture.png";
-		
-		// TODO Copied from WorldBlockManagement.cs, consider referencing directly!
-		switch(BlockID) {
-		case 1: {textureFileName = "stone.png";
-			break;
-		}
-		case 2: {textureFileName = "brick.png";
-			break;
-		}
-		case 3: {textureFileName = "leaves.png";
-			break;
-		}
-		case 4: {textureFileName = "brick.png";
-			break;
-		}
-		case 5: {textureFileName = "brick.png";
-			break;
-		}
-		}
-
-		Texture2D CurrentTexture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+		Texture2D CurrentTexture = WorldBlockManagement.getTextureFromBlockID(BlockID);
 		transBlock.renderer.material.SetTexture("_MainTex",CurrentTexture);
-		
 	}
 	
 	public void Reload(){
