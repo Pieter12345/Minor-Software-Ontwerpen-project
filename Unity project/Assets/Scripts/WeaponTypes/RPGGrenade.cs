@@ -7,16 +7,18 @@ public class RPGGrenade : MonoBehaviour {
 	public float explosionRadius = 2f;
 	public Transform unfiredGrenade;
 
-	private Transform RPG;
+	public GameObject explosionEffect;
+
+	public Transform RPG;
 
 	void Start(){
-		RPG = transform.parent;
 		transform.parent = null;
 	}
 
 	public void Fire(Vector3 to){
 		rigidbody.velocity = Vector3.zero;
-		transform.forward = -RPG.forward;
+		transform.LookAt(to);
+		transform.Rotate(new Vector3(0,270,0), Space.World);
 		transform.position = RPG.position;
 		rigidbody.AddForce((to-transform.position).normalized*fireForce);
 		rigidbody.angularVelocity = Vector3.zero;
@@ -31,6 +33,10 @@ public class RPGGrenade : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 
 		Collider[] hit = Physics.OverlapSphere(transform.position, explosionRadius);
+
+		if(explosionEffect !=null){
+			Instantiate(explosionEffect, transform.position, Quaternion.identity);
+		}
 
 		foreach(Collider c in hit){
 			Damageable dam = c.GetComponent(typeof(Damageable)) as Damageable;
