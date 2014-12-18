@@ -5,7 +5,8 @@ public class MultiLoot : MonoBehaviour {
 
 	private GameObject spawner;
 	private LootSpawner ls;
-
+	[Range(0.0f, 1.0f)]
+	public float masterProbability = 0.4f;
 	public GameObject[] spawnable;
 
 	// Use this for initialization
@@ -20,7 +21,9 @@ public class MultiLoot : MonoBehaviour {
 			Debug.LogWarning("NO SPAWNER FOUND!");
 			return;
 		}
-		int spawnindex = Mathf.FloorToInt(Random.Range(0,spawnable.Length-1));
-		ls.Spawn(spawnable[spawnindex], transform.position, Quaternion.identity);
+		if(Random.Range(0f, 1f) < masterProbability){
+			int spawnindex = Mathf.FloorToInt(Random.Range(0,spawnable.Length-1));
+			ls.Spawn(spawnable[spawnindex], transform.position, Quaternion.identity);
+		}
 	}
 }
