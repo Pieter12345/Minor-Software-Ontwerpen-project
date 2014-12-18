@@ -92,6 +92,7 @@
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
      <Compile Include="Assets\Scripts\pathFinding.cs" />
      <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
+     <None Include="Assets\Resources\Shaders\CloudShader.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 5.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 4.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader.shader" />

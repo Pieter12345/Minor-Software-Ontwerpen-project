@@ -25,7 +25,7 @@ public class RPGGrenade : MonoBehaviour {
 	}
 
 	public void Reset(){
-		unfiredGrenade.gameObject.SetActive(true);
+		//unfiredGrenade.gameObject.SetActive(true);
 		transform.position = RPG.position;
 		gameObject.SetActive(false);
 	}
