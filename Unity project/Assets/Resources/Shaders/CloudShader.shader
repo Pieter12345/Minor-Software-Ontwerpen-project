@@ -1,6 +1,6 @@
 // Compiled shader for PC, Mac & Linux Standalone, uncompressed size: 121.9KB
 
-Shader "Transparent/DiffuseNoFog" {
+Shader "Transparent/CloudShader" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
  _MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
