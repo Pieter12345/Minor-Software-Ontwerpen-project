@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 15735688}
   - 137: {fileID: 15735689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 16991305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ GameObject:
   - 23: {fileID: 79091808}
   - 114: {fileID: 79091807}
   - 82: {fileID: 79091812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,7 +1257,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 124387246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1865,7 @@ GameObject:
   - 23: {fileID: 158099313}
   - 108: {fileID: 158099311}
   - 114: {fileID: 158099312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PistolMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2091,7 +2091,7 @@ GameObject:
   - 114: {fileID: 176778363}
   - 33: {fileID: 176778365}
   - 82: {fileID: 176778366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2838,7 +2838,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 251597971}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3009,7 +3009,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 264700017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3457,7 +3457,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 334712198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3602,7 +3602,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 341306263}
   - 137: {fileID: 341306264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4761,7 +4761,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432234856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4933,7 +4933,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 477010170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5190,7 +5190,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 507442548}
   - 137: {fileID: 507442549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6212,7 +6212,7 @@ GameObject:
   - 114: {fileID: 621141091}
   - 114: {fileID: 621141092}
   - 114: {fileID: 621141093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6605,7 +6605,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 670478570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7075,7 +7075,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 707148160}
   - 137: {fileID: 707148161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7900,7 +7900,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 753812981}
   - 137: {fileID: 753812982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8043,7 +8043,7 @@ GameObject:
   - 4: {fileID: 772413952}
   - 33: {fileID: 772413954}
   - 23: {fileID: 772413953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RPG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8422,7 +8422,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 800289720}
   - 111: {fileID: 800289721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: teddybeerRennen2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8482,7 +8482,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 804790207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8790,7 +8790,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 823925265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9062,7 +9062,215 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100042, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100052, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100056, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100060, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100066, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100068, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100072, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100074, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100076, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100078, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 186916, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 186918, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 186920, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 117202, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100058, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 195260, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 133020, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 101584, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
@@ -9627,7 +9835,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 921699943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10556,7 +10764,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1022605149}
   - 137: {fileID: 1022605150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10697,7 +10905,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1028714321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11205,7 +11413,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1075958438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11451,7 +11659,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1111560431}
   - 137: {fileID: 1111560432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11922,7 +12130,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1150302705}
   - 137: {fileID: 1150302706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12122,7 +12330,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1162522519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12757,7 +12965,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1217881935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12785,7 +12993,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1218122464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13089,7 +13297,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1256058723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13591,7 +13799,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1317686282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14501,7 +14709,7 @@ GameObject:
   - 108: {fileID: 1391955341}
   - 114: {fileID: 1391955343}
   - 114: {fileID: 1391955344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14620,7 +14828,7 @@ GameObject:
   - 4: {fileID: 1404040348}
   - 33: {fileID: 1404040350}
   - 23: {fileID: 1404040349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14761,7 +14969,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1420974444}
   - 137: {fileID: 1420974445}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15473,7 +15681,7 @@ GameObject:
   - 4: {fileID: 1496268238}
   - 82: {fileID: 1496268240}
   - 114: {fileID: 1496268239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rpg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15510,8 +15718,8 @@ MonoBehaviour:
   weaponType: 3
   muzzleFlash: {fileID: 0}
   shotSound: {fileID: 0}
-  firedGrenade: {fileID: 0}
-  unfiredGrenade: {fileID: 0}
+  firedGrenade: {fileID: 1681080330}
+  unfiredGrenade: {fileID: 1404040348}
 --- !u!82 &1496268240
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16049,7 +16257,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1544282926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16308,7 +16516,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1559300616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16364,7 +16572,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1571625457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16535,7 +16743,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 838275205}
   m_GameObject: {fileID: 1579508057}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -16667,7 +16875,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1588012540}
   - 137: {fileID: 1588012539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16751,7 +16959,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1589414786}
   - 137: {fileID: 1589414787}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17165,7 +17373,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1613622234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17381,7 +17589,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1632228523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18118,7 +18326,7 @@ GameObject:
   - 114: {fileID: 1681080333}
   - 135: {fileID: 1681080332}
   - 54: {fileID: 1681080331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grenade_Fired
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18178,9 +18386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f39fff48b1c3d448a3b371a29f5367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireForce: 100
-  explosionRadius: 2
-  unfiredGrenade: {fileID: 0}
+  fireForce: 800
+  explosionRadius: 8
+  unfiredGrenade: {fileID: 1404040348}
 --- !u!23 &1681080334
 Renderer:
   m_ObjectHideFlags: 0
@@ -18263,7 +18471,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699489584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69723cd160dbf7f4abe71909399b7f97, type: 3}
   m_Name: 
@@ -18652,7 +18860,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1722508753}
   - 137: {fileID: 1722508754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19274,7 +19482,7 @@ GameObject:
   - 114: {fileID: 1767831528}
   - 114: {fileID: 1767831531}
   - 114: {fileID: 1767831532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerMesh
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -19380,7 +19588,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1772546801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20777,7 +20985,7 @@ GameObject:
   - 23: {fileID: 1899671179}
   - 108: {fileID: 1899671178}
   - 114: {fileID: 1899671177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21211,7 +21419,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1965255759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21470,7 +21678,7 @@ GameObject:
   - 23: {fileID: 1981540489}
   - 114: {fileID: 1981540491}
   - 82: {fileID: 1981540492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21609,7 +21817,7 @@ GameObject:
   - 23: {fileID: 1986070627}
   - 108: {fileID: 1986070626}
   - 114: {fileID: 1986070625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21819,7 +22027,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1988969097}
   - 137: {fileID: 1988969098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
