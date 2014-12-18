@@ -14,8 +14,12 @@ public class Loot : MonoBehaviour {
 	}
 
 	void OnDisable(){
+	
+		//Add 0.1 to y position to prevent through floor glitch
+		Vector3 Compensation = new Vector3(0f,0.1f,0f);
+	
 		if (Random.Range(0f, 1f) < dropProbability && !isQuitting)
-			Instantiate(loot, transform.position, Quaternion.identity);
+			Instantiate(loot, transform.position + Compensation, Quaternion.identity);
 	}
 
 }
