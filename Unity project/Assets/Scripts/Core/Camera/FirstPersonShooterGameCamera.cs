@@ -58,7 +58,6 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(this.cameraRotation + this.recoilRotation);
 
 		// Set the position of the aimPoint to the position we are looking at. TODO - Maybe only enable this when F is pressed, and implement a random raycast for shooting?
-		float aimTargetDist;
 		RaycastHit hit;
 		if (Physics.Raycast(transform.position, transform.forward, out hit, 1000f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) { // Ignore layer 8 (player collider).
 			aimTarget.position = transform.position + transform.forward * hit.distance;

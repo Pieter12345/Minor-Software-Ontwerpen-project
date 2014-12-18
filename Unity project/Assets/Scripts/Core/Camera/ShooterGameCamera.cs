@@ -23,7 +23,6 @@ public class ShooterGameCamera : MonoBehaviour {
 	private float angleH = 0;
 	private float angleV = 0;
 	private float maxCamDist = 3;
-	private LayerMask mask;
 	private Vector3 smoothPlayerPos;
 	
 	//Recoil parameters
@@ -100,7 +99,7 @@ public class ShooterGameCamera : MonoBehaviour {
 		RaycastHit hit;
 		Vector3 closeToFarDir = (farCamPoint - closeCamPoint) / farDist;
 		float padding = 0.3f;
-		if (Physics.Raycast(closeCamPoint, closeToFarDir, out hit, maxCamDist + padding, mask)) {
+		if (Physics.Raycast(closeCamPoint, closeToFarDir, out hit, maxCamDist + padding)) {
 			maxCamDist = hit.distance - padding;
 		}
 		transform.position = closeCamPoint + closeToFarDir * maxCamDist;

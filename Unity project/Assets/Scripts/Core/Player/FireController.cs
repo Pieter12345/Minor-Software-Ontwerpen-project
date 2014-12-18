@@ -95,7 +95,7 @@ public class FireController : MonoBehaviour {
 		dir.Normalize();
 		Ray ray = new Ray(camera.position, dir);
 		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit, 10)) {
+		if (Physics.Raycast(ray, out hit, 10f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
 			
 			Debug.DrawRay(camera.position, dir, Color.red);
 			
@@ -140,7 +140,6 @@ public class FireController : MonoBehaviour {
 	}
 
 	void UpdateAimBlockTex(int BlockID) {
-		string textureFileName = "textureNotFoundTexture.png";
 		Texture2D CurrentTexture = WorldBlockManagement.getTextureFromBlockID(BlockID);
 		transBlock.renderer.material.SetTexture("_MainTex",CurrentTexture);
 	}
