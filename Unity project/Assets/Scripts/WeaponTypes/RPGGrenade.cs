@@ -7,10 +7,9 @@ public class RPGGrenade : MonoBehaviour {
 	public float explosionRadius = 2f;
 	public Transform unfiredGrenade;
 
-	private Transform RPG;
+	public Transform RPG;
 
 	void Start(){
-		RPG = transform.parent;
 		transform.parent = null;
 	}
 
