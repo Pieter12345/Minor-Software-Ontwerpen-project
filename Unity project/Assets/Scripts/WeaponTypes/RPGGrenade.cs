@@ -7,6 +7,8 @@ public class RPGGrenade : MonoBehaviour {
 	public float explosionRadius = 2f;
 	public Transform unfiredGrenade;
 
+	public GameObject explosionEffect;
+
 	public Transform RPG;
 
 	void Start(){
@@ -31,6 +33,10 @@ public class RPGGrenade : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 
 		Collider[] hit = Physics.OverlapSphere(transform.position, explosionRadius);
+
+		if(explosionEffect !=null){
+			Instantiate(explosionEffect, transform.position, Quaternion.identity);
+		}
 
 		foreach(Collider c in hit){
 			Damageable dam = c.GetComponent(typeof(Damageable)) as Damageable;
