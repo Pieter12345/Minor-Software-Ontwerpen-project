@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 434244}
   - 114: {fileID: 11434246}
   - 114: {fileID: 11434244}
-  - 114: {fileID: 11434238}
+  - 114: {fileID: 11451576}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -176,19 +176,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134242}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11434238
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b589b093c76f44a82b2bbabfffc43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loot: {fileID: 100000, guid: ef4700c35f1a014469accbb198a861db, type: 2}
-  dropProbability: .25
 --- !u!114 &11434240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +229,22 @@ MonoBehaviour:
   enemyObject: {fileID: 134244}
   hittCooldown: .5
   damagePerHitt: 5
+--- !u!114 &11451576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1544e7aaa8a253041ba97b9a9cdda6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnable:
+  - {fileID: 100000, guid: ef4700c35f1a014469accbb198a861db, type: 2}
+  - {fileID: 175434, guid: 65501e4159a78f54699b14266010864f, type: 2}
+  - {fileID: 100000, guid: 1d18745d704dd0d499d30efae7309e9d, type: 2}
+  - {fileID: 105380, guid: 4ddf0c3628228de43bb108464607813f, type: 2}
 --- !u!136 &13634238
 CapsuleCollider:
   m_ObjectHideFlags: 1
