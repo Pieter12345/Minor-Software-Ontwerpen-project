@@ -8,6 +8,10 @@ public class RPG : Weapon {
 
 	private float timeLastShot;
 
+	void Update(){
+		unfiredGrenade.gameObject.SetActive(AmmoInClip > 0);
+	}
+
 	public override void Fire(Vector3 from, Vector3 to){
 		if(Time.time - timeLastShot > FireInterval){
 			timeLastShot = Time.time;
