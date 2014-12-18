@@ -28910,6 +28910,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11417202, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: RPG
+      value: 
+      objectReference: {fileID: 489173784}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
