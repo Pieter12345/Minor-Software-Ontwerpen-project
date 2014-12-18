@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\HighScoreKeeper.cs" />
+     <Compile Include="Assets\Scripts\Animation\Explosion.cs" />
      <Compile Include="Assets\Scripts\Animation\MuzzleFlash.cs" />
      <Compile Include="Assets\Scripts\Animation\Shell.cs" />
      <Compile Include="Assets\Scripts\Animation\SkyScrollerScript.cs" />
@@ -74,6 +75,8 @@
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
+     <Compile Include="Assets\Scripts\LootSpawner.cs" />
+     <Compile Include="Assets\Scripts\MultiLoot.cs" />
      <Compile Include="Assets\Scripts\PickUpHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimationManager.cs" />
      <Compile Include="Assets\Scripts\RuntimeParenting.cs" />
@@ -92,6 +95,7 @@
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
      <Compile Include="Assets\Scripts\pathFinding.cs" />
      <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
+     <None Include="Assets\Resources\Shaders\CloudShader.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 5.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 4.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader.shader" />

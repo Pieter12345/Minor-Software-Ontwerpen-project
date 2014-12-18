@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
+
 
 public class HighScoreKeeper : MonoBehaviour {
 
@@ -109,11 +110,11 @@ public class HighScoreKeeper : MonoBehaviour {
 					AccuracyBonus = AccuracyBonusParameter;
 				}
 				else {
-					AccuracyBonus = 0.7f * AccuracyBonusParameter;
+					AccuracyBonus = (int)Math.Round(0.7f * AccuracyBonusParameter);
 				}
 			}
 			else {
-				AccuracyBonus = 0.2f * AccuracyBonusParameter;
+				AccuracyBonus = (int)Math.Round(0.2f * AccuracyBonusParameter);
 			}
 		}
 	}
