@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bece8d1d0f9d4479611ed7dc7424e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 2
-  amountOfAmmo: 5
+  weaponType: 3
+  amountOfAmmo: 2
 --- !u!136 &13605380
 CapsuleCollider:
   m_ObjectHideFlags: 1

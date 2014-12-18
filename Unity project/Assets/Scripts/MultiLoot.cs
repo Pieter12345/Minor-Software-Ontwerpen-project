@@ -22,7 +22,7 @@ public class MultiLoot : MonoBehaviour {
 			return;
 		}
 		if(Random.Range(0f, 1f) < masterProbability){
-			int spawnindex = Mathf.FloorToInt(Random.Range(0,spawnable.Length-1));
+			int spawnindex = Mathf.FloorToInt(Random.Range(0,spawnable.Length));
 			ls.Spawn(spawnable[spawnindex], transform.position, Quaternion.identity);
 		}
 	}
