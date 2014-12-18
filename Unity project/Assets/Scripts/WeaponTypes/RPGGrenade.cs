@@ -15,7 +15,8 @@ public class RPGGrenade : MonoBehaviour {
 
 	public void Fire(Vector3 to){
 		rigidbody.velocity = Vector3.zero;
-		transform.forward = -RPG.forward;
+		transform.LookAt(to);
+		transform.Rotate(new Vector3(0,270,0), Space.World);
 		transform.position = RPG.position;
 		rigidbody.AddForce((to-transform.position).normalized*fireForce);
 		rigidbody.angularVelocity = Vector3.zero;

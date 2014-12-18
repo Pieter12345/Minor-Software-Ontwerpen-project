@@ -2633,6 +2633,7 @@ MonoBehaviour:
   fireForce: 800
   explosionRadius: 8
   unfiredGrenade: {fileID: 486918}
+  RPG: {fileID: 486920}
 --- !u!114 &11429844
 MonoBehaviour:
   m_ObjectHideFlags: 1
