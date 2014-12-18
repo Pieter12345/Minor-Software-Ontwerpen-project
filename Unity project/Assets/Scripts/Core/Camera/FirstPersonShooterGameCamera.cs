@@ -61,7 +61,6 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 		float aimTargetDist;
 		RaycastHit hit;
 		if (Physics.Raycast(transform.position, transform.forward, out hit, 1000f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) { // Ignore layer 8 (player collider).
-			Debug.Log (hit.distance);
 			aimTarget.position = transform.position + transform.forward * hit.distance;
 		}
 
