@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour {
 	private static Transform parent;
 
 	public Transform flag;
-	public static int[] flagPos = new int[] {10, 0, 10}; // x, y and z coordinates of the flag.
+	public static int[] flagPos = new int[] {0, 0, 0}; // x, y and z coordinates of the flag. This gets overwritten in Start().
 
 	private static GameObject[] enemyObjects;
 	private static int enemyObjectSize = 0; // Array size of enemyObjects.
@@ -35,10 +35,13 @@ public class EnemyController : MonoBehaviour {
 	public Object EnemyPrefab; // The prefab of the enemy.
 	private static Object EnemyPrefabStatic;
 
+	private static float startNewWaveAtThisTime = -1;
+
+	public int delayBetweenWaves = 3; // [sec]. The delay between 2 waves.
+	public static int delayBetweenWavesStatic;
+
 	private static int wave = 0;
 	private static int enemiesLeft = 0;
-//	private int amountOfEnemiesOnThisWave = 0; // The initial spawned amount of enemies on the current wave.
-//  private int enemiesKilledOnThisWave = 0;
 	
 
 	// Use this for initialization.
@@ -50,11 +53,13 @@ public class EnemyController : MonoBehaviour {
 				Mathf.FloorToInt(flag.position.z)
 			};
 
-		EnemyPrefabStatic = EnemyPrefab; // Create static reference.
-		playerStatic = player;
+		EnemyPrefabStatic = this.EnemyPrefab; // Create static reference.
+		playerStatic = player; // Create static reference.
+		parent = this.parentObject; // Create static reference.
 
-		parent = this.parentObject;
 		enemyObjects = new GameObject[maxAmountOfEnemies];
+
+		delayBetweenWavesStatic = this.delayBetweenWaves;
 
 		// Initialize pathFinding.
 		Vector3 playerCoords = player.transform.position;
@@ -64,7 +69,7 @@ public class EnemyController : MonoBehaviour {
 		pathToFlagIgnoringBlocks = new pathFinding(flagPos[0], flagPos[1], flagPos[2], true); // <-- Initial goal coords.
 
 		// Start a new wave.
-		startNextWave();
+		startNextWave(false);
 
 //		// Test code.
 //		spawnEnemy((int) 4, (int) 0, (int) 4);
@@ -80,6 +85,14 @@ public class EnemyController : MonoBehaviour {
 		if((playerCoordsOld - player.transform.position).sqrMagnitude > 0.5f*0.5f) {
 			playerCoordsOld = player.transform.position;
 			this.updatePlayerPathfinding();
+		}
+
+		// Start a new wave after some delay.
+		if(startNewWaveAtThisTime != -1) {
+			if(Time.time >= startNewWaveAtThisTime) {
+				startNextWave(false);
+				startNewWaveAtThisTime = -1;
+			}
 		}
 
 
@@ -177,7 +190,8 @@ public class EnemyController : MonoBehaviour {
 
 	// startNextWave method.
 	// Destroys all current enemies and spawns new enemies.
-	public static void startNextWave() {
+	public static void startNextWave(bool doDelayBeforeSpawn = true) {
+		if(doDelayBeforeSpawn) { startNewWaveAtThisTime = Time.time + delayBetweenWavesStatic; return; }
 		destroyAllEnemies(); // Just to make sure the next wave starts with an empty list.
 		wave++;
 		float a = 0f;
@@ -217,15 +231,17 @@ public class EnemyController : MonoBehaviour {
                 enemiesLeft2++;
             }
         }
+		enemiesLeft = enemiesLeft2;
+
+		Debug.Log("Enemies left: " + enemiesLeft);
         
-        // Spawn a new wave if there are no enemies left.
+        // Spawn a (delayed) new wave if there are no enemies left.
         if(enemiesLeft2 == 0) {
             startNextWave();
 			return;
         }
 
-		enemiesLeft = enemiesLeft2;
-		Debug.Log("Enemies left: " + enemiesLeft2);
+
     }
 
 	// FixedUpdate method.
@@ -238,7 +254,7 @@ public class EnemyController : MonoBehaviour {
 
 		// DEBUG - Spawns enemies when pressing F8.
 		if(Input.GetKeyDown(KeyCode.F8)) {
-			startNextWave();
+			startNextWave(false);
 		}
 	}
 

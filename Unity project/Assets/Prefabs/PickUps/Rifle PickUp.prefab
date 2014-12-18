@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 475434}
   - 33: {fileID: 3375434}
   - 23: {fileID: 2375434}
-  - 135: {fileID: 13575434}
   - 114: {fileID: 11475434}
+  - 136: {fileID: 13675962}
   m_Layer: 0
   m_Name: Rifle PickUp
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.9700012, y: -.330000013, z: 28.25}
+  m_LocalPosition: {x: 11.04, y: 10.9980001, z: 50.0680008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,8 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 1
   amountOfAmmo: 20
---- !u!135 &13575434
-SphereCollider:
+--- !u!136 &13675962
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -80,9 +80,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .600000024
-  m_Center: {x: -.00434148312, y: -.0520501658, z: .00202469528}
+  m_Radius: .159999996
+  m_Height: 1.61000001
+  m_Direction: 0
+  m_Center: {x: -.00360879302, y: -.0599999987, z: -.00221933424}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
