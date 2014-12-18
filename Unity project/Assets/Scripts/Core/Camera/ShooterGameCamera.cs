@@ -120,6 +120,12 @@ public class ShooterGameCamera : MonoBehaviour {
 		aimTarget.position = transform.position + transform.forward * aimTargetDist;
 	}
 
+	// setFired method.
+	// Should be set to true when the player fired.
+	public void setFired(bool state = true) {
+		this.Fired = state;
+	}
+
 	void OnGUI () {
 		if (Time.time != 0 && Time.timeScale != 0)
 			GUI.DrawTexture(new Rect(Screen.width/2-(reticle.width*0.5f), Screen.height/2-(reticle.height*0.5f), reticle.width, reticle.height), reticle);
