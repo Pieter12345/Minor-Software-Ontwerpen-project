@@ -105,7 +105,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
-  resolutionDialogBanner: {fileID: 2800000, guid: 7a853102c3118d14f81682c54d712b90,
+  resolutionDialogBanner: {fileID: 2800000, guid: 6ef7cea67d45a6a49be930389b38e017,
     type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
