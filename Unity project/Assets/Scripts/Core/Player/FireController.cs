@@ -24,54 +24,55 @@ public class FireController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonUp("Torch")){
-			if(torch != null)
-				torch.SetActive(!torch.activeInHierarchy);
-		}
+		if(Time.timeScale != 0f){
+			if(Input.GetButtonUp("Torch")){
+				if(torch != null)
+					torch.SetActive(!torch.activeInHierarchy);
+			}
 
-		if(Input.GetButton("Modifier")){ //Place block mode enabled
-			blockMode = true;
-			selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
-			UpdateAimBlockTex(selectedBlock);
-		} else {
-			blockMode = false;
-			if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
-				weapons.SelectNextWeaponUp();
-			else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
-				weapons.SelectNextWeaponDown();
-		}
-		if(selectedBlock < 1){
-			selectedBlock = 3;
-		} else if(selectedBlock > 3){
-			selectedBlock = 1;
-		}
+			if(Input.GetButton("Modifier")){ //Place block mode enabled
+				blockMode = true;
+				selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
+				UpdateAimBlockTex(selectedBlock);
+			} else {
+				blockMode = false;
+				if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+					weapons.SelectNextWeaponUp();
+				else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+					weapons.SelectNextWeaponDown();
+			}
+			if(selectedBlock < 1){
+				selectedBlock = 3;
+			} else if(selectedBlock > 3){
+				selectedBlock = 1;
+			}
 
-		if(Input.GetButtonUp("Fire1")){
-			timeLastBlock = 0;
-		}
+			if(Input.GetButtonUp("Fire1")){
+				timeLastBlock = 0;
+			}
 
-		if(Input.GetButton("Fire1")){
-			if (blockMode && positionValid){
-				float interval = Time.time - timeLastBlock;
-				if(interval > blockPlaceTime){
-					OnPlaceBlock();
-					timeLastBlock = Time.time;
+			if(Input.GetButton("Fire1")){
+				if (blockMode && positionValid){
+					float interval = Time.time - timeLastBlock;
+					if(interval > blockPlaceTime){
+						OnPlaceBlock();
+						timeLastBlock = Time.time;
+					}
+				} else if(!blockMode){
+					OnFireWeapon();
 				}
-			} else if(!blockMode){
-				OnFireWeapon();
 			}
-		}
-		if(Input.GetButtonDown("Fire2")){
-			if (blockMode){
-				OnDestroyBlock();
-			} else{
-				//doSomething
+			if(Input.GetButtonDown("Fire2")){
+				if (blockMode){
+					OnDestroyBlock();
+				} else{
+					//doSomething
+				}
 			}
+
+			if(Input.GetButtonDown("Reload"))
+				Reload();
 		}
-
-		if(Input.GetButtonDown("Reload"))
-			Reload();
-
 		if(Input.GetKeyDown(KeyCode.F9))
 			weapons.AddAmmoToCurrent(10);
 		UpdateBlockOutline();

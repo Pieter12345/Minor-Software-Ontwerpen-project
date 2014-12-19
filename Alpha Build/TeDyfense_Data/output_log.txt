@@ -1,0 +1,128 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Mobility Radeon HD 5000 Series (ID=0x68c1)
+    Vendor:   ATI
+    VRAM:     1017 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.061 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\System.dll (this message is harmless)
+Loading Level
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+UnloadTime: 3.957028 ms
+The AnimationClip 'ShotGunLopendSchieten' used by the Animation component 'teddybeerRennen2' must be marked as Legacy.
+ 
+(Filename:  Line: 1998)
+
+[INFO]: [WorldBlockManagement] Test blocks are being placed.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture leaves.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[INFO]: [WorldBlockManagement] Test: Saving level as custom level.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+IsolatedStorageException: Could not find a part of the path "C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\Assets\Levels\customSaves\save1.bytes".
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode) [0x00000] in <filename unknown>:0 
+  at WorldBlockManagement.saveLevelToFile (System.String fileName) [0x00000] in <filename unknown>:0 
+  at WorldBlockManagement.Awake () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2243.
+Total: 3.528950 ms (FindLiveObjects: 0.164763 ms CreateObjectMapping: 0.030796 ms MarkObjects: 2.312469 ms  DeleteObjects: 0.445401 ms)
+
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+Exiting game
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
