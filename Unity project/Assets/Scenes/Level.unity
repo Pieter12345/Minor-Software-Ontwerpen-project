@@ -17367,7 +17367,7 @@ GameObject:
   - 114: {fileID: 872717310}
   m_Layer: 0
   m_Name: PickUps
-  m_TagString: Untagged
+  m_TagString: PickupSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
