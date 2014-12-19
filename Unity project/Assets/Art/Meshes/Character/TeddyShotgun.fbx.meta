@@ -1,0 +1,1320 @@
+fileFormatVersion: 2
+guid: 229e6f1210e7e3341b191e6c5a074286
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature|ArmBovenLinks
+    100004: Armature|ArmBovenRechts
+    100006: Armature|ArmOnderLinks
+    100008: Armature|ArmOnderRechts
+    100010: Armature|BeenBovenLinks
+    100012: Armature|BeenBovenRechts
+    100014: Armature|BeenOnderLinks
+    100016: Armature|BeenOnderRechts
+    100018: Armature|HandLinks
+    100020: Armature|HandRechts
+    100022: Armature|HeupLinks
+    100024: Armature|HeupRechts
+    100026: Armature|Hoofd1
+    100028: Armature|Hoofd2
+    100030: Armature|Hoofd3
+    100032: Armature|Hoofd4
+    100034: Armature|Nek
+    100036: Armature|OnderRug
+    100038: Armature|Rug
+    100040: Armature|SchouderLinks
+    100042: Armature|SchouderRechts
+    100044: Armature|Staartbeen
+    100046: Armature|VoetLinks
+    100048: Armature|VoetRechts
+    100050: ArmLinks
+    100052: ArmRechts
+    100054: Buik
+    100056: Kop
+    100058: Neus
+    100060: OogLinks
+    100062: OogRechts
+    100064: OorLinks
+    100066: OorRechts
+    100068: PootLinks
+    100070: PootRechts
+    100072: Snuit
+    100074: Staart
+    100076: //RootNode
+    400000: Armature
+    400002: Armature|ArmBovenLinks
+    400004: Armature|ArmBovenRechts
+    400006: Armature|ArmOnderLinks
+    400008: Armature|ArmOnderRechts
+    400010: Armature|BeenBovenLinks
+    400012: Armature|BeenBovenRechts
+    400014: Armature|BeenOnderLinks
+    400016: Armature|BeenOnderRechts
+    400018: Armature|HandLinks
+    400020: Armature|HandRechts
+    400022: Armature|HeupLinks
+    400024: Armature|HeupRechts
+    400026: Armature|Hoofd1
+    400028: Armature|Hoofd2
+    400030: Armature|Hoofd3
+    400032: Armature|Hoofd4
+    400034: Armature|Nek
+    400036: Armature|OnderRug
+    400038: Armature|Rug
+    400040: Armature|SchouderLinks
+    400042: Armature|SchouderRechts
+    400044: Armature|Staartbeen
+    400046: Armature|VoetLinks
+    400048: Armature|VoetRechts
+    400050: ArmLinks
+    400052: ArmRechts
+    400054: Buik
+    400056: Kop
+    400058: Neus
+    400060: OogLinks
+    400062: OogRechts
+    400064: OorLinks
+    400066: OorRechts
+    400068: PootLinks
+    400070: PootRechts
+    400072: Snuit
+    400074: Staart
+    400076: //RootNode
+    4300000: Neus
+    4300002: Staart
+    4300004: ArmLinks
+    4300006: OogLinks
+    4300008: Snuit
+    4300010: Kop
+    4300012: ArmRechts
+    4300014: PootLinks
+    4300016: Buik
+    4300018: PootRechts
+    4300020: OorRechts
+    4300022: OorLinks
+    4300024: OogRechts
+    7400000: ShotGunLopendSchieten
+    7400002: ShotgunLopen
+    7400004: ShotgunIdleSchieten
+    7400006: ShotgunReload
+    7400008: ShotgunIdle
+    7400010: ShotgunRennendSchieten
+    7400012: Armature|ShotgunIdle
+    7400014: Armature|ShotgunLopen
+    7400016: Armature|ShotGunLopendSchieten.001
+    7400018: Armature|ShotgunReload
+    7400020: Armature|ShotgunRennendSchieten
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: ArmLinks
+    13700002: ArmRechts
+    13700004: Buik
+    13700006: Kop
+    13700008: Neus
+    13700010: OogLinks
+    13700012: OogRechts
+    13700014: OorLinks
+    13700016: OorRechts
+    13700018: PootLinks
+    13700020: PootRechts
+    13700022: Snuit
+    13700024: Staart
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ShotGunLopendSchieten
+      takeName: ShotGunLopendSchieten
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShotgunLopen
+      takeName: ShotgunLopen
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShotgunIdleSchieten
+      takeName: ShotgunIdleSchieten
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShotgunReload
+      takeName: ShotgunReload
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShotgunIdle
+      takeName: ShotgunIdle
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShotgunRennendSchieten
+      takeName: ShotgunRennendSchieten
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ShotgunIdle
+      takeName: Armature|ShotgunIdle
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ShotgunLopen
+      takeName: Armature|ShotgunLopen
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ShotGunLopendSchieten.001
+      takeName: Armature|ShotGunLopendSchieten.001
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ShotgunReload
+      takeName: Armature|ShotgunReload
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ShotgunRennendSchieten
+      takeName: Armature|ShotgunRennendSchieten
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|HeupLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks
+        weight: 1
+      - path: Armature/Armature|HeupLinks/Armature|BeenBovenLinks/Armature|BeenOnderLinks/Armature|VoetLinks
+        weight: 1
+      - path: Armature/Armature|HeupRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts
+        weight: 1
+      - path: Armature/Armature|HeupRechts/Armature|BeenBovenRechts/Armature|BeenOnderRechts/Armature|VoetRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|Nek/Armature|Hoofd1/Armature|Hoofd2/Armature|Hoofd3/Armature|Hoofd4
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderLinks/Armature|ArmBovenLinks/Armature|ArmOnderLinks/Armature|HandLinks
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts
+        weight: 1
+      - path: Armature/Armature|OnderRug/Armature|Rug/Armature|SchouderRechts/Armature|ArmBovenRechts/Armature|ArmOnderRechts/Armature|HandRechts
+        weight: 1
+      - path: Armature/Armature|Staartbeen
+        weight: 1
+      - path: ArmLinks
+        weight: 1
+      - path: ArmRechts
+        weight: 1
+      - path: Buik
+        weight: 1
+      - path: Kop
+        weight: 1
+      - path: Neus
+        weight: 1
+      - path: OogLinks
+        weight: 1
+      - path: OogRechts
+        weight: 1
+      - path: OorLinks
+        weight: 1
+      - path: OorRechts
+        weight: 1
+      - path: PootLinks
+        weight: 1
+      - path: PootRechts
+        weight: 1
+      - path: Snuit
+        weight: 1
+      - path: Staart
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
