@@ -41,7 +41,7 @@ public class RPGGrenade : MonoBehaviour {
 		foreach(Collider c in hit){
 			Damageable dam = c.GetComponent(typeof(Damageable)) as Damageable;
 			if(dam != null)
-				(dam.HPManager.GetComponent(typeof(Health)) as Health).Damage(WeaponStats.RPG.BaseDamage());
+				(dam.HPManager.GetComponent(typeof(Health)) as Health).Damage(WeaponStats.RPG.BaseDamage(),false);
 		}
 
 		Reset ();

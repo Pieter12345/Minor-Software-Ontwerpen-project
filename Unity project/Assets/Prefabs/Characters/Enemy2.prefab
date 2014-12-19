@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 434238}
   m_Layer: 0
   m_Name: EnemyModel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,10 @@ GameObject:
   - 136: {fileID: 13634238}
   - 23: {fileID: 2334238}
   - 114: {fileID: 11434240}
+  - 65: {fileID: 6537766}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +49,7 @@ GameObject:
   - 114: {fileID: 11434242}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +67,7 @@ GameObject:
   - 114: {fileID: 11451576}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15.5565796, y: -.5, z: 66.3753052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434238}
@@ -176,6 +177,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134242}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6537766
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .899999976, y: 1.60000002, z: .899999976}
+  m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
 --- !u!114 &11434240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPManager: {fileID: 434244}
   defense: .100000001
+  Headshot: 1
 --- !u!114 &11434242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPManager: {fileID: 434244}
   defense: 1
+  Headshot: 0
 --- !u!114 &11434244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1544e7aaa8a253041ba97b9a9cdda6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterProbability: .400000006
   spawnable:
   - {fileID: 100000, guid: ef4700c35f1a014469accbb198a861db, type: 2}
   - {fileID: 175434, guid: 65501e4159a78f54699b14266010864f, type: 2}
@@ -253,9 +269,9 @@ CapsuleCollider:
   m_GameObject: {fileID: 134240}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: .5
-  m_Height: 2
+  m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13634240

@@ -7,22 +7,26 @@ public class Health : MonoBehaviour {
 	protected float hp;
 	public float HP { get { return hp; } }
 	public bool IsDead { get { return hp <= 0; } }
+	private bool Headshot = false;
 
 	void Awake(){
 		hp = maxHP;
 	}
 
 	void Update(){
-		if (IsDead)
-			OnDeath();
+		if (IsDead) {
+			OnDeath(Headshot);
+			}
 		OnRegen();
 	}
 
-	public void Damage(float amount){
+	public void Damage(float amount, bool isHeadshot){
 		hp -= amount;
 
 		OnDamage();
 		OnDamage(amount);
+		
+		Headshot = isHeadshot;
 	}
 
 	public void Heal(float amount){
@@ -34,9 +38,10 @@ public class Health : MonoBehaviour {
 		OnHeal(amount);
 	}
 
-	protected virtual void OnDeath(){
+	protected virtual void OnDeath(bool isHeadshot){
 		Destroy(gameObject);
 	}
+
 	
 	protected virtual void OnDamage(){}
 	protected virtual void OnDamage(float amount){}

@@ -2,28 +2,48 @@ Initialize engine version: 4.6.1f1 (d1db7a1b5196)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Mobility Radeon HD 5000 Series (ID=0x68c1)
-    Vendor:   ATI
-    VRAM:     1017 MB
+    Renderer: Intel(R) HD Graphics 4600 (ID=0x416)
+    Vendor:   Intel
+    VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+Platform assembly: D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.117 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\TeDyfense_Data\Managed\System.dll (this message is harmless)
+Showing How To
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 2.547954 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 205.
+Total: 0.529434 ms (FindLiveObjects: 0.007697 ms CreateObjectMapping: 0.007270 ms MarkObjects: 0.132572 ms  DeleteObjects: 0.013257 ms)
+
+Loading Main Menu
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 0.345971 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 210.
+Total: 0.492655 ms (FindLiveObjects: 0.006414 ms CreateObjectMapping: 0.005987 ms MarkObjects: 0.130861 ms  DeleteObjects: 0.002138 ms)
+
 Loading Level
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
-UnloadTime: 3.957028 ms
+UnloadTime: 0.730003 ms
 The AnimationClip 'ShotGunLopendSchieten' used by the Animation component 'teddybeerRennen2' must be marked as Legacy.
  
 (Filename:  Line: 1998)
@@ -108,7 +128,7 @@ The AnimationClip 'ShotGunLopendSchieten' used by the Animation component 'teddy
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-IsolatedStorageException: Could not find a part of the path "C:\Users\Damien\Documents\GitHub\Minor-Software-Ontwerpen-project\Alpha Build\Assets\Levels\customSaves\save1.bytes".
+IsolatedStorageException: Could not find a part of the path "D:\TU\Jaar3\Minor\Minor Project\Minor-Software-Ontwerpen-project\Alpha Build\Assets\Levels\customSaves\save1.bytes".
   at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
   at System.IO.FileStream..ctor (System.String path, FileMode mode) [0x00000] in <filename unknown>:0 
   at WorldBlockManagement.saveLevelToFile (System.String fileName) [0x00000] in <filename unknown>:0 
@@ -116,12 +136,290 @@ IsolatedStorageException: Could not find a part of the path "C:\Users\Damien\Doc
  
 (Filename:  Line: -1)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2243.
-Total: 3.528950 ms (FindLiveObjects: 0.164763 ms CreateObjectMapping: 0.030796 ms MarkObjects: 2.312469 ms  DeleteObjects: 0.445401 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2243.
+Total: 2.275540 ms (FindLiveObjects: 0.083392 ms CreateObjectMapping: 0.020954 ms MarkObjects: 1.516028 ms  DeleteObjects: 0.292086 ms)
 
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+[SEVERE]: [WorldBlockManagement] The getTextureFromBlockID method has been called with an unknown blockID: 0. Returning textureNotFoundTexture.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] The getTextureFromBlockID method has been called with an unknown blockID: 0. Returning textureNotFoundTexture.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] The getTextureFromBlockID method has been called with an unknown blockID: 0. Returning textureNotFoundTexture.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Picked up RIFLE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak started. Time.time = 40.761
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture stone.png could not be loaded. Using textureNotFoundTexture.png.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak finished. Removing block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak started. Time.time = 42.79344
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak started. Time.time = 43.7266
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak finished. Removing block.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak above head started. Time.time = 45.37583
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak above head finished. Removing block at: 36 2 82
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Plane
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Capsule
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaged for: 12 points
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Enemies left: 4
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak above head started. Time.time = 48.32516
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Cube
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Cube
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaging flag!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Flag got killed
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Blockbreak above head started. Time.time = 50.75833
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NO SPAWNER FOUND!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NO SPAWNER FOUND!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NO SPAWNER FOUND!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NO SPAWNER FOUND!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 3.786864 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 396 unused Assets to reduce memory usage. Loaded Objects now: 283.
+Total: 3.898482 ms (FindLiveObjects: 0.014112 ms CreateObjectMapping: 0.014112 ms MarkObjects: 1.388160 ms  DeleteObjects: 2.093360 ms)
+
 Exiting game
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)

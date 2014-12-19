@@ -118,11 +118,11 @@ public class EnemyAI : MonoBehaviour {
 					if(canHitPlayer) {
 						// TODO - Damage the player here + animation?
 						Debug.Log("Damaging player!");
-						(player.parent.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt);
+						(player.parent.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt,false);
 					} else {
 						// TODO - Damage the flag here + animation?
 						Debug.Log("Damaging flag!");
-						(flag.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt);
+						(flag.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt,false);
 					}
 					break;
 				}

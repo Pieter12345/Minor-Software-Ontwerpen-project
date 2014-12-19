@@ -17,7 +17,7 @@ public class PlayerHealth : Health {
 		regenTo = maxHP;
 	}
 
-	protected override void OnDeath(){
+	protected override void OnDeath(bool isHeadshot){
 		Debug.Log("YOU JUST DIED MADAFAKA!!!");
 		Screen.lockCursor = false;
 		Application.LoadLevel("GameOver");
