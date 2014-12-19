@@ -16,11 +16,10 @@ public class PlayerAnimationManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = playerMesh.GetComponent<Animation>();
-		anim["ColtLopen"].speed = 3;
-		anim["ShotgunLopen"].speed = 3;
+		anim["Armature|ColtLopen"].speed = 3;
+		anim["Armature|ShotgunLopen"].speed = 3;
 		controller = GetComponent(typeof(CharacterController)) as CharacterController;
 		wContr = weapons.GetComponent(typeof(WeaponController)) as WeaponController;
-		anim.Play("ColtIdle");
 	}
 	
 	// Update is called once per frame
@@ -30,20 +29,23 @@ public class PlayerAnimationManager : MonoBehaviour {
 			return;
 		}
 		if(controller.velocity.y > epsilon){
-			anim.CrossFade("Springen");
+			anim.CrossFade("Armature|Springen");
 		} else if(controller.velocity.magnitude > 1){
 			if(wContr.HasWeapon)
 				if(wContr.SelectedWeaponType != WeaponStats.RIFLE && wContr.SelectedWeaponType != WeaponStats.SHOTGUN)
-					anim.CrossFade("ColtLopen");
+					anim.CrossFade("Armature|ColtLopen");
 				else
-					anim.CrossFade("ShotgunLopen");
+				anim.CrossFade("Armature|ShotgunLopen");
 			else
-				anim.CrossFade("Rennen");
+				anim.CrossFade("Armature|Rennen");
 		} else {
 			if(wContr.HasWeapon)
-				anim.CrossFade("ColtIdle");
+				if(wContr.SelectedWeaponType != WeaponStats.RIFLE && wContr.SelectedWeaponType != WeaponStats.SHOTGUN)
+					anim.CrossFade("Armature|ColtIdle");
 			else
-				anim.CrossFade("Wachten");
+				anim.CrossFade("Armature|ShotgunIdle");
+			else
+				anim.CrossFade("Armature|Wachten");
 		}
 	}
 
