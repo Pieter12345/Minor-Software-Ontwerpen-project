@@ -29951,6 +29951,10 @@ Prefab:
       propertyPath: RPG
       value: 
       objectReference: {fileID: 489173784}
+    - target: {fileID: 5486472, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -30087,7 +30091,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
