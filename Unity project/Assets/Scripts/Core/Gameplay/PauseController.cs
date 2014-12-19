@@ -9,12 +9,7 @@ public class PauseController : MonoBehaviour {
 	void Update () {
 		// on press pausekey
 		if (Input.GetButtonDown("Pause")) {
-			if (Time.timeScale != 0f) {
-				Time.timeScale = 0f; // set time to zero if game is running
-			}
-			else {
-				Time.timeScale = 1f; // resume game if game is not running
-			}
+			TogglePause();
 		}
 
 		Screen.lockCursor = Time.timeScale != 0f;
@@ -22,4 +17,14 @@ public class PauseController : MonoBehaviour {
 		pauseMenu.SetActive(Time.timeScale == 0f);
 
 	}
+
+	public void TogglePause(){
+		if (Time.timeScale != 0f) {
+			Time.timeScale = 0f; // set time to zero if game is running
+		}
+		else {
+			Time.timeScale = 1f; // resume game if game is not running
+		}
+	}
+
 }
