@@ -78,8 +78,8 @@ public class HighScoreKeeper : MonoBehaviour {
 		WaveTime = 0;
 	}
 	
-	// Kill Points - Called at enemy Kill
-	static void PointsOnKill(bool Headshot) {
+	// Kill Points - Called at enemy Kill //DONE//
+	public static void PointsOnKill(bool Headshot) {
 		if (Headshot) {
 			Score += EnemyKillPoints * HeadShotMultiplier;
 		}
@@ -89,8 +89,8 @@ public class HighScoreKeeper : MonoBehaviour {
 		Score += 1;
 	}
 	
-	// Shot Fired accuracy - Called at FireWeapon
-	static void ShotsFired(bool HitEnemy) {
+	// Shot Fired accuracy - Called at FireWeapon //DONE//
+	public static void ShotsFired(bool HitEnemy) {
 		if (HitEnemy) {
 			ShotsHit += 1;
 		}

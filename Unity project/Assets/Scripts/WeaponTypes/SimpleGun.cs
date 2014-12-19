@@ -33,7 +33,15 @@ public class SimpleGun : Weapon {
 				if (Physics.Raycast(ray, out hit, 100)) {
 					
 					Debug.Log("Shot hit " + hit.transform.name);
-									
+					
+					//Stats Accuracy counter- needs revising with each new enemy
+					if (hit.transform.tag == "Enemy") {
+						HighScoreKeeper.ShotsFired(true);
+					}
+					else {
+						HighScoreKeeper.ShotsFired(false);
+					}
+					
 					
 					Damageable hp = hit.transform.GetComponent<Damageable>();
 					if(hp!= null)

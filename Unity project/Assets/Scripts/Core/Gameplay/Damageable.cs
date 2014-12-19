@@ -5,6 +5,7 @@ public class Damageable : MonoBehaviour {
 
 	public Transform HPManager;
 	public float defense = 1.0f;
+	public bool Headshot;
 	
 	private Health hp;
 	public Health master { get { return hp; } }
@@ -16,7 +17,7 @@ public class Damageable : MonoBehaviour {
 	
 	public void Damage(float baseAmount){
 		Debug.Log ("Damaged for: " + baseAmount/defense + " points");
-		hp.Damage(baseAmount/defense);
+		hp.Damage((baseAmount/defense),Headshot);
 	}
 
 }

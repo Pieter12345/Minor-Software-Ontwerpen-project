@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HighScoreKeeper.cs" />
      <Compile Include="Assets\Scripts\Animation\Explosion.cs" />
      <Compile Include="Assets\Scripts\Animation\MuzzleFlash.cs" />
      <Compile Include="Assets\Scripts\Animation\Shell.cs" />
@@ -61,6 +60,7 @@
      <Compile Include="Assets\Scripts\Core\Gameplay\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\FlagHealth.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Health.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\HighScoreKeeper.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\PauseController.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Weapon.cs" />
