@@ -45,6 +45,13 @@ public class ShooterGameCamera {
 	// Use this for initialization.
 	public void Start () {
 		smoothPlayerPos = player.position;
+
+		// Enable the player model for third person.
+		Transform playerModel = player.FindChild("TeddyANIMATED full");
+		Renderer[] renderers = playerModel.GetComponentsInChildren<Renderer>();
+		foreach(Renderer singleRenderer in renderers) {
+			singleRenderer.enabled = true;
+		}
 	}
 		
 	
@@ -135,8 +142,8 @@ public class ShooterGameCamera {
 		this.Fired = state;
 	}
 
-	void OnGUI () {
-		if (Time.time != 0 && Time.timeScale != 0)
-			GUI.DrawTexture(new Rect(Screen.width/2-(reticle.width*0.5f), Screen.height/2-(reticle.height*0.5f), reticle.width, reticle.height), reticle);
-	}
+//	void OnGUI () {
+//		if (Time.time != 0 && Time.timeScale != 0)
+//			GUI.DrawTexture(new Rect(Screen.width/2-(reticle.width*0.5f), Screen.height/2-(reticle.height*0.5f), reticle.width, reticle.height), reticle);
+//	}
 }

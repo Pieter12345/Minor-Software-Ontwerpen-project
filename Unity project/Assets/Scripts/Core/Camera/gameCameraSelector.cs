@@ -13,7 +13,7 @@ public class gameCameraSelector : MonoBehaviour {
 	public Transform camTransform;
 	public Transform weapon;
 	
-	private Texture crosshair;
+	public Texture crosshair;
 
 	// Use this for initialization.
 	void Start () {
@@ -50,6 +50,13 @@ public class gameCameraSelector : MonoBehaviour {
 			this.firstPersonCam.setFired(state);
 		} else {
 			this.thirdPersonCam.setFired(state);
+		}
+	}
+
+	// Draw the crosshair.
+	void OnGUI () {
+		if (Time.time != 0 && Time.timeScale != 0) {
+			GUI.DrawTexture(new Rect(Screen.width/2f-(crosshair.width*0.5f), Screen.height/2f-(crosshair.height*0.5f), crosshair.width, crosshair.height), crosshair);
 		}
 	}
 }

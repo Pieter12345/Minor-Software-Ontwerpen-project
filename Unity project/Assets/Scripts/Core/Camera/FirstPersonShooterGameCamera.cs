@@ -39,8 +39,8 @@ public class FirstPersonShooterGameCamera {
 		this.cameraRotation = camTransform.rotation.eulerAngles;
 		this.recoilTimer = Time.time;
 
-		// Disable the model for first person.
-		Transform playerModel = player.FindChild("Teddymesh");
+		// Disable the player model for first person.
+		Transform playerModel = player.FindChild("TeddyANIMATED full");
 		Renderer[] renderers = playerModel.GetComponentsInChildren<Renderer>();
 		foreach(Renderer singleRenderer in renderers) {
 			singleRenderer.enabled = false;
@@ -115,15 +115,15 @@ public class FirstPersonShooterGameCamera {
 
 	}
 
-	// setFired method. TODO - Change the reference to this in SimpleGun.cs. This now looks for 2 scripts. (Merge scripts first).
+	// setFired method.
 	// Should be set to true when the player fired.
 	public void setFired(bool state = true) {
 		this.Fired = state;
 	}
 
-	// Draw a crosshair.
-	void OnGUI () {
-		if (Time.time != 0 && Time.timeScale != 0)
-			GUI.DrawTexture(new Rect(Screen.width/2-(crosshair.width*0.5f), Screen.height/2-(crosshair.height*0.5f), crosshair.width, crosshair.height), crosshair);
-	}
+//	// Draw a crosshair.
+//	void OnGUI () {
+//		if (Time.time != 0 && Time.timeScale != 0)
+//			GUI.DrawTexture(new Rect(Screen.width/2-(crosshair.width*0.5f), Screen.height/2-(crosshair.height*0.5f), crosshair.width, crosshair.height), crosshair);
+//	}
 }
