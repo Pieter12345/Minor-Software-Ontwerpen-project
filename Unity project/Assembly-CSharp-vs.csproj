@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GunIconHandler.cs" />
      <Compile Include="Assets\Scripts\Animation\Explosion.cs" />
      <Compile Include="Assets\Scripts\Animation\MuzzleFlash.cs" />
      <Compile Include="Assets\Scripts\Animation\Shell.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\Scripts\Core\Camera\BindPosition.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\FirstPersonShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
+     <Compile Include="Assets\Scripts\Core\Camera\gameCameraSelector.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoPool.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoTypes.cs" />

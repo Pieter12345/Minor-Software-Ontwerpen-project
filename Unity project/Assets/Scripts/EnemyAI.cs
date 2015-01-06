@@ -145,7 +145,7 @@ public class EnemyAI : MonoBehaviour {
 			}
 
 			// Break block above enemy if standing under player.
-			if(standingUnderPlayer && !isBreakingBlock) {
+			if(standingUnderPlayer && !isBreakingBlock && !canHitPlayer) {
 				isBreakingBlock = true;
 				blockBreakTimer = Time.time;
 				Debug.Log("Blockbreak above head started. Time.time = " + blockBreakTimer);

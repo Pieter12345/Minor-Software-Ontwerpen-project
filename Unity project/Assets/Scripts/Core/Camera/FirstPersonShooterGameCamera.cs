@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FirstPersonShooterGameCamera : MonoBehaviour {
+public class FirstPersonShooterGameCamera {
 
 	// Variables & Constants.
-	public Transform player;
-	public Transform aimTarget;
-	public Transform weapon;
-	public Texture crosshair;
+	private Transform player;
+	private Transform aimTarget;
+	private Transform weapon;
+	private Texture crosshair;
+	private Transform camTransform;
 
 	// Camera & control variables.
 	private Vector3 cameraRotation;
@@ -23,14 +24,23 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 	private Vector3 desiredRecoilRotation = new Vector3(0f, 0f, 0f); // Desired camera rotation caused by recoil (move recoilRotation to this).
 	private float recoilRotationSpeed = 0f;
 
+	// Constructor.
+	public FirstPersonShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Texture crosshair, Transform weapon) {
+		this.player = player;
+		this.aimTarget = aimTarget;
+		this.camTransform = cameraTransform;
+		this.crosshair = crosshair;
+		this.weapon = weapon;
+	}
+
 	// Start is called once.
-	void Start() {
-		transform.rotation = player.transform.rotation; // Initialize on player rotation so we can set the start angle by rotating the player in the editor.
-		this.cameraRotation = transform.rotation.eulerAngles;
+	public void Start() {
+		camTransform.rotation = player.transform.rotation; // Initialize on player rotation so we can set the start angle by rotating the player in the editor.
+		this.cameraRotation = camTransform.rotation.eulerAngles;
 		this.recoilTimer = Time.time;
 
 		// Disable the model for first person.
-		Transform playerModel = player.FindChild("teddybeerRennen2");
+		Transform playerModel = player.FindChild("Teddymesh");
 		Renderer[] renderers = playerModel.GetComponentsInChildren<Renderer>();
 		foreach(Renderer singleRenderer in renderers) {
 			singleRenderer.enabled = false;
@@ -39,7 +49,7 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 	}
 
 	// Update is called every frame.
-	void Update() {
+	public void Update() {
 
 		// Get the mouse input.
 		float horizontal = Input.GetAxis("Mouse X");
@@ -48,19 +58,19 @@ public class FirstPersonShooterGameCamera : MonoBehaviour {
 		if(vertical < -10f) { vertical = -10f; } // Limit y so it cant glitch by looking up or down too fast.
 
 		// Set the camera position and rotation.
-		transform.position = player.transform.position + (Vector3.up * 1.6f); // Set camera to player position at eye height.
+		camTransform.position = player.transform.position + (Vector3.up * 1.6f); // Set camera to player position at eye height.
 		this.cameraRotation += new Vector3(-vertical, horizontal, 0f) * Time.deltaTime * mouseSensitivity;
 		this.cameraRotation.x = (this.cameraRotation.x + 360f) % 360f; // Maps [-360, inf] to [0, 360].
 
 		if(this.cameraRotation.x < 180f && this.cameraRotation.x > 90f - this.minRotationX) { this.cameraRotation.x = 90f - this.minRotationX; }
 		if(this.cameraRotation.x > 180f && this.cameraRotation.x < 270f + (180f-this.maxRotationX)) { this.cameraRotation.x = 270f + (180f-this.maxRotationX); }
 
-		transform.rotation = Quaternion.Euler(this.cameraRotation + this.recoilRotation);
+		camTransform.rotation = Quaternion.Euler(this.cameraRotation + this.recoilRotation);
 
 		// Set the position of the aimPoint to the position we are looking at. TODO - Maybe only enable this when F is pressed, and implement a random raycast for shooting?
 		RaycastHit hit;
-		if (Physics.Raycast(transform.position, transform.forward, out hit, 1000f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) { // Ignore layer 8 (player collider).
-			aimTarget.position = transform.position + transform.forward * hit.distance;
+		if (Physics.Raycast(camTransform.position, camTransform.forward, out hit, 1000f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) { // Ignore layer 8 (player collider).
+			aimTarget.position = camTransform.position + camTransform.forward * hit.distance;
 		}
 
 		// Update the recoil.

@@ -19,8 +19,7 @@ public class PlayerHealth : Health {
 
 	protected override void OnDeath(bool isHeadshot){
 		Debug.Log("YOU JUST DIED MADAFAKA!!!");
-		Screen.lockCursor = false;
-		Application.LoadLevel("GameOver");
+		EndGame();
 	}
 
 	protected override void OnDamage(float amount){
