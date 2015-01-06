@@ -11,9 +11,10 @@ public class HighScoreKeeper : MonoBehaviour {
 	
 	public static int EnemyKillPoints = 1;			//Points per enemy Kill
 	public static int HeadShotMultiplier = 2;		//Bonus per Headshot
+	public static int HeadshotsTotal = 0;			//Amount of Headshots
 	
 	// Private variables
-	private static int Score = 0;					//The HighScore
+	private static int Score = 0;						//The HighScore
 	
 	// Wave parameters
 	private static int TotalWave = 1;				//Amount of Waves
@@ -34,7 +35,6 @@ public class HighScoreKeeper : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -43,7 +43,7 @@ public class HighScoreKeeper : MonoBehaviour {
 	}
 	
 	// Return the higshcore
-	static int getHighscore() {
+	public static int getHighscore() {
 		return Score;
 	}
 	
@@ -82,6 +82,8 @@ public class HighScoreKeeper : MonoBehaviour {
 	public static void PointsOnKill(bool Headshot) {
 		if (Headshot) {
 			Score += EnemyKillPoints * HeadShotMultiplier;
+			HeadshotsTotal += 1;
+			
 		}
 		else {
 			Score += EnemyKillPoints;
@@ -117,6 +119,15 @@ public class HighScoreKeeper : MonoBehaviour {
 				AccuracyBonus = (int)Math.Round(0.2f * AccuracyBonusParameter);
 			}
 		}
+	}
+	
+	public static void LogHighscore() {
+		Debug.LogWarning("Score: " + Score);
+		Debug.LogWarning("Shots Hit: " + ShotsHit);
+		Debug.LogWarning("Shots Missed: " + ShotsMissed);
+		Debug.LogWarning("Accuracy" + Accuracy*100 + "%");
+		Debug.LogWarning("Headshots: " + HeadshotsTotal);
+
 	}
 	
 }

@@ -37,6 +37,12 @@ public class Health : MonoBehaviour {
 		OnHeal();
 		OnHeal(amount);
 	}
+	
+	protected void EndGame() {
+		HighScoreKeeper.LogHighscore();
+		Screen.lockCursor = false;
+		Application.LoadLevel("GameOver");
+	}
 
 	protected virtual void OnDeath(bool isHeadshot){
 		Destroy(gameObject);
