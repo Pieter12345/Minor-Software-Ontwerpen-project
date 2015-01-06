@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Color_B05
-  m_Shader: {fileID: 4800000, guid: 14ea298b5c298bf4cbd742061379909f, type: 3}
+  m_Shader: {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,20 +17,28 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Texture: {fileID: 2800000, guid: b86337188bce3124d92c32eb8cdcfe17, type: 3}
+          m_Scale: {x: .0250000004, y: .0250000004}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Treshold
-        second: .446428567
+        second: 0
       data:
         first:
           name: _Intensity
-        second: .5
+        second: 2.32142854
+      data:
+        first:
+          name: _Shadow
+        second: 0
+      data:
+        first:
+          name: _Diffuse
+        second: 9.99999975e-05
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .367647052, g: .278756618, b: .251405716, a: 1}
+        second: {r: 1, g: .531947255, b: .477941155, a: 1}
