@@ -6,13 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD:Unity project/Assets/Art/Meshes/Woning/Materials/Carpet_red.mat
   m_Name: Carpet_red
   m_Shader: {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
-=======
-  m_Name: Color_002
-  m_Shader: {fileID: 4800000, guid: 8c3dc79f122d08a418a0b4c7842c34ec, type: 3}
->>>>>>> origin/master:Unity project/Assets/Art/Meshes/Woning/Materials/Color_002.mat
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -33,7 +28,6 @@ Material:
       data:
         first:
           name: _Intensity
-<<<<<<< HEAD:Unity project/Assets/Art/Meshes/Woning/Materials/Carpet_red.mat
         second: 1.03571427
       data:
         first:
@@ -47,21 +41,6 @@ Material:
         first:
           name: _Alpha
         second: 1
-=======
-        second: .857142866
-      data:
-        first:
-          name: _Shadow
-        second: 2.16071439
-      data:
-        first:
-          name: _Diffuse
-        second: .428571433
-      data:
-        first:
-          name: _Alpha
-        second: .5
->>>>>>> origin/master:Unity project/Assets/Art/Meshes/Woning/Materials/Color_002.mat
     m_Colors:
       data:
         first:
