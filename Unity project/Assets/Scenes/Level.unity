@@ -33798,6 +33798,7 @@ GameObject:
   - 81: {fileID: 1661318640}
   - 114: {fileID: 1661318644}
   - 114: {fileID: 1661318645}
+  - 114: {fileID: 1661318646}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -33876,7 +33877,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1661318638}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cf760d35390f244aa50e40d650a3006, type: 3}
   m_Name: 
@@ -33911,6 +33912,22 @@ MonoBehaviour:
   weapon: {fileID: 621141090}
   crosshair: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
   mouseSensitivity: 300
+--- !u!114 &1661318646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1661318638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5427eff4a63798a458fc7d0ed81120e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPerson: 1
+  player: {fileID: 1767831527}
+  aimTarget: {fileID: 1579508058}
+  camTransform: {fileID: 1661318639}
+  weapon: {fileID: 621141090}
 --- !u!1 &1678291465
 GameObject:
   m_ObjectHideFlags: 0

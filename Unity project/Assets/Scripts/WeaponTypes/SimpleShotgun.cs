@@ -25,7 +25,7 @@ public class SimpleShotgun : Weapon {
 			timeLastShot = Time.time;
 			if (AmmoInClip > 0){
 				// Add Recoil
-				camera.GetComponent<ShooterGameCamera>().Fired = true;
+// TODO - re-enable				camera.GetComponent<ShooterGameCamera>().Fired = true;
 				ShotEffects();
 				TakeFromClip();
 				Vector3 centerDir = to - from;
