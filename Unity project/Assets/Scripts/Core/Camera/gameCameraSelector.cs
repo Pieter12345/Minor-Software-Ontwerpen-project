@@ -43,4 +43,13 @@ public class gameCameraSelector : MonoBehaviour {
 			this.thirdPersonCam.Update();
 		}
 	}
+
+	// Redirect the setFired method to the right script.
+	public void setFired(bool state = true) {
+		if(firstPerson) {
+			this.firstPersonCam.setFired(state);
+		} else {
+			this.thirdPersonCam.setFired(state);
+		}
+	}
 }
