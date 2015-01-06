@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Color_002
-  m_Shader: {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8c3dc79f122d08a418a0b4c7842c34ec, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -27,16 +27,20 @@ Material:
         second: .696428597
       data:
         first:
-          name: _Shadow
-        second: 2.16071439
-      data:
-        first:
           name: _Intensity
         second: .857142866
       data:
         first:
+          name: _Shadow
+        second: 2.16071439
+      data:
+        first:
           name: _Diffuse
         second: .428571433
+      data:
+        first:
+          name: _Alpha
+        second: .5
     m_Colors:
       data:
         first:
