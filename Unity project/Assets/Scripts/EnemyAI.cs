@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour {
 	private pathFinding pathToFlagIgnoringBlocks;
 	private pathFinding currentPathfinding; // The current active pathfinding.
 	private float pathfindingLastChanged = Time.time;
-	private float pathfindingChangeCooldown = 5f; // [sec]. The amount of time before the enemy can switch between the player and flag pathFindings.
+	private float pathfindingChangeCooldown = 1f; // [sec]. The amount of time before the enemy can switch between the player and flag pathFindings.
 
 	// Jumping variables.
 	private float gravitation = 9.81f; // [m/(s*s)] Gravitation constant (average 9.81 on earth).
@@ -69,6 +69,25 @@ public class EnemyAI : MonoBehaviour {
 	// Update is called once per frame.
 	void Update () {
 
+		// DEBUG - Show a different texture color for each pathfinding.
+		bool debugging = true;
+		if(debugging) {
+			Texture2D texture = Resources.Load<Texture2D>("Textures/BlockTextures/textureNotFoundTexture");
+			if(currentPathfinding.Equals(pathToPlayer)) {
+				texture = Resources.Load<Texture2D>("Textures/BlockTextures/stone");
+			}
+			if(currentPathfinding.Equals(pathToPlayerIgnoringBlocks)) {
+				texture = Resources.Load<Texture2D>("Textures/BlockTextures/bricks");
+			}
+			if(currentPathfinding.Equals(pathToFlag)) {
+				texture = Resources.Load<Texture2D>("Textures/BlockTextures/leaves");
+			}
+			if(currentPathfinding.Equals(pathToFlagIgnoringBlocks)) {
+				texture = Resources.Load<Texture2D>("Textures/BlockTextures/background_green");
+			}
+			enemyObject.transform.FindChild("EnemyModel").FindChild("Capsule").renderer.material.mainTexture = texture;
+		}
+
 		// Get the current position.
 		Vector3 pos = enemyObject.transform.position;
 
@@ -76,11 +95,8 @@ public class EnemyAI : MonoBehaviour {
 		Vector3 playerPos = EnemyController.playerStatic.transform.position;
 		Vector3 flagPos = new Vector3(EnemyController.flagPos[0], EnemyController.flagPos[1], EnemyController.flagPos[2]);
 
-		// Get the player & flag health.
-		// TODO - Add references to player flag and health here, just to send damage to them.
-
 		// Select actions based on what the enemy is doing.
-		// Status activation variables / state indicators. TODO - Calculate each of the values of the variables.
+		// Status activation variables / state indicators.
 		bool canHitPlayer = (pos - playerPos).sqrMagnitude <= Mathf.Pow(1.5f, 2f); // True if enemy to player distance <= 1.5.
 		bool canHitFlag = (pos - flagPos).sqrMagnitude <= Mathf.Pow(1.5f, 2f); // True if enemy to flag distance <= 1.5.
 		bool standingUnderPlayer = (new Vector3(playerPos[0], 0f, playerPos[2]) - new Vector3(pos[0], 0f, pos[2])).sqrMagnitude <= Mathf.Pow(1f, 2f); // True if enemy to player in x-z plane distance <= 1.
@@ -100,7 +116,7 @@ public class EnemyAI : MonoBehaviour {
 
 		// If ready for a new task.
 		case "ready": {
-			// TODO - Implement AI choices here.
+			// AI flow - Implement AI choices here.
 			// If close to the player, hit him.
 			// elseif close to the flag, hit it.
 			// elseif standing under player, use some ability to break the block above the enemy to make the player fall.
@@ -108,7 +124,7 @@ public class EnemyAI : MonoBehaviour {
 			//     if path to player could not be found, set ignoreBlockPath and move to player.
 			// else set path and move to flag (chooce between blockbreaking or normal pathfinding?).
 			//     if path to flag could not be found, set ignoreBlockPath and move to flag.
-			// TODO - End of todo.
+			// End of AI flow.
 
 
 			// Attack the player and flag if possible. Prefers player over flag if both in range.
@@ -116,13 +132,13 @@ public class EnemyAI : MonoBehaviour {
 				if(Time.time - hittTimer >= hittCooldown) {
 					hittTimer = Time.time;
 					if(canHitPlayer) {
-						// TODO - Damage the player here + animation?
+						// TODO - Add animation.
 						Debug.Log("Damaging player!");
-						(player.parent.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt,false);
+						(player.parent.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt, false);
 					} else {
-						// TODO - Damage the flag here + animation?
+						// TODO - Add animation.
 						Debug.Log("Damaging flag!");
-						(flag.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt,false);
+						(flag.GetComponent(typeof(Health)) as Health).Damage(damagePerHitt, false);
 					}
 					break;
 				}
@@ -161,11 +177,15 @@ public class EnemyAI : MonoBehaviour {
 					if(mayChangePathfinding()) {
 						currentPathfinding = pathToPlayer;
 						if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToPlayerIgnoringBlocks; }
+						if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToFlag; }
+						if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToFlagIgnoringBlocks; }
 					}
-				} else {
-					currentPathfinding = pathToPlayer;
-					if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToPlayerIgnoringBlocks; }
-				}
+				} //else {
+//					currentPathfinding = pathToPlayer;
+//					if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToPlayerIgnoringBlocks; }
+//					if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToFlag; }
+//					if(currentPathfinding.getNextMoveText(Mathf.RoundToInt(pos[0]), Mathf.RoundToInt(pos[1]), Mathf.RoundToInt(pos[2])) == "noPathFoundError") { currentPathfinding = pathToFlagIgnoringBlocks; }
+//				}
 			}
 			else {
 				if(!(currentPathfinding.Equals(pathToFlag) || currentPathfinding.Equals(pathToFlagIgnoringBlocks))) {

@@ -259,11 +259,13 @@ public class WorldBlockManagement : MonoBehaviour {
 			
 			canWalkThrough[byteArrayIndex] = canWalkThroughLocal; // Set "canWalkThrough" block property.
 // Redundant			canWalkThroughOnlyId255[byteArrayIndex] = true; // If a new block is set and it wasnt ID 255.
-			
-			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+
+			Texture2D texture = Resources.Load<Texture2D>("Textures/BlockTextures/" + textureFileName.Replace(".png", "").Replace(".jpg", ""));
+//			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
 			if(texture == null) {
 				Debug.Log("[SEVERE]: [WorldBlockManagement] Texture " + textureFileName + " could not be loaded. Using textureNotFoundTexture.png.");
-				texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/textureNotFoundTexture.png") as Texture2D;
+				texture = Resources.Load<Texture2D>("Textures/BlockTextures/textureNotFoundTexture");
+//				texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/textureNotFoundTexture.png") as Texture2D;
 				shaderName = "Diffuse";
 				if(texture == null) {
 					Debug.Log("[SEVERE]: [WorldBlockManagement] Texture textureNotFoundTexture.png could not be loaded. Failed to add a texture to a block.");
@@ -559,7 +561,8 @@ public class WorldBlockManagement : MonoBehaviour {
 			break;
 		}
 		}
-		return Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+		return Resources.Load<Texture2D>("Textures/BlockTextures/" + textureFileName.Replace(".png", "").Replace(".jpg", ""));
+//		return Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
 	}
 
 	// Quote to copy:   """""""

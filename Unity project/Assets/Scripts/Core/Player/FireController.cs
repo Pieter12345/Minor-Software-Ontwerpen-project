@@ -33,6 +33,11 @@ public class FireController : MonoBehaviour {
 			if(Input.GetButton("Modifier")){ //Place block mode enabled
 				blockMode = true;
 				selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
+				if(selectedBlock < 1){
+					selectedBlock = 3;
+				} else if(selectedBlock > 3){
+					selectedBlock = 1;
+				}
 				UpdateAimBlockTex(selectedBlock);
 			} else {
 				blockMode = false;
@@ -40,11 +45,6 @@ public class FireController : MonoBehaviour {
 					weapons.SelectNextWeaponUp();
 				else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
 					weapons.SelectNextWeaponDown();
-			}
-			if(selectedBlock < 1){
-				selectedBlock = 3;
-			} else if(selectedBlock > 3){
-				selectedBlock = 1;
 			}
 
 			if(Input.GetButtonUp("Fire1")){
