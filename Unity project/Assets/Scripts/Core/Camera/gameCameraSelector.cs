@@ -7,6 +7,7 @@ public class gameCameraSelector : MonoBehaviour {
 	private ShooterGameCamera thirdPersonCam;
 	private FirstPersonShooterGameCamera firstPersonCam;
 	public bool firstPerson = false;
+	private bool isTempFirstPerson = false; // Used to save when a player is playing in third person, but is placing blocks in first.
 
 	public Transform player;
 	public Transform aimTarget;
@@ -30,24 +31,35 @@ public class gameCameraSelector : MonoBehaviour {
 	
 	// Update is called once per frame.
 	void LateUpdate () {
-
+		
 		// Toggle between first and third person if F5 is pressed.
-		if(Input.GetKeyDown(KeyCode.F5)) {
+		bool fKeyDown = Input.GetKeyDown(KeyCode.F);
+		bool fKeyUp   = Input.GetKeyUp(KeyCode.F);
+		if(Input.GetKeyDown(KeyCode.F5) || (fKeyDown && !firstPerson) || (fKeyUp && isTempFirstPerson)) {
+			isTempFirstPerson = fKeyDown && !firstPerson;
 			firstPerson = !firstPerson;
 
-			// Load the proper camera.
-			if(firstPerson) {
-				this.firstPersonCam.Start();
-			} else {
-				this.thirdPersonCam.Start();
-			}
+			// Start the right camera.
+			this.startCamera(firstPerson);
 		}
+
+		// 
 
 		// Update the proper camera.
 		if(firstPerson) {
 			this.firstPersonCam.Update();
 		} else {
 			this.thirdPersonCam.Update();
+		}
+	}
+
+	// startCamera method.
+	// Runs the Start() method in the first or third person camera script.
+	private void startCamera(bool firstPerson) {
+		if(firstPerson) {
+			this.firstPersonCam.Start();
+		} else {
+			this.thirdPersonCam.Start();
 		}
 	}
 
