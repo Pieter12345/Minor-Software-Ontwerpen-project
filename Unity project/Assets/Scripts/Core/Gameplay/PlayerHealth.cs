@@ -8,13 +8,17 @@ public class PlayerHealth : Health {
 	public float regeneratingFraction = 0.2f;
 	public float regenSpeed = 1.0f;
 	public float regenCooldown = 2f;
+	public GameObject hitOverlay;
 
+	private HitOverlay ho;
 	private float regenTo = 0f;
 	private float timeLastHit;	
 	private float epsilon = 0.1f;
 
 	void Start(){
 		regenTo = maxHP;
+		if(hitOverlay != null)
+			ho = hitOverlay.GetComponent(typeof(HitOverlay)) as HitOverlay;
 	}
 
 	protected override void OnDeath(bool isHeadshot){
@@ -25,6 +29,8 @@ public class PlayerHealth : Health {
 	protected override void OnDamage(float amount){
 		regenTo = (hp/maxHP + regeneratingFraction < 1f) ? (hp + regeneratingFraction*maxHP) : maxHP;
 		timeLastHit = Time.time;
+		if(ho!=null)
+			ho.Hit(amount);
 	}
 
 	protected override void OnDamage(){

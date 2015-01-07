@@ -8106,6 +8106,10 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: hitOverlay
+      value: 
+      objectReference: {fileID: 928854348}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -9790,6 +9794,7 @@ MonoBehaviour:
   regeneratingFraction: .200000003
   regenSpeed: 1
   regenCooldown: 5
+  hitOverlay: {fileID: 928854348}
 --- !u!1 &383894176
 GameObject:
   m_ObjectHideFlags: 0
@@ -19694,6 +19699,7 @@ GameObject:
   - 224: {fileID: 928854349}
   - 222: {fileID: 928854351}
   - 114: {fileID: 928854350}
+  - 114: {fileID: 928854352}
   m_Layer: 5
   m_Name: HitOverlay
   m_TagString: Untagged
@@ -19745,6 +19751,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928854348}
+--- !u!114 &928854352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 928854348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b867877808742fd4593dc2aa544eb3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToAlphaScaling: 20
+  fadeSpeed: 30
+  epsilon: .00999999978
 --- !u!1 &934405209
 GameObject:
   m_ObjectHideFlags: 0
