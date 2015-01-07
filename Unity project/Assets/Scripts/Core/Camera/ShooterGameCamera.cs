@@ -6,8 +6,6 @@ public class ShooterGameCamera {
 	private Transform player;
 	private Transform aimTarget;
 	private Transform camTransform;
-
-	private Texture reticle;
 	
 	public float smoothingTime = 0.5f;
 	public Vector3 pivotOffset = new Vector3(1.3f, 0.4f,  0.0f);
@@ -34,11 +32,10 @@ public class ShooterGameCamera {
 	private Transform weapon;
 
 	// Constructor.
-	public ShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Texture crosshair, Transform weapon) {
+	public ShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Transform weapon) {
 		this.player = player;
 		this.aimTarget = aimTarget;
 		this.camTransform = cameraTransform;
-		this.reticle = crosshair;
 		this.weapon = weapon;
 	}
 	
@@ -141,9 +138,4 @@ public class ShooterGameCamera {
 	public void setFired(bool state = true) {
 		this.Fired = state;
 	}
-
-//	void OnGUI () {
-//		if (Time.time != 0 && Time.timeScale != 0)
-//			GUI.DrawTexture(new Rect(Screen.width/2-(reticle.width*0.5f), Screen.height/2-(reticle.height*0.5f), reticle.width, reticle.height), reticle);
-//	}
 }

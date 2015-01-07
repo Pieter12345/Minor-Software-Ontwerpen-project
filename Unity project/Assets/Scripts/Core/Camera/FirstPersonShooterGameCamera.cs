@@ -7,7 +7,6 @@ public class FirstPersonShooterGameCamera {
 	private Transform player;
 	private Transform aimTarget;
 	private Transform weapon;
-	private Texture crosshair;
 	private Transform camTransform;
 
 	// Camera & control variables.
@@ -25,11 +24,10 @@ public class FirstPersonShooterGameCamera {
 	private float recoilRotationSpeed = 0f;
 
 	// Constructor.
-	public FirstPersonShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Texture crosshair, Transform weapon) {
+	public FirstPersonShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Transform weapon) {
 		this.player = player;
 		this.aimTarget = aimTarget;
 		this.camTransform = cameraTransform;
-		this.crosshair = crosshair;
 		this.weapon = weapon;
 	}
 
@@ -43,6 +41,7 @@ public class FirstPersonShooterGameCamera {
 		Transform playerModel = player.FindChild("TeddyANIMATED full");
 		Renderer[] renderers = playerModel.GetComponentsInChildren<Renderer>();
 		foreach(Renderer singleRenderer in renderers) {
+			Debug.Log (singleRenderer.name);
 			singleRenderer.enabled = false;
 		}
 
@@ -120,10 +119,4 @@ public class FirstPersonShooterGameCamera {
 	public void setFired(bool state = true) {
 		this.Fired = state;
 	}
-
-//	// Draw a crosshair.
-//	void OnGUI () {
-//		if (Time.time != 0 && Time.timeScale != 0)
-//			GUI.DrawTexture(new Rect(Screen.width/2-(crosshair.width*0.5f), Screen.height/2-(crosshair.height*0.5f), crosshair.width, crosshair.height), crosshair);
-//	}
 }

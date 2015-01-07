@@ -17,8 +17,15 @@ public class gameCameraSelector : MonoBehaviour {
 
 	// Use this for initialization.
 	void Start () {
-		this.thirdPersonCam = new ShooterGameCamera(player, aimTarget, transform, crosshair, weapon);
-		this.firstPersonCam = new FirstPersonShooterGameCamera(player, aimTarget, transform, crosshair, weapon);
+		this.thirdPersonCam = new ShooterGameCamera(player, aimTarget, transform, weapon);
+		this.firstPersonCam = new FirstPersonShooterGameCamera(player, aimTarget, transform, weapon);
+
+		// Load the proper camera.
+		if(firstPerson) {
+			this.firstPersonCam.Start();
+		} else {
+			this.thirdPersonCam.Start();
+		}
 	}
 	
 	// Update is called once per frame.
