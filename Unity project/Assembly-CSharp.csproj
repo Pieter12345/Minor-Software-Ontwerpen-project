@@ -88,8 +88,11 @@
      <Compile Include="Assets\Scripts\UI\FlagHealthbar.cs" />
      <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\UI\Healthbar.cs" />
+     <Compile Include="Assets\Scripts\UI\HitOverlay.cs" />
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
+     <Compile Include="Assets\Scripts\UI\ReloadText.cs" />
      <Compile Include="Assets\Scripts\UI\SplashScript.cs" />
+     <Compile Include="Assets\Scripts\UI\UnderAttackMessage.cs" />
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\RPG.cs" />
