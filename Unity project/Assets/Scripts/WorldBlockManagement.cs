@@ -16,12 +16,14 @@ public class WorldBlockManagement : MonoBehaviour {
 	private static bool[] canWalkThrough; // Same size as blockData, tells if the player can walk in this block.
 	private static bool[] canWalkThroughOnlyId255; // Only checks for blockID 255. This is the blockifyWorld invisible block.
 
+	public BlockType[] blocktypes;
+	public static BlockType[] blocks;
 	public Transform parentObject; // The (empty) parent GameObject to create new blocks in.
 	private static Transform parent; // Block objects will be created as childs of this GameObject. (Default: World/Blocks)
 
 	// Runs on creation of the object its bound to (should be the level floor plane or so).
 	void Awake () {
-
+		blocks = blocktypes;
 		// Load the default level to variables.
 		generateNewLevel(100, 30);
 //		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
@@ -214,54 +216,58 @@ public class WorldBlockManagement : MonoBehaviour {
 				}
 			}
 
+			if(blockID > blocks.Length ) return;
 			// Load the texture, shader and canWalkThrough value (Depends on blockID).
 			string textureFileName = "textureNotFoundTexture.png";
 			string shaderName = "Diffuse";
 			string blockShape = "full"; // The shape of the block. Should be one of: {full, topHalf, bottomHalf}.
-			bool canWalkThroughLocal = false; // True if enemies can walk through this block.
+			bool canWalkThroughLocal = blocks[blockID-1].canWalkThrough; // True if enemies can walk through this block.
 			bool blockInvisible = false; // To spawn invisible blocks.
-			bool hasCollider = true; // Disables collider but can still stop enemies.
-			switch(blockID) {
-			case 1: {
-				textureFileName = "stone.png";
-				break;
-			}
-			case 2: {
-				textureFileName = "brick.png";
-				break;
-			}
-			case 3: {
-				textureFileName = "leaves.png";
-				shaderName = "Transparent/Diffuse";
-				break;
-			}
-			case 4: {
-				textureFileName = "brick.png";
-				blockShape = "topHalf";
-				break;
-			}
-			case 5: {
-				textureFileName = "brick.png";
-				blockShape = "bottomHalf";
-				canWalkThroughLocal = true;
-				break;
-			}
-//			case 255: { // Invisible block without hitbox/collider.
-//				blockInvisible = true;
-//				hasCollider = false;
+			bool hasCollider = blocks[blockID-1].hasCollider; // Disables collider but can still stop enemies.
+//			switch(blockID) {
+//			case 1: {
+//				textureFileName = "stone.png";
 //				break;
 //			}
-			default: {
-				Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with an unknown blockID: " + blockID + ". Setting the block with textureNotFoundTexture and Diffuse shader.");
-				break;
-			}
-			}
-			
+//			case 2: {
+//				textureFileName = "brick.png";
+//				break;
+//			}
+//			case 3: {
+//				textureFileName = "leaves.png";
+//				shaderName = "Transparent/Diffuse";
+//				break;
+//			}
+//			case 4: {
+//				textureFileName = "brick.png";
+//				blockShape = "topHalf";
+//				break;
+//			}
+//			case 5: {
+//				textureFileName = "brick.png";
+//				blockShape = "bottomHalf";
+//				canWalkThroughLocal = true;
+//				break;
+//			}
+////			case 255: { // Invisible block without hitbox/collider.
+////				blockInvisible = true;
+////				hasCollider = false;
+////				break;
+////			}
+//			default: {
+//				Debug.Log("[SEVERE]: [WorldBlockManagement] The setBlockAt method has been called with an unknown blockID: " + blockID + ". Setting the block with textureNotFoundTexture and Diffuse shader.");
+//				break;
+//			}
+//			}
+			if(blocks[blockID-1].isTransparent)
+				shaderName = "Transparent/Diffuse";
+
 			canWalkThrough[byteArrayIndex] = canWalkThroughLocal; // Set "canWalkThrough" block property.
 // Redundant			canWalkThroughOnlyId255[byteArrayIndex] = true; // If a new block is set and it wasnt ID 255.
 
 			Texture2D texture = Resources.Load<Texture2D>("Textures/BlockTextures/" + textureFileName.Replace(".png", "").Replace(".jpg", ""));
 //			Texture2D texture = Resources.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/BlockTextures/" + textureFileName) as Texture2D;
+			texture = (Texture2D) blocks[blockID-1].texture;
 			if(texture == null) {
 				Debug.Log("[SEVERE]: [WorldBlockManagement] Texture " + textureFileName + " could not be loaded. Using textureNotFoundTexture.png.");
 				texture = Resources.Load<Texture2D>("Textures/BlockTextures/textureNotFoundTexture");

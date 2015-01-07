@@ -39936,6 +39936,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e43c01473643c8458f45de45a88cf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blocktypes:
+  - texture: {fileID: 2800000, guid: 52c4fdce8f4c9864dbcfb6574a259eb8, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: b8c86e527ceed0d4ca0a0fb18f87429e, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: e411dad984df14647ada3be35fe7ce7c, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 1
+  - texture: {fileID: 2800000, guid: 08ed1e0cb5fd9af46823143a41fcdd21, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: eb8ee053918884d409bfb454b90b00e2, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: f1be644f8610009408aefc582438fa03, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: 873666bd16b0104409c3d4138d7b556a, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
   parentObject: {fileID: 1902263561}
 --- !u!1 &1969513401
 GameObject:

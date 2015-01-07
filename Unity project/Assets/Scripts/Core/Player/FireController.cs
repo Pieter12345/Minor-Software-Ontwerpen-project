@@ -34,8 +34,8 @@ public class FireController : MonoBehaviour {
 				blockMode = true;
 				selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
 				if(selectedBlock < 1){
-					selectedBlock = 3;
-				} else if(selectedBlock > 3){
+					selectedBlock = WorldBlockManagement.blocks.Length;
+				} else if(selectedBlock > WorldBlockManagement.blocks.Length){
 					selectedBlock = 1;
 				}
 				UpdateAimBlockTex(selectedBlock);
@@ -140,7 +140,7 @@ public class FireController : MonoBehaviour {
 	}
 
 	void UpdateAimBlockTex(int BlockID) {
-		Texture2D CurrentTexture = WorldBlockManagement.getTextureFromBlockID(BlockID);
+		Texture2D CurrentTexture = (Texture2D) WorldBlockManagement.blocks[BlockID-1].texture;
 		transBlock.renderer.material.SetTexture("_MainTex",CurrentTexture);
 	}
 	
