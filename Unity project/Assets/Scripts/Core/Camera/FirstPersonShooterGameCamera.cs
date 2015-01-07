@@ -23,6 +23,11 @@ public class FirstPersonShooterGameCamera {
 	private Vector3 desiredRecoilRotation = new Vector3(0f, 0f, 0f); // Desired camera rotation caused by recoil (move recoilRotation to this).
 	private float recoilRotationSpeed = 0f;
 
+	// Aim down sight variables.
+	private bool isAimingDownSight = false;
+	private float aimDownSightDesiredFieldOfView = 60f; // Default Field Of View.
+	private float aimDownSightSpeed = 5f; // Speed of changing the aimDownSight.
+
 	// Constructor.
 	public FirstPersonShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Transform weapon) {
 		this.player = player;
@@ -70,6 +75,20 @@ public class FirstPersonShooterGameCamera {
 
 		// Update the recoil.
 		this.updateRecoil();
+
+		// Aim down sight.
+		if(Input.GetMouseButtonDown(1)) { // 1 = right mouse button.
+			isAimingDownSight = !isAimingDownSight;
+			if(isAimingDownSight) {
+				this.aimDownSightDesiredFieldOfView = 30f;
+			} else {
+				this.aimDownSightDesiredFieldOfView = 60f;
+			}
+		}
+		if(this.aimDownSightDesiredFieldOfView != this.camTransform.camera.fieldOfView) {
+			this.camTransform.camera.fieldOfView += (this.aimDownSightDesiredFieldOfView - this.camTransform.camera.fieldOfView) * Time.deltaTime * this.aimDownSightSpeed;
+		}
+
 
 	}
 
