@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class ShooterGameCamera : MonoBehaviour {
+public class ShooterGameCamera {
 	
-	public Transform player;
-	public Transform aimTarget;
+	private Transform player;
+	private Transform aimTarget;
+	private Transform camTransform;
+
+	private Texture reticle;
 	
 	public float smoothingTime = 0.5f;
 	public Vector3 pivotOffset = new Vector3(1.3f, 0.4f,  0.0f);
@@ -17,33 +20,40 @@ public class ShooterGameCamera : MonoBehaviour {
 	public float minVerticalAngle = -80f;
 	
 	public float mouseSensitivity = 0.1f;
-	
-	public Texture reticle;
-	
+
 	private float angleH = 0;
 	private float angleV = 0;
 	private float maxCamDist = 3;
 	private Vector3 smoothPlayerPos;
 	
-	//Recoil parameters
+	// Recoil parameters.
 	private float maxRecoil;
 	private float CameraRecoil;
 	private bool RecoilActive = false;
 	public bool Fired = false;
-	public Transform weapon;
+	private Transform weapon;
+
+	// Constructor.
+	public ShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Texture crosshair, Transform weapon) {
+		this.player = player;
+		this.aimTarget = aimTarget;
+		this.camTransform = cameraTransform;
+		this.reticle = crosshair;
+		this.weapon = weapon;
+	}
 	
-	// Use this for initialization
-	void Start () {
+	// Use this for initialization.
+	public void Start () {
 		smoothPlayerPos = player.position;
 	}
 		
 	
-	// Update is called once per frame
-	void LateUpdate () {
+	// Update is called once per frame.
+	public void Update () {
 		if (Time.deltaTime == 0 || Time.timeScale == 0 || player == null) 
 			return;
 		
-		// Set Recoil Degrees
+		// Set Recoil Degrees.
 		
 		/*weapon property*/
 		WeaponController wcont = weapon.GetComponent<WeaponController>();
@@ -76,12 +86,12 @@ public class ShooterGameCamera : MonoBehaviour {
 		
 		// Before changing camera, store the prev aiming distance.
 		// If we're aiming at nothing (the sky), we'll keep this distance.
-		float prevDist = (aimTarget.position - transform.position).magnitude;
+		float prevDist = (aimTarget.position - camTransform.position).magnitude;
 		
 		// Set aim rotation
 		Quaternion aimRotation = Quaternion.Euler(-angleV, angleH, 0);
 		Quaternion camYRotation = Quaternion.Euler(0, angleH, 0);
-		transform.rotation = aimRotation;
+		camTransform.rotation = aimRotation;
 		
 		// Find far and close position for the camera
 		smoothPlayerPos = Vector3.Lerp(smoothPlayerPos, player.position, smoothingTime * Time.deltaTime);
@@ -102,11 +112,11 @@ public class ShooterGameCamera : MonoBehaviour {
 		if (Physics.Raycast(closeCamPoint, closeToFarDir, out hit, maxCamDist + padding)) {
 			maxCamDist = hit.distance - padding;
 		}
-		transform.position = closeCamPoint + closeToFarDir * maxCamDist;
+		camTransform.position = closeCamPoint + closeToFarDir * maxCamDist;
 		
 		// Do a raycast from the camera to find the distance to the point we're aiming at.
 		float aimTargetDist;
-		if (Physics.Raycast(transform.position, transform.forward, out hit, 1000)) {
+		if (Physics.Raycast(camTransform.position, camTransform.forward, out hit, 1000)) {
 			aimTargetDist = hit.distance + 0.05f;
 		}
 		else {
@@ -116,7 +126,7 @@ public class ShooterGameCamera : MonoBehaviour {
 		
 		// Set the aimTarget position according to the distance we found.
 		// Make the movement slightly smooth.
-		aimTarget.position = transform.position + transform.forward * aimTargetDist;
+		aimTarget.position = camTransform.position + camTransform.forward * aimTargetDist;
 	}
 
 	// setFired method.
