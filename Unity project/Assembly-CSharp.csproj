@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Core\Camera\BindPosition.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\FirstPersonShooterGameCamera.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\ShooterGameCamera.cs" />
+     <Compile Include="Assets\Scripts\Core\Camera\gameCameraSelector.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoPool.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoTypes.cs" />
@@ -88,6 +89,7 @@
      <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\UI\Healthbar.cs" />
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
+     <Compile Include="Assets\Scripts\UI\SplashScript.cs" />
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\RPG.cs" />
