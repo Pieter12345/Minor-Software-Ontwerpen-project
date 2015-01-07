@@ -74,7 +74,7 @@ public class FireController : MonoBehaviour {
 				Reload();
 		}
 		if(Input.GetKeyDown(KeyCode.F9))
-			weapons.AddAmmoToCurrent(10);
+			weapons.AddAmmoToCurrent(1000);
 		UpdateBlockOutline();
 	}
 

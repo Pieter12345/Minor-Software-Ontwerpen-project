@@ -2,79 +2,71 @@
 using System.Collections;
 
 public enum WeaponStats {
-
 	PISTOL,
 	RIFLE,
 	SHOTGUN,
 	RPG
-
 }
 public static class WeaponStatsExtension{
 
-	public static int ClipSize(this WeaponStats w){
-		int foo = 1;
-		switch(w){
-		case WeaponStats.PISTOL:	foo = 10;	break;
-		case WeaponStats.RIFLE:		foo = 20;	break;
-		case WeaponStats.SHOTGUN:	foo = 2;	break;
-		case WeaponStats.RPG:		foo = 1;	break;
+	public static int ClipSize(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return 10;
+		case WeaponStats.RIFLE   : return 30;
+		case WeaponStats.SHOTGUN : return 2;
+		case WeaponStats.RPG     : return 1;
+		default                  : return 0;
 		}
-		return foo;
 	}
 
-	public static AmmoTypes AmmoType(this WeaponStats w){
-		AmmoTypes foo = AmmoTypes.PISTOL_BULLET;
-		switch(w){
-		case WeaponStats.PISTOL:	foo = AmmoTypes.PISTOL_BULLET;	break;
-		case WeaponStats.RIFLE:		foo = AmmoTypes.RIFLE_BULLET;	break;
-		case WeaponStats.SHOTGUN:	foo = AmmoTypes.SHELL;			break;
-		case WeaponStats.RPG:		foo = AmmoTypes.ROCKET;			break;
+	public static AmmoTypes AmmoType(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return AmmoTypes.PISTOL_BULLET;
+		case WeaponStats.RIFLE   : return AmmoTypes.RIFLE_BULLET;
+		case WeaponStats.SHOTGUN : return AmmoTypes.SHELL;
+		case WeaponStats.RPG     : return AmmoTypes.ROCKET;
+		default                  : return AmmoTypes.PISTOL_BULLET;
 		}
-		return foo;
 	}
 
-	public static float BaseDamage(this WeaponStats w){
-		float foo = 1f;
-		switch(w){
-		case WeaponStats.PISTOL:	foo = 1f;	break;
-		case WeaponStats.RIFLE:		foo = 1.2f;	break;
-		case WeaponStats.SHOTGUN:	foo = 10f;	break;
-		case WeaponStats.RPG:		foo = 50f;	break;
+	public static float BaseDamage(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return 1f;
+		case WeaponStats.RIFLE   : return 1.2f;
+		case WeaponStats.SHOTGUN : return 10f;
+		case WeaponStats.RPG     : return 50f;
+		default                  : return 1f;
 		}
-		return foo;
 	}
 
-	public static float FireInterval(this WeaponStats w){
-		float foo = 1f;
-		switch(w){
-		case WeaponStats.PISTOL:	foo = 0.2f;	break;
-		case WeaponStats.RIFLE:		foo = 0.2f;	break;
-		case WeaponStats.SHOTGUN:	foo = 1f;	break;
-		case WeaponStats.RPG:		foo = 3f;	break;
+	public static float FireInterval(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return 0.2f;
+		case WeaponStats.RIFLE   : return 0.05f;
+		case WeaponStats.SHOTGUN : return 1f;
+		case WeaponStats.RPG     : return 3f;
+		default                  : return 1f;
 		}
-		return foo;
 	}
 
-	public static float ReloadTime(this WeaponStats w){
-		float foo = 1f;
-		switch(w){
-		case WeaponStats.PISTOL:	foo = 1f;	break;
-		case WeaponStats.RIFLE:		foo = 0.2f;	break;
-		case WeaponStats.SHOTGUN:	foo = 1f;	break;
-		case WeaponStats.RPG:		foo = 3f;	break;
+	public static float ReloadTime(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return 1f;
+		case WeaponStats.RIFLE   : return 0.2f;
+		case WeaponStats.SHOTGUN : return 1f;
+		case WeaponStats.RPG     : return 3f;
+		default                  : return 1f;
 		}
-		return foo;
 	}
 
-	public static float Recoil(this WeaponStats w){
-		float foo = 1f;
-		switch(w){
-		case WeaponStats.PISTOL:	foo = 0.5f;	break;
-		case WeaponStats.RIFLE:		foo = 1f;	break;
-		case WeaponStats.SHOTGUN:	foo = 3f;	break;
-		case WeaponStats.RPG:		foo = 5f;	break;
+	public static float Recoil(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return 0.5f;
+		case WeaponStats.RIFLE   : return 0.5f;
+		case WeaponStats.SHOTGUN : return 2f;
+		case WeaponStats.RPG     : return 4f;
+		default                  : return 1f;
 		}
-		return foo;
 	}
 
 }

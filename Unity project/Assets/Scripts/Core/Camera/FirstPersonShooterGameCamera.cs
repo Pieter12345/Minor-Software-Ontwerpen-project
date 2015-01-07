@@ -41,7 +41,6 @@ public class FirstPersonShooterGameCamera {
 		Transform playerModel = player.FindChild("TeddyANIMATED full");
 		Renderer[] renderers = playerModel.GetComponentsInChildren<Renderer>();
 		foreach(Renderer singleRenderer in renderers) {
-			Debug.Log (singleRenderer.name);
 			singleRenderer.enabled = false;
 		}
 
@@ -67,14 +66,21 @@ public class FirstPersonShooterGameCamera {
 		camTransform.rotation = Quaternion.Euler(this.cameraRotation + this.recoilRotation);
 
 		// Set the position of the aimPoint to the position we are looking at. TODO - Maybe only enable this when F is pressed, and implement a random raycast for shooting?
-		RaycastHit hit;
-		if (Physics.Raycast(camTransform.position, camTransform.forward, out hit, 1000f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) { // Ignore layer 8 (player collider).
-			aimTarget.position = camTransform.position + camTransform.forward * hit.distance;
-		}
+		this.updateAimTargetPos();
 
 		// Update the recoil.
 		this.updateRecoil();
 
+	}
+
+	// updateAimTargetPos method.
+	// Does a new raycast to find and set the new position of the aimTarget.
+	private void updateAimTargetPos() {
+		// Set the position of the aimPoint to the position we are looking at.
+		RaycastHit hit;
+		if (Physics.Raycast(camTransform.position, camTransform.forward, out hit, 1000f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) { // Ignore layer 8 (player collider).
+			aimTarget.position = camTransform.position + camTransform.forward * hit.distance;
+		}
 	}
 
 	// updateRecoil method.
@@ -84,11 +90,11 @@ public class FirstPersonShooterGameCamera {
 		// Get the weapon recoil property.
 		WeaponController wcont = weapon.GetComponent<WeaponController>();
 		Weapon selectedWeapon =  wcont.SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon;
-		float weaponRecoilIntensity = selectedWeapon.Recoil;
+		float weaponRecoilIntensity = (selectedWeapon != null) ? selectedWeapon.Recoil : 0f;
 
 		// If the player has fired a gun, apply random recoil to the camera.
 		if(this.Fired) {
-			this.desiredRecoilRotation += new Vector3(Random.Range(-20f, -5f), Random.Range(-5f, 5f), Random.Range(-10f, 10f));
+			this.desiredRecoilRotation += new Vector3(Random.Range(-20f, -5f), Random.Range(-5f, 5f), Random.Range(-10f, 10f)) * weaponRecoilIntensity;
 			this.recoilRotationSpeed += 3f;
 			this.Fired = false;
 		}
@@ -96,7 +102,6 @@ public class FirstPersonShooterGameCamera {
 		// Custom FixedUpdate.
 		if(Time.time - this.recoilTimer >= this.recoilFixedUpdateStepSize) {
 			this.recoilTimer += this.recoilFixedUpdateStepSize;
-			
 
 			// Move recoilRotation towards the desiredRecoilRotation.
 			Vector3 differenceVector = (this.desiredRecoilRotation - this.recoilRotation);
