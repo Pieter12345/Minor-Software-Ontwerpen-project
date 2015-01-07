@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 137: {fileID: 13700000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400014}
   - 137: {fileID: 13700002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400020}
   - 137: {fileID: 13700004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400024}
   - 137: {fileID: 13700006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400026}
   - 137: {fileID: 13700008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400028}
   - 111: {fileID: 11100000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Teddymesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400036}
   - 137: {fileID: 13700010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400042}
   - 137: {fileID: 13700012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400044}
   - 137: {fileID: 13700014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400056}
   - 137: {fileID: 13700016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,8 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  - 82: {fileID: 8237824}
+  m_Layer: 8
   m_Name: PlayerMesh
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -475,7 +476,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +491,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +506,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +522,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400066}
   - 137: {fileID: 13700018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +538,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400068}
   - 137: {fileID: 13700020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +555,7 @@ GameObject:
   - 4: {fileID: 400070}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +570,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +585,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +601,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400076}
   - 137: {fileID: 13700022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +616,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +633,7 @@ GameObject:
   - 4: {fileID: 400080}
   - 33: {fileID: 3300028}
   - 23: {fileID: 2300028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trans Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +651,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +670,7 @@ GameObject:
   - 114: {fileID: 11400010}
   - 33: {fileID: 3300002}
   - 82: {fileID: 8200000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +685,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Bone.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +701,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400090}
   - 137: {fileID: 13700024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +720,7 @@ GameObject:
   - 23: {fileID: 2300004}
   - 114: {fileID: 11400020}
   - 82: {fileID: 8230798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +739,7 @@ GameObject:
   - 23: {fileID: 2300006}
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PistolMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +757,7 @@ GameObject:
   - 108: {fileID: 10800002}
   - 114: {fileID: 11400024}
   - 114: {fileID: 11400028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +776,7 @@ GameObject:
   - 23: {fileID: 2301584}
   - 108: {fileID: 10801584}
   - 114: {fileID: 11401584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +791,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|SchouderRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +807,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401828}
   - 137: {fileID: 13701826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Staart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +822,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|HeupLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +838,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401832}
   - 137: {fileID: 13701828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OorLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +853,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Hoofd2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +868,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Nek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +884,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401838}
   - 137: {fileID: 13701830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Snuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +899,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|BeenBovenRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +914,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|BeenOnderLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +929,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|HandRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +945,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401846}
   - 137: {fileID: 13701832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +960,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|VoetRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +976,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401850}
   - 137: {fileID: 13701834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +992,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401852}
   - 137: {fileID: 13701836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OogRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1007,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Rug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1023,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401856}
   - 111: {fileID: 11101826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TeddyANIMATED full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1039,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401858}
   - 137: {fileID: 13701838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OorRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1055,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401860}
   - 137: {fileID: 13701840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1069,7 +1070,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|VoetLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1085,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Staartbeen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1100,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|OnderRug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1115,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|ArmOnderRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1129,7 +1130,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|BeenOnderRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1146,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401872}
   - 137: {fileID: 13701842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1162,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401874}
   - 137: {fileID: 13701844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PootLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1177,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1192,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|ArmOnderLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1207,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|ArmBovenRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1222,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Hoofd3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1236,7 +1237,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|HandLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1252,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|BeenBovenLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1268,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401888}
   - 137: {fileID: 13701846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PootRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1283,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Hoofd4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1297,7 +1298,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|SchouderLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1314,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401894}
   - 137: {fileID: 13701848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OogLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1329,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|ArmBovenLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,7 +1344,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|Hoofd1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1360,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401900}
   - 137: {fileID: 13701850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Buik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1375,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature|HeupRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1392,7 @@ GameObject:
   - 4: {fileID: 413634}
   - 198: {fileID: 19813634}
   - 199: {fileID: 19913634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1409,7 @@ GameObject:
   - 4: {fileID: 413636}
   - 198: {fileID: 19813636}
   - 199: {fileID: 19913636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1426,7 @@ GameObject:
   - 4: {fileID: 413638}
   - 198: {fileID: 19813638}
   - 199: {fileID: 19913638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1443,7 @@ GameObject:
   - 4: {fileID: 413640}
   - 198: {fileID: 19813640}
   - 199: {fileID: 19913640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,7 +1458,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 413642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1475,7 @@ GameObject:
   - 4: {fileID: 413644}
   - 198: {fileID: 19813642}
   - 199: {fileID: 19913642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1491,7 +1492,7 @@ GameObject:
   - 4: {fileID: 413646}
   - 198: {fileID: 19813644}
   - 199: {fileID: 19913644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1509,7 @@ GameObject:
   - 4: {fileID: 413648}
   - 198: {fileID: 19813646}
   - 199: {fileID: 19913646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1526,7 @@ GameObject:
   - 4: {fileID: 413650}
   - 198: {fileID: 19813648}
   - 199: {fileID: 19913648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,7 +1543,7 @@ GameObject:
   - 4: {fileID: 413652}
   - 198: {fileID: 19813650}
   - 199: {fileID: 19913650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1560,7 @@ GameObject:
   - 4: {fileID: 413654}
   - 198: {fileID: 19813652}
   - 199: {fileID: 19913652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1577,7 @@ GameObject:
   - 4: {fileID: 413656}
   - 198: {fileID: 19813654}
   - 199: {fileID: 19913654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1593,7 +1594,7 @@ GameObject:
   - 4: {fileID: 413658}
   - 198: {fileID: 19813656}
   - 199: {fileID: 19913656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1609,7 +1610,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413660}
   - 108: {fileID: 10813634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TODO Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1627,7 @@ GameObject:
   - 4: {fileID: 413662}
   - 198: {fileID: 19813658}
   - 199: {fileID: 19913658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1643,7 +1644,7 @@ GameObject:
   - 4: {fileID: 413664}
   - 198: {fileID: 19813660}
   - 199: {fileID: 19913660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1660,7 +1661,7 @@ GameObject:
   - 4: {fileID: 413666}
   - 198: {fileID: 19813662}
   - 199: {fileID: 19913662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1678,7 @@ GameObject:
   - 4: {fileID: 413668}
   - 198: {fileID: 19813664}
   - 199: {fileID: 19913664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1694,7 +1695,7 @@ GameObject:
   - 4: {fileID: 413670}
   - 198: {fileID: 19813666}
   - 199: {fileID: 19913666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1714,7 @@ GameObject:
   - 23: {fileID: 2333020}
   - 114: {fileID: 11433020}
   - 82: {fileID: 8255238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1731,7 @@ GameObject:
   - 4: {fileID: 486468}
   - 199: {fileID: 19986472}
   - 198: {fileID: 19886472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1747,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486470}
   - 108: {fileID: 10886472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1766,7 +1767,7 @@ GameObject:
   - 114: {fileID: 11486472}
   - 135: {fileID: 13586472}
   - 54: {fileID: 5486472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grenade_Fired
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1783,7 +1784,7 @@ GameObject:
   - 4: {fileID: 486916}
   - 33: {fileID: 3386916}
   - 23: {fileID: 2386916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RPG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1800,7 +1801,7 @@ GameObject:
   - 4: {fileID: 486918}
   - 33: {fileID: 3386918}
   - 23: {fileID: 2386918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1817,7 +1818,7 @@ GameObject:
   - 4: {fileID: 486920}
   - 82: {fileID: 8237662}
   - 114: {fileID: 11429844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rpg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1837,7 @@ GameObject:
   - 23: {fileID: 2395260}
   - 108: {fileID: 10895260}
   - 114: {fileID: 11495260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3240,8 +3241,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133020}
-  m_LocalRotation: {x: .191165283, y: .710163653, z: .675120592, w: -.0577548333}
-  m_LocalPosition: {x: -.715999007, y: .283000439, z: 1.08300245}
+  m_LocalRotation: {x: .374008089, y: .560651958, z: .350376308, w: -.650402784}
+  m_LocalPosition: {x: -.463, y: .247999996, z: 1.11199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401584}
@@ -3823,6 +3824,64 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8237824
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100058}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: eb542037f9f9bff46bce4ccc686a45aa, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8255238
 AudioSource:
   m_ObjectHideFlags: 1
@@ -4351,6 +4410,8 @@ MonoBehaviour:
   regeneratingFraction: .200000003
   regenSpeed: 1
   regenCooldown: 5
+  hitOverlay: {fileID: 0}
+  soundSource: {fileID: 100058}
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1

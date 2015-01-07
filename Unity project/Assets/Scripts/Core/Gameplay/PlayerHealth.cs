@@ -9,7 +9,9 @@ public class PlayerHealth : Health {
 	public float regenSpeed = 1.0f;
 	public float regenCooldown = 2f;
 	public GameObject hitOverlay;
+	public GameObject soundSource;
 
+	private AudioSource audioS;
 	private HitOverlay ho;
 	private float regenTo = 0f;
 	private float timeLastHit;	
@@ -17,6 +19,8 @@ public class PlayerHealth : Health {
 
 	void Start(){
 		regenTo = maxHP;
+		if(soundSource!=null)
+			audioS = soundSource.GetComponent<AudioSource>();
 		if(hitOverlay != null)
 			ho = hitOverlay.GetComponent(typeof(HitOverlay)) as HitOverlay;
 	}
@@ -36,6 +40,8 @@ public class PlayerHealth : Health {
 	protected override void OnDamage(){
 		regenTo = (hp/maxHP + regeneratingFraction < 1f) ? (hp + regeneratingFraction*maxHP) : maxHP;
 		timeLastHit = Time.time;
+		if(audioS != null)
+			audioS.PlayOneShot(audioS.clip);
 	}
 
 	protected override void OnRegen(){
