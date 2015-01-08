@@ -68,7 +68,7 @@ public static class WeaponStatsExtension{
 	public static float Recoil(this WeaponStats w) {
 		switch(w) {
 		case WeaponStats.PISTOL  : return 0.5f;
-		case WeaponStats.RIFLE   : return 0.5f;
+		case WeaponStats.RIFLE   : return 0.2f;
 		case WeaponStats.SHOTGUN : return 2f;
 		case WeaponStats.RPG     : return 4f;
 		case WeaponStats.LANDMINE: return 0.01f;

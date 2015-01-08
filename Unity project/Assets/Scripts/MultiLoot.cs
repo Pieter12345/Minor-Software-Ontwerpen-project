@@ -44,7 +44,8 @@ public class MultiLoot : MonoBehaviour {
 				if (rnd < probSum)
 					return l.pickUp;
 			}
+			return lootAble[lootAble.Length-1].pickUp;
 		}
-		return lootAble[lootAble.Length-1].pickUp;
+		return null;
 	}
 }

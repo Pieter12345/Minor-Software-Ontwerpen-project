@@ -97,6 +97,8 @@
      <Compile Include="Assets\Scripts\UI\UnderAttackMessage.cs" />
      <Compile Include="Assets\Scripts\UI\WaveNumberDisplay.cs" />
      <Compile Include="Assets\Scripts\WeaponPickUp.cs" />
+     <Compile Include="Assets\Scripts\WeaponTypes\LandMine.cs" />
+     <Compile Include="Assets\Scripts\WeaponTypes\LandMinePlacer.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\RPG.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\RPGGrenade.cs" />
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleGun.cs" />

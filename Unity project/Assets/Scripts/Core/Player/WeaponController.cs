@@ -22,8 +22,6 @@ public class WeaponController : MonoBehaviour {
 		}
 	}
 
-	public GameObject camera;
-
 	private int selectedWeapon;
 	public int SelectedWeapon { 
 		get {
