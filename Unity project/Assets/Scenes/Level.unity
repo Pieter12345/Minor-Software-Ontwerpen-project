@@ -3036,6 +3036,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 22456e06a0dd1744d92f3b8274660163, type: 3}
   - {fileID: 21300000, guid: 0d37bca1611a9724c980d92d9fc4a2c7, type: 3}
   - {fileID: 21300000, guid: 9d9e3140b7b382a41b670a9e0c9b3d25, type: 3}
+  - {fileID: 21300000, guid: 01fdd7edb6a731d43a3ff054cf114666, type: 3}
 --- !u!114 &40942158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35474,7 +35475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69723cd160dbf7f4abe71909399b7f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 60
+  maxHP: 120
   underAttackMessage: {fileID: 1233119510}
 --- !u!23 &1699489586
 Renderer:
