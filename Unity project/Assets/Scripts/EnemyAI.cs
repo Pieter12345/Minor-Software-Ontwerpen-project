@@ -70,7 +70,7 @@ public class EnemyAI : MonoBehaviour {
 	void Update () {
 
 		// DEBUG - Show a different texture color for each pathfinding.
-		bool debugging = true;
+		bool debugging = false;
 		if(debugging) {
 			Texture2D texture = Resources.Load<Texture2D>("Textures/BlockTextures/textureNotFoundTexture");
 			if(currentPathfinding.Equals(pathToPlayer)) {

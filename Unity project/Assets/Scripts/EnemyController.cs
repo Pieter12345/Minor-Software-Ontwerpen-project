@@ -34,6 +34,8 @@ public class EnemyController : MonoBehaviour {
 
 	public Object EnemyPrefab; // The prefab of the enemy.
 	private static Object EnemyPrefabStatic;
+	public EnemyTypes[] enemies;
+	private static EnemyTypes[] EnemiesStatic;
 
 	private static float startNewWaveAtThisTime = -1;
 
@@ -54,6 +56,7 @@ public class EnemyController : MonoBehaviour {
 			};
 
 		EnemyPrefabStatic = this.EnemyPrefab; // Create static reference.
+		EnemiesStatic = this.enemies; // Create static reference.
 		playerStatic = player; // Create static reference.
 		parent = this.parentObject; // Create static reference.
 
@@ -116,7 +119,32 @@ public class EnemyController : MonoBehaviour {
 //		}
 	}
 
-
+	public static int getIndexOfToSpawn(){
+		if(EnemiesStatic.Length > 1){
+			float[] chances = new float[EnemiesStatic.Length];
+			chances[0] = EnemiesStatic[0].spawnWeight;
+			for(int i = 1; i < EnemiesStatic.Length; i++){
+				chances[i] = chances[i-1] + EnemiesStatic[i].spawnWeight;
+			}
+			bool found = false;
+			float rnd;
+			int index = 0;
+			do{
+				rnd = Random.Range(0f, chances[chances.Length-1]);
+				for(int i =0; i < chances.Length; i++){
+					if (rnd < chances[i]){
+						index = i;
+						break;
+					} 
+				}
+				if(getWave() >= EnemiesStatic[index].SpawnAfterWave){
+					found = true;
+				}
+			}while(!found);
+			return index;
+		}
+		return 0;
+	}
 
 	// spawnEnemy method.
 	// Spawns an enemy.
@@ -124,7 +152,7 @@ public class EnemyController : MonoBehaviour {
 
 		// Create the capsule and store a reference to it.
 //		enemy = GameObject.CreatePrimitive(PrimitiveType.Capsule); // Create a new capsule object.
-		enemy = (GameObject) Instantiate(EnemyPrefabStatic); // Create a new enemy object.
+		enemy = (GameObject) Instantiate(EnemiesStatic[getIndexOfToSpawn()].enemyPrefab); // Create a new enemy object.
 		enemy.transform.position = new Vector3(x, y, z); // Put the enemy in position.
 		enemy.transform.parent = parent; // Puts the enemy object in a tab in the hierarchy window.
 //		enemy.renderer.material.mainTexture = texture;

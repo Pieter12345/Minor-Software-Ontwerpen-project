@@ -3429,6 +3429,13 @@ MonoBehaviour:
   maxAmountOfEnemies: 1000
   player: {fileID: 1767831526}
   EnemyPrefab: {fileID: 134244, guid: 00d08ea2f608bd64c892d22b6b0e8497, type: 2}
+  enemies:
+  - enemyPrefab: {fileID: 134244, guid: 00d08ea2f608bd64c892d22b6b0e8497, type: 2}
+    spawnWeight: 1
+    SpawnAfterWave: 0
+  - enemyPrefab: {fileID: 169918, guid: 928da6c77637964448bbe85e5f5e81c7, type: 2}
+    spawnWeight: .5
+    SpawnAfterWave: 2
   delayBetweenWaves: 3
 --- !u!1 &60444321
 GameObject:
@@ -38488,7 +38495,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 532c7898197a43a4c82be966e7bc9cd2, type: 2}
+  - {fileID: 2100000, guid: b13fe76898565a74d85ae328b34f01b2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -38651,7 +38658,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: b13fe76898565a74d85ae328b34f01b2, type: 2}
+  - {fileID: 2100000, guid: 532c7898197a43a4c82be966e7bc9cd2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
