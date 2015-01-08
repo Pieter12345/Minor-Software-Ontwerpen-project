@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoPool.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\AmmoTypes.cs" />
+     <Compile Include="Assets\Scripts\Core\Gameplay\BlockType.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\Damageable.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Core\Gameplay\FlagHealth.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\Scripts\Core\Util\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemyTypes.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\LootAble.cs" />
