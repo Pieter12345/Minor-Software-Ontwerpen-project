@@ -31,9 +31,7 @@ public class EnemyController : MonoBehaviour {
 	public GameObject player;
 	public static GameObject playerStatic;
 	private Vector3 playerCoordsOld = new Vector3(0f, 0f, 0f); // Used to check if the player has moved.
-
-	public Object EnemyPrefab; // The prefab of the enemy.
-	private static Object EnemyPrefabStatic;
+	
 	public EnemyTypes[] enemies;
 	private static EnemyTypes[] EnemiesStatic;
 
@@ -55,7 +53,6 @@ public class EnemyController : MonoBehaviour {
 				Mathf.FloorToInt(flag.position.z)
 			};
 
-		EnemyPrefabStatic = this.EnemyPrefab; // Create static reference.
 		EnemiesStatic = this.enemies; // Create static reference.
 		playerStatic = player; // Create static reference.
 		parent = this.parentObject; // Create static reference.

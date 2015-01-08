@@ -6,7 +6,8 @@ public enum AmmoTypes {
 	PISTOL_BULLET,
 	RIFLE_BULLET,
 	SHELL,
-	ROCKET
+	ROCKET,
+	LANDMINE
 
 }
 
@@ -18,6 +19,7 @@ public static class AmmoTypesExtension{
 		case AmmoTypes.RIFLE_BULLET:	return 200;
 		case AmmoTypes.SHELL:			return 20;
 		case AmmoTypes.ROCKET:			return 2;
+		case AmmoTypes.LANDMINE:		return 20;
 		
 		default:
 			return 1;

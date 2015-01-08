@@ -5,7 +5,8 @@ public enum WeaponStats {
 	PISTOL,
 	RIFLE,
 	SHOTGUN,
-	RPG
+	RPG,
+	LANDMINE
 }
 public static class WeaponStatsExtension{
 
@@ -15,6 +16,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return 30;
 		case WeaponStats.SHOTGUN : return 2;
 		case WeaponStats.RPG     : return 1;
+		case WeaponStats.LANDMINE: return 1;
 		default                  : return 0;
 		}
 	}
@@ -25,6 +27,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return AmmoTypes.RIFLE_BULLET;
 		case WeaponStats.SHOTGUN : return AmmoTypes.SHELL;
 		case WeaponStats.RPG     : return AmmoTypes.ROCKET;
+		case WeaponStats.LANDMINE: return AmmoTypes.LANDMINE;
 		default                  : return AmmoTypes.PISTOL_BULLET;
 		}
 	}
@@ -35,6 +38,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return 1.2f;
 		case WeaponStats.SHOTGUN : return 10f;
 		case WeaponStats.RPG     : return 50f;
+		case WeaponStats.LANDMINE: return 40f;
 		default                  : return 1f;
 		}
 	}
@@ -45,6 +49,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return 0.05f;
 		case WeaponStats.SHOTGUN : return 1f;
 		case WeaponStats.RPG     : return 3f;
+		case WeaponStats.LANDMINE: return 0.1f;
 		default                  : return 1f;
 		}
 	}
@@ -55,6 +60,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return 0.2f;
 		case WeaponStats.SHOTGUN : return 1f;
 		case WeaponStats.RPG     : return 3f;
+		case WeaponStats.LANDMINE: return 0.2f;
 		default                  : return 1f;
 		}
 	}
@@ -65,6 +71,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return 0.5f;
 		case WeaponStats.SHOTGUN : return 2f;
 		case WeaponStats.RPG     : return 4f;
+		case WeaponStats.LANDMINE: return 0.01f;
 		default                  : return 1f;
 		}
 	}

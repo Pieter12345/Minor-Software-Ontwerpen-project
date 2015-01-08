@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &167502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 467502}
-  - 114: {fileID: 11493850}
-  - 114: {fileID: 11493852}
-  - 114: {fileID: 11420428}
-  m_Layer: 0
-  m_Name: EnemyModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &169918
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +518,7 @@ GameObject:
   - 137: {fileID: 13769938}
   - 136: {fileID: 13669918}
   - 114: {fileID: 11469924}
+  - 54: {fileID: 5438014}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -560,7 +543,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &169988
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -568,6 +551,8 @@ GameObject:
   - 4: {fileID: 469988}
   - 111: {fileID: 11169918}
   - 114: {fileID: 11469922}
+  - 114: {fileID: 11424872}
+  - 114: {fileID: 11424870}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -575,19 +560,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &467502
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167502}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 469988}
-  m_Father: {fileID: 469918}
-  m_RootOrder: 0
 --- !u!4 &469918
 Transform:
   m_ObjectHideFlags: 1
@@ -595,10 +567,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.6787109, y: -.5, z: 27.5435181}
+  m_LocalPosition: {x: 34.1873779, y: -.5, z: 74.5057373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 467502}
+  - {fileID: 469988}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &469920
@@ -1053,8 +1025,23 @@ Transform:
   - {fileID: 469968}
   - {fileID: 469966}
   - {fileID: 469964}
-  m_Father: {fileID: 467502}
+  m_Father: {fileID: 469918}
   m_RootOrder: 0
+--- !u!54 &5438014
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169984}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!111 &11169918
 Animation:
   m_ObjectHideFlags: 1
@@ -1073,12 +1060,12 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &11420428
+--- !u!114 &11424870
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167502}
+  m_GameObject: {fileID: 169988}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1544e7aaa8a253041ba97b9a9cdda6ea, type: 3}
@@ -1094,6 +1081,21 @@ MonoBehaviour:
     probability: .300000012
   - pickUp: {fileID: 105380, guid: 4ddf0c3628228de43bb108464607813f, type: 2}
     probability: .100000001
+--- !u!114 &11424872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a9141f29781ad409913e70a2ab7543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyObject: {fileID: 169918}
+  enemyModel: {fileID: 469918}
+  hittCooldown: .5
+  damagePerHitt: 5
 --- !u!114 &11469918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1135,33 +1137,6 @@ MonoBehaviour:
   HPManager: {fileID: 469988}
   defense: 1
   Headshot: 0
---- !u!114 &11493850
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b591512daf1224c99e14a8feb8b9d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 10
-  DestroyOnDeath: 1
---- !u!114 &11493852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a9141f29781ad409913e70a2ab7543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyObject: {fileID: 169918}
-  hittCooldown: .5
-  damagePerHitt: 1
 --- !u!135 &13569918
 SphereCollider:
   m_ObjectHideFlags: 1

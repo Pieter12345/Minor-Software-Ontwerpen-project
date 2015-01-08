@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour {
 
 	// Variables & Constants.
 	public GameObject enemyObject; // The object that represents this enemy.
+	public Transform enemyModel;
 
 	private string status = "ready";
 	private Vector3 singleMoveGoalCoords; // Goal coords of each step.
@@ -287,7 +288,7 @@ public class EnemyAI : MonoBehaviour {
 	// turnTo method.
 	// (Slowly) turns this enemy to a given direction. This method should be called in an update loop to reach the desired rotation.
 	private void turnTo(Vector3 directionVector, float deltaTime) {
-		Transform enemyModel = enemyObject.transform.FindChild("EnemyModel").transform;
+//		Transform enemyModel = transform;
 		Vector3 stepTowardsDesiredDirection = Vector3.MoveTowards(enemyModel.forward, directionVector, 1f * deltaTime); // 1f is the rotation speed.
 		enemyModel.LookAt(stepTowardsDesiredDirection + enemyModel.position);
 
