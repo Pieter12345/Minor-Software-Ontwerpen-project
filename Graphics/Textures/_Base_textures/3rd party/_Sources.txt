@@ -57,6 +57,14 @@ Filename:Leather0064_S.jpg
 Source	:CGTextures
 URL	:http://www.cgtextures.com/texview.php?id=15243&PHPSESSID=363ne1ip937usclil5c9800cg0
 
+Filename:FabricLaceTrims0036_S.jpg
+Source	:CGTextures
+URL	:http://www.cgtextures.com/texview.php?id=25920&PHPSESSID=363ne1ip937usclil5c9800cg0
+
 Filename:SplatterColored0001_S
 Source	:CGTextures
 URL	:http://www.cgtextures.com/texview.php?id=31632&PHPSESSID=363ne1ip937usclil5c9800cg0
+
+Filename:evil-clown.jpg
+Source	:Google
+URL	:http://mundabor.files.wordpress.com/2013/12/evil-clown.jpg
