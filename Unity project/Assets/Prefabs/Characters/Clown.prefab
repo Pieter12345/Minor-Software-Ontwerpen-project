@@ -1108,7 +1108,7 @@ MonoBehaviour:
   - pickUp: {fileID: 100000, guid: 1d18745d704dd0d499d30efae7309e9d, type: 2}
     probability: .300000012
   - pickUp: {fileID: 105380, guid: 4ddf0c3628228de43bb108464607813f, type: 2}
-    probability: .100000001
+    probability: .200000003
   - pickUp: {fileID: 114344, guid: 89323a594623bb94395e018b1f112914, type: 2}
     probability: 1
 --- !u!114 &11470566

@@ -279,6 +279,8 @@ MonoBehaviour:
     probability: .25
   - pickUp: {fileID: 100000, guid: 1d18745d704dd0d499d30efae7309e9d, type: 2}
     probability: .25
+  - pickUp: {fileID: 114344, guid: 89323a594623bb94395e018b1f112914, type: 2}
+    probability: .5
 --- !u!136 &13634240
 CapsuleCollider:
   m_ObjectHideFlags: 1
