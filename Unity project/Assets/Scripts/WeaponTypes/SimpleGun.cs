@@ -6,7 +6,7 @@ public class SimpleGun : Weapon {
 	private float timeLastShot;
 	private ObjectPool shellPool;
 
-	public Transform camera;
+	public Transform cameraTransform;
 
 	public GameObject shell;
 	public Vector3 ejectLocation;
@@ -17,7 +17,7 @@ public class SimpleGun : Weapon {
 			timeLastShot = Time.time;
 			if (AmmoInClip > 0){
 				// Add Recoil.
-				camera.GetComponent<gameCameraSelector>().setFired(true);
+				cameraTransform.GetComponent<gameCameraSelector>().setFired(true);
 				ShotEffects();
 				TakeFromClip();
 				EjectShell();
@@ -30,12 +30,7 @@ public class SimpleGun : Weapon {
 					Debug.Log("Shot hit " + hit.transform.name);
 					
 					//Stats Accuracy counter- needs revising with each new enemy
-					if (hit.transform.tag == "Enemy") {
-						HighScoreKeeper.ShotsFired(true);
-					}
-					else {
-						HighScoreKeeper.ShotsFired(false);
-					}
+					HighScoreKeeper.ShotsFired(hit.transform.tag == "Enemy"); // Tells the HiScoreKeeper wether the shot hitt an enemy or not.
 					
 					
 					Damageable hp = hit.transform.GetComponent<Damageable>();

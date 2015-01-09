@@ -98,10 +98,6 @@ public class ShooterGameCamera {
 		// limit vertical angle
 		angleV = Mathf.Clamp(angleV, minVerticalAngle, maxVerticalAngle);
 		
-		// Before changing camera, store the prev aiming distance.
-		// If we're aiming at nothing (the sky), we'll keep this distance.
-		float prevDist = (aimTarget.position - camTransform.position).magnitude;
-		
 		// Set camera rotation
 		Quaternion aimRotation = Quaternion.Euler(-angleV, angleH, 0);
 		Quaternion camYRotation = Quaternion.Euler(0, angleH, 0);

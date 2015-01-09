@@ -14,9 +14,9 @@ public class Health : MonoBehaviour {
 	}
 
 	void Update(){
-		if (IsDead) {
+		if(IsDead) {
 			OnDeath(Headshot);
-			}
+		}
 		OnRegen();
 	}
 

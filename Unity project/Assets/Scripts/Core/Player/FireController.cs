@@ -4,7 +4,7 @@ using System.Collections;
 public class FireController : MonoBehaviour {
 
 	public Transform aimTarget;
-	public Transform camera;
+	public Transform cameraTransform;
 	public Transform transBlock;
 	public Transform weaponController;
 	public GameObject torch;
@@ -79,7 +79,7 @@ public class FireController : MonoBehaviour {
 	}
 
 	void OnFireWeapon () {
-		weapons.Fire(camera.position, aimTarget.position);
+		weapons.Fire(cameraTransform.position, aimTarget.position);
 	}
 
 	void OnPlaceBlock(){
@@ -91,13 +91,13 @@ public class FireController : MonoBehaviour {
 	}
 
 	void OnDestroyBlock(){
-		Vector3 dir = aimTarget.position-camera.position;
+		Vector3 dir = aimTarget.position-cameraTransform.position;
 		dir.Normalize();
-		Ray ray = new Ray(camera.position, dir);
+		Ray ray = new Ray(cameraTransform.position, dir);
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, 10f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
 			
-			Debug.DrawRay(camera.position, dir, Color.red);
+			Debug.DrawRay(cameraTransform.position, dir, Color.red);
 			
 			Vector3 destroyPosition = (new Vector3(Mathf.Floor(hit.point.x-0.5f*hit.normal.x),
 			                                   Mathf.Floor(hit.point.y-0.5f*hit.normal.y),
@@ -114,13 +114,13 @@ public class FireController : MonoBehaviour {
 		positionValid = true;
 		transBlock.gameObject.SetActive(blockMode);
 		if(blockMode){
-			Vector3 dir = aimTarget.position-camera.position;
+			Vector3 dir = aimTarget.position-cameraTransform.position;
 			dir.Normalize();
-			Ray ray = new Ray(camera.position, dir);
+			Ray ray = new Ray(cameraTransform.position, dir);
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, 10f, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
 
-				Debug.DrawRay(camera.position, dir, Color.red);
+				Debug.DrawRay(cameraTransform.position, dir, Color.red);
 
 				transBlock.position = (new Vector3(Mathf.Floor(hit.point.x+0.5f*hit.normal.x),
 				                                   Mathf.Floor(hit.point.y+0.5f*hit.normal.y),

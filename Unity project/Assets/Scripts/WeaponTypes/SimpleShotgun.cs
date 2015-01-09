@@ -5,7 +5,7 @@ public class SimpleShotgun : Weapon {
 
 	private float timeLastShot;
 
-	public Transform camera;
+	public Transform cameraTransform;
 
 	Vector3 from, to;
 
@@ -25,7 +25,7 @@ public class SimpleShotgun : Weapon {
 			timeLastShot = Time.time;
 			if (AmmoInClip > 0){
 				// Add Recoil
-				camera.GetComponent<gameCameraSelector>().setFired(true);
+				cameraTransform.GetComponent<gameCameraSelector>().setFired(true);
 				ShotEffects();
 				TakeFromClip();
 				Vector3 centerDir = to - from;
