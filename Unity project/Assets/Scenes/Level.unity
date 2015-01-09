@@ -3441,6 +3441,9 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 170636, guid: 0e47d7fc09e7b4741ac70a6e62f082bc, type: 2}
     spawnWeight: .5
     SpawnAfterWave: 2
+  - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}
+    spawnWeight: .5
+    SpawnAfterWave: 4
   delayBetweenWaves: 3
 --- !u!1 &58563821
 GameObject:
@@ -33262,7 +33265,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
@@ -48752,7 +48755,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400020, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: camera
