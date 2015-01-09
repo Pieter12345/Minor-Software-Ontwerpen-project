@@ -71,9 +71,62 @@ public class FireController : MonoBehaviour {
 				}
 			}
 
+			WeaponStats[] w = weapons.WeaponsInInventory;
+			if(Input.GetKeyUp(KeyCode.Alpha1)){
+				foreach(WeaponStats i in w){
+					if((int) i == 0){
+						weapons.SelectedWeapon = 0;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha2)){
+				foreach(WeaponStats i in w){
+					if((int) i == 1){
+						weapons.SelectedWeapon = 1;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha3)){
+				foreach(WeaponStats i in w){
+					if((int) i == 2){
+						weapons.SelectedWeapon = 2;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha4)){
+				foreach(WeaponStats i in w){
+					if((int) i == 3){
+						weapons.SelectedWeapon = 3;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha5)){
+				foreach(WeaponStats i in w){
+					if((int) i == 4){
+						weapons.SelectedWeapon = 4;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha6)){
+				foreach(WeaponStats i in w){
+					if((int) i == 5){
+						weapons.SelectedWeapon = 5;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha7)){
+				foreach(WeaponStats i in w){
+					if((int) i == 6){
+						weapons.SelectedWeapon = 6;
+					}
+				}
+			} else if(Input.GetKeyUp(KeyCode.Alpha8)){
+				foreach(WeaponStats i in w){
+					if((int) i == 7){
+						weapons.SelectedWeapon = 7;
+					}
+				}
+			}
+
+
 			if(Input.GetButtonDown("Reload"))
 				Reload();
 		}
+
 		if(Input.GetKeyDown(KeyCode.F9))
 			weapons.AddAmmoToCurrent(1000);
 		UpdateBlockOutline();
