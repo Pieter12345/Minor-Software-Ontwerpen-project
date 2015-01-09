@@ -133,9 +133,10 @@ public class FirstPersonShooterGameCamera {
 	// Checks for user input and handles the aim down sight.
 	private void updateAimDownSight() {
 
-		// Get if the player is in block placing mode. Stop aiming down sight if he is.
+		// Get if the player is in block placing mode or is he is sprinting. Stop aiming down sight if he is.
 		bool isBlockPlacingMode = (player.parent.GetComponent<FireController>().BlockPlacingMode == null ? false : player.parent.GetComponent<FireController>().BlockPlacingMode);
-		if(isBlockPlacingMode && isAimingDownSight) {
+		bool isSprinting = (player.GetComponent<NormalCharacterMotor>().getIsSprinting == null ? false : player.GetComponent<NormalCharacterMotor>().getIsSprinting);
+		if((isBlockPlacingMode || isSprinting) && isAimingDownSight) {
 			this.aimDownSightDesiredFieldOfView = 60f;
 			isAimingDownSight = false;
 		}

@@ -17,6 +17,9 @@ public class NormalCharacterMotor : CharacterMotor {
 	public float sneakMultiplier = 0.5f;
 	public float sprintMultiplier = 2f;
 
+	private bool isSprinting = false;
+	public bool getIsSprinting { get{ return isSprinting; } }
+
 
 	// Update is called once per frame
 	void Update () {
@@ -75,7 +78,8 @@ public class NormalCharacterMotor : CharacterMotor {
 		}
 		
 		// Sprinting.
-		if(Input.GetKey("left shift") || Input.GetButton("Sprint")) {
+		isSprinting = Input.GetKey("left shift") || Input.GetButton("Sprint");
+		if(isSprinting) {
 			movement.x *= sprintMultiplier;
 			movement.z *= sprintMultiplier;
 		}

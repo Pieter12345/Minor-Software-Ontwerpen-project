@@ -38455,9 +38455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ba378ae5e249240b09c19080e407f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 3.5
-  maxBackwardsSpeed: 1.5
-  maxSidewaysSpeed: 1.5
+  maxForwardSpeed: 5
+  maxBackwardsSpeed: 2
+  maxSidewaysSpeed: 2
   forwardVector: {x: 0, y: 0, z: 1}
   maxRotationSpeed: 270
   ySpeedJump: .800000012
@@ -48797,6 +48797,18 @@ Prefab:
     - target: {fileID: 100096, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: maxForwardSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: maxBackwardsSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: maxSidewaysSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
