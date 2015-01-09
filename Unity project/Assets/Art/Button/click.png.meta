@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: 0a84a469eb745455a865ac99acc6eb1f
+guid: 48cc2b9cb3e624226a2277bde8d3b1ec
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: click_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +43,16 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: click_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 592
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
