@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: a3f41bb4bd728495ab4a0d3e8e3ac26d
+guid: 0ad499175753c431e82d5e0e263da6d3
 TextureImporter:
   fileIDToRecycleName:
-    21300000: button-_0
+    21300000: button_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,13 +44,13 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: button-_0
+    - name: button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 614
-        height: 142
+        width: 592
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

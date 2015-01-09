@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 3e0e9a160eb004bd99f22abd65a30985
+guid: 2fdfeed98c20043179182de169511980
 TextureImporter:
   fileIDToRecycleName:
-    21300000: button-hover-_0
+    21300000: hover_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,13 +44,13 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: button-hover-_0
+    - name: hover_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 614
-        height: 142
+        width: 592
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
