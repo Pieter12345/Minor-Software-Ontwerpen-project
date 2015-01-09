@@ -4234,7 +4234,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: .300000012
+  m_Intensity: .100000001
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -4667,7 +4667,7 @@ MonoBehaviour:
   weaponType: 4
   muzzleFlash: {fileID: 0}
   shotSound: {fileID: 0}
-  landMine: {fileID: 119878, guid: 3627ea06dd874cc49a3401632f92c268, type: 2}
+  landMine: {fileID: 199490, guid: 3627ea06dd874cc49a3401632f92c268, type: 2}
 --- !u!114 &11486472
 MonoBehaviour:
   m_ObjectHideFlags: 1

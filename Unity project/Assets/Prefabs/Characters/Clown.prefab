@@ -1081,6 +1081,8 @@ MonoBehaviour:
     probability: .300000012
   - pickUp: {fileID: 105380, guid: 4ddf0c3628228de43bb108464607813f, type: 2}
     probability: .100000001
+  - pickUp: {fileID: 114344, guid: 89323a594623bb94395e018b1f112914, type: 2}
+    probability: 1
 --- !u!114 &11424872
 MonoBehaviour:
   m_ObjectHideFlags: 1
