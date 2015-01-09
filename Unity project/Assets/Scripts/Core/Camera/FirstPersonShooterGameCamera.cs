@@ -105,14 +105,16 @@ public class FirstPersonShooterGameCamera {
 	// updateRecoil method.
 	// Checks if the player has fired and adds recoil per shot.
 	private void updateRecoil() {
-
-		// Get the weapon recoil property.
-		WeaponController wcont = weapon.GetComponent<WeaponController>();
-		Weapon selectedWeapon =  wcont.SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon;
-		float weaponRecoilIntensity = (selectedWeapon != null) ? selectedWeapon.Recoil : 0f;
-
+		
 		// If the player has fired a gun, apply random recoil to the camera.
 		if(this.Fired) {
+			
+			// Get the weapon recoil intensity (weapon property).
+			WeaponController wcont = weapon.GetComponent<WeaponController>();
+			Weapon selectedWeapon =  wcont.SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon;
+			float weaponRecoilIntensity = (selectedWeapon != null) ? selectedWeapon.Recoil : 0f;
+
+			// Apply the recoil.
 			this.desiredRecoilRotation += new Vector3(Random.Range(-20f, -5f), Random.Range(-5f, 5f), Random.Range(-10f, 10f)) * weaponRecoilIntensity;
 			this.recoilRotationSpeed += 3f;
 			this.Fired = false;
@@ -139,7 +141,7 @@ public class FirstPersonShooterGameCamera {
 	}
 
 	// setFired method.
-	// Should be set to true when the player fired.
+	// Should be set to true when the player fired. Used to add recoil.
 	public void setFired(bool state = true) {
 		this.Fired = state;
 	}
