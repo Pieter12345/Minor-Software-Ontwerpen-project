@@ -76,4 +76,32 @@ public static class WeaponStatsExtension{
 		}
 	}
 
+	// -----------------------------------------------------------------------------
+	// Used to align the weapon model with the camera in first person (position).
+	// -----------------------------------------------------------------------------
+	public static Vector3 firstPersonModelPosition(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return new Vector3(0.342f, -0.303f, 0.656f);
+		case WeaponStats.RIFLE   : return new Vector3(0.468f, -0.358f, 0.878f);
+		case WeaponStats.SHOTGUN : return new Vector3(0.22f, -0.169f, 0.703f);
+		case WeaponStats.RPG     : return new Vector3(0.241f, -0.31f, 0.776f);
+		case WeaponStats.LANDMINE: return new Vector3(0.485f, -0.421f, 1.089f);
+		default                  : return new Vector3(0f, 0f, 0f);
+		}
+	}
+
+	// -----------------------------------------------------------------------------
+	// Used to align the weapon model with the camera in first person (rotation).
+	// -----------------------------------------------------------------------------
+	public static Vector3 firstPersonModelRotation(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return new Vector3(270f, 270f, 0f);
+		case WeaponStats.RIFLE   : return new Vector3(270f, 270f, 0f);
+		case WeaponStats.SHOTGUN : return new Vector3(270f, 270f, 0f);
+		case WeaponStats.RPG     : return new Vector3(0f, 90f, 0f);
+		case WeaponStats.LANDMINE: return new Vector3(30f, 290f, 20f);
+		default                  : return new Vector3(0f, 0f, 0f);
+		}
+	}
+
 }
