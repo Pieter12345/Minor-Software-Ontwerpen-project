@@ -11,7 +11,8 @@ public class FireController : MonoBehaviour {
 
 	public float blockPlaceTime = 0.5f;
 
-	private bool blockMode = false;
+	private bool blockPlacingMode = false;
+	public bool BlockPlacingMode{ get{ return blockPlacingMode; } }
 	private WeaponController weapons;
 	private bool positionValid = true;
 	private int selectedBlock = 2;
@@ -31,7 +32,7 @@ public class FireController : MonoBehaviour {
 			}
 
 			if(Input.GetButton("Modifier")){ //Place block mode enabled
-				blockMode = true;
+				blockPlacingMode = true;
 				selectedBlock += Mathf.CeilToInt(Input.GetAxisRaw("Mouse ScrollWheel"));
 				if(selectedBlock < 1){
 					selectedBlock = WorldBlockManagement.blocks.Length;
@@ -40,7 +41,7 @@ public class FireController : MonoBehaviour {
 				}
 				UpdateAimBlockTex(selectedBlock);
 			} else {
-				blockMode = false;
+				blockPlacingMode = false;
 				if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
 					weapons.SelectNextWeaponUp();
 				else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
@@ -52,18 +53,18 @@ public class FireController : MonoBehaviour {
 			}
 
 			if(Input.GetButton("Fire1")){
-				if (blockMode && positionValid){
+				if (blockPlacingMode && positionValid){
 					float interval = Time.time - timeLastBlock;
 					if(interval > blockPlaceTime){
 						OnPlaceBlock();
 						timeLastBlock = Time.time;
 					}
-				} else if(!blockMode){
+				} else if(!blockPlacingMode){
 					OnFireWeapon();
 				}
 			}
 			if(Input.GetButtonDown("Fire2")){
-				if (blockMode){
+				if (blockPlacingMode){
 					OnDestroyBlock();
 				} else{
 					//doSomething
@@ -112,8 +113,8 @@ public class FireController : MonoBehaviour {
 
 	void UpdateBlockOutline(){
 		positionValid = true;
-		transBlock.gameObject.SetActive(blockMode);
-		if(blockMode){
+		transBlock.gameObject.SetActive(blockPlacingMode);
+		if(blockPlacingMode){
 			Vector3 dir = aimTarget.position-cameraTransform.position;
 			dir.Normalize();
 			Ray ray = new Ray(cameraTransform.position, dir);

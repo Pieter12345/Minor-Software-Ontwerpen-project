@@ -77,18 +77,7 @@ public class FirstPersonShooterGameCamera {
 		this.updateRecoil();
 
 		// Aim down sight.
-		if(Input.GetMouseButtonDown(1)) { // 1 = right mouse button.
-			isAimingDownSight = !isAimingDownSight;
-			if(isAimingDownSight) {
-				this.aimDownSightDesiredFieldOfView = 30f;
-			} else {
-				this.aimDownSightDesiredFieldOfView = 60f;
-			}
-		}
-		if(this.aimDownSightDesiredFieldOfView != this.camTransform.camera.fieldOfView) {
-			this.camTransform.camera.fieldOfView += (this.aimDownSightDesiredFieldOfView - this.camTransform.camera.fieldOfView) * Time.deltaTime * this.aimDownSightSpeed;
-		}
-
+		this.updateAimDownSight();
 
 	}
 
@@ -138,6 +127,31 @@ public class FirstPersonShooterGameCamera {
 			this.recoilRotation *= (this.recoilRotation.sqrMagnitude <= 0.1f ? 0f : 1f);
 		}
 
+	}
+
+	// updateAimDownSight method.
+	// Checks for user input and handles the aim down sight.
+	private void updateAimDownSight() {
+
+		// Get if the player is in block placing mode. Stop aiming down sight if he is.
+		bool isBlockPlacingMode = (player.parent.GetComponent<FireController>().BlockPlacingMode == null ? false : player.parent.GetComponent<FireController>().BlockPlacingMode);
+		if(isBlockPlacingMode && isAimingDownSight) {
+			this.aimDownSightDesiredFieldOfView = 60f;
+			isAimingDownSight = false;
+		}
+
+		// If the player is not in block placing mode and had clicked the right mouse button, aim down sight.
+		if(Input.GetMouseButtonDown(1) && !isBlockPlacingMode) { // 1 = right mouse button.
+			isAimingDownSight = !isAimingDownSight;
+			if(isAimingDownSight) {
+				this.aimDownSightDesiredFieldOfView = 30f;
+			} else {
+				this.aimDownSightDesiredFieldOfView = 60f;
+			}
+		}
+		if(this.aimDownSightDesiredFieldOfView != this.camTransform.camera.fieldOfView) {
+			this.camTransform.camera.fieldOfView += (this.aimDownSightDesiredFieldOfView - this.camTransform.camera.fieldOfView) * Time.deltaTime * this.aimDownSightSpeed;
+		}
 	}
 
 	// setFired method.

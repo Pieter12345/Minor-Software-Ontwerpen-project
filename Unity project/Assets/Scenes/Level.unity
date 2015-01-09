@@ -4906,7 +4906,7 @@ MonoBehaviour:
   weaponType: 2
   muzzleFlash: {fileID: 1899671175}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
 --- !u!23 &79091808
 Renderer:
   m_ObjectHideFlags: 0
@@ -6376,7 +6376,7 @@ MonoBehaviour:
   weaponType: 0
   muzzleFlash: {fileID: 158099309}
   shotSound: {fileID: 8300000, guid: 57d3c1469b81dad4183083c8b5be0794, type: 3}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
   ejectLocation: {x: .100000001, y: 0, z: 0}
   ejectForce: {x: 0, y: 1, z: 2}
@@ -9987,7 +9987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimTarget: {fileID: 1579508058}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
   transBlock: {fileID: 2067389830}
   weaponController: {fileID: 621141090}
   torch: {fileID: 1391955340}
@@ -14021,7 +14021,6 @@ MonoBehaviour:
   - {fileID: 79091806}
   - {fileID: 489173784}
   - {fileID: 226763090}
-  camera: {fileID: 1661318638}
 --- !u!114 &621141092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42352,7 +42351,7 @@ MonoBehaviour:
   weaponType: 1
   muzzleFlash: {fileID: 1986070623}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
   ejectLocation: {x: .100000001, y: 0, z: 0}
   ejectForce: {x: 0, y: 1, z: 2}
@@ -48663,6 +48662,22 @@ Prefab:
       objectReference: {fileID: 1661318638}
     - target: {fileID: 11433020, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: camera
+      value: 
+      objectReference: {fileID: 1661318639}
+    - target: {fileID: 11400006, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1661318639}
+    - target: {fileID: 11433020, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1661318639}
+    - target: {fileID: 11400010, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1661318639}
+    - target: {fileID: 11400020, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1661318639}
     m_RemovedComponents: []
