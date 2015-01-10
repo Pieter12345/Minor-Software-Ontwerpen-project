@@ -7,7 +7,11 @@ public class HealthPickUp : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		if(other.tag.Equals("Player")){
-			other.transform.parent.GetComponent<PlayerHealth>().Heal(amountToHeal);
+			PlayerHealth ph = other.transform.parent.GetComponent<PlayerHealth>();
+			if(ph.HP < ph.maxHP){
+				ph.Heal(amountToHeal);
+				Destroy(gameObject);
+			}
 		}
 	}
 }

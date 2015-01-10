@@ -28,7 +28,10 @@ public class FirstPersonShooterGameCamera {
 	private float aimDownSightDesiredFieldOfView = 60f; // Default Field Of View.
 	private float aimDownSightSpeed = 5f; // Speed of changing the aimDownSight.
 
+
+	// ---------------------------------------------------------------------------------------------
 	// Constructor.
+	// ---------------------------------------------------------------------------------------------
 	public FirstPersonShooterGameCamera(Transform player, Transform aimTarget, Transform cameraTransform, Transform weapon) {
 		this.player = player;
 		this.aimTarget = aimTarget;
@@ -36,7 +39,10 @@ public class FirstPersonShooterGameCamera {
 		this.weapon = weapon;
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
 	// Start is called once.
+	// ---------------------------------------------------------------------------------------------
 	public void Start() {
 		camTransform.rotation = player.transform.rotation; // Initialize on player rotation so we can set the start angle by rotating the player in the editor.
 		this.cameraRotation = camTransform.rotation.eulerAngles;
@@ -49,9 +55,15 @@ public class FirstPersonShooterGameCamera {
 			singleRenderer.enabled = false;
 		}
 
+		// Enable the currently used weapon model and attach it to the camera instead of the playermodel.
+		this.updateSelectedWeapon();
+		
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
 	// Update is called every frame.
+	// ---------------------------------------------------------------------------------------------
 	public void Update() {
 
 		// Get the mouse input.
@@ -79,10 +91,16 @@ public class FirstPersonShooterGameCamera {
 		// Aim down sight.
 		this.updateAimDownSight();
 
+		// Enable the currently used weapon model and attach it to the camera instead of the playermodel.
+		this.updateSelectedWeapon();
+
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
 	// updateAimTargetPos method.
 	// Does a new raycast to find and set the new position of the aimTarget.
+	// ---------------------------------------------------------------------------------------------
 	private void updateAimTargetPos() {
 		// Set the position of the aimPoint to the position we are looking at.
 		RaycastHit hit;
@@ -91,8 +109,11 @@ public class FirstPersonShooterGameCamera {
 		}
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
 	// updateRecoil method.
 	// Checks if the player has fired and adds recoil per shot.
+	// ---------------------------------------------------------------------------------------------
 	private void updateRecoil() {
 		
 		// If the player has fired a gun, apply random recoil to the camera.
@@ -129,8 +150,11 @@ public class FirstPersonShooterGameCamera {
 
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
 	// updateAimDownSight method.
 	// Checks for user input and handles the aim down sight.
+	// ---------------------------------------------------------------------------------------------
 	private void updateAimDownSight() {
 
 		// Get if the player is in block placing mode or is he is sprinting. Stop aiming down sight if he is.
@@ -155,8 +179,38 @@ public class FirstPersonShooterGameCamera {
 		}
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
+	// updateSelectedWeapon method.
+	// Checks if the right weapon is still shown and attaches it to the camera instead of the playermodel.
+	// ---------------------------------------------------------------------------------------------
+	private Transform lastSelectedWeapon = null;
+	private void updateSelectedWeapon() {
+		WeaponController wcont = weapon.GetComponent<WeaponController>();
+		Transform selectedWeapon =  wcont.SelectedWeaponTransform;
+		if(lastSelectedWeapon == null || !lastSelectedWeapon.Equals(selectedWeapon)) { // Only update on change.
+			lastSelectedWeapon = selectedWeapon;
+			if(selectedWeapon.name.Equals("rpg")) {
+				foreach(Renderer renderer in selectedWeapon.GetComponentsInChildren<Renderer>()) {
+					renderer.enabled = true;
+				}
+			} else {
+				selectedWeapon.renderer.enabled = true; // Show weapon model.
+			}
+			selectedWeapon.parent.SetParent(camTransform); // Attach to camera.
+			selectedWeapon.parent.transform.localPosition = new Vector3(0f, 0f, 0f); // Reset Weapons position (parent).
+			selectedWeapon.parent.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f)); // Reset Weapons rotation (parent).
+			selectedWeapon.localPosition = wcont.SelectedWeaponType.firstPersonModelPosition(); // Set position.
+			selectedWeapon.localRotation = Quaternion.Euler(wcont.SelectedWeaponType.firstPersonModelRotation()); // Set rotation.
+
+		}
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
 	// setFired method.
 	// Should be set to true when the player fired. Used to add recoil.
+	// ---------------------------------------------------------------------------------------------
 	public void setFired(bool state = true) {
 		this.Fired = state;
 	}

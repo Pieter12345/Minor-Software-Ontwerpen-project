@@ -44,6 +44,11 @@ public class PlayerHealth : Health {
 			audioS.PlayOneShot(audioS.clip);
 	}
 
+	protected override void OnHeal(float amount){
+		regenTo = ((hp+amount)/maxHP + regeneratingFraction < 1f) ? (hp + amount + regeneratingFraction*maxHP) : maxHP;
+		timeLastHit = Time.time;
+	}
+
 	protected override void OnRegen(){
 		if(playerCanRegen){
 			if(Mathf.Abs(hp-regenTo) < epsilon)
