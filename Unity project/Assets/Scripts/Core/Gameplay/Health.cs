@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Health : MonoBehaviour {
 
@@ -38,8 +39,31 @@ public class Health : MonoBehaviour {
 		OnHeal(amount);
 	}
 	
+	// OnDeath Endgame Highscore Upload //consider moving to other c# file if referencing allows
+	IEnumerator PostStats (string url) {
+		var post = new WWWForm();
+		post.AddField("PlayerID",1);
+		post.AddField("Highscore",HighScoreKeeper.Score);
+		post.AddField("ShotsFired",(HighScoreKeeper.ShotsHit+HighScoreKeeper.ShotsMissed));
+		post.AddField("Accuracy", ((int) Math.Round (HighScoreKeeper.Accuracy)));
+		post.AddField("BlocksPlaced",HighScoreKeeper.BlocksPlaced);
+		post.AddField("BlocksDestroyed",(HighScoreKeeper.BlocksDestroyedPlayer+HighScoreKeeper.BlocksDestroyedEnemy));
+		post.AddField("WaveHighscore",HighScoreKeeper.TotalWave);
+		
+		
+		var get = new WWW(url,post);
+		yield return get;
+		
+		if (get.error!=null) {
+			Debug.Log(get.error);
+		}
+		else {
+			Debug.Log(get.text);
+		}
+	}
+	
 	protected void EndGame() {
-		HighScoreKeeper.LogHighscore();
+		StartCoroutine(PostStats("http://drproject.twi.tudelft.nl:8083/SQL"));
 		Screen.lockCursor = false;
 		Application.LoadLevel("GameOver");
 	}
