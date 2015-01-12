@@ -3466,7 +3466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &57642062
 Transform:
   m_ObjectHideFlags: 0
@@ -3495,7 +3495,16 @@ MonoBehaviour:
   flag: {fileID: 1699489589}
   maxAmountOfEnemies: 1000
   player: {fileID: 1767831526}
-  EnemyPrefab: {fileID: 0}
+  enemies:
+  - enemyPrefab: {fileID: 134244, guid: 00d08ea2f608bd64c892d22b6b0e8497, type: 2}
+    spawnWeight: 1
+    SpawnAfterWave: 0
+  - enemyPrefab: {fileID: 170636, guid: 0e47d7fc09e7b4741ac70a6e62f082bc, type: 2}
+    spawnWeight: .300000012
+    SpawnAfterWave: 1
+  - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}
+    spawnWeight: .300000012
+    SpawnAfterWave: 1
   delayBetweenWaves: 3
 --- !u!1 &58563821
 GameObject:
@@ -5018,7 +5027,7 @@ MonoBehaviour:
   weaponType: 2
   muzzleFlash: {fileID: 1899671175}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
 --- !u!23 &79091808
 Renderer:
   m_ObjectHideFlags: 0
@@ -6488,7 +6497,7 @@ MonoBehaviour:
   weaponType: 0
   muzzleFlash: {fileID: 158099309}
   shotSound: {fileID: 8300000, guid: 57d3c1469b81dad4183083c8b5be0794, type: 3}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
   ejectLocation: {x: .100000001, y: 0, z: 0}
   ejectForce: {x: 0, y: 1, z: 2}
@@ -10099,7 +10108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimTarget: {fileID: 1579508058}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
   transBlock: {fileID: 2067389830}
   weaponController: {fileID: 621141090}
   torch: {fileID: 1391955340}
@@ -10121,6 +10130,8 @@ MonoBehaviour:
   regeneratingFraction: .200000003
   regenSpeed: 1
   regenCooldown: 5
+  hitOverlay: {fileID: 0}
+  soundSource: {fileID: 0}
 --- !u!1 &383894176
 GameObject:
   m_ObjectHideFlags: 0
@@ -14130,7 +14141,6 @@ MonoBehaviour:
   - {fileID: 79091806}
   - {fileID: 489173784}
   - {fileID: 226763090}
-  camera: {fileID: 1661318638}
 --- !u!114 &621141092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30627,7 +30637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16897bc315b41e74da6329404032da46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newParent: {fileID: 1256058723}
 --- !u!114 &1391955344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36597,6 +36606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a04ec3e5631ea143968c0a2a900cca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fade: {fileID: 0}
 --- !u!1 &1644953532
 GameObject:
   m_ObjectHideFlags: 0
@@ -38436,6 +38446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 120
+  underAttackMessage: {fileID: 0}
 --- !u!23 &1699489586
 Renderer:
   m_ObjectHideFlags: 0
@@ -45599,6 +45610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e43c01473643c8458f45de45a88cf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blocktypes: []
   parentObject: {fileID: 1902263561}
 --- !u!1 &1969513401
 GameObject:
@@ -45834,7 +45846,7 @@ MonoBehaviour:
   weaponType: 1
   muzzleFlash: {fileID: 1986070623}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
-  camera: {fileID: 1661318639}
+  cameraTransform: {fileID: 1661318639}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
   ejectLocation: {x: .100000001, y: 0, z: 0}
   ejectForce: {x: 0, y: 1, z: 2}
