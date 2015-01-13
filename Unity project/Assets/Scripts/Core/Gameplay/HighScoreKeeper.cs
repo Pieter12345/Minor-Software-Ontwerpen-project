@@ -17,7 +17,7 @@ public class HighScoreKeeper : MonoBehaviour {
 	public static int Score = 0;						//The HighScore
 	
 	// Wave parameters
-	public static int TotalWave = 1;				//Amount of Waves
+	public static int TotalWave = 0;				//Amount of Waves
 	private static float WaveTime = 0;				//Time passed in the current wave
 	private static float MaxWaveTime;				//Criterium for the WaveTimeBonus
 	
@@ -35,11 +35,24 @@ public class HighScoreKeeper : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		ResetScores();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		WaveTime += Time.deltaTime;
+	}
+	
+	public static void ResetScores() {
+		HeadshotsTotal = 0;
+		Score = 0;
+		TotalWave = 0;
+		BlocksPlaced = 0;
+		BlocksDestroyedPlayer = 0;
+		BlocksDestroyedEnemy = 0;
+		ShotsHit = 0;
+		ShotsMissed = 0;
+		
 	}
 	
 	// Return the higshcore
@@ -64,7 +77,7 @@ public class HighScoreKeeper : MonoBehaviour {
 	}
 	
 	// Wave Progression - Called at end of wave
-	static void PointsNextWave(int WaveNumber) {
+	public static void PointsNextWave(int WaveNumber) {
 	
 		int Points = BaseWaveScore + WaveScoreProgression * WaveNumber;
 		Score += Points;

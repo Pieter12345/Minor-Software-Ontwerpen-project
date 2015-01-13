@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
 	public float HP { get { return hp; } }
 	public bool IsDead { get { return hp <= 0; } }
 	private bool Headshot = false;
+	private bool CoRoutineRunning = false;
 
 	void Awake(){
 		hp = maxHP;
@@ -41,15 +42,20 @@ public class Health : MonoBehaviour {
 	
 	// OnDeath Endgame Highscore Upload //consider moving to other c# file if referencing allows
 	IEnumerator PostStats (string url) {
+	
+		CoRoutineRunning = true;
+	
 		var post = new WWWForm();
 		post.AddField("PlayerID",1);
 		post.AddField("Highscore",HighScoreKeeper.Score);
 		post.AddField("ShotsFired",(HighScoreKeeper.ShotsHit+HighScoreKeeper.ShotsMissed));
-		post.AddField("Accuracy", ((int) Math.Round (HighScoreKeeper.Accuracy)));
+		post.AddField("Accuracy", ((int) Math.Round (100*HighScoreKeeper.Accuracy)));
+		post.AddField("Headshots",HighScoreKeeper.HeadshotsTotal);
 		post.AddField("BlocksPlaced",HighScoreKeeper.BlocksPlaced);
 		post.AddField("BlocksDestroyed",(HighScoreKeeper.BlocksDestroyedPlayer+HighScoreKeeper.BlocksDestroyedEnemy));
 		post.AddField("WaveHighscore",HighScoreKeeper.TotalWave);
 		
+		Debug.Log("posting");
 		
 		var get = new WWW(url,post);
 		yield return get;
@@ -60,12 +66,16 @@ public class Health : MonoBehaviour {
 		else {
 			Debug.Log(get.text);
 		}
+		CoRoutineRunning = false;
+		Application.LoadLevel("GameOver");
 	}
 	
 	protected void EndGame() {
-		StartCoroutine(PostStats("http://drproject.twi.tudelft.nl:8083/SQL"));
+		if (CoRoutineRunning!=true) {
+			StartCoroutine(PostStats("http://drproject.twi.tudelft.nl:8083/SQL"));
+		}	
 		Screen.lockCursor = false;
-		Application.LoadLevel("GameOver");
+		
 	}
 
 	protected virtual void OnDeath(bool isHeadshot){

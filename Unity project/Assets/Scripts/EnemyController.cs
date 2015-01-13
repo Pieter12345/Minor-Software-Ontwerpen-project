@@ -218,6 +218,7 @@ public class EnemyController : MonoBehaviour {
 	public static void startNextWave(bool doDelayBeforeSpawn = true) {
 		if(doDelayBeforeSpawn) { startNewWaveAtThisTime = Time.time + delayBetweenWavesStatic; return; }
 		destroyAllEnemies(); // Just to make sure the next wave starts with an empty list.
+		HighScoreKeeper.PointsNextWave(wave);
 		wave++;
 		float a = 0f;
 		float b = 2f;
