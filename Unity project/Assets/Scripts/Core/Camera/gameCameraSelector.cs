@@ -18,6 +18,7 @@ public class gameCameraSelector : MonoBehaviour {
 	
 	public Texture crosshair;
 
+	public bool isAimingDownSight { get { return (this.firstPerson ? this.firstPersonCam.getIsAimingDownSight() : false); } }
 	public bool isReloading { get{ return false; } } // TODO - Implement this.
 	public bool isSwitchingWeapons { get{ return (this.firstPerson ? this.firstPersonCam.getIsSwitchingWeapons() : false); } } // TODO - Implement weapon switching in third person.
 	//	public bool isSwitchingWeapons { get{ return (this.firstPerson ? this.firstPersonCam.getIsSwitchingWeapons() : this.thirdPersonCam.getIsSwitchingWeapons()); } };
@@ -118,7 +119,7 @@ public class gameCameraSelector : MonoBehaviour {
 	// Draw the crosshair.
 	// ---------------------------------------------------------------------------------------------
 	void OnGUI () {
-		if (Time.time != 0 && Time.timeScale != 0) {
+		if (Time.time != 0 && Time.timeScale != 0 && !this.isAimingDownSight) {
 			GUI.DrawTexture(new Rect(Screen.width/2f-(crosshair.width*0.5f), Screen.height/2f-(crosshair.height*0.5f), crosshair.width, crosshair.height), crosshair);
 		}
 	}

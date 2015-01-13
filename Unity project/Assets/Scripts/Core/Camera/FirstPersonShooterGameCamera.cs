@@ -309,4 +309,13 @@ public class FirstPersonShooterGameCamera {
 		return this.isSwitchingWeapons || weapon.localEulerAngles.x != 0; // isSwitchingWeapons turns false after 50% of the switch.
 	}
 
+
+	// ---------------------------------------------------------------------------------------------
+	// getIsAimingDownSight method.
+	// Returns true if the player is aiming down sight or moving there.
+	// ---------------------------------------------------------------------------------------------
+	public bool getIsAimingDownSight() {
+		return this.isAimingDownSight;
+	}
+
 }
