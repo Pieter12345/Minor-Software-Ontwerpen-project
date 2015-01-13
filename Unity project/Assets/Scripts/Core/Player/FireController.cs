@@ -173,6 +173,7 @@ public class FireController : MonoBehaviour {
 	}
 
 	void OnPlaceBlock(){
+		HighScoreKeeper.BlockAction(true,true);
 		WorldBlockManagement.setBlockAt(Mathf.FloorToInt(transBlock.position.x),
 		                  Mathf.FloorToInt(transBlock.position.y),
 		                  Mathf.FloorToInt(transBlock.position.z),
