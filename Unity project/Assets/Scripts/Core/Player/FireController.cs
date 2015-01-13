@@ -12,7 +12,9 @@ public class FireController : MonoBehaviour {
 	public float blockPlaceTime = 0.5f;
 
 	private bool blockPlacingMode = false;
-	public bool BlockPlacingMode{ get{ return blockPlacingMode; } }
+	public bool BlockPlacingMode{ get { return blockPlacingMode; } }
+	public int AmountOfBlocks{ get; set; }
+	public int amountOfStartingBlocks = 20;
 	private WeaponController weapons;
 	private bool positionValid = true;
 	private int selectedBlock = 2;
@@ -21,6 +23,7 @@ public class FireController : MonoBehaviour {
 	void Start(){
 		weapons = weaponController.GetComponent<WeaponController>();
 		timeLastBlock = 0f;
+		AmountOfBlocks = amountOfStartingBlocks;
 	}
 
 	// Update is called once per frame
@@ -76,8 +79,9 @@ public class FireController : MonoBehaviour {
 			if(Input.GetButton("Fire1")){
 				if (blockPlacingMode && positionValid){
 					float interval = Time.time - timeLastBlock;
-					if(interval > blockPlaceTime){
+					if(interval > blockPlaceTime && AmountOfBlocks > 0){
 						OnPlaceBlock();
+						AmountOfBlocks--;
 						timeLastBlock = Time.time;
 					}
 				} else if(!blockPlacingMode){
@@ -218,7 +222,7 @@ public class FireController : MonoBehaviour {
 			}
 		}
 
-		if (positionValid) {
+		if (positionValid && AmountOfBlocks > 0) {
 			transBlock.renderer.material.color = Color.green;
 		} else {
 			transBlock.renderer.material.color = Color.red;
