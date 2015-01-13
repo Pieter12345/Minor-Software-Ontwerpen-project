@@ -122,11 +122,11 @@ public class HighScoreKeeper : MonoBehaviour {
 	}
 	
 	public static void LogHighscore() {
-		Debug.LogWarning("Score: " + Score);
-		Debug.LogWarning("Shots Hit: " + ShotsHit);
-		Debug.LogWarning("Shots Missed: " + ShotsMissed);
-		Debug.LogWarning("Accuracy" + Accuracy*100 + "%");
-		Debug.LogWarning("Headshots: " + HeadshotsTotal);
+		Debug.Log("Score: " + Score);
+		Debug.Log("Shots Hit: " + ShotsHit);
+		Debug.Log("Shots Missed: " + ShotsMissed);
+		Debug.Log("Accuracy: " + Accuracy*100 + "%");
+		Debug.Log("Headshots: " + HeadshotsTotal);
 
 	}
 	
