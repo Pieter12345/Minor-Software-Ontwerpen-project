@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 499486}
   - 108: {fileID: 10899490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 499488}
   - 33: {fileID: 3399488}
   - 23: {fileID: 2399488}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 23: {fileID: 2399490}
   - 114: {fileID: 11460014}
   - 135: {fileID: 13560014}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Landmine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

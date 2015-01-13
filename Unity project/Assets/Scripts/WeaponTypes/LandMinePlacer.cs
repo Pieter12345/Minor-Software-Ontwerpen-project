@@ -13,8 +13,10 @@ public class LandMinePlacer : Weapon {
 			Ray ray = new Ray(from, dir);
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, maxDistance)) {
-				TakeFromClip();
-				GameObject.Instantiate(landMine, new Vector3(hit.point.x, hit.point.y + 0.3f, hit.point.z), Quaternion.identity);
+				if(!hit.transform.tag.Equals("Enemy")){
+					TakeFromClip();
+					GameObject.Instantiate(landMine, new Vector3(hit.point.x, hit.point.y + 0.3f, hit.point.z), Quaternion.identity);
+				}
 			}
 		}
 	}
