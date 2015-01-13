@@ -53,6 +53,6 @@ public class SimpleGun : Weapon {
 		s.SetActive(true);
 		s.transform.rotation = transform.rotation;
 		s.transform.position = transform.position + ejectLocation;
-		s.rigidbody.AddForce(s.transform.rotation* ejectForce);
+		s.rigidbody.AddForce(s.transform.rotation * ejectForce);
 	}
 }

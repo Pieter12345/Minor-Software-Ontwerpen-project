@@ -26,6 +26,9 @@ public class FireController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Time.timeScale != 0f){
+
+			gameCameraSelector gameCamera = cameraTransform.GetComponent<gameCameraSelector>();
+
 			if(Input.GetButtonUp("Torch")){
 				if(torch != null)
 					torch.SetActive(!torch.activeInHierarchy);
@@ -42,10 +45,28 @@ public class FireController : MonoBehaviour {
 				UpdateAimBlockTex(selectedBlock);
 			} else {
 				blockPlacingMode = false;
-				if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
-					weapons.SelectNextWeaponUp();
-				else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
-					weapons.SelectNextWeaponDown();
+				if(Input.GetAxisRaw("Mouse ScrollWheel") > 0) {
+//					weapons.SelectNextWeaponUp();
+					int nextWeapon = (weapons.SelectedWeapon + 1) % weapons.getWeaponArraySize();
+					for(int i = 0; i <= weapons.getWeaponArraySize()-2; i++) { // Limit the amount of max loops to prevent infinite loop bugs.
+						if(weapons.hasWeaponID(nextWeapon)) {
+							gameCamera.requestWeaponChange(nextWeapon);
+							break;
+						}
+						nextWeapon = (nextWeapon + 1) % weapons.getWeaponArraySize();
+					}
+				}
+				else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0) {
+//					weapons.SelectNextWeaponDown();
+					int nextWeapon = (weapons.SelectedWeapon - 1 + weapons.getWeaponArraySize()) % weapons.getWeaponArraySize();
+					for(int i = 0; i <= weapons.getWeaponArraySize()-2; i++) { // Limit the amount of max loops to prevent infinite loop bugs.
+						if(weapons.hasWeaponID(nextWeapon)) {
+							gameCamera.requestWeaponChange(nextWeapon);
+							break;
+						}
+						nextWeapon = (nextWeapon - 1 + weapons.getWeaponArraySize()) % weapons.getWeaponArraySize();
+					}
+				}
 			}
 
 			if(Input.GetButtonUp("Fire1")){
@@ -75,49 +96,57 @@ public class FireController : MonoBehaviour {
 			if(Input.GetKeyUp(KeyCode.Alpha1)){
 				foreach(WeaponStats i in w){
 					if((int) i == 0){
-						weapons.SelectedWeapon = 0;
+						gameCamera.requestWeaponChange(0);
+//						weapons.SelectedWeapon = 0;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha2)){
 				foreach(WeaponStats i in w){
 					if((int) i == 1){
-						weapons.SelectedWeapon = 1;
+						gameCamera.requestWeaponChange(1);
+//						weapons.SelectedWeapon = 1;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha3)){
 				foreach(WeaponStats i in w){
 					if((int) i == 2){
-						weapons.SelectedWeapon = 2;
+						gameCamera.requestWeaponChange(2);
+//						weapons.SelectedWeapon = 2;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha4)){
 				foreach(WeaponStats i in w){
 					if((int) i == 3){
-						weapons.SelectedWeapon = 3;
+						gameCamera.requestWeaponChange(3);
+//						weapons.SelectedWeapon = 3;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha5)){
 				foreach(WeaponStats i in w){
 					if((int) i == 4){
-						weapons.SelectedWeapon = 4;
+						gameCamera.requestWeaponChange(4);
+//						weapons.SelectedWeapon = 4;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha6)){
 				foreach(WeaponStats i in w){
 					if((int) i == 5){
-						weapons.SelectedWeapon = 5;
+						gameCamera.requestWeaponChange(5);
+//						weapons.SelectedWeapon = 5;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha7)){
 				foreach(WeaponStats i in w){
 					if((int) i == 6){
-						weapons.SelectedWeapon = 6;
+						gameCamera.requestWeaponChange(6);
+//						weapons.SelectedWeapon = 6;
 					}
 				}
 			} else if(Input.GetKeyUp(KeyCode.Alpha8)){
 				foreach(WeaponStats i in w){
 					if((int) i == 7){
-						weapons.SelectedWeapon = 7;
+						gameCamera.requestWeaponChange(7);
+//						weapons.SelectedWeapon = 7;
 					}
 				}
 			}
@@ -133,7 +162,10 @@ public class FireController : MonoBehaviour {
 	}
 
 	void OnFireWeapon () {
-		weapons.Fire(cameraTransform.position, aimTarget.position);
+		gameCameraSelector gameCamera = cameraTransform.GetComponent<gameCameraSelector>();
+		if(!gameCamera.isSwitchingWeapons && !gameCamera.isReloading) {
+			weapons.Fire(cameraTransform.position, aimTarget.position);
+		}
 	}
 
 	void OnPlaceBlock(){

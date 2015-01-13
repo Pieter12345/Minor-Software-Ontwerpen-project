@@ -127,4 +127,26 @@ public class WeaponController : MonoBehaviour {
 		AmmoManager am = GetComponent<AmmoManager>();
 		am.AddAmmo(weaponScript.AmmoType, amount);
 	}
+
+	// hasWeaponID method.
+	// Returns true if the player has the weapon at the specified weaponID (index). Falso otherwise.
+	public bool hasWeaponID(int weaponID) {
+		if(weaponID >= weaponsInInventory.Length) { return false; }
+		return weaponsInInventory[weaponID];
+	}
+
+	// setWeaponID method.
+	// Sets the weapon ID. Returns false if the weaponID is not in the players inventory.
+	public bool setWeaponID(int weaponID){
+		if(weaponID >= weaponsInInventory.Length) { return false; }
+		if(!weaponsInInventory[weaponID]) { return false; }
+		selectedWeapon = weaponID;
+		return true;
+	}
+
+	// getWeaponArraySize method.
+	// Returns the amount of weapons the player COULD have.
+	public int getWeaponArraySize() {
+		return weaponsInInventory.Length;
+	}
 }
