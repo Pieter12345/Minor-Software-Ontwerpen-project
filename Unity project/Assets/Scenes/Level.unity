@@ -40976,8 +40976,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300154, guid: 5d44dcc4d9c7f22449e3e0244cd85709, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1764845003
 Prefab:
   m_ObjectHideFlags: 0
@@ -41242,7 +41240,6 @@ Prefab:
   m_RootGameObject: {fileID: 708517523}
   m_IsPrefabParent: 0
   m_IsExploded: 1
->>>>>>> origin/master
 --- !u!1 &1766161172
 GameObject:
   m_ObjectHideFlags: 0
