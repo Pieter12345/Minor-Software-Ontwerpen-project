@@ -14,22 +14,22 @@ public class HighScoreKeeper : MonoBehaviour {
 	public static int HeadshotsTotal = 0;			//Amount of Headshots
 	
 	// Private variables
-	private static int Score = 0;						//The HighScore
+	public static int Score = 0;						//The HighScore
 	
 	// Wave parameters
-	private static int TotalWave = 1;				//Amount of Waves
+	public static int TotalWave = 1;				//Amount of Waves
 	private static float WaveTime = 0;				//Time passed in the current wave
 	private static float MaxWaveTime;				//Criterium for the WaveTimeBonus
 	
 	// Block Stats
-	private static int BlocksPlaced = 0;			// # of blocks placed
-	private static int BlocksDestroyedPlayer = 0;	// # of blocks destroyed by the player
-	private static int BlocksDestroyedEnemy = 0;	// # of blocks destroyed by the enemy
+	public static int BlocksPlaced = 0;			// # of blocks placed
+	public static int BlocksDestroyedPlayer = 0;	// # of blocks destroyed by the player
+	public static int BlocksDestroyedEnemy = 0;	// # of blocks destroyed by the enemy
 	
 	// Firing Stats
-	private static int ShotsHit = 0;				//Shots that hit an enemy
-	private static int ShotsMissed = 0;				//Shots that miss an enemy
-	private static float Accuracy;					//Ratio between shots hit and shots fired
+	public static int ShotsHit = 0;				//Shots that hit an enemy
+	public static int ShotsMissed = 0;				//Shots that miss an enemy
+	public static float Accuracy;					//Ratio between shots hit and shots fired
 	private static int AccuracyBonus;				//Bonus at end game for a high accuracy
 	private static int AccuracyBonusParameter = 100;//Parameter for the accuracy bonus
 
