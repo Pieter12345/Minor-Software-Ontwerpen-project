@@ -38284,7 +38284,7 @@ MonoBehaviour:
   aimTarget: {fileID: 1579508058}
   camTransform: {fileID: 1661318639}
   weapon: {fileID: 621141090}
-  modelLeftHand: {fileID: 1553566043}
+  modelLeftHand: {fileID: 0}
   crosshair: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
 --- !u!1 &1678291465
 GameObject:
@@ -45610,7 +45610,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e43c01473643c8458f45de45a88cf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocktypes: []
+  blocktypes:
+  - texture: {fileID: 2800000, guid: 08ed1e0cb5fd9af46823143a41fcdd21, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: f1be644f8610009408aefc582438fa03, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: 4af756692bd0c3e44ba8700bcb913f2d, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: a9f9d2f844150a6418779c1158b02b1c, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
+  - texture: {fileID: 2800000, guid: 924e00ee9bb4301438faa6485bc4585a, type: 3}
+    canWalkThrough: 0
+    hasCollider: 1
+    isTransparent: 0
   parentObject: {fileID: 1902263561}
 --- !u!1 &1969513401
 GameObject:
