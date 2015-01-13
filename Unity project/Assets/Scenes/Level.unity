@@ -38443,7 +38443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 120
-  underAttackMessage: {fileID: 0}
+  underAttackMessage: {fileID: 1233119510}
 --- !u!23 &1699489586
 Renderer:
   m_ObjectHideFlags: 0
