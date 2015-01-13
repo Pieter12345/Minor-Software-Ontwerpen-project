@@ -13,9 +13,9 @@ public class PickUpHandler : MonoBehaviour {
 	}
 
 	public void PickUp(WeaponStats w){
-
+		// If it is the first weapon pickup of this type.
 		if(weaponController.PickUpWeapon(w)) {
-			PickUp(w.AmmoType(), w.InitialAmmoPickupAmount());
+			PickUp(w.AmmoType(), w.InitialAmmoPickupAmount()); // Add initial ammo boost.
 		}
 	}
 

@@ -26,7 +26,7 @@ public class PlayerHealth : Health {
 	}
 
 	protected override void OnDeath(bool isHeadshot){
-		Debug.Log("YOU JUST DIED MADAFAKA!!!");
+		Debug.Log("You have died, my friend.");
 		EndGame();
 	}
 

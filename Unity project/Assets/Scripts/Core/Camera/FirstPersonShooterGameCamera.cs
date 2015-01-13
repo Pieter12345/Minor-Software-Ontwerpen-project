@@ -32,7 +32,7 @@ public class FirstPersonShooterGameCamera {
 	// Weapon switching variables.
 	private bool isSwitchingWeapons = false;
 	private int weaponToSwitchTo;
-	private float weaponsRotationSpeed = 0.1f;
+	private float weaponsRotationSpeed = 0.5f;
 
 
 	// ---------------------------------------------------------------------------------------------
