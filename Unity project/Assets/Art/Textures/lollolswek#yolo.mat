@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Steve_Hair
-  m_Shader: {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
+  m_Name: lollolswek#yolo
+  m_Shader: {fileID: 4800000, guid: 14ea298b5c298bf4cbd742061379909f, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,21 +24,21 @@ Material:
       data:
         first:
           name: _Treshold
-        second: .321428567
+        second: .0535714217
       data:
         first:
           name: _Shadow
-        second: 2.16071439
+        second: 1.35714281
       data:
         first:
           name: _Intensity
-        second: .857142866
+        second: 1.12499988
       data:
         first:
           name: _Diffuse
-        second: .571428597
+        second: .267857134
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .926470578, g: .592668712, b: .592668712, a: 1}
+        second: {r: 1, g: 0, b: 0, a: 1}

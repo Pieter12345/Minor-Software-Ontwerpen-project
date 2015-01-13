@@ -120,11 +120,6 @@ public static class WeaponStatsExtension{
 	// -----------------------------------------------------------------------------
 	public static Vector3 thirdPersonModelPosition(this WeaponStats w) {
 		switch(w) {
-//		case WeaponStats.PISTOL  : return new Vector3(-0.508f, 0.225f, 0.967f);
-//		case WeaponStats.RIFLE   : return new Vector3(-0.463f, 0.248f, 1.112f);
-//		case WeaponStats.SHOTGUN : return new Vector3(-0.48f, 0.262f, 1.035f);
-//		case WeaponStats.RPG     : return new Vector3(-0.5959f, 0.273f, 0.897f);
-//		case WeaponStats.LANDMINE: return new Vector3(-0.391f, 0.328f, 0.789f);
 		case WeaponStats.PISTOL  : return new Vector3(0.037f, 0.167f, -0.085f);
 		case WeaponStats.RIFLE   : return new Vector3(0.153f, 0.228f, -0.143f);
 		case WeaponStats.SHOTGUN : return new Vector3(0.08f, 0.32f, -0.12f);
@@ -139,11 +134,6 @@ public static class WeaponStatsExtension{
 	// -----------------------------------------------------------------------------
 	public static Vector3 thirdPersonModelRotation(this WeaponStats w) {
 		switch(w) {
-//		case WeaponStats.PISTOL  : return new Vector3(312.83f, 276.26f, 7.61f);
-//		case WeaponStats.RIFLE   : return new Vector3(298.43f, 281.08f, 355.61f);
-//		case WeaponStats.SHOTGUN : return new Vector3(298.06f, 272.52f, 16.42f);
-//		case WeaponStats.RPG     : return new Vector3(333.54f, 96.04f, 3.30f);
-//		case WeaponStats.LANDMINE: return new Vector3(0f, 0f, 0f);
 		case WeaponStats.PISTOL  : return new Vector3(333.13f, 270.00f, 108.92f);
 		case WeaponStats.RIFLE   : return new Vector3(330.21f, 238.32f, 107.05f);
 		case WeaponStats.SHOTGUN : return new Vector3(356.60f, 188.72f, 126.27f);
