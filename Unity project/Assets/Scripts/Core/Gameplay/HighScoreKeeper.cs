@@ -108,7 +108,7 @@ public class HighScoreKeeper : MonoBehaviour {
 		//Accuracy Bonus
 		if (Accuracy > 0.50f) {
 			if (Accuracy > 0.70f) {
-				if (Accuracy > 0.95) {
+				if (Accuracy > 0.95f) {
 					AccuracyBonus = AccuracyBonusParameter;
 				}
 				else {
