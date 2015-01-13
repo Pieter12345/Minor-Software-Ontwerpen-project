@@ -134,7 +134,7 @@ public class EnemyController : MonoBehaviour {
 						break;
 					} 
 				}
-				if(getWave() >= EnemiesStatic[index].SpawnAfterWave){
+				if(getWave() > EnemiesStatic[index].SpawnAfterWave){
 					found = true;
 				}
 			}while(!found);
