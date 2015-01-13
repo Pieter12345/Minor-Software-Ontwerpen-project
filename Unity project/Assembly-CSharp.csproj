@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\PickUpHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimationManager.cs" />
      <Compile Include="Assets\Scripts\UI\AmmoCounter.cs" />
+     <Compile Include="Assets\Scripts\UI\BlockCounter.cs" />
      <Compile Include="Assets\Scripts\UI\EnemiesCounter.cs" />
      <Compile Include="Assets\Scripts\UI\FlagHealthbar.cs" />
      <Compile Include="Assets\Scripts\UI\HealthDisplay.cs" />

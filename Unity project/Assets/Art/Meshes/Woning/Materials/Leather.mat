@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Steve_Hair
-  m_Shader: {fileID: 4800000, guid: 72462051453b25f4c8c39c467ad0a413, type: 3}
+  m_Name: Leather
+  m_Shader: {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,28 +17,28 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Texture: {fileID: 2800000, guid: 7f6d3f1d7c2fb054a8966f9d8299c64b, type: 3}
+          m_Scale: {x: .100000001, y: .100000001}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Treshold
-        second: .321428567
+        second: 0
       data:
         first:
           name: _Shadow
-        second: 2.16071439
+        second: 0
       data:
         first:
           name: _Intensity
-        second: .857142866
+        second: 1.48214281
       data:
         first:
           name: _Diffuse
-        second: .571428597
+        second: 9.99999975e-05
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .926470578, g: .592668712, b: .592668712, a: 1}
+        second: {r: .632352948, g: .423118532, b: .423118532, a: 1}
