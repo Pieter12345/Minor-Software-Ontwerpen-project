@@ -38284,7 +38284,7 @@ MonoBehaviour:
   aimTarget: {fileID: 1579508058}
   camTransform: {fileID: 1661318639}
   weapon: {fileID: 621141090}
-  modelLeftHand: {fileID: 0}
+  modelLeftHand: {fileID: 1553566043}
   crosshair: {fileID: 2800000, guid: 0e585ac5d33a0d049af81ff2e08535c3, type: 3}
 --- !u!1 &1678291465
 GameObject:
