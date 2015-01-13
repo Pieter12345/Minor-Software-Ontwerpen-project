@@ -11979,7 +11979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
-  amountOfAmmo: 20
+  amountOfAmmo: 40
 --- !u!136 &515646164
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28383,7 +28383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
-  amountOfAmmo: 5
+  amountOfAmmo: 8
 --- !u!136 &1257116373
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47089,7 +47089,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 414344, guid: 89323a594623bb94395e018b1f112914, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89323a594623bb94395e018b1f112914, type: 2}

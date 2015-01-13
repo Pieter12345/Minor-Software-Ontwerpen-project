@@ -32,6 +32,20 @@ public static class WeaponStatsExtension{
 		}
 	}
 
+	// -----------------------------------------------------------------------------
+	// The amount of ammo gained when picking up the weapon for the first time.
+	// -----------------------------------------------------------------------------
+	public static int InitialAmmoPickupAmount(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return 30;
+		case WeaponStats.RIFLE   : return 300;
+		case WeaponStats.SHOTGUN : return 20;
+		case WeaponStats.RPG     : return 5;
+		case WeaponStats.LANDMINE: return 5;
+		default                  : return 0;
+		}
+	}
+
 	public static AmmoTypes AmmoType(this WeaponStats w) {
 		switch(w) {
 		case WeaponStats.PISTOL  : return AmmoTypes.PISTOL_BULLET;

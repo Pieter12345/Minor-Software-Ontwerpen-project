@@ -14,7 +14,9 @@ public class PickUpHandler : MonoBehaviour {
 
 	public void PickUp(WeaponStats w){
 
-		weaponController.PickUpWeapon(w);
+		if(weaponController.PickUpWeapon(w)) {
+			PickUp(w.AmmoType(), w.InitialAmmoPickupAmount());
+		}
 	}
 
 	public void PickUp(AmmoTypes a, int amount){
@@ -23,8 +25,12 @@ public class PickUpHandler : MonoBehaviour {
 
 	void Update(){
 		//cheat gun
-		if(Input.GetKeyUp(KeyCode.F10)){
+		if(Input.GetKeyDown(KeyCode.F10)){
 			PickUp(WeaponStats.PISTOL);
+			PickUp(WeaponStats.RPG);
+			PickUp(WeaponStats.LANDMINE);
+			PickUp(WeaponStats.RIFLE);
+			PickUp(WeaponStats.SHOTGUN);
 		}
 	}
 
