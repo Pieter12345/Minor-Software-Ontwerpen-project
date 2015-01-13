@@ -228,6 +228,17 @@ public class ShooterGameCamera {
 
 
 	// ---------------------------------------------------------------------------------------------
+	// ReloadWeapon method.
+	// Used to add weapon reloading animations.
+	// ---------------------------------------------------------------------------------------------
+	public void ReloadWeapon() {
+		// TODO - Implement this for third person? (Just pass through for now).
+		WeaponController wcont = weapon.GetComponent<WeaponController>();
+		wcont.Reload();
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
 	// setMouseSensitivity method.
 	// ---------------------------------------------------------------------------------------------
 	public void setMouseSensitivity(float sensitivity) {

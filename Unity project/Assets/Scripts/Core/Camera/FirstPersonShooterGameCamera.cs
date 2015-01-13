@@ -27,12 +27,21 @@ public class FirstPersonShooterGameCamera {
 	// Aim down sight variables.
 	private bool isAimingDownSight = false;
 	private float aimDownSightDesiredFieldOfView = 60f; // Default Field Of View.
-	private float aimDownSightSpeed = 5f; // Speed of changing the aimDownSight.
+	private float aimDownSightFovSpeed = 5f; // Speed of changing the aimDownSight FOV.
+	private float aimDownSightTranslationSpeed = 0.3f;
+	private float aimDownSightRotationSpeed = 0.3f;
+
+	// Weapon reloading & switching variables.
+	private float lastWeaponsRotationSpeed = 0; // Used to store the speed to rotate back with.
 
 	// Weapon switching variables.
 	private bool isSwitchingWeapons = false;
 	private int weaponToSwitchTo;
-	private float weaponsRotationSpeed = 0.5f;
+	private float weaponsSwitchRotationSpeed = 0.5f;
+	
+	// Weapon reloading variables.
+	private bool isReloadingWeapon = false;
+	private float weaponsReloadRotationSpeed = 0.5f;
 
 
 	// ---------------------------------------------------------------------------------------------
@@ -101,8 +110,8 @@ public class FirstPersonShooterGameCamera {
 		// Enable the currently used weapon model and attach it to the camera instead of the playermodel.
 		this.updateSelectedWeapon();
 
-		// Weapon switching animation.
-		this.updateWeaponChange();
+		// Update weapon switching and reloading animation. These are both in one method because they change the same object rotation.
+		this.updateWeaponChangeAndReload();
 
 	
 	}
@@ -170,7 +179,7 @@ public class FirstPersonShooterGameCamera {
 		// Get if the player is in block placing mode or is he is sprinting. Stop aiming down sight if he is.
 		bool isBlockPlacingMode = player.parent.GetComponent<FireController>().BlockPlacingMode;
 		bool isSprinting = player.GetComponent<NormalCharacterMotor>().getIsSprinting;
-		if((isBlockPlacingMode || isSprinting) && this.isAimingDownSight) {
+		if((isBlockPlacingMode || isSprinting || this.isReloadingWeapon || this.isSwitchingWeapons) && this.isAimingDownSight) {
 			this.aimDownSightDesiredFieldOfView = 60f;
 			this.isAimingDownSight = false;
 		}
@@ -187,36 +196,34 @@ public class FirstPersonShooterGameCamera {
 
 		// Move the fieldOfView towards the desired fieldOfView.
 		if(this.aimDownSightDesiredFieldOfView != this.camTransform.camera.fieldOfView) {
-			this.camTransform.camera.fieldOfView += (this.aimDownSightDesiredFieldOfView - this.camTransform.camera.fieldOfView) * Time.deltaTime * this.aimDownSightSpeed;
+			this.camTransform.camera.fieldOfView += (this.aimDownSightDesiredFieldOfView - this.camTransform.camera.fieldOfView) * Time.deltaTime * this.aimDownSightFovSpeed;
 		}
 
 		// Move weapon model from current location to the middle of the screen (or back).
 		WeaponController wcont = weapon.GetComponent<WeaponController>();
 		Transform selectedWeaponTransform = wcont.SelectedWeaponTransform;
-		float translationSpeed = 0.1f;
-		float rotationSpeed = 0.1f;
 		if(this.isAimingDownSight) {
 
 			// Move towards position.
 			if(!selectedWeaponTransform.localPosition.Equals(wcont.SelectedWeaponType.firstPersonAimDownSightModelPosition())) {
-				selectedWeaponTransform.localPosition += (wcont.SelectedWeaponType.firstPersonAimDownSightModelPosition() - selectedWeaponTransform.localPosition) * translationSpeed;
+				selectedWeaponTransform.localPosition += (wcont.SelectedWeaponType.firstPersonAimDownSightModelPosition() - selectedWeaponTransform.localPosition) * this.aimDownSightTranslationSpeed;
 			}
 
 			// Move towards rotation.
 			if(!selectedWeaponTransform.localRotation.eulerAngles.Equals(wcont.SelectedWeaponType.firstPersonAimDownSightModelRotation())) {
-				selectedWeaponTransform.localRotation = Quaternion.Euler(selectedWeaponTransform.localRotation.eulerAngles + (wcont.SelectedWeaponType.firstPersonAimDownSightModelRotation() - selectedWeaponTransform.localRotation.eulerAngles) * rotationSpeed);
+				selectedWeaponTransform.localRotation = Quaternion.Euler(selectedWeaponTransform.localRotation.eulerAngles + (wcont.SelectedWeaponType.firstPersonAimDownSightModelRotation() - selectedWeaponTransform.localRotation.eulerAngles) * this.aimDownSightRotationSpeed);
 			}
 
 		} else {
 
 			// Move towards position.
 			if(!selectedWeaponTransform.localPosition.Equals(wcont.SelectedWeaponType.firstPersonModelPosition())) {
-				selectedWeaponTransform.localPosition += (wcont.SelectedWeaponType.firstPersonModelPosition() - selectedWeaponTransform.localPosition) * translationSpeed;
+				selectedWeaponTransform.localPosition += (wcont.SelectedWeaponType.firstPersonModelPosition() - selectedWeaponTransform.localPosition) * this.aimDownSightTranslationSpeed;
 			}
 			
 			// Move towards rotation.
 			if(!selectedWeaponTransform.localRotation.eulerAngles.Equals(wcont.SelectedWeaponType.firstPersonModelRotation())) {
-				selectedWeaponTransform.localRotation = Quaternion.Euler(selectedWeaponTransform.localRotation.eulerAngles + (wcont.SelectedWeaponType.firstPersonModelRotation() - selectedWeaponTransform.localRotation.eulerAngles) * rotationSpeed);
+				selectedWeaponTransform.localRotation = Quaternion.Euler(selectedWeaponTransform.localRotation.eulerAngles + (wcont.SelectedWeaponType.firstPersonModelRotation() - selectedWeaponTransform.localRotation.eulerAngles) * this.aimDownSightRotationSpeed);
 			}
 
 		}
@@ -267,27 +274,96 @@ public class FirstPersonShooterGameCamera {
 	// Used to start the weapon switching animation.
 	// ---------------------------------------------------------------------------------------------
 	public void requestWeaponChange(int weaponID) {
-		this.weaponToSwitchTo = weaponID; // Set the new weapon ID to switch to later.
-		this.isSwitchingWeapons = true; // Start the animation on next update.
+		if(!this.isReloadingWeapon) {
+			this.weaponToSwitchTo = weaponID; // Set the new weapon ID to switch to later.
+			this.isSwitchingWeapons = true; // Start the animation on next update.
+			this.isReloadingWeapon = false; // Cancel reloading if active.
+		}
 	}
 
 
-	// ---------------------------------------------------------------------------------------------
-	// updateWeaponChange method.
-	// Used to perform the weapon switching animation.
-	// ---------------------------------------------------------------------------------------------
-	public void updateWeaponChange() {
-		float desiredWeaponsRotation = this.isSwitchingWeapons ? 30f : 0f;
-		if(Mathf.Abs(weapon.localEulerAngles.x - desiredWeaponsRotation) > 0.05f) {
-			weapon.localEulerAngles += new Vector3((desiredWeaponsRotation - weapon.localEulerAngles.x) * this.weaponsRotationSpeed, 0f, 0f);
-		} else {
-			this.isSwitchingWeapons = false;
-			weapon.localEulerAngles = new Vector3(desiredWeaponsRotation, 0f, 0f);
+//	// ---------------------------------------------------------------------------------------------
+//	// updateWeaponChange method.
+//	// Used to perform the weapon switching animation.
+//	// ---------------------------------------------------------------------------------------------
+//	public void updateWeaponChange() {
+//		float desiredWeaponsRotation = this.isSwitchingWeapons ? 30f : 0f;
+//		if(Mathf.Abs(weapon.localEulerAngles.x - desiredWeaponsRotation) > 0.05f) {
+//			weapon.localEulerAngles += new Vector3((desiredWeaponsRotation - weapon.localEulerAngles.x) * this.weaponsSwitchRotationSpeed, 0f, 0f);
+//		} else {
+//			this.isSwitchingWeapons = false;
+//			weapon.localEulerAngles = new Vector3(desiredWeaponsRotation, 0f, 0f);
+//
+//			// Switch the weapon model if it is at its max rotation (off the camera).
+//			if(desiredWeaponsRotation != 0) {
+//				WeaponController wcont = weapon.GetComponent<WeaponController>();
+//				wcont.SelectedWeapon = this.weaponToSwitchTo;
+//			}
+//		}
+//	}
 
-			// Switch the weapon model if it is at its max rotation (off the camera).
+
+	// ---------------------------------------------------------------------------------------------
+	// ReloadWeapon method.
+	// Used to add weapon reloading animations.
+	// ---------------------------------------------------------------------------------------------
+	public void ReloadWeapon() {
+		if(weapon.localEulerAngles.x == 0f && !this.isSwitchingWeapons) {
+			this.isReloadingWeapon = true;
+		}
+	}
+
+
+//	// ---------------------------------------------------------------------------------------------
+//	// updateWeaponReload method.
+//	// Used to perform the weapon reloading animation.
+//	// ---------------------------------------------------------------------------------------------
+//	public void updateWeaponReload() {
+//		float desiredWeaponsRotation = this.isReloadingWeapon ? 30f : 0f;
+//		if(Mathf.Abs(weapon.localEulerAngles.x - desiredWeaponsRotation) > 0.05f) {
+//			weapon.localEulerAngles += new Vector3((desiredWeaponsRotation - weapon.localEulerAngles.x) * this.weaponsReloadRotationSpeed, 0f, 0f);
+//		} else {
+//			this.isReloadingWeapon = false;
+//			weapon.localEulerAngles = new Vector3(desiredWeaponsRotation, 0f, 0f);
+//			
+//			// Reload the weapon if it is at its max rotation (off the camera).
+//			if(desiredWeaponsRotation != 0) {
+//				WeaponController wcont = weapon.GetComponent<WeaponController>();
+//				wcont.Reload();
+//			}
+//		}
+//	}
+
+
+	// ---------------------------------------------------------------------------------------------
+	// updateWeaponChangeAndReload method.
+	// Used to perform the weapon reloading and switching animation.
+	// ---------------------------------------------------------------------------------------------
+	public void updateWeaponChangeAndReload() {
+		float desiredWeaponsRotation = this.isReloadingWeapon || this.isSwitchingWeapons ? 30f : 0f;
+		if(this.isReloadingWeapon && this.isSwitchingWeapons) {
+			this.lastWeaponsRotationSpeed = Mathf.Min (this.weaponsReloadRotationSpeed, this.weaponsSwitchRotationSpeed);
+		} else if(this.isReloadingWeapon) {
+			this.lastWeaponsRotationSpeed = this.weaponsReloadRotationSpeed;
+		} else if(this.isSwitchingWeapons) {
+			this.lastWeaponsRotationSpeed = this.weaponsSwitchRotationSpeed;
+		}
+		if(Mathf.Abs(weapon.localEulerAngles.x - desiredWeaponsRotation) > 0.05f) {
+			weapon.localEulerAngles += new Vector3((desiredWeaponsRotation - weapon.localEulerAngles.x) * this.lastWeaponsRotationSpeed, 0f, 0f);
+		} else {
+			weapon.localEulerAngles = new Vector3(desiredWeaponsRotation, 0f, 0f);
+			
+			// Reload or switch the weapon if it is at its max rotation (off the camera).
 			if(desiredWeaponsRotation != 0) {
 				WeaponController wcont = weapon.GetComponent<WeaponController>();
-				wcont.SelectedWeapon = this.weaponToSwitchTo;
+				if(this.isReloadingWeapon) {
+					this.isReloadingWeapon = false;
+					wcont.Reload();
+				}
+				if(this.isSwitchingWeapons) {
+					this.isSwitchingWeapons = false;
+					wcont.SelectedWeapon = this.weaponToSwitchTo;
+				}
 			}
 		}
 	}
@@ -316,6 +392,15 @@ public class FirstPersonShooterGameCamera {
 	// ---------------------------------------------------------------------------------------------
 	public bool getIsAimingDownSight() {
 		return this.isAimingDownSight;
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
+	// getIsReloading method.
+	// Returns true if the player is aiming down sight or moving there.
+	// ---------------------------------------------------------------------------------------------
+	public bool getIsReloading() {
+		return this.isReloadingWeapon || weapon.localEulerAngles.x != 0;
 	}
 
 }

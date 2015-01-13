@@ -19,7 +19,7 @@ public class gameCameraSelector : MonoBehaviour {
 	public Texture crosshair;
 
 	public bool isAimingDownSight { get { return (this.firstPerson ? this.firstPersonCam.getIsAimingDownSight() : false); } }
-	public bool isReloading { get{ return false; } } // TODO - Implement this.
+	public bool isReloading { get{ return (this.firstPerson ? this.firstPersonCam.getIsReloading() : false); } } // TODO - Implement weapon reloading in third person.
 	public bool isSwitchingWeapons { get{ return (this.firstPerson ? this.firstPersonCam.getIsSwitchingWeapons() : false); } } // TODO - Implement weapon switching in third person.
 	//	public bool isSwitchingWeapons { get{ return (this.firstPerson ? this.firstPersonCam.getIsSwitchingWeapons() : this.thirdPersonCam.getIsSwitchingWeapons()); } };
 
@@ -111,6 +111,18 @@ public class gameCameraSelector : MonoBehaviour {
 			this.firstPersonCam.requestWeaponChange(weaponID);
 		} else {
 			this.thirdPersonCam.requestWeaponChange(weaponID);
+		}
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
+	// Redirect weapon reloading to the right script. Used to add weapon reload animations.
+	// ---------------------------------------------------------------------------------------------
+	public void ReloadWeapon() {
+		if(firstPerson) {
+			this.firstPersonCam.ReloadWeapon();
+		} else {
+			this.thirdPersonCam.ReloadWeapon();
 		}
 	}
 

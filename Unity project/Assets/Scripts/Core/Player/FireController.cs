@@ -156,8 +156,10 @@ public class FireController : MonoBehaviour {
 			}
 
 
-			if(Input.GetButtonDown("Reload"))
-				Reload();
+			if(Input.GetButtonDown("Reload")) {
+				gameCamera.ReloadWeapon();
+//				Reload();
+			}
 		}
 
 		if(Input.GetKeyDown(KeyCode.F9))
@@ -235,7 +237,7 @@ public class FireController : MonoBehaviour {
 		transBlock.renderer.material.SetTexture("_MainTex",CurrentTexture);
 	}
 	
-	public void Reload(){
-		weapons.Reload();
-	}
+//	public void Reload(){
+//		weapons.Reload();
+//	}
 }
