@@ -167,7 +167,7 @@ public class FireController : MonoBehaviour {
 
 	void OnFireWeapon () {
 		gameCameraSelector gameCamera = cameraTransform.GetComponent<gameCameraSelector>();
-		if(!gameCamera.isSwitchingWeapons && !gameCamera.isReloading) {
+		if(!gameCamera.isSwitchingWeapons && !gameCamera.isReloading && !Input.GetKey(KeyCode.LeftShift)) {
 			weapons.Fire(cameraTransform.position, aimTarget.position);
 		}
 	}
