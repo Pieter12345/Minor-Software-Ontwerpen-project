@@ -3443,7 +3443,7 @@ MonoBehaviour:
     SpawnAfterWave: 1
   - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}
     spawnWeight: .300000012
-    SpawnAfterWave: 1
+    SpawnAfterWave: 3
   delayBetweenWaves: 3
 --- !u!1 &58563821
 GameObject:
