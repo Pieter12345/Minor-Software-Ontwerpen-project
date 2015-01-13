@@ -111,8 +111,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.6700001, y: .939999998, z: 68.5999985}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalPosition: {x: 1.36000001, y: 1.58000004, z: 17.8099995}
+  m_LocalScale: {x: .300000012, y: .300000012, z: 1}
   m_Children:
   - {fileID: 484544}
   - {fileID: 484546}
@@ -131,7 +131,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: ebcb890427ab516428521e6296854449, type: 2}
+  - {fileID: 2100000, guid: 07b6484cfc74c7a44a952e3ec557fa21, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -151,7 +151,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: ebcb890427ab516428521e6296854449, type: 2}
+  - {fileID: 2100000, guid: 07b6484cfc74c7a44a952e3ec557fa21, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -171,7 +171,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: ebcb890427ab516428521e6296854449, type: 2}
+  - {fileID: 2100000, guid: 07b6484cfc74c7a44a952e3ec557fa21, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
