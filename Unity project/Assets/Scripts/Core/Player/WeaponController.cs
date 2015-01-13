@@ -96,12 +96,17 @@ public class WeaponController : MonoBehaviour {
 
 	}
 
-	public void PickUpWeapon(WeaponStats w){
+	// PickUpWeapon method.
+	// Adds a weapon to the players inventory if it wasnt there already.
+	// Returns true if the player did not have this weapon before.
+	public bool PickUpWeapon(WeaponStats w){
+		bool hadThisWeaponAlready = weaponsInInventory[(int) w];
 		weaponsInInventory[(int) w] = true;
 		if(!hasWeapon){	
 			hasWeapon = true;
 			SelectNextWeaponUp();
 		}
+		return !hadThisWeaponAlready;
 	}
 
 	public void DropWeapon(WeaponStats w){

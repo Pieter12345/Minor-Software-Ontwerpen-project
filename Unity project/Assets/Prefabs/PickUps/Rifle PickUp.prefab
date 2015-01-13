@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
-  amountOfAmmo: 20
+  amountOfAmmo: 40
 --- !u!136 &13675962
 CapsuleCollider:
   m_ObjectHideFlags: 1
