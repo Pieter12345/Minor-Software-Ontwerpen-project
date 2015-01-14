@@ -26698,7 +26698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17415300e3375743bb6e58b84f7080e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scroll: {x: .00100000005, y: .00999999978}
+  Scroll: {x: .00999999978, y: .00999999978}
 --- !u!23 &962229598
 Renderer:
   m_ObjectHideFlags: 0
@@ -45047,6 +45047,14 @@ Prefab:
     - target: {fileID: 400000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
+      propertyPath: Scroll.x
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
+      propertyPath: Scroll.x
+      value: -.00999999978
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
@@ -64588,7 +64596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17415300e3375743bb6e58b84f7080e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scroll: {x: .00100000005, y: -.00999999978}
+  Scroll: {x: -.00999999978, y: -.00999999978}
 --- !u!23 &2084019142
 Renderer:
   m_ObjectHideFlags: 0
