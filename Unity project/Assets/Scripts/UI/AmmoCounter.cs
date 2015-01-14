@@ -19,7 +19,7 @@ public class AmmoCounter : MonoBehaviour {
 		if(wContr != null){
 			string toShow = "";
 			if(wContr.HasWeapon)
-				toShow = "Ammo: " + wContr.SelectedWeaponInClip + "/" + wContr.SelectedWeaponInPool;
+				toShow = wContr.SelectedWeaponInClip + "/" + wContr.SelectedWeaponInPool;
 			ammoText.text = toShow;
 		}
 	}
