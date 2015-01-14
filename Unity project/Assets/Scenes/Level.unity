@@ -38772,7 +38772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5427eff4a63798a458fc7d0ed81120e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPerson: 0
+  firstPerson: 1
   mouseSensitivity: 100
   player: {fileID: 1767831527}
   aimTarget: {fileID: 1579508058}

@@ -6,7 +6,7 @@ public class gameCameraSelector : MonoBehaviour {
 	// Variables & Constants.
 	private ShooterGameCamera thirdPersonCam;
 	private FirstPersonShooterGameCamera firstPersonCam;
-	public bool firstPerson = false;
+	public bool firstPerson = true;
 	public float mouseSensitivity = 100f;
 	private bool isTempFirstPerson = false; // Used to save when a player is playing in third person, but is placing blocks in first.
 

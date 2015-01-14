@@ -308,7 +308,9 @@ public class FirstPersonShooterGameCamera {
 	// Used to add weapon reloading animations.
 	// ---------------------------------------------------------------------------------------------
 	public void ReloadWeapon() {
-		if(weapon.localEulerAngles.x == 0f && !this.isSwitchingWeapons) {
+		WeaponController wcont = weapon.GetComponent<WeaponController>();
+		Weapon selectedWeapon =  wcont.SelectedWeaponTransform.GetComponent(typeof(Weapon)) as Weapon;
+		if(weapon.localEulerAngles.x == 0f && !this.isSwitchingWeapons && selectedWeapon.AmmoInClip != selectedWeapon.ClipSize) {
 			this.isReloadingWeapon = true;
 		}
 	}

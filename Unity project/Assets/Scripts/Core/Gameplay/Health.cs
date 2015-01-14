@@ -24,6 +24,8 @@ public class Health : MonoBehaviour {
 
 	public void Damage(float amount, bool isHeadshot){
 		hp -= amount;
+		if(hp < 0f) { hp = 0f; }
+		if(hp > maxHP) { hp = maxHP; }
 
 		OnDamage();
 		OnDamage(amount);
@@ -33,8 +35,8 @@ public class Health : MonoBehaviour {
 
 	public void Heal(float amount){
 		hp += amount;
-		if(hp > maxHP)
-			hp = maxHP;
+		if(hp < 0f) { hp = 0f; }
+		if(hp > maxHP) { hp = maxHP; }
 
 		OnHeal();
 		OnHeal(amount);
