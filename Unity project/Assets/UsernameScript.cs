@@ -14,6 +14,8 @@ public class UsernameScript : MonoBehaviour {
 	
 	private bool CoRoutineRunning = false;
 
+	public GameObject loginPanel;
+	public GameObject mainMenuPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +45,7 @@ public class UsernameScript : MonoBehaviour {
 			Debug.Log(get.text);
 			if (get.text == "Username Already Taken") {
 				//Do User NAME Taken action
+
 			}
 			else {
 				// Resume Game / LOG SUCCES
@@ -66,16 +69,18 @@ public class UsernameScript : MonoBehaviour {
 			Debug.Log(get.error);
 		}
 		else {
-			Debug.Log(get.text);
-			if(get.text == "Wrong Pass") {
+			if(get.text.Equals("Wrong Pass")) {
 				// DEnied
-			}
-			if(get.text == "Username Not Found") {
+				Debug.LogWarning("Wrong pass");
+			} else if(get.text.Equals("Username Not Found")) {
 				//
-			}
-			
-			else { //login succes
+				Debug.LogWarning("Wrong user");
+			} else { //login succes
+				Debug.Log("Login successful");
+				Debug.Log(get.text);
 				SetCurrentUser(int.Parse(get.text));
+				mainMenuPanel.SetActive(true);
+				loginPanel.SetActive(false);
 			}
 		}
 		CoRoutineRunning = false;
