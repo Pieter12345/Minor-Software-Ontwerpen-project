@@ -71,7 +71,7 @@ public static class WeaponStatsExtension{
 	public static float FireInterval(this WeaponStats w) {
 		switch(w) {
 		case WeaponStats.PISTOL  : return 0.2f;
-		case WeaponStats.RIFLE   : return 0.05f;
+		case WeaponStats.RIFLE   : return 0.1f;
 		case WeaponStats.SHOTGUN : return 1f;
 		case WeaponStats.RPG     : return 3f;
 		case WeaponStats.LANDMINE: return 0.1f;
