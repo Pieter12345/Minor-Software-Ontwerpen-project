@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: haar
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: be8d6996436721e45a7ec7f83f66ca0a, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -20,7 +20,23 @@ Material:
           m_Texture: {fileID: 2800000, guid: 884063b47acb22342b96378956dce003, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _Treshold
+        second: 0
+      data:
+        first:
+          name: _Shadow
+        second: .5
+      data:
+        first:
+          name: _Intensity
+        second: 4.78571415
+      data:
+        first:
+          name: _Diffuse
+        second: 0
     m_Colors:
       data:
         first:
