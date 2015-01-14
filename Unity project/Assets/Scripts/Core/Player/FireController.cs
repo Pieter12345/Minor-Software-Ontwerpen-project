@@ -162,7 +162,7 @@ public class FireController : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.F9))
+		if(Input.GetKeyDown(KeyCode.F9) && Application.isEditor)
 			weapons.AddAmmoToCurrent(1000);
 		UpdateBlockOutline();
 	}
