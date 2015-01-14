@@ -107,6 +107,7 @@
      <Compile Include="Assets\Scripts\WeaponTypes\SimpleShotgun.cs" />
      <Compile Include="Assets\Scripts\WorldBlockManagement.cs" />
      <Compile Include="Assets\Scripts\pathFinding.cs" />
+     <Compile Include="Assets\UsernameScript.cs" />
      <None Include="Assets\Resources\Shaders\Toon Shader 2.shader" />
      <None Include="Assets\Resources\Shaders\CloudShader.shader" />
      <None Include="Assets\Resources\Shaders\Toon Shader 5.shader" />
