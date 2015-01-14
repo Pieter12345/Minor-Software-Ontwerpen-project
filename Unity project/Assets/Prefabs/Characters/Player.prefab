@@ -4564,6 +4564,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   shotSound: {fileID: 0}
   landMine: {fileID: 199490, guid: 3627ea06dd874cc49a3401632f92c268, type: 2}
+  maxDistance: 10
 --- !u!114 &11410042
 MonoBehaviour:
   m_ObjectHideFlags: 1
