@@ -8,7 +8,8 @@ public class MenuButtons : MonoBehaviour
     //Fade into menu on load//
     void Start()
     {
-        Fade.CrossFadeAlpha(0f, 1f, true);
+		if(Fade != null)
+        	Fade.CrossFadeAlpha(0f, 1f, true);
         //Invoke("FadeDisable", 1f);
     }
     
