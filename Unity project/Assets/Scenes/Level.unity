@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 1051047}
   - 33: {fileID: 1051049}
   - 23: {fileID: 1051048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - 4: {fileID: 32531364}
   - 33: {fileID: 32531366}
   - 23: {fileID: 32531365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4846,7 +4846,7 @@ GameObject:
   - 4: {fileID: 74926434}
   - 33: {fileID: 74926436}
   - 23: {fileID: 74926435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12178,7 +12178,7 @@ GameObject:
   - 4: {fileID: 540902807}
   - 33: {fileID: 540902809}
   - 23: {fileID: 540902808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36844,6 +36844,10 @@ Prefab:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1661318639}
+    - target: {fileID: 100080, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
   m_RootGameObject: {fileID: 381778677}
@@ -39091,7 +39095,7 @@ GameObject:
   - 135: {fileID: 1699489587}
   - 23: {fileID: 1699489586}
   - 114: {fileID: 1699489585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flag
   m_TagString: Flag
   m_Icon: {fileID: 0}
@@ -47399,7 +47403,7 @@ GameObject:
   - 4: {fileID: 2042222419}
   - 33: {fileID: 2042222421}
   - 23: {fileID: 2042222420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
