@@ -25,7 +25,7 @@ public class SimpleGun : Weapon {
 				dir.Normalize();
 				Ray ray = new Ray(from, dir);
 				RaycastHit hit;
-				if (Physics.Raycast(ray, out hit, 100)) {
+				if (Physics.Raycast(ray, out hit, 100, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
 					
 					Debug.Log("Shot hit " + hit.transform.name);
 					
@@ -56,3 +56,7 @@ public class SimpleGun : Weapon {
 		s.rigidbody.AddForce(s.transform.rotation * ejectForce);
 	}
 }
+
+
+
+

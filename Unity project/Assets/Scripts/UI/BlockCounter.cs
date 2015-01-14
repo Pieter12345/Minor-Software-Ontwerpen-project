@@ -18,6 +18,6 @@ public class BlockCounter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(fc!=null)
-			text.text = fc.AmountOfBlocks.ToString();
+			text.text = "Blocks: " + fc.AmountOfBlocks.ToString();
 	}
 }

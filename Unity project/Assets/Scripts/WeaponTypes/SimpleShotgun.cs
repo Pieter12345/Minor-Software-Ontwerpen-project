@@ -34,7 +34,7 @@ public class SimpleShotgun : Weapon {
 				foreach(Vector3 dir in directions){
 					Ray ray = new Ray(from, dir);
 					RaycastHit hit;
-					if (Physics.Raycast(ray, out hit, 100)) {
+					if (Physics.Raycast(ray, out hit, 100, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
 						
 						Debug.Log("Shotgun hit " + hit.transform.name);
 						

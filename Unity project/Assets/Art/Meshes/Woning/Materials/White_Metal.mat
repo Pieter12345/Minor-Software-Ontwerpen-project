@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: White_Metal
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e7521bfc5776b5947a54030d54c5dbb0, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -20,7 +20,23 @@ Material:
           m_Texture: {fileID: 2800000, guid: 9afa6e3c8d79a1b4394280abc2e57ec0, type: 3}
           m_Scale: {x: .00999999978, y: .00999999978}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _Treshold
+        second: 0
+      data:
+        first:
+          name: _Shadow
+        second: .0178571437
+      data:
+        first:
+          name: _Intensity
+        second: 1.57142866
+      data:
+        first:
+          name: _Diffuse
+        second: 0
     m_Colors:
       data:
         first:

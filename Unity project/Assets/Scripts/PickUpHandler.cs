@@ -25,7 +25,7 @@ public class PickUpHandler : MonoBehaviour {
 
 	void Update(){
 		//cheat gun
-		if(Input.GetKeyDown(KeyCode.F10)){
+		if(Input.GetKeyDown(KeyCode.F10) && Application.isEditor){
 			PickUp(WeaponStats.PISTOL);
 			PickUp(WeaponStats.RPG);
 			PickUp(WeaponStats.LANDMINE);

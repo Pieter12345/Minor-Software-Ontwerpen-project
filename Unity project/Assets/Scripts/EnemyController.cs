@@ -279,7 +279,7 @@ public class EnemyController : MonoBehaviour {
 		pathToFlagIgnoringBlocks.UpdatePathFixed(); // Allows the pathfinding to calc the path in steps.
 
 		// DEBUG - Spawns enemies when pressing F8.
-		if(Input.GetKeyDown(KeyCode.F8)) {
+		if(Input.GetKeyDown(KeyCode.F8) && Application.isEditor) {
 			startNextWave(false);
 		}
 	}
