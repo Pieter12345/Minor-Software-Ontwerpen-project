@@ -110,5 +110,8 @@ public class UsernameScript : MonoBehaviour {
 	private void SetCurrentUser(int UserID) {
 		CurrentUser = UserID;
 	}
-	
+	public void SkipLogin(){
+		mainMenuPanel.SetActive(true);
+		loginPanel.SetActive(false);
+	}
 }

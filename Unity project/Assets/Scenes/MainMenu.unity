@@ -478,7 +478,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304771183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 383437159}
+        m_MethodName: SkipLogin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &304771183
@@ -589,7 +601,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_LocalPosition.x
@@ -698,15 +710,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1147186778}
+      objectReference: {fileID: 383437159}
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RetryLevel
+      value: SkipLogin
       objectReference: {fileID: 0}
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -723,7 +735,7 @@ Prefab:
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 304771183}
     - target: {fileID: 11464406, guid: 0a2cc5a398825478eb650ab132f28858, type: 2}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
@@ -1366,7 +1378,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 140}
+  m_AnchoredPosition: {x: 0, y: 120}
   m_SizeDelta: {x: 250, y: 40}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &547835533
@@ -3386,7 +3398,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: 791, y: 151}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1837785460
 MonoBehaviour:
