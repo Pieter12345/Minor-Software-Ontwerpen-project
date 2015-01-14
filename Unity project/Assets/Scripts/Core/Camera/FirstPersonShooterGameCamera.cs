@@ -30,6 +30,7 @@ public class FirstPersonShooterGameCamera {
 	private float aimDownSightFovSpeed = 5f; // Speed of changing the aimDownSight FOV.
 	private float aimDownSightTranslationSpeed = 0.3f;
 	private float aimDownSightRotationSpeed = 0.3f;
+	private float aimDownSightMouseSensitivityMultiplier = 0.4f; // Multiplied by the mouseSensitivity to be able to aim more precise.
 
 	// Weapon reloading & switching variables.
 	private float lastWeaponsRotationSpeed = 0; // Used to store the speed to rotate back with.
@@ -90,7 +91,7 @@ public class FirstPersonShooterGameCamera {
 
 		// Set the camera position and rotation.
 		camTransform.position = player.transform.position + (Vector3.up * 1.6f); // Set camera to player position at eye height.
-		this.cameraRotation += new Vector3(-vertical, horizontal, 0f) * Time.deltaTime * mouseSensitivity;
+		this.cameraRotation += new Vector3(-vertical, horizontal, 0f) * Time.deltaTime * mouseSensitivity * (this.isAimingDownSight ? this.aimDownSightMouseSensitivityMultiplier : 1f);
 		this.cameraRotation.x = (this.cameraRotation.x + 360f) % 360f; // Maps [-360, inf] to [0, 360].
 
 		if(this.cameraRotation.x < 180f && this.cameraRotation.x > 90f - this.minRotationX) { this.cameraRotation.x = 90f - this.minRotationX; }
