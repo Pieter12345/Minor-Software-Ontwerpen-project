@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class UsernameScript : MonoBehaviour {
 
-	public static int CurrentUser = 0;
-
 	public static string Username;
 	public static string Password;
 	
@@ -91,7 +89,7 @@ public class UsernameScript : MonoBehaviour {
 		CoRoutineRunning = true;
 	
 		var post = new WWWForm();
-		post.AddField("UserID",CurrentUser);
+		post.AddField("UserID",CurrentUser.CurrentUserID);
 		
 		var get = new WWW(url,post);
 		yield return get;
@@ -107,7 +105,7 @@ public class UsernameScript : MonoBehaviour {
 	
 	public void GetUsername() {
 		if (CoRoutineRunning!=true) {
-			StartCoroutine(LoginUser("http://drproject.twi.tudelft.nl:8083/UserID"));
+			StartCoroutine(CurrentUserName("http://drproject.twi.tudelft.nl:8083/UserID"));
 		}			
 	}
 	
