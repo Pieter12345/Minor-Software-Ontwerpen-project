@@ -3853,7 +3853,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 134244, guid: 00d08ea2f608bd64c892d22b6b0e8497, type: 2}
     spawnWeight: 1
     SpawnAfterWave: 0
-  - enemyPrefab: {fileID: 182814, guid: b7f837a68c2e9044bb0c12124bc18ef0, type: 2}
+  - enemyPrefab: {fileID: 187738, guid: 3e81f4516af13b14d98704cfb304ab61, type: 2}
     spawnWeight: .300000012
     SpawnAfterWave: 1
   - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}

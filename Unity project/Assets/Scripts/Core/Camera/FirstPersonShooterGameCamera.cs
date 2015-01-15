@@ -44,6 +44,9 @@ public class FirstPersonShooterGameCamera {
 	private bool isReloadingWeapon = false;
 	private float weaponsReloadRotationSpeed = 0.5f;
 
+	// Weapon rotation when sprinting.
+	private float weaponsSprintRotationSpeed = 0.3f;
+
 
 	// ---------------------------------------------------------------------------------------------
 	// Constructor.
@@ -344,6 +347,15 @@ public class FirstPersonShooterGameCamera {
 	// ---------------------------------------------------------------------------------------------
 	public void updateWeaponChangeAndReload() {
 		float desiredWeaponsRotation = this.isReloadingWeapon || this.isSwitchingWeapons ? 30f : 0f;
+
+		// Cancel weapon change and reload in sprint. Add sprint animation instead.
+		if(Input.GetKey(KeyCode.LeftShift)) {
+			desiredWeaponsRotation = 10f;
+			this.isReloadingWeapon = false;
+			this.isSwitchingWeapons = false;
+			this.lastWeaponsRotationSpeed = this.weaponsSprintRotationSpeed;
+		}
+
 		if(this.isReloadingWeapon && this.isSwitchingWeapons) {
 			this.lastWeaponsRotationSpeed = Mathf.Min (this.weaponsReloadRotationSpeed, this.weaponsSwitchRotationSpeed);
 		} else if(this.isReloadingWeapon) {
