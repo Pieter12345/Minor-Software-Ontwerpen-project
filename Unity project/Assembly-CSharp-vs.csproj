@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GunIconHandler.cs" />
+     <Compile Include="Assets\NameSync.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationScript.cs" />
      <Compile Include="Assets\Scripts\Animation\Explosion.cs" />
      <Compile Include="Assets\Scripts\Animation\MuzzleFlash.cs" />

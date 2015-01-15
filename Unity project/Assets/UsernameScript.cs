@@ -43,7 +43,6 @@ public class UsernameScript : MonoBehaviour {
 			Debug.Log(get.text);
 			if (get.text == "Username Already Taken") {
 				//Do User NAME Taken action
-
 			}
 			else {
 				// Resume Game / LOG SUCCES
@@ -70,18 +69,21 @@ public class UsernameScript : MonoBehaviour {
 			if(get.text.Equals("Wrong Pass")) {
 				// DEnied
 				Debug.LogWarning("Wrong pass");
+				CoRoutineRunning = false;
 			} else if(get.text.Equals("Username Not Found")) {
 				//
 				Debug.LogWarning("Wrong user");
+				CoRoutineRunning = false;
 			} else { //login succes
 				Debug.Log("Login successful");
 				CurrentUser.CurrentUserID = (int.Parse(get.text));
-				GetUsername();
 				mainMenuPanel.SetActive(true);
 				loginPanel.SetActive(false);
+				CoRoutineRunning = false;
+				GetUsername();
 			}
 		}
-		CoRoutineRunning = false;
+		
 	}
 
 	IEnumerator CurrentUserName (string url) {
@@ -99,8 +101,10 @@ public class UsernameScript : MonoBehaviour {
 		}
 		else {
 			CurrentUser.CurrentUsername = get.text;
+			Debug.Log(get.text);
 		}
 		CoRoutineRunning = false;
+		
 	}
 	
 	public void GetUsername() {
