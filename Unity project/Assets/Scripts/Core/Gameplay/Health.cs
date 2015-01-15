@@ -48,7 +48,7 @@ public class Health : MonoBehaviour {
 		CoRoutineRunning = true;
 	
 		var post = new WWWForm();
-		post.AddField("PlayerID",UsernameScript.CurrentUser);
+		post.AddField("PlayerID",CurrentUser.CurrentUsername);
 		post.AddField("Highscore",HighScoreKeeper.Score);
 		post.AddField("ShotsFired",(HighScoreKeeper.ShotsHit+HighScoreKeeper.ShotsMissed));
 		post.AddField("Accuracy", ((int) Math.Round (100*HighScoreKeeper.Accuracy)));
