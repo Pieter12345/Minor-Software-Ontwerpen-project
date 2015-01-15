@@ -5,6 +5,6 @@ public static class CurrentUser {
 	
 	public static string CurrentUsername;
 	public static int CurrentUserID;
-	public static bool LoggedIn;
+	public static bool LoggedIn = false;
 	
 }
