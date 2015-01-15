@@ -18,7 +18,7 @@ public class PauseController : MonoBehaviour {
 
 	}
 
-	public void TogglePause(){
+	public static void TogglePause(){
 		if (Time.timeScale != 0f) {
 			Time.timeScale = 0f; // set time to zero if game is running
 		}

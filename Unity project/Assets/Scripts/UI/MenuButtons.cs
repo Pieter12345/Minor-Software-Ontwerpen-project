@@ -43,6 +43,10 @@ public class MenuButtons : MonoBehaviour
         LoadScene("LoadQuitGame");
 
     }
+
+	public void Resume() {
+		Time.timeScale = 1f; // resume game.
+	}
     ///////////////////////////////////////////
 
     //Code corresponding to Menu Buttons//
@@ -75,7 +79,8 @@ public class MenuButtons : MonoBehaviour
     //Fades screen to black in 1 second, then calls the function
     void LoadScene(string function)
     {
-        Fade.CrossFadeAlpha(1f, 1f, true);
+		if(Fade != null)
+        	Fade.CrossFadeAlpha(1f, 1f, true);
         Invoke(function, 1f);
     }
 }
