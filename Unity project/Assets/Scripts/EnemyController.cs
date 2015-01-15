@@ -46,6 +46,8 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization.
 	void Start () {
+		wave = 0;
+
 		if (flag != null)
 			flagPos = new int[] {
 				Mathf.FloorToInt(flag.position.x), 
