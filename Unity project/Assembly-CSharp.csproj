@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EnemyTypes.cs" />
+     <Compile Include="Assets\Scripts\FetchUsername.cs" />
      <Compile Include="Assets\Scripts\HealthPickUp.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />

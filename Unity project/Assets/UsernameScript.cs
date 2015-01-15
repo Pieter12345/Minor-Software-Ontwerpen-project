@@ -77,8 +77,8 @@ public class UsernameScript : MonoBehaviour {
 				Debug.LogWarning("Wrong user");
 			} else { //login succes
 				Debug.Log("Login successful");
-				Debug.Log(get.text);
-				SetCurrentUser(int.Parse(get.text));
+				CurrentUser.CurrentUserID = (int.Parse(get.text));
+				GetUsername();
 				mainMenuPanel.SetActive(true);
 				loginPanel.SetActive(false);
 			}
@@ -86,6 +86,30 @@ public class UsernameScript : MonoBehaviour {
 		CoRoutineRunning = false;
 	}
 
+	IEnumerator CurrentUserName (string url) {
+	
+		CoRoutineRunning = true;
+	
+		var post = new WWWForm();
+		post.AddField("UserID",CurrentUser);
+		
+		var get = new WWW(url,post);
+		yield return get;
+		
+		if (get.error!=null) {
+			Debug.Log(get.error);
+		}
+		else {
+			CurrentUser.CurrentUsername = get.text;
+		}
+		CoRoutineRunning = false;
+	}
+	
+	public void GetUsername() {
+		if (CoRoutineRunning!=true) {
+			StartCoroutine(LoginUser("http://drproject.twi.tudelft.nl:8083/UserID"));
+		}			
+	}
 	
 	public void UserSetInfo() {
 		Username = UserField.GetComponent<InputField>().text;
@@ -106,10 +130,7 @@ public class UsernameScript : MonoBehaviour {
 			StartCoroutine(AddNewUser("http://drproject.twi.tudelft.nl:8083/newuser"));
 		}	
 	}
-	
-	private void SetCurrentUser(int UserID) {
-		CurrentUser = UserID;
-	}
+
 	public void SkipLogin(){
 		mainMenuPanel.SetActive(true);
 		loginPanel.SetActive(false);
