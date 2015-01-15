@@ -3859,6 +3859,9 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}
     spawnWeight: .300000012
     SpawnAfterWave: 3
+  - enemyPrefab: {fileID: 142966, guid: 5f60678f1c9dbd7439986436674d6d53, type: 2}
+    spawnWeight: .200000003
+    SpawnAfterWave: 5
   delayBetweenWaves: 3
 --- !u!1 &58563821
 GameObject:
@@ -14246,7 +14249,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465614, guid: 3243d872f9f0244f6ae1b48aec2bf85f, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 22465614, guid: 3243d872f9f0244f6ae1b48aec2bf85f, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -45323,7 +45326,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: Scroll.x
@@ -45488,7 +45491,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 46bd434a8fead44459a6acf766d033f8, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 46bd434a8fead44459a6acf766d033f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -47471,7 +47474,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11410034, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: cameraTransform
@@ -66675,7 +66678,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2431eb5188380c34e80248a30b24fc39, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 2431eb5188380c34e80248a30b24fc39, type: 3}
       propertyPath: m_TagString
