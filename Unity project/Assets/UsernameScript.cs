@@ -81,6 +81,7 @@ public class UsernameScript : MonoBehaviour {
 				loginPanel.SetActive(false);
 				CoRoutineRunning = false;
 				GetUsername();
+				CurrentUser.LoggedIn = true;
 			}
 		}
 		
