@@ -5,6 +5,7 @@ public class LandMinePlacer : Weapon {
 
 	public GameObject landMine;
 	public float maxDistance = 10f;
+	public GameObject camera;
 
 	public override void Fire(Vector3 from, Vector3 to){
 		if(AmmoInClip>0){
@@ -15,6 +16,8 @@ public class LandMinePlacer : Weapon {
 			if (Physics.Raycast(ray, out hit, maxDistance, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
 				if(!hit.transform.tag.Equals("Enemy")){
 					TakeFromClip();
+					if(camera != null)
+						camera.GetComponent<gameCameraSelector>().ReloadWeapon();
 					GameObject.Instantiate(landMine, new Vector3(hit.point.x, hit.point.y + 0.3f, hit.point.z), Quaternion.identity);
 				}
 			}
