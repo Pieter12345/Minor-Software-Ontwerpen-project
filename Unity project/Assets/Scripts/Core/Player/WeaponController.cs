@@ -61,6 +61,12 @@ public class WeaponController : MonoBehaviour {
 			else
 				w.gameObject.SetActive(false);
 		}
+		if(SelectedWeaponType == WeaponStats.LANDMINE){
+			if(SelectedWeaponInPool < 1 && SelectedWeaponInClip < 1){
+				DropWeapon(WeaponStats.LANDMINE);
+				SelectNextWeaponDown();
+			}
+		}
 	}
 
 	public void SelectNextWeaponUp(){
@@ -110,6 +116,7 @@ public class WeaponController : MonoBehaviour {
 	}
 
 	public void DropWeapon(WeaponStats w){
+		weaponsInInventory[(int) w] = false;
 		bool weaponFound = false;
 		foreach(bool b in weaponsInInventory){
 			if (b == true)
@@ -117,7 +124,6 @@ public class WeaponController : MonoBehaviour {
 		}
 		if(!weaponFound)
 			hasWeapon = false;
-		weaponsInInventory[(int) w] = false;
 	}
 
 	public void Reload(){
