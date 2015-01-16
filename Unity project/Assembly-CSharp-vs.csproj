@@ -75,6 +75,8 @@
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\WeaponController.cs" />
+     <Compile Include="Assets\Scripts\Core\Util\IgnoreCollision.cs" />
+     <Compile Include="Assets\Scripts\Core\Util\IgnoreCollisionByTag.cs" />
      <Compile Include="Assets\Scripts\Core\Util\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\CurrentUser.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
