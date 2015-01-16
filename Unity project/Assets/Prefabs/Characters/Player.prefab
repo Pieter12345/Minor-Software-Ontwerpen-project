@@ -4514,7 +4514,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 2
   muzzleFlash: {fileID: 110084}
-  impactEffects: []
+  impactEffects:
+  - {fileID: 100000, guid: 7eb4d55233968c244b6f4c1813a14de8, type: 2}
+  - {fileID: 100000, guid: 157497fa58794ce4995808bbec1dea29, type: 2}
+  - {fileID: 100000, guid: 493f7f2d6b21e4342a6e8560ad53b752, type: 2}
+  - {fileID: 100000, guid: 4fb891048166c474f93c54ce55c287ac, type: 2}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
   cameraTransform: {fileID: 0}
 --- !u!114 &11410036

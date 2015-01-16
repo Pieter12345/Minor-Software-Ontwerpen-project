@@ -35,7 +35,7 @@ public class SimpleShotgun : Weapon {
 					Ray ray = new Ray(from, dir);
 					RaycastHit hit;
 					if (Physics.Raycast(ray, out hit, 100, int.MaxValue - LayerMask.GetMask("Ignore Aimpoint Raycast"))) {
-						
+						ImpactEffects(hit.point);
 						Debug.Log("Shotgun hit " + hit.transform.name);
 						
 						
