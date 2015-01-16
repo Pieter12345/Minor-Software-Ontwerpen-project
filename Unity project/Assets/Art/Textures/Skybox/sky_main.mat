@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: sky
+  m_Name: sky_main
   m_Shader: {fileID: 4800000, guid: 4af0ccf3bcd951a4da170521b1971538, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -20,16 +20,9 @@ Material:
           m_Texture: {fileID: 2800000, guid: 9b05ff6c91791c64fb32f4231c4bb8e5, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _BumpMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: .490196079}
+        second: {r: 1, g: 1, b: 1, a: 1}
