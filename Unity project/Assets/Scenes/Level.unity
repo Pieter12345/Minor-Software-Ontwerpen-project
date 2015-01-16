@@ -3912,6 +3912,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 58563821}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &58563824
 Renderer:
   m_ObjectHideFlags: 0
@@ -5358,12 +5359,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28098243264bec248bb0b4b42c1ae034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRadarDotTexture: {fileID: 2800000, guid: a68cc70b16da6fc4b8f958097f129e8c,
+  enemyRadarDotSprite: {fileID: 21300000, guid: 7ef47905b710aad49adc299ff4748dc6,
     type: 3}
-  radarTexture: {fileID: 2800000, guid: a68cc70b16da6fc4b8f958097f129e8c, type: 3}
+  radarSprite: {fileID: 21300000, guid: 7ef47905b710aad49adc299ff4748dc6, type: 3}
   radarSize: 100
   radarPanel: {fileID: 770838677}
-  enemyRadarSprite: {fileID: 21300000, guid: a68cc70b16da6fc4b8f958097f129e8c, type: 3}
 --- !u!212 &74505050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5857,7 +5857,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 4
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 70, y: 160}
@@ -5941,20 +5941,20 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 74505048}
+  - {fileID: 1806982593}
   - {fileID: 647419362}
   - {fileID: 1514095678}
-  - {fileID: 1806982593}
-  - {fileID: 99112434}
   - {fileID: 1702768653}
   - {fileID: 1464140838}
-  - {fileID: 981937888}
   - {fileID: 1698116188}
+  - {fileID: 981937888}
   - {fileID: 820904612}
   - {fileID: 796486665}
-  - {fileID: 478807756}
+  - {fileID: 99112434}
   - {fileID: 1205811719}
-  - {fileID: 293796254}
   - {fileID: 549974147}
+  - {fileID: 478807756}
+  - {fileID: 293796254}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_AnchorMin: {x: 0, y: 0}
@@ -7318,6 +7318,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 156616581}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &156616584
 Renderer:
   m_ObjectHideFlags: 0
@@ -10100,6 +10101,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 199490, guid: 3627ea06dd874cc49a3401632f92c268, type: 2}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!1 &230582624
 GameObject:
   m_ObjectHideFlags: 0
@@ -10149,6 +10151,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 230582624}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &230582627
 Renderer:
   m_ObjectHideFlags: 0
@@ -10947,6 +10950,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 268828624}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &268828627
 Renderer:
   m_ObjectHideFlags: 0
@@ -11153,7 +11157,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
@@ -14672,7 +14676,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 35}
@@ -16346,7 +16350,7 @@ RectTransform:
   - {fileID: 1074152421}
   - {fileID: 784250562}
   m_Father: {fileID: 103314339}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -16661,6 +16665,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 565496694}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &565496697
 Renderer:
   m_ObjectHideFlags: 0
@@ -19283,7 +19288,7 @@ RectTransform:
   m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 100, y: -30}
@@ -22213,6 +22218,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 729874182}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &729874185
 Renderer:
   m_ObjectHideFlags: 0
@@ -24437,7 +24443,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 100, y: 120}
@@ -25289,7 +25295,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 100, y: 30}
@@ -35518,7 +35524,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -35537,7 +35543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToAlphaScaling: 20
-  fadeSpeed: 30
+  fadeSpeed: 200
   epsilon: .00999999978
 --- !u!114 &1205811721
 MonoBehaviour:
@@ -42664,7 +42670,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -60, y: -30}
@@ -43698,7 +43704,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
   m_AnchoredPosition: {x: 0, y: -30}
@@ -43787,6 +43793,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 1517224069}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &1517224072
 Renderer:
   m_ObjectHideFlags: 0
@@ -50161,7 +50168,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 45, y: 70}
@@ -50256,6 +50263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 120
   underAttackMessage: {fileID: 293796253}
+  regenSpeed: 2
 --- !u!23 &1699489586
 Renderer:
   m_ObjectHideFlags: 0
@@ -50517,7 +50525,7 @@ RectTransform:
   - {fileID: 1879702313}
   - {fileID: 1904522365}
   m_Father: {fileID: 103314339}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
@@ -53592,6 +53600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 120
   underAttackMessage: {fileID: 293796253}
+  regenSpeed: 2
 --- !u!1 &1797973906
 GameObject:
   m_ObjectHideFlags: 0
@@ -53880,7 +53889,7 @@ RectTransform:
   - {fileID: 1769212936}
   - {fileID: 591375059}
   m_Father: {fileID: 103314339}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 100, y: -50}
@@ -56839,6 +56848,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 1898368978}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &1898368981
 Renderer:
   m_ObjectHideFlags: 0
@@ -68488,6 +68498,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 2138082855}
   maxDistance: 10
+  camera: {fileID: 0}
 --- !u!23 &2138082858
 Renderer:
   m_ObjectHideFlags: 0
