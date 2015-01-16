@@ -4514,6 +4514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 2
   muzzleFlash: {fileID: 110084}
+  impactEffects: []
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
   cameraTransform: {fileID: 0}
 --- !u!114 &11410036
@@ -4544,6 +4545,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   muzzleFlash: {fileID: 110042}
+  impactEffects:
+  - {fileID: 100000, guid: 493f7f2d6b21e4342a6e8560ad53b752, type: 2}
+  - {fileID: 100000, guid: 157497fa58794ce4995808bbec1dea29, type: 2}
+  - {fileID: 100000, guid: 7eb4d55233968c244b6f4c1813a14de8, type: 2}
+  - {fileID: 100000, guid: 4fb891048166c474f93c54ce55c287ac, type: 2}
   shotSound: {fileID: 8300000, guid: 57d3c1469b81dad4183083c8b5be0794, type: 3}
   cameraTransform: {fileID: 0}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}
@@ -4562,6 +4568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 4
   muzzleFlash: {fileID: 0}
+  impactEffects: []
   shotSound: {fileID: 0}
   landMine: {fileID: 199490, guid: 3627ea06dd874cc49a3401632f92c268, type: 2}
   maxDistance: 10
@@ -4578,6 +4585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 3
   muzzleFlash: {fileID: 0}
+  impactEffects: []
   shotSound: {fileID: 0}
   firedGrenade: {fileID: 410076}
   unfiredGrenade: {fileID: 410056}
@@ -4654,6 +4662,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 1
   muzzleFlash: {fileID: 110092}
+  impactEffects:
+  - {fileID: 100000, guid: 7eb4d55233968c244b6f4c1813a14de8, type: 2}
+  - {fileID: 100000, guid: 157497fa58794ce4995808bbec1dea29, type: 2}
+  - {fileID: 100000, guid: 4fb891048166c474f93c54ce55c287ac, type: 2}
+  - {fileID: 100000, guid: 493f7f2d6b21e4342a6e8560ad53b752, type: 2}
   shotSound: {fileID: 8300000, guid: 09f2fac27379ede4894947c197f1965a, type: 3}
   cameraTransform: {fileID: 0}
   shell: {fileID: 100000, guid: ba1dd17b30b2be34489b644dd8b0cddc, type: 2}

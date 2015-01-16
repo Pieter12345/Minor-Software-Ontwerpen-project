@@ -7,6 +7,7 @@ public abstract class Weapon : MonoBehaviour {
 
 	public WeaponStats weaponType;
 	public GameObject muzzleFlash;
+	public GameObject[] impactEffects;
 	public AudioClip shotSound;
 
 	protected MuzzleFlash flashScript;
@@ -86,6 +87,13 @@ public abstract class Weapon : MonoBehaviour {
 		if(shotSound != null){
 			audio.pitch = Random.Range(0.9f, 1.1f);
 			audio.PlayOneShot(shotSound);
+		}
+	}
+	public void ImpactEffects(Vector3 location){
+		if(impactEffects.Length>0){
+			foreach(GameObject go in impactEffects){
+				Instantiate(go, location, Quaternion.identity);
+			}
 		}
 	}
 }

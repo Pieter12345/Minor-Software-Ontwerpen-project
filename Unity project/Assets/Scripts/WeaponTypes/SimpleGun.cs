@@ -32,7 +32,8 @@ public class SimpleGun : Weapon {
 					//Stats Accuracy counter- needs revising with each new enemy
 					HighScoreKeeper.ShotsFired(hit.transform.tag == "Enemy"); // Tells the HiScoreKeeper wether the shot hitt an enemy or not.
 					
-					
+					ImpactEffects(to);
+
 					Damageable hp = hit.transform.GetComponent<Damageable>();
 					if(hp!= null)
 						hp.Damage(BaseDamage);
