@@ -53419,7 +53419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69723cd160dbf7f4abe71909399b7f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 120
+  maxHP: 300
   underAttackMessage: {fileID: 293796253}
 --- !u!1 &1797973906
 GameObject:
