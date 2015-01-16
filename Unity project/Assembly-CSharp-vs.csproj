@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemyRadar.cs" />
      <Compile Include="Assets\GunIconHandler.cs" />
      <Compile Include="Assets\NameSync.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationScript.cs" />
@@ -75,6 +76,8 @@
      <Compile Include="Assets\Scripts\Core\Player\NormalCharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlatformCharacterController.cs" />
      <Compile Include="Assets\Scripts\Core\Player\WeaponController.cs" />
+     <Compile Include="Assets\Scripts\Core\Util\IgnoreCollision.cs" />
+     <Compile Include="Assets\Scripts\Core\Util\IgnoreCollisionByTag.cs" />
      <Compile Include="Assets\Scripts\Core\Util\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\CurrentUser.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
