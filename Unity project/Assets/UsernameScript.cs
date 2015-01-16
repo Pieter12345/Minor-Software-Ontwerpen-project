@@ -30,8 +30,8 @@ public class UsernameScript : MonoBehaviour {
 		CoRoutineRunning = true;
 	
 		var post = new WWWForm();
-		post.AddField("Username",Username);
-		post.AddField("Pass",Password);
+		post.AddField("Username", Username);
+		post.AddField("Pass", Password);
 		
 		var get = new WWW(url,post);
 		yield return get;
@@ -56,8 +56,8 @@ public class UsernameScript : MonoBehaviour {
 		CoRoutineRunning = true;
 	
 		var post = new WWWForm();
-		post.AddField("Username",Username);
-		post.AddField("Pass",Password);
+		post.AddField("Username", (Username == null ? "Anonymous" : Username));
+		post.AddField("Pass", (Password == null ? "" : Password));
 		
 		var get = new WWW(url,post);
 		yield return get;
@@ -129,9 +129,10 @@ public class UsernameScript : MonoBehaviour {
 	}
 	
 	public void PostUserInfo () {
-		if (CoRoutineRunning!=true && Password!="" && Username!="") {
-			StartCoroutine(AddNewUser("http://drproject.twi.tudelft.nl:8083/newuser"));
-		}	
+		if(Username == "") { Debug.Log("[INFO] [UsernameScript] Please enter a username."); return; }
+		if(Password == "") { Debug.Log("[INFO] [UsernameScript] Please enter a password."); return; }
+		if(!CoRoutineRunning) { Debug.Log("[INFO] [UsernameScript] Your previous request is still being processed. Please wait a moment."); return; }
+		StartCoroutine(AddNewUser("http://drproject.twi.tudelft.nl:8083/newuser"));
 	}
 
 	public void SkipLogin(){

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MenuButtons : MonoBehaviour
-{
+public class MenuButtons : MonoBehaviour {
     public UnityEngine.UI.RawImage Fade;
 
     //Fade into menu on load//
@@ -11,6 +10,7 @@ public class MenuButtons : MonoBehaviour
 		if(Fade != null)
         	Fade.CrossFadeAlpha(0f, 1f, true);
         //Invoke("FadeDisable", 1f);
+		Screen.lockCursor = false; // Allow cursor movement.
     }
     
     //(dep)
