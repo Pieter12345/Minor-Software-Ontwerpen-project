@@ -5889,7 +5889,7 @@ RectTransform:
   - {fileID: 293796254}
   - {fileID: 549974147}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -9474,7 +9474,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &196804570
 GameObject:
   m_ObjectHideFlags: 0
@@ -10212,7 +10212,7 @@ Transform:
   - {fileID: 953374330}
   - {fileID: 378779258}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!95 &238468123
 Animator:
   serializedVersion: 3
@@ -12710,7 +12710,7 @@ Transform:
   - {fileID: 1579508058}
   - {fileID: 2067389830}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!114 &381778679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14267,7 +14267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465614, guid: 3243d872f9f0244f6ae1b48aec2bf85f, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 22465614, guid: 3243d872f9f0244f6ae1b48aec2bf85f, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -16426,7 +16426,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11410034, guid: f89203309dc0e8740a2accfcb2d1c0b7, type: 2}
       propertyPath: cameraTransform
@@ -20821,7 +20821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &691697043
 GameObject:
   m_ObjectHideFlags: 0
@@ -24007,7 +24007,7 @@ Transform:
   - {fileID: 872717309}
   - {fileID: 701673240}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &780929664
 GameObject:
   m_ObjectHideFlags: 0
@@ -44435,7 +44435,7 @@ Transform:
   - {fileID: 2099015088}
   - {fileID: 1861562216}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &1551656174
 GameObject:
   m_ObjectHideFlags: 0
@@ -45464,7 +45464,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: Scroll.x
@@ -45629,7 +45629,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 46bd434a8fead44459a6acf766d033f8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 46bd434a8fead44459a6acf766d033f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -49666,7 +49666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!81 &1661318640
 AudioListener:
   m_ObjectHideFlags: 0
@@ -50207,7 +50207,7 @@ Transform:
   - {fileID: 74926434}
   - {fileID: 32531364}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!1 &1699991227
 GameObject:
   m_ObjectHideFlags: 0
@@ -53411,7 +53411,7 @@ Transform:
   - {fileID: 1559824440}
   - {fileID: 243490856}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!114 &1796774141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53670,7 +53670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!114 &1806454157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56474,7 +56474,7 @@ Transform:
   - {fileID: 962229600}
   - {fileID: 2084019140}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
 --- !u!1 &1895709187
 GameObject:
   m_ObjectHideFlags: 0
@@ -57100,7 +57100,7 @@ Transform:
   - {fileID: 1560295947}
   - {fileID: 601093648}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
 --- !u!95 &1912971343
 Animator:
   serializedVersion: 3
@@ -66756,7 +66756,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2431eb5188380c34e80248a30b24fc39, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 2431eb5188380c34e80248a30b24fc39, type: 3}
       propertyPath: m_TagString
