@@ -29,6 +29,7 @@ public class MenuButtons : MonoBehaviour
 
     public void ToMainMenu()
     {
+		Time.timeScale = 1f;
         LoadScene("LoadMainMenu");
     }
 
