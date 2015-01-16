@@ -50085,6 +50085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 120
   underAttackMessage: {fileID: 293796253}
+  regenSpeed: 0
 --- !u!23 &1699489586
 Renderer:
   m_ObjectHideFlags: 0
@@ -53421,6 +53422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 300
   underAttackMessage: {fileID: 293796253}
+  regenSpeed: 2
 --- !u!1 &1797973906
 GameObject:
   m_ObjectHideFlags: 0
