@@ -53635,7 +53635,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1806454156}
   - 114: {fileID: 1806454155}
-  - 114: {fileID: 1806454157}
   m_Layer: 0
   m_Name: HighScoreKeeper
   m_TagString: Untagged
@@ -53666,17 +53665,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
---- !u!114 &1806454157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1806454154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5227da4e897017f4c9a767d6b1f3d856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1806982592
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,22 +69,19 @@ public class UsernameScript : MonoBehaviour {
 			if(get.text.Equals("Wrong Pass")) {
 				// DEnied
 				Debug.LogWarning("Wrong pass");
-				CoRoutineRunning = false;
 			} else if(get.text.Equals("Username Not Found")) {
 				//
 				Debug.LogWarning("Wrong user");
-				CoRoutineRunning = false;
 			} else { //login succes
 				Debug.Log("Login successful");
 				CurrentUser.CurrentUserID = (int.Parse(get.text));
 				mainMenuPanel.SetActive(true);
 				loginPanel.SetActive(false);
-				CoRoutineRunning = false;
-				GetUsername();
 				CurrentUser.LoggedIn = true;
 			}
 		}
 		
+		CoRoutineRunning = false;		
 	}
 
 	IEnumerator CurrentUserName (string url) {
