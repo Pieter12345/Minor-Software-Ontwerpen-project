@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b591512daf1224c99e14a8feb8b9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 20
+  maxHP: 25
   DestroyOnDeath: 1
 --- !u!114 &11424622
 MonoBehaviour:
@@ -546,7 +546,7 @@ MonoBehaviour:
   enemyObject: {fileID: 124620}
   enemyModel: {fileID: 424618}
   hittCooldown: .5
-  damagePerHitt: 5
+  damagePerHitt: 20
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

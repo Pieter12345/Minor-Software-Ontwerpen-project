@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b591512daf1224c99e14a8feb8b9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 20
+  maxHP: 5
   DestroyOnDeath: 1
 --- !u!114 &11442456
 MonoBehaviour:
@@ -780,7 +780,7 @@ MonoBehaviour:
   enemyObject: {fileID: 142966}
   enemyModel: {fileID: 442966}
   hittCooldown: .800000012
-  damagePerHitt: 10
+  damagePerHitt: 50
 --- !u!135 &13542978
 SphereCollider:
   m_ObjectHideFlags: 1

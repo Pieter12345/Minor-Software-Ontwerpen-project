@@ -4456,7 +4456,7 @@ MonoBehaviour:
   weaponController: {fileID: 410058}
   torch: {fileID: 100096}
   blockPlaceTime: .5
-  amountOfStartingBlocks: 20
+  amountOfStartingBlocks: 5
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1

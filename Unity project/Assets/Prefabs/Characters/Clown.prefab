@@ -1119,7 +1119,7 @@ MonoBehaviour:
   enemyObject: {fileID: 187738}
   enemyModel: {fileID: 487740}
   hittCooldown: .5
-  damagePerHitt: 5
+  damagePerHitt: 30
 --- !u!114 &11487802
 MonoBehaviour:
   m_ObjectHideFlags: 1
