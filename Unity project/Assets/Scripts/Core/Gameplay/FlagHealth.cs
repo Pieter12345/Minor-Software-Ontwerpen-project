@@ -4,6 +4,7 @@ using System.Collections;
 public class FlagHealth : Health {	
 
 	public GameObject underAttackMessage;
+	public float regenSpeed = 2;
 
 	private UnderAttackMessage uam;
 
@@ -21,5 +22,7 @@ public class FlagHealth : Health {
 		Debug.Log("Flag got killed");
 		EndGame();
 	}
-
+	protected override void OnRegen(){
+		Heal(regenSpeed*Time.deltaTime);
+	}
 }
