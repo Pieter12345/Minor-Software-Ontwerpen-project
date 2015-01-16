@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11407314}
   m_Layer: 0
   m_Name: Torso
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - 114: {fileID: 11407312}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ GameObject:
   - 4: {fileID: 442974}
   - 33: {fileID: 3342974}
   - 23: {fileID: 2342974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - 114: {fileID: 11497750}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ GameObject:
   - 4: {fileID: 497744}
   - 33: {fileID: 3397742}
   - 23: {fileID: 2397742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - 4: {fileID: 497746}
   - 33: {fileID: 3397744}
   - 23: {fileID: 2397744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - 4: {fileID: 497748}
   - 33: {fileID: 3397746}
   - 23: {fileID: 2397746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - 4: {fileID: 497750}
   - 33: {fileID: 3397748}
   - 23: {fileID: 2397748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.4733276, y: 0, z: 75.8345337}
+  m_LocalPosition: {x: 22.5421143, y: .9851017, z: 17.7026367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497738}

@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491526}
   - 137: {fileID: 13791574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491528}
   - 137: {fileID: 13791576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - 114: {fileID: 11454280}
   m_Layer: 0
   m_Name: Buik
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - 114: {fileID: 11454278}
   m_Layer: 0
   m_Name: Kop
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491534}
   - 137: {fileID: 13791582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491536}
   - 137: {fileID: 13791584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OogLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491538}
   - 137: {fileID: 13791586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OogRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491540}
   - 137: {fileID: 13791588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OorLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491542}
   - 137: {fileID: 13791590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OorRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491548}
   - 137: {fileID: 13791596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Snuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.0231934, y: -.5, z: 77.2200317}
+  m_LocalPosition: {x: 22.138916, y: .454861879, z: 18.5197144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434166}
