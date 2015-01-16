@@ -35,7 +35,6 @@ public class Health : MonoBehaviour {
 
 	public void Heal(float amount){
 		hp += amount;
-		if(hp < 0f) { hp = 0f; }
 		if(hp > maxHP) { hp = maxHP; }
 
 		OnHeal();
