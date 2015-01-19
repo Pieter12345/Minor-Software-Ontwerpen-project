@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy1_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 100000}
+  enemyModel: {fileID: 0}
+  hittCooldown: .5
+  damagePerHitt: 1
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
