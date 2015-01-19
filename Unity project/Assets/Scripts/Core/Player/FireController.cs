@@ -48,7 +48,7 @@ public class FireController : MonoBehaviour {
 				UpdateAimBlockTex(selectedBlock);
 			} else {
 				blockPlacingMode = false;
-				if(Input.GetAxisRaw("Mouse ScrollWheel") > 0) {
+				if(Input.GetAxisRaw("Mouse ScrollWheel") < 0) {
 //					weapons.SelectNextWeaponUp();
 					int nextWeapon = (weapons.SelectedWeapon + 1) % weapons.getWeaponArraySize();
 					for(int i = 0; i <= weapons.getWeaponArraySize()-2; i++) { // Limit the amount of max loops to prevent infinite loop bugs.
@@ -59,7 +59,7 @@ public class FireController : MonoBehaviour {
 						nextWeapon = (nextWeapon + 1) % weapons.getWeaponArraySize();
 					}
 				}
-				else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0) {
+				else if(Input.GetAxisRaw("Mouse ScrollWheel") > 0) {
 //					weapons.SelectNextWeaponDown();
 					int nextWeapon = (weapons.SelectedWeapon - 1 + weapons.getWeaponArraySize()) % weapons.getWeaponArraySize();
 					for(int i = 0; i <= weapons.getWeaponArraySize()-2; i++) { // Limit the amount of max loops to prevent infinite loop bugs.
