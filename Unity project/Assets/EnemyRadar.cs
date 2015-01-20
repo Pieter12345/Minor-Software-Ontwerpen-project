@@ -101,7 +101,7 @@ public class EnemyRadar : MonoBehaviour {
 	// createRadar method.
 	// Draws the radar to the screen.
 	public void createRadar() {
-		GameObject radarObject = new GameObject();	//same as playerDot?
+		GameObject radarObject = new GameObject();
 		radarObject.name = "radarSprite";
 		radarObject.AddComponent("Image");
 		radarObject.GetComponent<Image>().sprite = this.radarSprite;
@@ -110,16 +110,5 @@ public class EnemyRadar : MonoBehaviour {
 		radarObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f); // TODO - Scale image to desired radarSize based on sprite size?
 		radarObject.GetComponent<Image>().color=Color.red;
 	}
-
-//	// addEnemyDot method.
-//	// Draws enemy dots to the radar.
-//	public void addEnemyDot(Vector3 pos) {
-//		GameObject enemyDotObject = new GameObject();
-//		enemyDotObject.AddComponent("Image");
-//		enemyDotObject.GetComponent<Image>().sprite = this.enemyRadarDotSprite;
-//		enemyDotObject.transform.SetParent(this.radarPanel.transform);
-//		enemyDotObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f); // TODO - Resize based on sprite size?
-//		enemyDotObject.transform.localPosition = pos;
-//	}
 
 }
