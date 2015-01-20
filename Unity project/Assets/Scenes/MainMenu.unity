@@ -5016,6 +5016,8 @@ MonoBehaviour:
   loginPanel: {fileID: 347225745}
   mainMenuPanel: {fileID: 1837785458}
   loginPopUp: {fileID: 1342310837}
+  registerPopUp: {fileID: 872928764}
+  connectPopUp: {fileID: 1726146394}
 --- !u!4 &383437160
 Transform:
   m_ObjectHideFlags: 0
