@@ -13,6 +13,6 @@ public class EnemiesCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		t.text = "Enemies Remaining: " + EnemyController.getEnemiesLeft();
+		t.text = "" + EnemyController.getEnemiesLeft();
 	}
 }

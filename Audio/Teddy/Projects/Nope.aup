@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no" ?>
 <!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
-<project xmlns="http://audacity.sourceforge.net/xml/" projname="Nope_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="207.2813516883" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Nope_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="0.8346031746" vpos="0" h="0.0000000000" zoom="207.2813516883" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
 	<tags>
 		<tag name="ARTIST" value="AB van Ramshorst"/>
 		<tag name="YEAR" value="2014"/>
@@ -10,14 +10,14 @@
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="36806">
 				<waveblock start="0">
-					<simpleblockfile filename="e00005f2.au" len="36806" min="-0.027586" max="0.023339" rms="0.001837"/>
+					<simpleblockfile filename="e0000b9a.au" len="36806" min="-0.275863" max="0.23339" rms="0.018373"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="4">
-				<controlpoint t="0.000005000000" val="0.416020661592"/>
-				<controlpoint t="0.164028262664" val="1.000000000000"/>
+				<controlpoint t="0.000005000000" val="0.012919896282"/>
+				<controlpoint t="0.255691115329" val="1.000000000000"/>
 				<controlpoint t="0.458314263325" val="1.000000000000"/>
-				<controlpoint t="0.834609395318" val="0.012919896282"/>
+				<controlpoint t="0.834598174603" val="0.007751937956"/>
 			</envelope>
 		</waveclip>
 	</wavetrack>
@@ -25,14 +25,14 @@
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="36806">
 				<waveblock start="0">
-					<simpleblockfile filename="e0000d85.au" len="36806" min="-0.027588" max="0.023337" rms="0.001837"/>
+					<simpleblockfile filename="e0000730.au" len="36806" min="-0.275884" max="0.233366" rms="0.018373"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="4">
-				<controlpoint t="0.000005000000" val="0.416020661592"/>
-				<controlpoint t="0.164028262664" val="1.000000000000"/>
+				<controlpoint t="0.000005000000" val="0.012919896282"/>
+				<controlpoint t="0.255691115329" val="1.000000000000"/>
 				<controlpoint t="0.458314263325" val="1.000000000000"/>
-				<controlpoint t="0.834609395318" val="0.012919896282"/>
+				<controlpoint t="0.834598174603" val="0.007751937956"/>
 			</envelope>
 		</waveclip>
 	</wavetrack>

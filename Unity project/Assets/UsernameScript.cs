@@ -15,6 +15,10 @@ public class UsernameScript : MonoBehaviour {
 	public GameObject loginPanel;
 	public GameObject mainMenuPanel;
 
+	public GameObject loginPopUp;
+	public GameObject registerPopUp;
+	public GameObject connectPopUp;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -35,14 +39,23 @@ public class UsernameScript : MonoBehaviour {
 		
 		var get = new WWW(url,post);
 		yield return get;
-		
+
 		if (get.error!=null) {
+			if(connectPopUp != null){
+				connectPopUp.SetActive(get.error!=null);
+				Text txt = connectPopUp.transform.FindChild("Text").GetComponent<Text>() as Text;
+				txt.text = get.error;
+			} else {
+				Debug.LogWarning("No connection popup");
+			}
 			Debug.Log(get.error);
 		}
 		else {
 			Debug.Log(get.text);
 			if (get.text == "Username Already Taken") {
 				//Do User NAME Taken action
+				if(registerPopUp != null)
+					registerPopUp.SetActive(true);
 			}
 			else {
 				// Resume Game / LOG SUCCES
@@ -68,9 +81,13 @@ public class UsernameScript : MonoBehaviour {
 		else {
 			if(get.text.Equals("Wrong Pass")) {
 				// DEnied
+				if(loginPopUp != null)
+					loginPopUp.SetActive(true);
 				Debug.LogWarning("Wrong pass");
 			} else if(get.text.Equals("Username Not Found")) {
 				//
+				if(loginPopUp != null)
+					loginPopUp.SetActive(true);
 				Debug.LogWarning("Wrong user");
 			} else { //login succes
 				Debug.Log("Login successful");
@@ -81,7 +98,8 @@ public class UsernameScript : MonoBehaviour {
 			}
 		}
 		
-		CoRoutineRunning = false;		
+		CoRoutineRunning = false;	
+		GetUsername();
 	}
 
 	IEnumerator CurrentUserName (string url) {

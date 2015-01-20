@@ -6,6 +6,7 @@ public class EnemyRadar : MonoBehaviour {
 
 	// Variables & Constants.
 	public Sprite enemyRadarDotSprite;
+    public Sprite compassDotSprite;
 	public Sprite radarSprite;
 
 //	public int radarSize = 100;
@@ -45,6 +46,14 @@ public class EnemyRadar : MonoBehaviour {
 		playerDot.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
 		playerDot.transform.localPosition = new Vector3(0f, 0f, 0f);
 		playerDot.GetComponent<Image>().color=Color.red;
+
+        GameObject compassDot = new GameObject();
+        compassDot.AddComponent("Image");
+        compassDot.name = "CompassDotSprite";
+        playerDot.GetComponent<Image>().sprite = this.compassDotSprite;
+        compassDot.transform.SetParent(this.radarPanel.transform);
+        compassDot.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+        compassDot.transform.localPosition = new Vector3(0f, 100f, 0f);
 
 		// Create and show the radar sprite.
 		this.createRadar();
@@ -90,7 +99,7 @@ public class EnemyRadar : MonoBehaviour {
 	// createRadar method.
 	// Draws the radar to the screen.
 	public void createRadar() {
-		GameObject radarObject = new GameObject();
+		GameObject radarObject = new GameObject();	//same as playerDot?
 		radarObject.name = "radarSprite";
 		radarObject.AddComponent("Image");
 		radarObject.GetComponent<Image>().sprite = this.radarSprite;

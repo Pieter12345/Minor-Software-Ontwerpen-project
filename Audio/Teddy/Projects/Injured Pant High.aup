@@ -1,16 +1,17 @@
 <?xml version="1.0" standalone="no" ?>
 <!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
-<project xmlns="http://audacity.sourceforge.net/xml/" projname="Injured Pant High_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="167.6462115922" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Injured Pant High_data" version="1.3.0" audacityversion="2.0.6" sel0="0.0000000000" sel1="1.4157823129" vpos="0" h="0.0000000000" zoom="167.6462115922" rate="44100.0" snapto="off" selectionformat="uu:mm:ss + milliseconden">
 	<tags>
-		<tag name="ARTIST" value="AB van Ramshorst"/>
-		<tag name="YEAR" value="2014"/>
 		<tag name="ALBUM" value="TedDyfence"/>
+		<tag name="TITLE" value="Injured Pant High"/>
+		<tag name="YEAR" value="2014"/>
+		<tag name="ARTIST" value="AB van Ramshorst"/>
 	</tags>
 	<wavetrack name="Audiospoor" channel="0" linked="1" mute="0" solo="0" height="393" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="62436">
 				<waveblock start="0">
-					<simpleblockfile filename="e0000823.au" len="62436" min="-0.001888" max="0.001935" rms="0.000233"/>
+					<simpleblockfile filename="e0000069.au" len="62436" min="-0.010615" max="0.010883" rms="0.001308"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
@@ -20,7 +21,7 @@
 		<waveclip offset="0.00000000">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="62436">
 				<waveblock start="0">
-					<simpleblockfile filename="e0000132.au" len="62436" min="-0.00177" max="0.001932" rms="0.000254"/>
+					<simpleblockfile filename="e0000836.au" len="62436" min="-0.009955" max="0.010865" rms="0.001426"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
