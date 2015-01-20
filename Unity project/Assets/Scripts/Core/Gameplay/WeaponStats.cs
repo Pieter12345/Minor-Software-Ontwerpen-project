@@ -185,4 +185,48 @@ public static class WeaponStatsExtension{
 		}
 	}
 
+	// -----------------------------------------------------------------------------
+	// Used to align the weapon model with the camera in first person when aiming down sight through a scope (position).
+	// -----------------------------------------------------------------------------
+	public static Vector3 firstPersonAimDownAcogSightModelPosition(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return new Vector3( 0.026f, -0.149f, 0.550f); // TODO
+		case WeaponStats.RIFLE   : return new Vector3( 0.1214f, -0.2536f, 0.377f); // Works for scope on position -0.08, -0.145, 0.23 with rotation 0, 90, 0.
+		case WeaponStats.SHOTGUN : return new Vector3(-0.031f, -0.050f, 0.810f); // TODO
+		case WeaponStats.RPG     : return new Vector3(     0f, -0.190f, 0.700f); // TODO
+		case WeaponStats.LANDMINE: return new Vector3(     0f, -0.200f, 1.100f); // TODO
+		default                  : return new Vector3(0f, 0f, 0f);
+		}
+	}
+	
+	// -----------------------------------------------------------------------------
+	// Used to align the weapon model with the camera in first person when aiming down sight through a scope (rotation).
+	// -----------------------------------------------------------------------------
+	public static Vector3 firstPersonAimDownAcogSightModelRotation(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return new Vector3(270f, 270f, 0f); // TODO
+		case WeaponStats.RIFLE   : return new Vector3(270f, 270f, 0f); // TODO
+		case WeaponStats.SHOTGUN : return new Vector3(270f, 270f, 0f); // TODO
+		case WeaponStats.RPG     : return new Vector3(0f, 90f, 358.51f); // TODO
+		case WeaponStats.LANDMINE: return new Vector3(0f, 0f, 0f); // TODO
+		default                  : return new Vector3(0f, 0f, 0f);
+		}
+	}
+
+	// -----------------------------------------------------------------------------
+	// Returns wether the model can have an ACOG scope or not.
+	// -----------------------------------------------------------------------------
+	public static bool canHaveAcogScope(this WeaponStats w) {
+		switch(w) {
+		case WeaponStats.PISTOL  : return false;
+		case WeaponStats.RIFLE   : return true;
+		case WeaponStats.SHOTGUN : return false;
+		case WeaponStats.RPG     : return false;
+		case WeaponStats.LANDMINE: return false;
+		default                  : return false;
+		}
+	}
+
+
+
 }

@@ -47,6 +47,9 @@ public class FirstPersonShooterGameCamera {
 	// Weapon rotation when sprinting.
 	private float weaponsSprintRotationSpeed = 0.3f;
 
+	// ACOG scope variable.
+	private bool hasAcogScope = true;
+
 
 	// ---------------------------------------------------------------------------------------------
 	// Constructor.
@@ -180,6 +183,10 @@ public class FirstPersonShooterGameCamera {
 	// ---------------------------------------------------------------------------------------------
 	private void updateAimDownSight() {
 
+		// WeaponController/weapon references.
+		WeaponController wcont = weapon.GetComponent<WeaponController>();
+		Transform selectedWeaponTransform = wcont.SelectedWeaponTransform;
+
 		// Get if the player is in block placing mode or is he is sprinting. Stop aiming down sight if he is.
 		bool isBlockPlacingMode = player.parent.GetComponent<FireController>().BlockPlacingMode;
 		bool isSprinting = player.GetComponent<NormalCharacterMotor>().getIsSprinting;
@@ -192,7 +199,7 @@ public class FirstPersonShooterGameCamera {
 		if(Input.GetMouseButtonDown(1) && !isBlockPlacingMode) { // 1 = right mouse button.
 			this.isAimingDownSight = !this.isAimingDownSight;
 			if(this.isAimingDownSight) {
-				this.aimDownSightDesiredFieldOfView = 30f;
+				this.aimDownSightDesiredFieldOfView = this.hasAcogScope && wcont.SelectedWeaponType.canHaveAcogScope() ? 15f : 30f; // Normal aimDownSight or ACOG scope.
 			} else {
 				this.aimDownSightDesiredFieldOfView = 60f;
 			}
@@ -204,18 +211,18 @@ public class FirstPersonShooterGameCamera {
 		}
 
 		// Move weapon model from current location to the middle of the screen (or back).
-		WeaponController wcont = weapon.GetComponent<WeaponController>();
-		Transform selectedWeaponTransform = wcont.SelectedWeaponTransform;
 		if(this.isAimingDownSight) {
 
 			// Move towards position.
-			if(!selectedWeaponTransform.localPosition.Equals(wcont.SelectedWeaponType.firstPersonAimDownSightModelPosition())) {
-				selectedWeaponTransform.localPosition += (wcont.SelectedWeaponType.firstPersonAimDownSightModelPosition() - selectedWeaponTransform.localPosition) * this.aimDownSightTranslationSpeed;
+			Vector3 goalPosition = this.hasAcogScope && wcont.SelectedWeaponType.canHaveAcogScope() ? wcont.SelectedWeaponType.firstPersonAimDownAcogSightModelPosition() : wcont.SelectedWeaponType.firstPersonAimDownSightModelPosition();
+			Vector3 goalRotation = this.hasAcogScope && wcont.SelectedWeaponType.canHaveAcogScope() ? wcont.SelectedWeaponType.firstPersonAimDownAcogSightModelRotation() : wcont.SelectedWeaponType.firstPersonAimDownSightModelRotation();
+			if(!selectedWeaponTransform.localPosition.Equals(goalPosition)) {
+				selectedWeaponTransform.localPosition += (goalPosition - selectedWeaponTransform.localPosition) * this.aimDownSightTranslationSpeed;
 			}
 
 			// Move towards rotation.
-			if(!selectedWeaponTransform.localRotation.eulerAngles.Equals(wcont.SelectedWeaponType.firstPersonAimDownSightModelRotation())) {
-				selectedWeaponTransform.localRotation = Quaternion.Euler(selectedWeaponTransform.localRotation.eulerAngles + (wcont.SelectedWeaponType.firstPersonAimDownSightModelRotation() - selectedWeaponTransform.localRotation.eulerAngles) * this.aimDownSightRotationSpeed);
+			if(!selectedWeaponTransform.localRotation.eulerAngles.Equals(goalRotation)) {
+				selectedWeaponTransform.localRotation = Quaternion.Euler(selectedWeaponTransform.localRotation.eulerAngles + (goalRotation - selectedWeaponTransform.localRotation.eulerAngles) * this.aimDownSightRotationSpeed);
 			}
 
 		} else {
@@ -250,6 +257,10 @@ public class FirstPersonShooterGameCamera {
 			}
 			if(selectedWeapon.renderer != null) {
 				selectedWeapon.renderer.enabled = true; // Show weapon model.
+			}
+			Transform acogScope = selectedWeapon.FindChild("ACOG Scope");
+			if(acogScope != null) {
+				acogScope.renderer.enabled = this.hasAcogScope;
 			}
 
 			// Set attachment properties.
@@ -416,6 +427,34 @@ public class FirstPersonShooterGameCamera {
 	// ---------------------------------------------------------------------------------------------
 	public bool getIsReloading() {
 		return this.isReloadingWeapon || weapon.localEulerAngles.x != 0;
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
+	// setAcogScope method.
+	// Enabled or disables the ACOG scope on all models that support it.
+	// ---------------------------------------------------------------------------------------------
+	public void setAcogScope(bool enabled) {
+		WeaponController wcont = weapon.GetComponent<WeaponController>();
+		if(wcont.SelectedWeaponType.canHaveAcogScope()) {
+			this.hasAcogScope = enabled;
+
+			// Update scope model.
+			Transform acogScope = wcont.SelectedWeaponTransform.FindChild("ACOG Scope");
+			if(acogScope != null) {
+				acogScope.renderer.enabled = this.hasAcogScope;
+			}
+		}
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
+	// hasAcogScopeEnabled method.
+	// Returns true if the weapon has an ACOG scope attached.
+	// ---------------------------------------------------------------------------------------------
+	public bool hasAcogScopeEnabled() {
+		WeaponController wcont = weapon.GetComponent<WeaponController>();
+		return this.hasAcogScope && wcont.SelectedWeaponType.canHaveAcogScope();
 	}
 
 }

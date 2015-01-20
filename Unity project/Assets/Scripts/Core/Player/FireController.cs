@@ -96,6 +96,11 @@ public class FireController : MonoBehaviour {
 				}
 			}
 
+			// ACOG scope cheat for testing.
+			if(Input.GetKeyDown(KeyCode.O)) {
+				gameCamera.setAcogScope(!gameCamera.hasAcogScopeEnabled());
+			}
+
 			WeaponStats[] w = weapons.WeaponsInInventory;
 			if(Input.GetKeyUp(KeyCode.Alpha1)){
 				foreach(WeaponStats i in w){

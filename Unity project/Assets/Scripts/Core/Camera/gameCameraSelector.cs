@@ -128,6 +128,32 @@ public class gameCameraSelector : MonoBehaviour {
 
 
 	// ---------------------------------------------------------------------------------------------
+	// Redirect setAcogScope method.
+	// Enabled or disables the ACOG scope on all models that support it. Only supported in first person.
+	// ---------------------------------------------------------------------------------------------
+	public void setAcogScope(bool enabled) {
+		if(this.firstPerson) {
+			this.firstPersonCam.setAcogScope(enabled);
+		} else {
+			return;
+		}
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
+	// Redirect hasAcogScopeEnabled method.
+	// Returns true if the weapon has an ACOG scope attached. Only supported in first person.
+	// ---------------------------------------------------------------------------------------------
+	public bool hasAcogScopeEnabled() {
+		if(this.firstPerson) {
+			return this.firstPersonCam.hasAcogScopeEnabled();
+		} else {
+			return false;
+		}
+	}
+
+
+	// ---------------------------------------------------------------------------------------------
 	// Draw the crosshair.
 	// ---------------------------------------------------------------------------------------------
 	void OnGUI () {
