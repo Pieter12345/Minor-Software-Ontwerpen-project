@@ -305,6 +305,16 @@ public class EnemyController : MonoBehaviour {
 		return enemiesLeft;
 	}
 
+	// getEnemyObjects method.
+	// Returns an array with all enemies.
+	public static GameObject[] getEnemyObjects() {
+		GameObject[] enemyObjectArray = new GameObject[enemyObjectSize];
+		for(int i = 0; i < enemyObjectSize; i++) {
+			enemyObjectArray[i] = enemyObjects[i];
+		}
+		return enemyObjectArray;
+	}
+
 
 
 }
