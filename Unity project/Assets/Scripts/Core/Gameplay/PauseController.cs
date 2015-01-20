@@ -4,6 +4,8 @@ using System.Collections;
 public class PauseController : MonoBehaviour {
 
 	public GameObject pauseMenu;
+	public GameObject PlaySound;
+	public GameObject PauseSound;
 
 	// Update is called once per frame
 	void Update () {
@@ -18,12 +20,16 @@ public class PauseController : MonoBehaviour {
 
 	}
 
-	public static void TogglePause(){
+	public void TogglePause(){
 		if (Time.timeScale != 0f) {
 			Time.timeScale = 0f; // set time to zero if game is running
+			PlaySound.GetComponent<AudioSource>().Pause();
+			PauseSound.GetComponent<AudioSource>().Play();
 		}
 		else {
 			Time.timeScale = 1f; // resume game if game is not running
+			PlaySound.GetComponent<AudioSource>().Play();
+			PauseSound.GetComponent<AudioSource>().Stop();
 		}
 	}
 
