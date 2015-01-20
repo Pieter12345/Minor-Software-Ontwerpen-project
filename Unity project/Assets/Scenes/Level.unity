@@ -3746,10 +3746,10 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}
     spawnWeight: .300000012
     SpawnAfterWave: 1
-  - enemyPrefab: {fileID: 142966, guid: 5f60678f1c9dbd7439986436674d6d53, type: 2}
+  - enemyPrefab: {fileID: 146870, guid: 058742eb09153ac4f9dd752eaf7ef144, type: 2}
     spawnWeight: .200000003
     SpawnAfterWave: 5
-  - enemyPrefab: {fileID: 191522, guid: 6005ef362419fa84b841fbbe1a048c18, type: 2}
+  - enemyPrefab: {fileID: 191104, guid: d140439e46fce484aaace5b2b7379771, type: 2}
     spawnWeight: .100000001
     SpawnAfterWave: 6
   delayBetweenWaves: 3
@@ -5672,7 +5672,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 70, y: 160}
@@ -5758,17 +5758,17 @@ RectTransform:
   - {fileID: 1792868648}
   - {fileID: 1514095678}
   - {fileID: 820904612}
-  - {fileID: 99112434}
   - {fileID: 647419362}
   - {fileID: 1806982593}
   - {fileID: 2036968250}
+  - {fileID: 99112434}
   - {fileID: 1702768653}
-  - {fileID: 796486665}
   - {fileID: 1464140838}
-  - {fileID: 981937888}
   - {fileID: 1698116188}
-  - {fileID: 478807756}
+  - {fileID: 981937888}
+  - {fileID: 796486665}
   - {fileID: 293796254}
+  - {fileID: 478807756}
   - {fileID: 549974147}
   - {fileID: 1205811719}
   m_Father: {fileID: 0}
@@ -10973,7 +10973,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
@@ -14155,7 +14155,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465614, guid: 3243d872f9f0244f6ae1b48aec2bf85f, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 22465614, guid: 3243d872f9f0244f6ae1b48aec2bf85f, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -14559,7 +14559,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 35}
@@ -19115,7 +19115,7 @@ RectTransform:
   m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 100, y: -30}
@@ -20685,6 +20685,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 549974146}
+  PlaySound: {fileID: 0}
+  PauseSound: {fileID: 0}
 --- !u!4 &690982906
 Transform:
   m_ObjectHideFlags: 0
@@ -24271,7 +24273,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 30, y: 120}
@@ -42715,7 +42717,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -90, y: -30}
@@ -45620,7 +45622,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 28d18faa73661794394eba1d0ba0eaf4, type: 2}
       propertyPath: Scroll.x
@@ -45785,7 +45787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 46bd434a8fead44459a6acf766d033f8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 46bd434a8fead44459a6acf766d033f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -50213,7 +50215,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 80, y: 70}
@@ -53856,7 +53858,7 @@ RectTransform:
   - {fileID: 1769212936}
   - {fileID: 591375059}
   m_Father: {fileID: 103314339}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 100, y: -50}
@@ -61032,7 +61034,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103314339}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -90, y: -85}
