@@ -66,7 +66,7 @@ GameObject:
   - 114: {fileID: 11434244}
   - 114: {fileID: 11451576}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: EnemyCapsule
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
