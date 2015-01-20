@@ -3742,13 +3742,16 @@ MonoBehaviour:
     SpawnAfterWave: 0
   - enemyPrefab: {fileID: 187738, guid: 3e81f4516af13b14d98704cfb304ab61, type: 2}
     spawnWeight: .300000012
-    SpawnAfterWave: 1
+    SpawnAfterWave: 3
   - enemyPrefab: {fileID: 124620, guid: 04150419ade3f1d49a74a5cfd167e7a9, type: 2}
     spawnWeight: .300000012
-    SpawnAfterWave: 3
-  - enemyPrefab: {fileID: 114132, guid: 5f60678f1c9dbd7439986436674d6d53, type: 2}
+    SpawnAfterWave: 1
+  - enemyPrefab: {fileID: 142966, guid: 5f60678f1c9dbd7439986436674d6d53, type: 2}
     spawnWeight: .200000003
     SpawnAfterWave: 5
+  - enemyPrefab: {fileID: 191522, guid: 6005ef362419fa84b841fbbe1a048c18, type: 2}
+    spawnWeight: .100000001
+    SpawnAfterWave: 6
   delayBetweenWaves: 3
 --- !u!1 &58563821
 GameObject:
