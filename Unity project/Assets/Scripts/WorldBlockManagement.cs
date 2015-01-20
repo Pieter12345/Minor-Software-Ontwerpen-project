@@ -65,17 +65,15 @@ public class WorldBlockManagement : MonoBehaviour {
 
 //		setBlocksInRegion(0,0,0, 99,0,99, 1);
 
-		setBlockAt(0,           0, 0,           1);
-		setBlockAt(levelSize-1, 0, 0,           1);
-		setBlockAt(0,           0, levelSize-1, 1);
-		setBlockAt(levelSize-1, 0, levelSize-1, 1);
-
-		setBlockAt(0,           levelHeight-2, 0,           1);
-		setBlockAt(levelSize-1, levelHeight-2, 0,           1);
-		setBlockAt(0,           levelHeight-2, levelSize-1, 1);
-		setBlockAt(levelSize-1, levelHeight-2, levelSize-1, 1);
-
-		setBlockAt (10, 2, 10, 3); // A block at the flag pos (Set flag pos in EnemyController!).
+//		setBlockAt(0,           0, 0,           1);
+//		setBlockAt(levelSize-1, 0, 0,           1);
+//		setBlockAt(0,           0, levelSize-1, 1);
+//		setBlockAt(levelSize-1, 0, levelSize-1, 1);
+//
+//		setBlockAt(0,           levelHeight-2, 0,           1);
+//		setBlockAt(levelSize-1, levelHeight-2, 0,           1);
+//		setBlockAt(0,           levelHeight-2, levelSize-1, 1);
+//		setBlockAt(levelSize-1, levelHeight-2, levelSize-1, 1);
 
 		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
 		saveLevelToFile("save1");
