@@ -9912,7 +9912,7 @@ MonoBehaviour:
   shotSound: {fileID: 0}
   landMine: {fileID: 199490, guid: 3627ea06dd874cc49a3401632f92c268, type: 2}
   maxDistance: 10
-  camera: {fileID: 0}
+  camera: {fileID: 1661318638}
 --- !u!1 &230582624
 GameObject:
   m_ObjectHideFlags: 0
@@ -23654,9 +23654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: .313725501}
+  m_Sprite: {fileID: 21300000, guid: 67f524a2dc90f934b84630d7b1b05111, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
