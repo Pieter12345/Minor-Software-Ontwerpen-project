@@ -3454,6 +3454,7 @@ GameObject:
   - 224: {fileID: 347225746}
   - 222: {fileID: 347225748}
   - 114: {fileID: 347225747}
+  - 114: {fileID: 347225749}
   m_Layer: 5
   m_Name: Name Input
   m_TagString: Untagged
@@ -3514,6 +3515,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 347225745}
+--- !u!114 &347225749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347225745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52257445483433409dfe4ff8ac2f14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  us: {fileID: 383437159}
 --- !u!1 &353225647
 GameObject:
   m_ObjectHideFlags: 0
@@ -11147,6 +11160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 1795323535}
+  fadeAudio: {fileID: 2068410160}
 --- !u!4 &1147186779
 Transform:
   m_ObjectHideFlags: 0
