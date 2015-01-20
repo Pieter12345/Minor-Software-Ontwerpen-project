@@ -83,7 +83,7 @@ public class EnemyRadar : MonoBehaviour {
 		}
 
  		// Rotate the radarPanel to point it in the direction the player is looking in.
-		this.radarObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, this.camTransform.rotation.eulerAngles.y));
+		this.radarPanel.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, this.camTransform.rotation.eulerAngles.y));
 	}
 
 	// createRadar method.
