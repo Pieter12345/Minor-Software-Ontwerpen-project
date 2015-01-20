@@ -6,6 +6,7 @@ public class EnemyRadar : MonoBehaviour {
 
 	// Variables & Constants.
 	public Sprite enemyRadarDotSprite;
+    public Sprite compassDotSprite;
 	public Sprite radarSprite;
 
 //	public int radarSize = 100;
@@ -34,6 +35,8 @@ public class EnemyRadar : MonoBehaviour {
 			this.enemyDots[i].transform.SetParent(this.radarPanel.transform);
 			this.enemyDots[i].transform.localScale = new Vector3(0.1f, 0.1f, 1f);
 			this.enemyDots[i].SetActive(false);
+			enemyDots[i].GetComponent<Image>().color=Color.green;
+
 		}
 
 		// Create and show the playerDot on the radar.
@@ -45,6 +48,14 @@ public class EnemyRadar : MonoBehaviour {
 		playerDot.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
 		playerDot.transform.localPosition = new Vector3(0f, 0f, 0f);
 		playerDot.GetComponent<Image>().color=Color.red;
+
+        GameObject compassDot = new GameObject();
+        compassDot.AddComponent("Image");
+        compassDot.name = "CompassDotSprite";
+        playerDot.GetComponent<Image>().sprite = this.compassDotSprite;
+        compassDot.transform.SetParent(this.radarPanel.transform);
+        compassDot.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+        compassDot.transform.localPosition = new Vector3(0f, 100f, 0f);
 
 		// Create and show the radar sprite.
 		this.createRadar();
@@ -90,7 +101,7 @@ public class EnemyRadar : MonoBehaviour {
 	// createRadar method.
 	// Draws the radar to the screen.
 	public void createRadar() {
-		GameObject radarObject = new GameObject();	//same as playerDot?
+		GameObject radarObject = new GameObject();
 		radarObject.name = "radarSprite";
 		radarObject.AddComponent("Image");
 		radarObject.GetComponent<Image>().sprite = this.radarSprite;
@@ -99,16 +110,5 @@ public class EnemyRadar : MonoBehaviour {
 		radarObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f); // TODO - Scale image to desired radarSize based on sprite size?
 		radarObject.GetComponent<Image>().color=Color.red;
 	}
-
-//	// addEnemyDot method.
-//	// Draws enemy dots to the radar.
-//	public void addEnemyDot(Vector3 pos) {
-//		GameObject enemyDotObject = new GameObject();
-//		enemyDotObject.AddComponent("Image");
-//		enemyDotObject.GetComponent<Image>().sprite = this.enemyRadarDotSprite;
-//		enemyDotObject.transform.SetParent(this.radarPanel.transform);
-//		enemyDotObject.transform.localScale = new Vector3(0.1f, 0.1f, 1f); // TODO - Resize based on sprite size?
-//		enemyDotObject.transform.localPosition = pos;
-//	}
 
 }
