@@ -5249,6 +5249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyRadarDotSprite: {fileID: 21300000, guid: a68cc70b16da6fc4b8f958097f129e8c,
     type: 3}
+  compassDotSprite: {fileID: 0}
   radarSprite: {fileID: 21300000, guid: 7ef47905b710aad49adc299ff4748dc6, type: 3}
   radarScale: 1
   maxRadarViewRange: 100
@@ -5771,7 +5772,7 @@ RectTransform:
   - {fileID: 1205811719}
   - {fileID: 549974147}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -32164,7 +32165,7 @@ Transform:
   - {fileID: 1637571389}
   - {fileID: 491600369}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &1162204254
 GameObject:
   m_ObjectHideFlags: 0
@@ -60828,7 +60829,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -90, y: -85}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2036968251
 MonoBehaviour:
@@ -60843,7 +60844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 8f75820843233484098a79620da35d9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 824c23f6880a04750852902204b2dc04, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
