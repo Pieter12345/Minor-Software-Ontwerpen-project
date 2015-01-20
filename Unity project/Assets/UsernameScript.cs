@@ -98,7 +98,8 @@ public class UsernameScript : MonoBehaviour {
 			}
 		}
 		
-		CoRoutineRunning = false;		
+		CoRoutineRunning = false;	
+		GetUsername();
 	}
 
 	IEnumerator CurrentUserName (string url) {
@@ -145,7 +146,7 @@ public class UsernameScript : MonoBehaviour {
 	public void PostUserInfo () {
 		if(Username == "") { Debug.Log("[INFO] [UsernameScript] Please enter a username."); return; }
 		if(Password == "") { Debug.Log("[INFO] [UsernameScript] Please enter a password."); return; }
-		if(!CoRoutineRunning) { Debug.Log("[INFO] [UsernameScript] Your previous request is still being processed. Please wait a moment."); return; }
+		if(CoRoutineRunning) { Debug.Log("[INFO] [UsernameScript] Your previous request is still being processed. Please wait a moment."); return; }
 		StartCoroutine(AddNewUser("http://drproject.twi.tudelft.nl:8083/newuser"));
 	}
 
