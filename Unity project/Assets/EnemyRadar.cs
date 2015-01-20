@@ -35,6 +35,8 @@ public class EnemyRadar : MonoBehaviour {
 			this.enemyDots[i].transform.SetParent(this.radarPanel.transform);
 			this.enemyDots[i].transform.localScale = new Vector3(0.1f, 0.1f, 1f);
 			this.enemyDots[i].SetActive(false);
+			enemyDots[i].GetComponent<Image>().color=Color.green;
+
 		}
 
 		// Create and show the playerDot on the radar.
