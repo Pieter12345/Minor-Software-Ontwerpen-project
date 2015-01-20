@@ -15,6 +15,8 @@ public class UsernameScript : MonoBehaviour {
 	public GameObject loginPanel;
 	public GameObject mainMenuPanel;
 
+	public GameObject loginPopUp;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -68,9 +70,13 @@ public class UsernameScript : MonoBehaviour {
 		else {
 			if(get.text.Equals("Wrong Pass")) {
 				// DEnied
+				if(loginPopUp != null)
+					loginPopUp.SetActive(true);
 				Debug.LogWarning("Wrong pass");
 			} else if(get.text.Equals("Username Not Found")) {
 				//
+				if(loginPopUp != null)
+					loginPopUp.SetActive(true);
 				Debug.LogWarning("Wrong user");
 			} else { //login succes
 				Debug.Log("Login successful");

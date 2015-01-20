@@ -90,7 +90,7 @@ public class EnemyRadar : MonoBehaviour {
 	// createRadar method.
 	// Draws the radar to the screen.
 	public void createRadar() {
-		GameObject radarObject = new GameObject();
+		GameObject radarObject = new GameObject();	//same as playerDot?
 		radarObject.name = "radarSprite";
 		radarObject.AddComponent("Image");
 		radarObject.GetComponent<Image>().sprite = this.radarSprite;

@@ -99,6 +99,7 @@
      <Compile Include="Assets\Scripts\UI\Healthbar.cs" />
      <Compile Include="Assets\Scripts\UI\HitOverlay.cs" />
      <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
+     <Compile Include="Assets\Scripts\UI\PopUpButton.cs" />
      <Compile Include="Assets\Scripts\UI\ReloadText.cs" />
      <Compile Include="Assets\Scripts\UI\SplashScript.cs" />
      <Compile Include="Assets\Scripts\UI\UnderAttackMessage.cs" />
