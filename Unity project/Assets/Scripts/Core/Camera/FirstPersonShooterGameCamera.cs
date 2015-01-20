@@ -49,6 +49,7 @@ public class FirstPersonShooterGameCamera {
 
 	// ACOG scope variable.
 	private bool hasAcogScope = true;
+	private float aimDownAcogSightMouseSensitivityMultiplier = 0.3f; // Works together with aimDownSightMouseSensitivityMultiplier.
 
 
 	// ---------------------------------------------------------------------------------------------
@@ -97,7 +98,7 @@ public class FirstPersonShooterGameCamera {
 
 		// Set the camera position and rotation.
 		camTransform.position = player.transform.position + (Vector3.up * 1.6f); // Set camera to player position at eye height.
-		this.cameraRotation += new Vector3(-vertical, horizontal, 0f) * Time.deltaTime * mouseSensitivity * (this.isAimingDownSight ? this.aimDownSightMouseSensitivityMultiplier : 1f);
+		this.cameraRotation += new Vector3(-vertical, horizontal, 0f) * Time.deltaTime * mouseSensitivity * (this.isAimingDownSight ? this.aimDownSightMouseSensitivityMultiplier : 1f) * (this.isAimingDownSight && this.hasAcogScope && weapon.GetComponent<WeaponController>().SelectedWeaponType.canHaveAcogScope() ? this.aimDownAcogSightMouseSensitivityMultiplier : 1f);
 		this.cameraRotation.x = (this.cameraRotation.x + 360f) % 360f; // Maps [-360, inf] to [0, 360].
 
 		if(this.cameraRotation.x < 180f && this.cameraRotation.x > 90f - this.minRotationX) { this.cameraRotation.x = 90f - this.minRotationX; }
@@ -199,7 +200,7 @@ public class FirstPersonShooterGameCamera {
 		if(Input.GetMouseButtonDown(1) && !isBlockPlacingMode) { // 1 = right mouse button.
 			this.isAimingDownSight = !this.isAimingDownSight;
 			if(this.isAimingDownSight) {
-				this.aimDownSightDesiredFieldOfView = this.hasAcogScope && wcont.SelectedWeaponType.canHaveAcogScope() ? 15f : 30f; // Normal aimDownSight or ACOG scope.
+				this.aimDownSightDesiredFieldOfView = this.hasAcogScope && wcont.SelectedWeaponType.canHaveAcogScope() ? 10f : 30f; // Normal aimDownSight or ACOG scope.
 			} else {
 				this.aimDownSightDesiredFieldOfView = 60f;
 			}
