@@ -110,7 +110,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return new Vector3(0.468f, -0.358f, 0.878f);
 		case WeaponStats.SHOTGUN : return new Vector3(0.22f, -0.169f, 0.703f);
 		case WeaponStats.RPG     : return new Vector3(0.241f, -0.31f, 0.776f);
-		case WeaponStats.LANDMINE: return new Vector3(0.485f, -0.421f, 1.089f);
+		case WeaponStats.LANDMINE: return new Vector3(1.4f, -1.093553f, 1.057048f);
 		default                  : return new Vector3(0f, 0f, 0f);
 		}
 	}
@@ -124,7 +124,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return new Vector3(270f, 270f, 0f);
 		case WeaponStats.SHOTGUN : return new Vector3(270f, 270f, 0f);
 		case WeaponStats.RPG     : return new Vector3(0f, 90f, 0f);
-		case WeaponStats.LANDMINE: return new Vector3(30f, 290f, 20f);
+		case WeaponStats.LANDMINE: return new Vector3(314.1098f, 292.5976f, 54.43377f);
 		default                  : return new Vector3(0f, 0f, 0f);
 		}
 	}
@@ -194,7 +194,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return new Vector3( 0.1214f, -0.2536f, 0.377f); // Works for scope on position -0.08, -0.145, 0.23 with rotation 0, 90, 0.
 		case WeaponStats.SHOTGUN : return new Vector3(-0.031f, -0.050f, 0.810f); // TODO
 		case WeaponStats.RPG     : return new Vector3(     0f, -0.190f, 0.700f); // TODO
-		case WeaponStats.LANDMINE: return new Vector3(     0f, -0.200f, 1.100f); // TODO
+		case WeaponStats.LANDMINE: return new Vector3( 0.026f, -0.149f, 0.550f); // TODO
 		default                  : return new Vector3(0f, 0f, 0f);
 		}
 	}
