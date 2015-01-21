@@ -52,7 +52,7 @@ public class EnemyRadar : MonoBehaviour {
         GameObject compassDot = new GameObject();
         compassDot.AddComponent("Image");
         compassDot.name = "CompassDotSprite";
-        playerDot.GetComponent<Image>().sprite = this.compassDotSprite;
+        compassDot.GetComponent<Image>().sprite = this.compassDotSprite;
         compassDot.transform.SetParent(this.radarPanel.transform);
         compassDot.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         compassDot.transform.localPosition = new Vector3(0f, 100f, 0f);
