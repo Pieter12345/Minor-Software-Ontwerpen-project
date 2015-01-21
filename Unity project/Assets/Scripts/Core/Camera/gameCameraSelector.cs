@@ -7,7 +7,7 @@ public class gameCameraSelector : MonoBehaviour {
 	private ShooterGameCamera thirdPersonCam;
 	private FirstPersonShooterGameCamera firstPersonCam;
 	public bool firstPerson = true;
-	public float mouseSensitivity = 100f;
+	public float mouseSensitivity = 200f;
 	private bool isTempFirstPerson = false; // Used to save when a player is playing in third person, but is placing blocks in first.
 
 	public Transform player;
@@ -29,6 +29,8 @@ public class gameCameraSelector : MonoBehaviour {
 	// Initializes and runs the Start() method in the first or third person camera script.
 	// ---------------------------------------------------------------------------------------------
 	void Start () {
+		if(PlayerPrefs.HasKey("mouseSensitivity"))
+			mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity");
 
 		// Create camera controlling objects.
 		this.thirdPersonCam = new ShooterGameCamera(player, aimTarget, transform, weapon, modelLeftHand);
@@ -158,6 +160,7 @@ public class gameCameraSelector : MonoBehaviour {
 	// ---------------------------------------------------------------------------------------------
 	public void setMouseSensitivity(float sensitivity) {
 		this.mouseSensitivity = sensitivity;
+		PlayerPrefs.SetFloat("mouseSensitivity", mouseSensitivity);
 	}
 
 
