@@ -101,6 +101,13 @@ public class FireController : MonoBehaviour {
 				gameCamera.setAcogScope(!gameCamera.hasAcogScopeEnabled());
 			}
 
+
+			// Save level on F12 press.
+			if(Input.GetKeyDown (KeyCode.F12)) {
+				WorldBlockManagement.saveLevelToFile("F12Save");
+			}
+
+
 			WeaponStats[] w = weapons.WeaponsInInventory;
 			if(Input.GetKeyUp(KeyCode.Alpha1)){
 				foreach(WeaponStats i in w){

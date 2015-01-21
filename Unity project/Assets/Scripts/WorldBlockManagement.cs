@@ -26,6 +26,7 @@ public class WorldBlockManagement : MonoBehaviour {
 		blocks = blocktypes;
 		// Load the default level to variables.
 		generateNewLevel(100, 30);
+//		loadLevelFromFile("customSaves/F12Save");
 //		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
 
 		// Make the parentObject static.
@@ -75,8 +76,8 @@ public class WorldBlockManagement : MonoBehaviour {
 //		setBlockAt(0,           levelHeight-2, levelSize-1, 1);
 //		setBlockAt(levelSize-1, levelHeight-2, levelSize-1, 1);
 
-		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
-		saveLevelToFile("save1");
+//		Debug.Log("[INFO]: [WorldBlockManagement] Test: Saving level as custom level.");
+//		saveLevelToFile("save1");
 
 	}
 
@@ -147,19 +148,19 @@ public class WorldBlockManagement : MonoBehaviour {
 	// saveLevelToFile
 	// Saves the current state of the level.
 	// Argument fileName can be a name without extension.
-	public void saveLevelToFile(string fileName) {
+	public static void saveLevelToFile(string fileName) {
 		string filePath = "Assets/Levels/customSaves/" + fileName + ".bytes";
 		
 		FileStream outStream = new FileStream(filePath, FileMode.Create);
 		BinaryWriter writer = new BinaryWriter(outStream);
 
-		writer.Write(levelSize);
-		writer.Write(levelHeight);
+		writer.Write((byte) levelSize);
+		writer.Write((byte) levelHeight);
 		for(int i=0; i < blockData.Length; i++) {
 			writer.Write(blockData[i]);
 		}
 		writer.Close();
-
+		Debug.Log("[INFO]: [WorldBlockManagement] The level has been saved at Filepath: " + filePath  + ".");
 	}
 
 	// setBlockAt method.
