@@ -12,45 +12,8 @@ GameObject:
   - 114: {fileID: 11406250}
   - 114: {fileID: 11406252}
   m_Layer: 0
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  m_Name: Vleermuis
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &113354
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 413354}
-  m_Layer: 0
-  m_Name: Armature.001
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &113356
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 413356}
-  - 135: {fileID: 13513474}
-  - 114: {fileID: 11413468}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-=======
   m_Name: Vleermuis 1
   m_TagString: Enemy
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,13 +28,8 @@ GameObject:
   - 4: {fileID: 406134}
   - 111: {fileID: 11106256}
   m_Layer: 0
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  m_Name: Sphere
-  m_TagString: Enemy
-=======
   m_Name: EnemyModel
-  m_TagString: Untagged
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,18 +41,10 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  - 4: {fileID: 413360}
-  - 137: {fileID: 13713476}
-  m_Layer: 8
-  m_Name: Sphere.001
-  m_TagString: Enemy
-=======
   - 4: {fileID: 406136}
   m_Layer: 0
   m_Name: Armature.001
-  m_TagString: Untagged
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -916,11 +866,6 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  - 4: {fileID: 413470}
-  - 137: {fileID: 13713468}
-  m_Layer: 8
-=======
   - 4: {fileID: 406138}
   - 135: {fileID: 13506254}
   - 114: {fileID: 11406254}
@@ -941,7 +886,6 @@ GameObject:
   - 4: {fileID: 406140}
   - 137: {fileID: 13706248}
   m_Layer: 0
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
   m_Name: Cube_MeshPart0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,15 +899,9 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  - 4: {fileID: 413472}
-  - 137: {fileID: 13713470}
-  m_Layer: 8
-=======
   - 4: {fileID: 406142}
   - 137: {fileID: 13706250}
   m_Layer: 0
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
   m_Name: Cube_MeshPart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,15 +915,9 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  - 4: {fileID: 413474}
-  - 137: {fileID: 13713472}
-  m_Layer: 8
-=======
   - 4: {fileID: 406144}
   - 137: {fileID: 13706252}
   m_Layer: 0
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
   m_Name: Cube_MeshPart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,11 +965,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD:Unity project/Assets/Prefabs/Characters/Vleermuis.prefab
-  m_LocalPosition: {x: 1635.35193, y: 635.094177, z: -1501.84753}
-=======
   m_LocalPosition: {x: 68.3025513, y: -.431564331, z: -23.8411865}
->>>>>>> origin/master:Unity project/Assets/Prefabs/Characters/Vleermuis 1.prefab
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406134}
