@@ -3795,7 +3795,7 @@ MonoBehaviour:
   maxAmountOfEnemies: 1000
   player: {fileID: 1767831526}
   enemies:
-  - enemyPrefab: {fileID: 113352, guid: 066be8325207f7c4c990e46f0dd2625c, type: 2}
+  - enemyPrefab: {fileID: 106132, guid: d9be583432ef61a4ea0610097a95d256, type: 2}
     spawnWeight: 1
     SpawnAfterWave: 0
   - enemyPrefab: {fileID: 187738, guid: 3e81f4516af13b14d98704cfb304ab61, type: 2}
