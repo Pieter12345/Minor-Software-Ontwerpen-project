@@ -31,6 +31,7 @@ public class MenuButtons : MonoBehaviour {
     {
 		Time.timeScale = 1f;
         LoadScene("LoadMainMenu");
+		LoadMainMenu();
     }
 
     public void RetryLevel()
@@ -41,6 +42,7 @@ public class MenuButtons : MonoBehaviour {
 
     public void QuitGame()
     {
+		Time.timeScale = 1f;
         LoadScene("LoadQuitGame");
 
     }
