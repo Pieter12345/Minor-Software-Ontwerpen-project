@@ -20,7 +20,7 @@ QualitySettings:
     antiAliasing: 2
     softParticles: 1
     softVegetation: 1
-    vSyncCount: 2
+    vSyncCount: 1
     lodBias: 2
     maximumLODLevel: 0
     particleRaycastBudget: 4096
