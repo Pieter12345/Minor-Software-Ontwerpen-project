@@ -29,6 +29,8 @@ public class gameCameraSelector : MonoBehaviour {
 	// Initializes and runs the Start() method in the first or third person camera script.
 	// ---------------------------------------------------------------------------------------------
 	void Start () {
+		if(PlayerPrefs.HasKey("mouseSensitivity"))
+			mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity");
 
 		// Create camera controlling objects.
 		this.thirdPersonCam = new ShooterGameCamera(player, aimTarget, transform, weapon, modelLeftHand);
@@ -158,6 +160,7 @@ public class gameCameraSelector : MonoBehaviour {
 	// ---------------------------------------------------------------------------------------------
 	public void setMouseSensitivity(float sensitivity) {
 		this.mouseSensitivity = sensitivity;
+		PlayerPrefs.SetFloat("mouseSensitivity", mouseSensitivity);
 	}
 
 
