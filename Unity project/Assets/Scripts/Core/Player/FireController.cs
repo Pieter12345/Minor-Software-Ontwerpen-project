@@ -8,6 +8,7 @@ public class FireController : MonoBehaviour {
 	public Transform transBlock;
 	public Transform weaponController;
 	public GameObject torch;
+	public AudioClip BlockPlacement;
 
 	public float blockPlaceTime = 0.5f;
 
@@ -185,6 +186,7 @@ public class FireController : MonoBehaviour {
 
 	void OnPlaceBlock(){
 		HighScoreKeeper.BlockAction(true,true);
+		audio.PlayOneShot(BlockPlacement);
 		WorldBlockManagement.setBlockAt(Mathf.FloorToInt(transBlock.position.x),
 		                  Mathf.FloorToInt(transBlock.position.y),
 		                  Mathf.FloorToInt(transBlock.position.z),
