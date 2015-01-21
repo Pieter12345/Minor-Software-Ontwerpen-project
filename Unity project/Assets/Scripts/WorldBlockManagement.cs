@@ -26,17 +26,16 @@ public class WorldBlockManagement : MonoBehaviour {
 		blocks = blocktypes;
 		// Load the default level to variables.
 		generateNewLevel(100, 30);
-//		loadLevelFromFile("customSaves/F12Save");
-//		loadLevelFromFile("32x32x16"); // Available empty testlevels: testLevel, 100x100x20.
+		// Blockify all already-in-scene objects with invisible blocks.
+		blockifyWorld();
+//		loadLevelFromFile("customSaves/lalala");
+//		loadLevelFromFile("StandardGame"); // Available empty testlevels: testLevel, 100x100x20.
 
 		// Make the parentObject static.
 		parent = this.parentObject;
 
 		// Create a floor plane with the size of the loaded level.
 		createGroundPlane();
-
-		// Blockify all already-in-scene objects with invisible blocks.
-		blockifyWorld();
 
 		// Load the level to the scene (Does not clear an old loaded level).
 		int byteArrayIndex = 0;
