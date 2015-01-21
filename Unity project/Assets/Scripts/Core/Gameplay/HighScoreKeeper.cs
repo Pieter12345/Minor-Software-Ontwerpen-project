@@ -30,7 +30,7 @@ public class HighScoreKeeper : MonoBehaviour {
 	public static int ShotsHit = 0;				//Shots that hit an enemy
 	public static int ShotsMissed = 0;				//Shots that miss an enemy
 	public static float Accuracy;					//Ratio between shots hit and shots fired
-	private static int AccuracyBonus;				//Bonus at end game for a high accuracy
+	public static int AccuracyBonus;				//Bonus at end game for a high accuracy
 	private static int AccuracyBonusParameter = 100;//Parameter for the accuracy bonus
 
 	// Use this for initialization
@@ -116,7 +116,7 @@ public class HighScoreKeeper : MonoBehaviour {
 	}
 	
 	// Accuracy Bonus
-	static void BonusPoints() {
+	public static void BonusPoints() {
 		
 		//Accuracy Bonus
 		if (Accuracy > 0.50f) {
