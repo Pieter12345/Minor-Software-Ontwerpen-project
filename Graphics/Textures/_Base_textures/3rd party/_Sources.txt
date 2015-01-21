@@ -65,10 +65,6 @@ Filename:SplatterColored0001_S
 Source	:CGTextures
 URL	:http://www.cgtextures.com/texview.php?id=31632&PHPSESSID=363ne1ip937usclil5c9800cg0
 
-Filename:evil-clown.jpg
-Source	:Google
-URL	:http://mundabor.files.wordpress.com/2013/12/evil-clown.jpg
-
 Filename:FabricPatterns0108_S
 Source	:CGTextures
 URL	:http://www.cgtextures.com/texview.php?id=38991&PHPSESSID=363ne1ip937usclil5c9800cg0
