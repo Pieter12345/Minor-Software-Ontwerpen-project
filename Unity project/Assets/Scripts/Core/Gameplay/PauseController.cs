@@ -10,7 +10,7 @@ public class PauseController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// on press pausekey
-		if (Input.GetButtonDown("Pause")) {
+		if (Input.GetButtonDown("Pause") || Input.GetKeyUp(KeyCode.Escape)) {
 			TogglePause();
 		}
 
