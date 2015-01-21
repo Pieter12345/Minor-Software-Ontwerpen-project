@@ -24,10 +24,10 @@ public class WorldBlockManagement : MonoBehaviour {
 	// Runs on creation of the object its bound to (should be the level floor plane or so).
 	void Awake () {
 		blocks = blocktypes;
-		// Load the default level to variables.
+
+		// Load an empty level to variables.
 		generateNewLevel(100, 30);
-		// Blockify all already-in-scene objects with invisible blocks.
-		blockifyWorld();
+
 //		loadLevelFromFile("customSaves/lalala");
 //		loadLevelFromFile("StandardGame"); // Available empty testlevels: testLevel, 100x100x20.
 
@@ -36,6 +36,9 @@ public class WorldBlockManagement : MonoBehaviour {
 
 		// Create a floor plane with the size of the loaded level.
 		createGroundPlane();
+
+		// Blockify all already-in-scene objects with invisible blocks.
+		blockifyWorld();
 
 		// Load the level to the scene (Does not clear an old loaded level).
 		int byteArrayIndex = 0;
