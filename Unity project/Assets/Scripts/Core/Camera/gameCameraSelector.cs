@@ -50,6 +50,9 @@ public class gameCameraSelector : MonoBehaviour {
 	// ---------------------------------------------------------------------------------------------
 	void LateUpdate () {
 
+//		// Debug - Show FPS in console.
+//		Debug.Log("FPS: " + 1.0f/Time.deltaTime);
+
 		// Return if the game hasnt started yet or if it has been paused.
 		if (Time.deltaTime == 0 || Time.timeScale == 0) { return; }
 		
