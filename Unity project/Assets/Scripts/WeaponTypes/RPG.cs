@@ -21,6 +21,7 @@ public class RPG : Weapon {
 					Debug.LogError("RPG has no grenade!");
 					return;
 				}
+				ShootSound();
 				unfiredGrenade.gameObject.SetActive(false);
 				firedGrenade.gameObject.SetActive(true);
 				firedGrenade.GetComponent<RPGGrenade>().Fire(to);
