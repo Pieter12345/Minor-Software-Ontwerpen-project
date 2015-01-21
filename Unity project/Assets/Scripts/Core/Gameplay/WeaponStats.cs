@@ -166,7 +166,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return new Vector3( 0.120f, -0.210f, 0.800f);
 		case WeaponStats.SHOTGUN : return new Vector3(-0.031f, -0.050f, 0.810f);
 		case WeaponStats.RPG     : return new Vector3(     0f, -0.190f, 0.700f);
-		case WeaponStats.LANDMINE: return new Vector3(     0f, -0.200f, 1.100f);
+		case WeaponStats.LANDMINE: return new Vector3(-0.230f, -1.010f, 1.610f);
 		default                  : return new Vector3(0f, 0f, 0f);
 		}
 	}
@@ -180,7 +180,7 @@ public static class WeaponStatsExtension{
 		case WeaponStats.RIFLE   : return new Vector3(270f, 270f, 0f);
 		case WeaponStats.SHOTGUN : return new Vector3(270f, 270f, 0f);
 		case WeaponStats.RPG     : return new Vector3(0f, 90f, 358.51f);
-		case WeaponStats.LANDMINE: return new Vector3(0f, 0f, 0f);
+		case WeaponStats.LANDMINE: return new Vector3(305f, 177f, 60f);
 		default                  : return new Vector3(0f, 0f, 0f);
 		}
 	}
