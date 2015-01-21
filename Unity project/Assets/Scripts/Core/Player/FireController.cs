@@ -176,6 +176,10 @@ public class FireController : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.F9) && Application.isEditor)
 			weapons.AddAmmoToCurrent(1000);
+		if(Input.GetKeyDown(KeyCode.F11) && Application.isEditor)
+			WorldBlockManagement.saveLevelToFile("F11Save");
+		if(Input.GetKeyDown(KeyCode.F12) && Application.isEditor)
+			AmountOfBlocks+=10;
 		UpdateBlockOutline();
 	}
 
