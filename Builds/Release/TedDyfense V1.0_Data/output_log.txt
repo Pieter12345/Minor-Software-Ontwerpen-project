@@ -1,0 +1,123 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: ATI Radeon HD 4800 Series (ID=0x9440)
+    Vendor:   ATI
+    VRAM:     503 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.229 seconds
+desktop: 1920x1080 60Hz; virtual: 6400x1080 at -1280,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Pietje\Documents\GitHub\Minor-Software-Ontwerpen-project\Release\TedDyfense_Data\Managed\System.dll (this message is harmless)
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+UnloadTime: 1.127447 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1486.
+Total: 0.992095 ms (FindLiveObjects: 0.057898 ms CreateObjectMapping: 0.027238 ms MarkObjects: 0.261066 ms  DeleteObjects: 0.198488 ms)
+
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+Succesfully added new User to Database
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Login successful
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Pieter
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Loading Level
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1788)
+
+UnloadTime: 2.712565 ms
+[INFO]: [WorldBlockManagement] Test blocks are being placed.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3102.
+Total: 2.729397 ms (FindLiveObjects: 0.110139 ms CreateObjectMapping: 0.039460 ms MarkObjects: 2.036012 ms  DeleteObjects: 0.126901 ms)
+
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+Picked up PISTOL
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Picked up LANDMINE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Sphere
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaged for: 10 points
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Enemies left: 4
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Picked up RIFLE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Picked up RIFLE
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Sphere
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaged for: 12 points
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Enemies left: 3
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Sphere
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaged for: 12 points
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Enemies left: 2
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Shot hit Sphere
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Damaged for: 12 points
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Enemies left: 1
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
