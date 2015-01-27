@@ -1160,7 +1160,7 @@ GameObject:
   - 114: {fileID: 11440880}
   - 114: {fileID: 11440882}
   m_Layer: 0
-  m_Name: Vleermuis
+  m_Name: Vleermuis_smaller
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

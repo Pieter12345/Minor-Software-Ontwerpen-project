@@ -9231,7 +9231,7 @@ MonoBehaviour:
   torch: {fileID: 1391955340}
   BlockPlacement: {fileID: 8300000, guid: 428e973257441804290914b9cc048ece, type: 3}
   blockPlaceTime: .5
-  amountOfStartingBlocks: 5
+  amountOfStartingBlocks: 30
 --- !u!114 &381778680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10940,7 +10940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
-  amountOfAmmo: 40
+  amountOfAmmo: 60
 --- !u!136 &515646164
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17619,7 +17619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  amountOfAmmo: 10
+  amountOfAmmo: 20
 --- !u!135 &805476314
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25153,7 +25153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  amountOfAmmo: 10
+  amountOfAmmo: 20
 --- !u!135 &1195133410
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25750,7 +25750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  amountOfAmmo: 10
+  amountOfAmmo: 20
 --- !u!135 &1212222874
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26036,7 +26036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
-  amountOfAmmo: 8
+  amountOfAmmo: 16
 --- !u!136 &1257116373
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34055,7 +34055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  amountOfAmmo: 10
+  amountOfAmmo: 20
 --- !u!135 &1617860017
 SphereCollider:
   m_ObjectHideFlags: 0

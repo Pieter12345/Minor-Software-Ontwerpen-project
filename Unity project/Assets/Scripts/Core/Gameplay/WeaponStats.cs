@@ -37,11 +37,11 @@ public static class WeaponStatsExtension{
 	// -----------------------------------------------------------------------------
 	public static int InitialAmmoPickupAmount(this WeaponStats w) {
 		switch(w) {
-		case WeaponStats.PISTOL  : return 20;
-		case WeaponStats.RIFLE   : return 100;
-		case WeaponStats.SHOTGUN : return 10;
-		case WeaponStats.RPG     : return 2;
-		case WeaponStats.LANDMINE: return 3;
+		case WeaponStats.PISTOL  : return 30;
+		case WeaponStats.RIFLE   : return 300;
+		case WeaponStats.SHOTGUN : return 20;
+		case WeaponStats.RPG     : return 5;
+		case WeaponStats.LANDMINE: return 5;
 		default                  : return 0;
 		}
 	}
