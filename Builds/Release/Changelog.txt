@@ -1,0 +1,8 @@
+--------------------------------------------------------------------------------
+TedDyfense changelog for version 1.1 beta build 1
+--------------------------------------------------------------------------------
+
+- Simplified the bat model to reduce lagg.
+- Increased the initial amount of blocks in your inventory.
+- Increased the initial amount of ammo when picking up weapons.
+- Increased the amount of ammo picked up from pickups.
